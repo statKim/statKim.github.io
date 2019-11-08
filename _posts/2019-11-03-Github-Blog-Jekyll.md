@@ -2,7 +2,7 @@
 layout: post
 title:  "Jekyll 테마로 Github Blog 만들기"
 subtitle:   "Jekyll 테마로 Github Blog 만들기"
-categories: development
+categories: programming
 tags: git
 comments: true
 ---
