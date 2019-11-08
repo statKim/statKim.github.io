@@ -1,68 +1,51 @@
-# [Start Bootstrap - Resume](https://startbootstrap.com/template-overviews/resume/)
 
-[Resume](https://startbootstrap.com/template-overviews/resume/) is a resume and CV theme for [Bootstrap](http://getbootstrap.com/) created by [Start Bootstrap](http://startbootstrap.com/). This theme features a fixed sidebar with content sections to build a simple, yet elegant resume.
+## Github Blog
+- [https://statKim.github.io](https://statKim.github.io)
+- 이 블로그는 [zzsza](https://github.com/zzsza/zzsza.github.io)님 블로그 테마를 기반으로 제작되었습니다
+- 본 테마를 사용하고 싶으신 경우, [zzsza](https://github.com/zzsza/zzsza.github.io)님에게 issue 또는 메일([snugyun01@gmail.com](snugyun01@gmail.com))로 문의해주시기 바랍니다.
 
-## Preview
+### Structure
+```
+├── README.md
+├── _config.yml : 기본 설정이 저장된 파일
+├── _data : 유저 데이터가 저장된 폴더, author.yml만 수정하면 됨
+├── _draft : 초안 작성 폴더, 커밋해도 반영되지 않음
+├── _featured_categories : 카테고리(메뉴판의 큰 제목)
+├── _featured_tags : 카테고리의 태그(메뉴판의 소제목)
+├── _includes : 기본 홈페이지 포맷
+├── _ipynbs : ipynb 저장 폴더
+├── _js : 자바스크립트 소스 저장 폴더
+├── _layouts : 타입별 레이아웃 폴더
+├── _plugins : 플러그인 저장 폴더. 그러나 Github에서 빌드시 플러그인 사용 불가능
+├── _posts : 글 저장 폴더
+├── _sass
+├── _site : 빌드시 생기는 폴더, 신경쓸 필요 없음
+├── about.md : about에서 나타날 내용
+├── assets : css, js, img 등 저장하는 폴더
+├── favicon.ico : favicon 아이콘
+├── feed.xml
+├── index.html
+├── robots.xml
+├── search.html
+├── sitemap.xml
+├── tile-wide.png
+└── tile.png
+```
 
-[![Resume Preview](https://startbootstrap.com/assets/img/screenshots/themes/resume.png)](https://blackrockdigital.github.io/startbootstrap-resume/)
+- ```_config.yml```, ```_data```, ```_featured_categories```, ```_featured_tags```, ```about.md``` 내용 수정
+- ```favicon.ico```, ```tile-wide.png```, ```tile.png``` 원하는 이미지로 설정
 
-**[View Live Preview](https://blackrockdigital.github.io/startbootstrap-resume/)**
+### 로컬 빌드
+- Ruby가 설치되어 있어야 합니다
+- Ruby 설치는 [공식 문서](https://www.ruby-lang.org/ko/documentation/installation/) 참고
 
-## Status
+```
+bundle exec jekyll serve
+```
 
-[![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/BlackrockDigital/startbootstrap-resume/master/LICENSE)
-[![npm version](https://img.shields.io/npm/v/startbootstrap-resume.svg)](https://www.npmjs.com/package/startbootstrap-resume)
-[![Build Status](https://travis-ci.org/BlackrockDigital/startbootstrap-resume.svg?branch=master)](https://travis-ci.org/BlackrockDigital/startbootstrap-resume)
-[![dependencies Status](https://david-dm.org/BlackrockDigital/startbootstrap-resume/status.svg)](https://david-dm.org/BlackrockDigital/startbootstrap-resume)
-[![devDependencies Status](https://david-dm.org/BlackrockDigital/startbootstrap-resume/dev-status.svg)](https://david-dm.org/BlackrockDigital/startbootstrap-resume?type=dev)
+### 원격 빌드
+- Github 저장소에 Push
 
-## Download and Installation
-
-To begin using this template, choose one of the following options to get started:
-* [Download the latest release on Start Bootstrap](https://startbootstrap.com/template-overviews/resume/)
-* Install via npm: `npm i startbootstrap-resume`
-* Clone the repo: `git clone https://github.com/BlackrockDigital/startbootstrap-resume.git`
-* [Fork, Clone, or Download on GitHub](https://github.com/BlackrockDigital/startbootstrap-resume)
-
-## Usage
-
-### Basic Usage
-
-After downloading, simply edit the HTML and CSS files included with the template in your favorite text editor to make changes. These are the only files you need to worry about, you can ignore everything else! To preview the changes you make to the code, you can open the `index.html` file in your web browser.
-
-### Advanced Usage
-
-After installation, run `npm install` and then run `npm start` which will open up a preview of the template in your default browser, watch for changes to core template files, and live reload the browser when changes are saved. You can view the `gulpfile.js` to see which tasks are included with the dev environment.
-
-#### Gulp Tasks
-
-- `gulp` the default task that builds everything
-- `gulp watch` browserSync opens the project in your default browser and live reloads when changes are made
-- `gulp css` compiles SCSS files into CSS and minifies the compiled CSS
-- `gulp js` minifies the themes JS file
-- `gulp vendor` copies dependencies from node_modules to the vendor directory
-
-You must have npm installed globally in order to use this build environment.
-
-## Bugs and Issues
-
-Have a bug or an issue with this template? [Open a new issue](https://github.com/BlackrockDigital/startbootstrap-resume/issues) here on GitHub or leave a comment on the [template overview page at Start Bootstrap](http://startbootstrap.com/template-overviews/resume/).
-
-## About
-
-Start Bootstrap is an open source library of free Bootstrap templates and themes. All of the free templates and themes on Start Bootstrap are released under the MIT license, which means you can use them for any purpose, even for commercial projects.
-
-* https://startbootstrap.com
-* https://twitter.com/SBootstrap
-
-Start Bootstrap was created by and is maintained by **[David Miller](http://davidmiller.io/)**, Owner of [Blackrock Digital](http://blackrockdigital.io/).
-
-* http://davidmiller.io
-* https://twitter.com/davidmillerskt
-* https://github.com/davidtmiller
-
-Start Bootstrap is based on the [Bootstrap](http://getbootstrap.com/) framework created by [Mark Otto](https://twitter.com/mdo) and [Jacob Thorton](https://twitter.com/fat).
-
-## Copyright and License
-
-Copyright 2013-2019 Blackrock Digital LLC. Code released under the [MIT](https://github.com/BlackrockDigital/startbootstrap-resume/blob/gh-pages/LICENSE) license.
+### 글 작성
+- ```_featured_categories```, ```_featured_tags``` 설정한 후, ```_posts```에 글을 작성합니다
+- 글 제목 형태는 ```2018-01-03-title1.md``` 이런 방식처럼 작성! 날짜를 빼고 쓰면 반영되지 않습니다

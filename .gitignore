@@ -1,1 +1,8 @@
-node_modules
+_site
+.sass-cache
+.jekyll-metadata
+vendor
+.idea
+_posts/.ipynb_checkpoints
+*.bak
+CV/
