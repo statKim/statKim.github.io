@@ -42,10 +42,6 @@ google_fonts:        Lato
 # If you do not use a Google Fonts, uncomment the line below
 # no_google_fonts:     true
 
-# Set your Google Analytics id to receive `pageview` events.
-# To remove Google Anaylics from your page, remove the line below.
-google_analytics:    UA-110573232-1
-
 # Setting a disqus shortname will enable the comment section on pages with `comments: true` in the front matter
 disqus_shortname:    statkim
 
