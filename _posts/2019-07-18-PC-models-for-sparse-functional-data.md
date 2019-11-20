@@ -1,7 +1,7 @@
 ---
 layout: post
-title:  "Principal Component Models for Sparse Functional Data 논문 리뷰"
-subtitle:   "Principal Component Models for Sparse Functional Data 논문 리뷰"
+title:  "Principal Component Models for Sparse Functional Data"
+subtitle:   "Principal Component Models for Sparse Functional Data"
 categories: data
 tags: paper
 comments: true
@@ -19,7 +19,7 @@ comments: true
 8. Appendix
 
 
-
+<br>
 ## 1. Introduction
 
 ### The problem
@@ -85,7 +85,7 @@ $$
 - The reduced rank method presented in this paper looks better than the mixed effect method.
 
 
-
+<br>
 ## 2. The Growth Curve Data
 
 ![](https://github.com/statKim/FDA-Lab/blob/master/Principal Component Models for Sparse Functional Data/img/3.png?raw=true)
@@ -95,6 +95,7 @@ $$
 - In the mixed effect model, the peak is not looked clear.
 
 
+<br>
 ## 3. The Reduced Rank Model
 
 ### The reduced rank model
@@ -186,7 +187,7 @@ $$
 - The reduced rank likelihood is strictly higer than the constrained likelihood.
 
 
-
+<br>
 ## 4. Fitting the Reduced Rank Model
 
 ### Preamble
@@ -240,7 +241,7 @@ $$
 - Distribution assumption X
 - It can be maximized using $$\texttt{EM}$$ algorithm.
 
-
+<br>
 ## 5. The Reduced Rank and Mixed Effects Methods Compared
 
 #### Study 1
@@ -273,7 +274,7 @@ In two studies, mixed effects and reduced rank model were fitted to 10 datasets 
 - The likelihood estmate becomes worse as the variance is underestimated.
 
 
-
+<br>
 ## 6. Model Selection and Inference
 
 ### Selection of the number of knots in the spline basis
@@ -316,13 +317,13 @@ Selecting the rank of the covariance matrix $$=$$ Selecting \# of PCs
 - LRT test
 	- $$H_0:k=k_0$$ vs $$H_1:k=k_1$$
 	- $$LRT = 2(\log L_{k=k_1} - \log L_{k=k_0}) \ \dot\sim \ \chi^2_{df}$$,
-	   where $$df=$$ difference of parameters
+	  <br>where $$df=$$ difference of parameters
 
 
 - Example
 	- $$H_0:k=1$$ vs $$H_1:k=2$$
 	- $$LRT = 2(\log L_{k=2} - \log L_{k=1}) = 19.28 \ \dot\sim \ \chi^2_5$$,
-	   $$p$$-value $$=0.002$$
+	  <br>$$p$$-value $$=0.002$$
 	- Reject $$H_0$$, we choose $$k=2$$.
 	- But this dataset is sparse, we shoud caution when using an asymptotic result
 
@@ -345,7 +346,7 @@ To compute confidence intervals for the overall mean function, PCs and individua
 ![](https://github.com/statKim/FDA-Lab/blob/master/Principal Component Models for Sparse Functional Data/img/10.png?raw=true)
 
 
-
+<br>
 ## 7. Comparison of the Reduced Rank Method and Classical Principal Components
 
 
@@ -409,7 +410,7 @@ $$
 - Also it finds the best plane when the curves are not measured at the same time points, but the distance between the plane and each data point is measured relative to the metric $$\mathbf{B}_i^T\mathbf{B}_i$$.
 
 
-
+<br>
 ## 8. Appendix
 
 ### BLUP(Best Linear Unbiased Prediction)
@@ -487,10 +488,10 @@ $$
 where $$\hat{\mathbf{\beta}}$$ is BLUE(Best Linear Unbiased Estimator) and $$\hat{\mathbf{u}}$$ is BLUP(Best Linear Unbiased Prediction)
 
 
-
+<br>
 ## Reference
 
-James *et al.* (2000), **Principal component models for sparse functional data.** *Biometrika*, 87(3), 587-602.
+1. James *et al.* (2000), **Principal component models for sparse functional data.** *Biometrika*, 87(3), 587-602.
 
 
 <br>
