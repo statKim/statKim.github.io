@@ -1,7 +1,7 @@
 ---
 layout: post
-title:  "[시뮬레이션] Reduced rank model for sparse functional data"
-subtitle:   "[시뮬레이션] Reduced rank model for sparse functional data"
+title:  "[시뮬레이션] Reduced Rank Model for Sparse Functional Data"
+subtitle:   "[시뮬레이션] Reduced Rank Model for Sparse Functional Data"
 categories: data
 tags: fda-lab
 comments: true
