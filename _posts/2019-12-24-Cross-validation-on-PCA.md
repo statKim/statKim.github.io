@@ -136,7 +136,7 @@ $$
 
   1. Apply PCA on data $$X^{(-i)}$$ left-out $$i$$th row.
 
-  2. For the left-out variables, $$j=1,2,\dots, J$$
+  2. For the left-out variables, $$j=1,2,\cdots, J$$
 
      1. Estimate the score (Least squares form)
    
@@ -156,7 +156,7 @@ $$
         CV(k) = \sum_i \sum_j (x_{ij} - \hat{x}_{ij}(k))^2
         $$
 
-  3. Iterate $$i=1,2,\dots,I$$.
+  3. Iterate $$i=1,2,\cdots,I$$.
 
 - $$x_{ij}$$ and $$\hat{x}_{ij}$$ are actually independent.
 
@@ -184,7 +184,7 @@ $$
 
 - **Procedure**
 
-  - For left-out element $$s=1,\dots,IJ$$
+  - For left-out element $$s=1,\cdots,IJ$$
 
     1. Split data into $$X^{(-s)}$$ and $$x^{(s)}$$.
 
