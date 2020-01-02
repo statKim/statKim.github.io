@@ -25,5 +25,3 @@ order: 10
 | **산학 협력 프로젝트(현대모비스)**<br>*빅데이터 기반 서비스부품 수요예측 강화* | 2019.02 - 2019.09 | 데이터 크롤링<br>텍스트 마이닝<br>데이터 분석 |
 | [**다빈치 SW 해커톤 2018**](https://github.com/statKim/Da_Vinci_SW_Hackathon)<br>*눈치싸움 대작전* | 2018.11 - 2018.12 | 웹 개발<br>DB 구축<br>모델링   |
 | [**빅데이터 활용 웹 어플리케이션 개발**](https://github.com/statKim/2018_Multicampus_Project)<br>*창업 with Data* | 2018.07 - 2018.08 | 데이터 분석<br>모델링           |
-
-[CV](../CV/index.html)
