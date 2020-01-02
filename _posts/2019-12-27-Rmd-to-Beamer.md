@@ -82,3 +82,14 @@ plot(pressure)
 
 ![](https://github.com/statKim/TIL/blob/master/R/images/rmd_beamer4.png?raw=true)
 
+<br>
+
+### 그래프 caption 및 크기 조절
+```r
+​```{r pressure, fig.cap="caption", out.width="250px", out.height="180px"}
+plot(pressure)
+​```
+```
+
+![](https://github.com/statKim/TIL/blob/master/R/images/rmd_beamer5.png?raw=true)
+
