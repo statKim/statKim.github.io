@@ -1,8 +1,8 @@
 ---
 layout: tag-blog
-title: Keras
-slug: keras
+title: Lab
+slug: lab
 category: data
 menu: false
-order: 6
+order: 2
 ---
