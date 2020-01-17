@@ -12,7 +12,6 @@ GEM
       http_parser.rb (~> 0.6.0)
     eventmachine (1.2.7)
     eventmachine (1.2.7-x64-mingw32)
-    execjs (2.7.0)
     fast-stemmer (1.0.2)
     ffi (1.9.25)
     ffi (1.9.25-x64-mingw32)
@@ -35,9 +34,6 @@ GEM
       safe_yaml (~> 1.0)
     jekyll-feed (0.10.0)
       jekyll (~> 3.3)
-    jekyll-katex (1.0.0)
-      execjs (~> 2.7)
-      jekyll (>= 3.6, < 5.0)
     jekyll-paginate (1.1.0)
     jekyll-redirect-from (0.14.0)
       jekyll (~> 3.3)
@@ -77,7 +73,6 @@ DEPENDENCIES
   classifier-reborn
   jekyll (~> 3.4)
   jekyll-feed (~> 0.9)
-  jekyll-katex
   jekyll-paginate (~> 1.1)
   jekyll-redirect-from (~> 0.12)
   jekyll-sitemap (~> 1.0)
