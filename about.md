@@ -37,6 +37,7 @@ order: 10
 
 #### ETC
 - `Git`
+- `Flask`
 
 <br>
 
