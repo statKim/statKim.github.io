@@ -49,3 +49,24 @@ bundle exec jekyll serve
 ### 글 작성
 - ```_featured_categories```, ```_featured_tags``` 설정한 후, ```_posts```에 글을 작성합니다
 - 글 제목 형태는 ```2018-01-03-title1.md``` 이런 방식처럼 작성! 날짜를 빼고 쓰면 반영되지 않습니다
+
+- `ipython` 파일의 경우, `html`로 변환해줘야함
+
+  - 사용방법 : `bash ipython_to_html.sh {file_name}`
+
+    ex) `bash ipython_to_html.sh 2020-01-28-ggplot2-summary`
+
+  - `html` 파일 맨 위에 아래 내용 추가
+
+    ```
+    ---
+    layout: post
+    title:  "ggplot2을 사용해서 데이터 시각화하기"
+    subtitle:   "ggplot2을 사용해서 데이터 시각화하기"
+    categories: programming
+    tags: r
+    comments: true
+    ---
+    ```
+
+    
