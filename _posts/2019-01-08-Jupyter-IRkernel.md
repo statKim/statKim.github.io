@@ -14,7 +14,7 @@ comments: true
 - **Anaconda (Jupyter)**
 - **R**
 
-
+<br>
 
 ## 2. R에서 Packages 설치
 
@@ -26,7 +26,7 @@ devtools::install_github('IRkernel/IRkernel')
 IRkernel::installspec()
 ```
 
-
+<br>
 
 ## 3. Jupyter kernel에 추가되었는지 확인
 
@@ -39,7 +39,7 @@ $ jupyter kernelspec list
 - 로컬에 가지고 있던 R과 같은 버전을 사용할 수 있다!
 
 ```R
-> version
+version
 ```
 
 ![irkernel](https://github.com/statKim/TIL/blob/master/R/images/irkernel.png?raw=true)

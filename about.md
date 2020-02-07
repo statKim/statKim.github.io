@@ -18,26 +18,8 @@ order: 10
 <br>
 
 ## Education
-- **중앙대학교 통계학과 석사과정**, 2019.03 - 
+- **중앙대학교 통계학 석사과정**, 2019.03 - 
 - **중앙대학교 응용통계학 학사**, 2013.03 - 2019.02
-
-<br>
-
-## Technical Skill
-#### Programming Language
-- `R`
-- `Python`
-- `Java`
-
-#### Data Analysis
-- `SQL`
-- `SAS`
-- `Tensorflow` / `Keras`
-- `Selenium` / `Beautiful Soup`
-
-#### ETC
-- `Git`
-- `Flask`
 
 <br>
 

@@ -7,6 +7,11 @@ tags: r
 comments: true
 ---
 
+- **Beamer**란 $$LaTeX$$ 문서의 발표자료 형식으로 강의록에서 많이 사용됨
+- 특히, 수식이 많은 자료를 presentation 형태로 만들 때 유용
+- $$LaTeX$$이 설치되어 있는 경우, **R markdown**으로 **Beamer** 문서를 만들 수 있음
+
+<br>
 
 ### R markdown의 header
 
@@ -26,7 +31,7 @@ output:
 - `title` : 제목
 - `author` : 저자이름
 - `date` : 날짜
-- `institute` : 소속(연구소)
+- `institute` : 소속
 - `fonttheme` : Beamer에서 사용할 폰트(LaTeX 폰트 기준) 결정
     - `professionalfonts`는 수식의 경우만 `serif` 폰트로 변환해줌
 
@@ -85,7 +90,7 @@ plot(pressure)
 <br>
 
 ### 그래프 caption 및 크기 조절
-```r
+```markdown
 ​```{r pressure, fig.cap="caption", out.width="250px", out.height="180px"}
 plot(pressure)
 ​```

@@ -1,7 +1,7 @@
 ---
 layout: post
-title:  "Tensorflow 2.0 gpu 설치하기"
-subtitle:   "Tensorflow 2.0 gpu 설치하기"
+title:  "Tensorflow 2.0 GPU 설치하기"
+subtitle:   "Tensorflow 2.0 GPU 설치하기"
 categories: programming
 tags: python
 comments: true
@@ -90,12 +90,11 @@ import tensorflow as tf
 print(tf.__version__) 
 tf.test.is_gpu_available()
 ```
-output
-```python
+
+```
 2.0.0
 True
 ```
-![](https://github.com/statKim/TIL/blob/master/Python/img/tf_gpu.png?raw=T)
 
 <br>
 

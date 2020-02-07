@@ -489,11 +489,11 @@ where $$\hat{\mathbf{\beta}}$$ is BLUE(Best Linear Unbiased Estimator) and $$\ha
 
 
 <br>
-## Reference
 
-1. James *et al.* (2000), **Principal component models for sparse functional data.** *Biometrika*, 87(3), 587-602.
+## Reference
+- James *et al.* (2000), **Principal component models for sparse functional data.** *Biometrika*, 87(3), 587-602.
 
 
 <br>
 
-이 게시글의 원본 세미나 자료는 제 [Github](https://github.com/statKim/FDA-Lab/blob/master/Principal%20Component%20Models%20for%20Sparse%20Functional%20Data/Principal_Component_Models_for_Sparse_Functional_Data.pdf)에서 받으실 수 있습니다.
+이 글의 논문 요약 발표 자료는 제 [Github](https://github.com/statKim/FDA-Lab/blob/master/Principal%20Component%20Models%20for%20Sparse%20Functional%20Data/Principal_Component_Models_for_Sparse_Functional_Data.pdf)에서 받으실 수 있습니다.
