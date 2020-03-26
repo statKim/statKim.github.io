@@ -9,9 +9,9 @@ order: 10
 - Github : [https://github.com/statKim](https://github.com/statKim)
 - E-mail : [hyunsung1021@gmail.com](mailto:hyunsung1021@gmail.com)
 
-현재 [중앙대학교 통계학과](https://stat.cau.ac.kr/)에서 석사과정을 하고 있으며 [다변량 분석 연구실(Multivariate Data Analysis Lab)](https://sites.google.com/site/yaejilim/)에서 연구하고 있습니다.
+현재 [중앙대학교 통계학과](https://stat.cau.ac.kr/)에서 석사과정을 하고 있으며 [다변량 통계 연구실(Multivariate Statistics Lab)](https://sites.google.com/site/yaejilim/)에서 연구하고 있습니다.
 
-`Principal Component Analysis(PCA)`, `Machine Learning` 분야에 관심을 가지고 있으며, 현재 `Functional principal component analysis(FPCA)`에 대해 연구하고 있습니다.
+`Principal Component Analysis(PCA)`, `Functional Data Analysis(FDA)`, `Machine Learning` 분야에 관심을 가지고 있으며, 현재 `Functional principal component analysis(FPCA)`에 대해 연구하고 있습니다.
 
 프로그래밍 언어로는 `R`, `Python`, `SQL`, `SAS`을 다룰 수 있으며 특히, `R`로 데이터 다루는 것을 좋아합니다.
 
