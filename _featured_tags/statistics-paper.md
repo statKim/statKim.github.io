@@ -2,7 +2,7 @@
 layout: tag-blog
 title: Paper
 slug: paper
-category: data
+category: statistics
 menu: false
-order: 5
+order: 2
 ---

@@ -2,7 +2,7 @@
 layout: post
 title:  "Principal Component Models for Sparse Functional Data"
 subtitle:   "Principal Component Models for Sparse Functional Data"
-categories: data
+categories: statistics
 tags: paper
 comments: true
 ---

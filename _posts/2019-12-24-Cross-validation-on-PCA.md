@@ -2,8 +2,8 @@
 layout: post
 title:  "PCA에서 최적 PC 개수를 정하기 위한 Cross-validation 방법"
 subtitle:   "PCA에서 최적 PC 개수를 정하기 위한 Cross-validation 방법"
-categories: data
-tags: statistics
+categories: statistics
+tags: paper
 comments: true
 ---
 

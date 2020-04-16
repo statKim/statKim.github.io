@@ -44,12 +44,7 @@ order: 10
 - `Principal Component Analysis`
 - `Functional Data Analysis`
 - `Machine Learning`
-- `Data Science`
-- `Meteorological Statistics`
-
-<br>
-
-## Publication
+- `Statistical Learning`
 
 <br>
 

@@ -2,7 +2,7 @@
 layout: post
 title:  "Functional Principal Component Analysis"
 subtitle:   "Functional Principal Component Analysis"
-categories: data
+categories: statistics
 tags: fda
 comments: true
 ---

@@ -2,7 +2,7 @@
 layout: tag-blog
 title: Functional-Data-Analysis
 slug: fda
-category: data
+category: statistics
 menu: false
-order: 2
+order: 1
 ---
