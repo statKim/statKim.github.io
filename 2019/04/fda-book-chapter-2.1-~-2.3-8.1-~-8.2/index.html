@@ -1,0 +1,916 @@
+<!DOCTYPE html>
+<html lang="ko-kr">
+  <head>
+    
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="generator" content="Hugo 0.73.0 with theme Tranquilpeak 0.4.8-BETA">
+<meta name="author" content="김현성">
+<meta name="keywords" content="">
+<meta name="description" content="2. Tools for exploring functional data 2.1 Introduction FDA의 notation과 concept 정의 FDA에서 사용하는 statistics 정의 Matrix decompositions, projections, and the constrained maximization of quadratic forms에 대한 자세한 내용은 Appendix 참고 2.2 Some notation 2.2.1 Scalars, vectors, functions and">
+
+
+<meta property="og:description" content="2. Tools for exploring functional data 2.1 Introduction FDA의 notation과 concept 정의 FDA에서 사용하는 statistics 정의 Matrix decompositions, projections, and the constrained maximization of quadratic forms에 대한 자세한 내용은 Appendix 참고 2.2 Some notation 2.2.1 Scalars, vectors, functions and">
+<meta property="og:type" content="article">
+<meta property="og:title" content="[FDA Book] Chapter 2.1 ~ 2.3 &amp; 8.1 ~ 8.2">
+<meta name="twitter:title" content="[FDA Book] Chapter 2.1 ~ 2.3 &amp; 8.1 ~ 8.2">
+<meta property="og:url" content="/2019/04/fda-book-chapter-2.1-~-2.3-8.1-~-8.2/">
+<meta property="twitter:url" content="/2019/04/fda-book-chapter-2.1-~-2.3-8.1-~-8.2/">
+<meta property="og:site_name" content="statKim">
+<meta property="og:description" content="2. Tools for exploring functional data 2.1 Introduction FDA의 notation과 concept 정의 FDA에서 사용하는 statistics 정의 Matrix decompositions, projections, and the constrained maximization of quadratic forms에 대한 자세한 내용은 Appendix 참고 2.2 Some notation 2.2.1 Scalars, vectors, functions and">
+<meta name="twitter:description" content="2. Tools for exploring functional data 2.1 Introduction FDA의 notation과 concept 정의 FDA에서 사용하는 statistics 정의 Matrix decompositions, projections, and the constrained maximization of quadratic forms에 대한 자세한 내용은 Appendix 참고 2.2 Some notation 2.2.1 Scalars, vectors, functions and">
+<meta property="og:locale" content="en-us">
+
+  
+    <meta property="article:published_time" content="2019-04-26T00:00:00">
+  
+  
+    <meta property="article:modified_time" content="2019-04-26T00:00:00">
+  
+  
+  
+    
+      <meta property="article:section" content="book">
+    
+  
+  
+    
+      <meta property="article:tag" content="FDA">
+    
+      <meta property="article:tag" content="FPCA">
+    
+      <meta property="article:tag" content="book">
+    
+  
+
+
+<meta name="twitter:card" content="summary">
+
+
+
+
+
+
+
+
+
+
+
+  <meta property="og:image" content="/img/profile.jpg">
+  <meta property="twitter:image" content="/img/profile.jpg">
+
+
+    <title>[FDA Book] Chapter 2.1 ~ 2.3 &amp; 8.1 ~ 8.2</title>
+
+    <link rel="icon" href="/img/favicon.ico">
+    
+
+    
+
+    <link rel="canonical" href="/2019/04/fda-book-chapter-2.1-~-2.3-8.1-~-8.2/">
+
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.4/jquery.fancybox.min.css" integrity="sha256-vuXZ9LGmmwtjqFX1F+EKin1ThZMub58gKULUyf0qECk=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.4/helpers/jquery.fancybox-thumbs.min.css" integrity="sha256-SEa4XYAHihTcEP1f5gARTB2K26Uk8PsndQYHQC1f4jU=" crossorigin="anonymous" />
+    
+    
+    <link rel="stylesheet" href="/css/style-twzjdbqhmnnacqs0pwwdzcdbt8yhv8giawvjqjmyfoqnvazl0dalmnhdkvp7.min.css" />
+    
+    
+
+    
+      
+    
+    
+  </head>
+
+  <body>
+    <div id="blog">
+      <header id="header" data-behavior="5">
+  <i id="btn-open-sidebar" class="fa fa-lg fa-bars"></i>
+  <div class="header-title">
+    <a class="header-title-link" href="/">statKim</a>
+  </div>
+  
+    
+      <a class="header-right-picture "
+         href="/#about">
+    
+    
+    
+      
+        <img class="header-picture" src="/img/profile.jpg" alt="Author&#39;s picture" />
+      
+    
+    </a>
+  
+</header>
+
+      <nav id="sidebar" data-behavior="5">
+  <div class="sidebar-container">
+    
+      <div class="sidebar-profile">
+        <a href="/#about">
+          <img class="sidebar-profile-picture" src="/img/profile.jpg" alt="Author&#39;s picture" />
+        </a>
+        <h4 class="sidebar-profile-name">김현성</h4>
+        
+          <h5 class="sidebar-profile-bio">MS student in Statistics</h5>
+        
+      </div>
+    
+    <ul class="sidebar-buttons">
+      
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="/">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-home"></i>
+      
+      <span class="sidebar-button-desc">Home</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="/categories">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-bookmark"></i>
+      
+      <span class="sidebar-button-desc">Categories</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="/tags">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-tags"></i>
+      
+      <span class="sidebar-button-desc">Tags</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="/archives">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-archive"></i>
+      
+      <span class="sidebar-button-desc">Archives</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="/about">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-question"></i>
+      
+      <span class="sidebar-button-desc">About</span>
+    </a>
+  </li>
+
+
+    </ul>
+    <ul class="sidebar-buttons">
+      
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://github.com/statKim">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-github"></i>
+      
+      <span class="sidebar-button-desc">GitHub</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="mailto:hyunsung1021@gmail.com" target="_blank" rel="noopener">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-envelope-o"></i>
+      
+      <span class="sidebar-button-desc">Email</span>
+    </a>
+  </li>
+
+
+    </ul>
+    <ul class="sidebar-buttons">
+      
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="/index.xml">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-rss"></i>
+      
+      <span class="sidebar-button-desc">RSS</span>
+    </a>
+  </li>
+
+
+    </ul>
+  </div>
+</nav>
+
+      
+
+      <div id="main" data-behavior="5"
+        class="
+               hasCoverMetaOut
+               ">
+        <article class="post" itemscope itemType="http://schema.org/BlogPosting">
+          
+          
+            <div class="post-header main-content-wrap text-center">
+  
+    <h1 class="post-title" itemprop="headline">
+      [FDA Book] Chapter 2.1 ~ 2.3 &amp; 8.1 ~ 8.2
+    </h1>
+  
+  
+  <div class="postShorten-meta post-meta">
+    
+      <time itemprop="datePublished" datetime="2019-04-26T00:00:00Z">
+        
+  April 26, 2019
+
+      </time>
+    
+    
+  
+  
+    <span>in</span>
+    
+      <a class="category-link" href="/categories/book">book</a>
+    
+  
+
+  </div>
+
+</div>
+          
+          <div class="post-content markdown" itemprop="articleBody">
+            <div class="main-content-wrap">
+              <h1 id="2-tools-for-exploring-functional-data">2. Tools for exploring functional data</h1>
+<h2 id="21-introduction">2.1 Introduction</h2>
+<ul>
+<li>FDA의 notation과 concept 정의</li>
+<li>FDA에서 사용하는 statistics 정의</li>
+<li>Matrix decompositions, projections, and the constrained maximization of quadratic forms에 대한 자세한 내용은 Appendix 참고</li>
+</ul>
+<!-- raw HTML omitted -->
+<h2 id="22-some-notation">2.2 Some notation</h2>
+<h3 id="221-scalars-vectors-functions-and-matrices">2.2.1 Scalars, vectors, functions and matrices</h3>
+<ul>
+<li>$x$ : a vector \<br>
+$\Rightarrow x_i$ : scalar (the elements of vector $x$)</li>
+<li>$x$ : a function \<br>
+$\Rightarrow x(t)$ : scalar (the values of function $x$) \<br>
+$\Rightarrow x(\mathbf{t})$ : vector $\mathbf{t}$에 대한 function value ($p$-dim function)</li>
+<li>If $x_i$ or $x(t)$ is a vector, we use $\mathbf{x}_i$ or $\mathbf{x}(t)$</li>
+<li>Standard notation을 요약하여 사용
+<ul>
+<li>$\texttt{Temp}$ : a temperature record</li>
+<li>$\texttt{Knee}$ : a knee angle</li>
+<li>$\texttt{LMSSE}$ : a squared error fitting criterion for a linear model</li>
+<li>$\texttt{RSQ}$ : a squared correlation measure.</li>
+</ul>
+</li>
+</ul>
+<!-- raw HTML omitted -->
+<h3 id="222-derivatives-and-integrals">2.2.2 Derivatives and integrals</h3>
+<ul>
+<li>$D$ : operator (함수 $x$를 함수 $Dx$로 변환하는 operator)</li>
+<li>$D^m x$ : the derivative of order m of a function $x$ ($\frac{d^mx}{dt^m}$와 동일)</li>
+<li>$D^0 x$ : $x$ \<br>
+$s.t. \ D^{1}D^{-1}x=D^0x=x$,\<br>
+when $D^{-1}x$가 $x$의 부정적분(indefinite integral)</li>
+<li>$\int x$ : $\int_{a}^{b} x(t)dt$ ($t$의 적분 범위가 clear할 때)</li>
+</ul>
+<!-- raw HTML omitted -->
+<h3 id="223-inner-products">2.2.3 Inner products</h3>
+<ul>
+<li>
+<p>Inner product for functions</p>
+<p>$$ \langle x,y \rangle = \int x(t)y(t)dt $$</p>
+</li>
+<li>
+<p>$L_2$ norm</p>
+<p>$$ \lVert x \rVert^2=\langle x,x \rangle = \int x^2(t)dt $$</p>
+</li>
+</ul>
+<!-- raw HTML omitted -->
+<h3 id="224-functions-of-functions">2.2.4 Functions of functions</h3>
+<ul>
+<li>
+<p>functional composition (합성함수)</p>
+<p>$ x^*=x \circ h $</p>
+</li>
+<li>
+<p>function value</p>
+<p>$ x^*(t)=(x \circ h)(t)=x[h(t)] $</p>
+</li>
+<li>
+<p>inverse function $h^{-1}$</p>
+<p>$$ (h \circ h^{-1})(t)=(h^{-1} \circ h)(t)=t $$</p>
+</li>
+<li>
+<p>functional transformations operations (or operators) 
+ex) $D$ : $x \rightarrow Dx$</p>
+</li>
+</ul>
+<!-- raw HTML omitted -->
+<h2 id="23-summary-statistics-for-functional-data">2.3 Summary statistics for functional data</h2>
+<h3 id="231-functional-means-and-variances">2.3.1 Functional means and variances</h3>
+<ul>
+<li>
+<p>Mean function</p>
+<p>$$ \bar{x}(t)=\frac{1}{N}\sum_{i=1}^{N}x_i(t) $$</p>
+</li>
+<li>
+<p>Variance function</p>
+<p>$$ Var_X(t)=\frac{1}{N-1}\sum_{i=1}^{N}[x_i(t)-\bar{x}(t)]^2 $$</p>
+</li>
+</ul>
+<p><img src="https://github.com/statKim/FDA-Lab/blob/master/FDA/img/1.png?raw=T" alt=""></p>
+<!-- raw HTML omitted -->
+<h3 id="232-covariance-and-correlation-functions">2.3.2 Covariance and correlation functions</h3>
+<ul>
+<li>
+<p>Covariance function</p>
+<p>$$ Cov_X(t_1, t_2)=\frac{1}{N-1}\sum_{i=1}^{N}{x_i(t_1)-\bar{x}(t_1)}{x_i(t_2)-\bar{x}(t_2)} $$</p>
+</li>
+<li>
+<p>Correlation function</p>
+<p>$$ Corr_X(t_1, t_2)=\frac{Cov_X(t_1, t_2)}{\sqrt{Var_X(t_1)Var_X(t_2)}} $$</p>
+</li>
+</ul>
+<p><img src="https://github.com/statKim/FDA-Lab/blob/master/FDA/img/2.png?raw=T" alt=""></p>
+<!-- raw HTML omitted -->
+<h3 id="233-cross-covariance-and-cross-correlation-functions">2.3.3 Cross-covariance and cross-correlation functions</h3>
+<ul>
+<li>
+<p>Cross-covariance function</p>
+<p>$$ Cov_{X,Y}(t_1, t_2)=\frac{1}{N-1}\sum_{i=1}^{N}{x_i(t_1)-\bar{x}(t_1)}{y_i(t_2)-\bar{y}(t_2)} $$</p>
+</li>
+<li>
+<p>Cross-correlation function</p>
+<p>$$ Corr_{X,Y}(t_1, t_2)=\frac{Cov_{X,Y}(t_1, t_2)}{\sqrt{Var_X(t_1)Var_Y(t_2)}} $$</p>
+</li>
+</ul>
+<p><img src="https://github.com/statKim/FDA-Lab/blob/master/FDA/img/3.png?raw=T" alt="">
+<img src="https://github.com/statKim/FDA-Lab/blob/master/FDA/img/6.png?raw=T" alt="">
+<img src="https://github.com/statKim/FDA-Lab/blob/master/FDA/img/7.png?raw=T" alt=""></p>
+<h4 id="cantour-plots-of-cross-correlation-functions">Cantour plots of cross-correlation functions</h4>
+<p><img src="https://github.com/statKim/FDA-Lab/blob/master/FDA/img/8.png?raw=T" alt="">
+<img src="https://github.com/statKim/FDA-Lab/blob/master/FDA/img/9.png?raw=T" alt=""></p>
+<p><img src="https://github.com/statKim/FDA-Lab/blob/master/FDA/img/4.png?raw=T" alt=""></p>
+<h4 id="cantour-plots-of-correlation-functions">Cantour plots of correlation functions</h4>
+<p><img src="https://github.com/statKim/FDA-Lab/blob/master/FDA/img/10.png?raw=T" alt="">
+<img src="https://github.com/statKim/FDA-Lab/blob/master/FDA/img/11.png?raw=T" alt=""></p>
+<p><img src="https://github.com/statKim/FDA-Lab/blob/master/FDA/img/12.png?raw=T" alt="">
+<img src="https://github.com/statKim/FDA-Lab/blob/master/FDA/img/13.png?raw=T" alt=""></p>
+<!-- raw HTML omitted -->
+<h1 id="8-principal-components-analysis-for-functional-data">8. Principal components analysis for functional data</h1>
+<h2 id="81-introduction">8.1 Introduction</h2>
+<ul>
+<li>전처리와 시각화 후, data의 특성을 파악하기 위해 PCA를 사용</li>
+<li>Classical multivariate anlaysis에서는 variance-covariance와 correlation을 설명하기 힘든 경우가 많음</li>
+<li>PCA는 유용한 정보를 담고 있는 covariance structure를 파악하는데 도움을 준다.</li>
+<li>PCA를 통해 이후의 분석에서 발생할 수 있는 문제를 사전에 고려할 수 있다. (ex - multicollinearity)</li>
+<li>FPCA(functional PCA)는 smoothing 되어있는 경우에 특성이 더 잘 나타난다. (smoothing 과정에서 regularization issue 발생)</li>
+</ul>
+<!-- raw HTML omitted -->
+<h2 id="82-defining-functional-pca">8.2 Defining functional PCA</h2>
+<h3 id="821-pca-for-multivariate-data">8.2.1 PCA for multivariate data</h3>
+<h4 id="concept-of-multivariate-pca">Concept of multivariate PCA</h4>
+<ul>
+<li>
+<p>Linear combination of X</p>
+<p>$$ f_i = \sum_{j=1}^{p}\beta_j x_{ij}, \ i=1,&hellip;,N $$</p>
+<p>where $\beta_j$ : weighting coefficient, $x_{ij}$ : $i$th obs of $j$th variable</p>
+</li>
+<li>
+<p>Vectorized form</p>
+<p>$$ f_i = \mathbf{\beta}^{'} \mathbf{x}_i, \ i=1,&hellip;,N $$</p>
+<p>where $ \mathbf{\beta}=(\beta_1,&hellip;,\beta_p)^{'}, \ \mathbf{x}<em>i=(x</em>{i1},&hellip;,x_{ip})^{'} $</p>
+</li>
+</ul>
+<h4 id="how-to-find-pc">How to find PC</h4>
+<ol>
+<li>
+<p>Find the weight vector $\xi_1 = (\xi_{11},&hellip;,\xi_{p1})^{'}$ for</p>
+<p>$$ f_{i1}=\sum_j \xi_{j1}x_{ij}=\mathbf{\xi}_1^{'} \mathbf{x}_i $$</p>
+<p>s.t. maximize $ \frac{1}{N}\sum_if_{i1}^2 $ subject to $\sum_j \xi_{j1}^2 = \lVert \xi_1 \rVert^2 = 1 $</p>
+</li>
+<li>
+<p>1번 과정을 반복하며 동시에</p>
+<p>$$ \sum_j \xi_{jk}\xi_{jm} = \mathbf{\xi}_k^{'} \mathbf{\xi}_m=0, \ k&lt;m $$</p>
+<p>을 만족하는 $ \xi_2,&hellip;,\xi_m $을 찾는다.</p>
+</li>
+</ol>
+<h4 id="summary">Summary</h4>
+<ol>
+<li>Mean square(변수들 간 variation)를 maximize하는 방향의 unit vector $\mathbf{\xi}_1 $을 찾는다.</li>
+<li>2nd PC부터는 mean square를 maximize함과 동시에 이전 PC loading($ \mathbf{\xi}_i $)과 orthogonal한 $ \mathbf{\xi}_2,&hellip;\mathbf{\xi}_k \ (k&lt;p) $을 찾는다.</li>
+</ol>
+<ul>
+<li>Data의 mean을 뺀 후에 PCA를 하는 것이 일반적이다. (Centering $\Rightarrow \max MS(f_{ij}) = \max Var(f_{ij}) $)</li>
+<li>Weight vector $\mathbf{\xi}_i$는 unique하지 않다. (Sign change)</li>
+<li>PC score $f_{im}$은 특정 사례 또는 반복실험의 특징 측면에서 변동(variation)의 의미를 설명하는데 도움을 준다.</li>
+</ul>
+<!-- raw HTML omitted -->
+<h3 id="822-defining-pca-for-functional-data">8.2.2 Defining PCA for functional data</h3>
+<h4 id="concept-of-functional-pca">Concept of functional PCA</h4>
+<ul>
+<li>
+<p>Inner product of integration version is defined by</p>
+<p>$$ \int \beta x = \int \beta(s) x(s) ds $$</p>
+</li>
+<li>
+<p>PC score</p>
+<p>$$ f_i = \int \beta x_i = \int \beta(s) x_i(s) ds $$</p>
+<p>where $\beta$ : weight function</p>
+</li>
+</ul>
+<h4 id="how-to-find-functional-pca">How to find functional PCA</h4>
+<ol>
+<li>
+<p>Find the weight function $\xi_1(s)$ for</p>
+<p>$$ f_i = \int \xi_1(s) x_i(s) ds $$</p>
+<p>s.t. maximize $ \frac{1}{N}\sum_i f_{i1}^2 = \frac{1}{N}\sum_i (\int \xi_1 x_i)^2 $ \<br>
+subject to $ \lVert \xi_1 \rVert^2 =\int \xi_1(s)^2ds = \int \xi_1^2 = 1 $</p>
+</li>
+<li>
+<p>1번 과정을 반복하며 동시에</p>
+<p>$$ \int \xi_k \xi_m=0, \ k&lt;m $$</p>
+<p>을 만족하는 $ \xi_2,&hellip;,\xi_m $을 찾는다.</p>
+</li>
+</ol>
+<h4 id="summary-1">Summary</h4>
+<ol>
+<li>Mean square를 maximize하는 방향이고 $ \lVert \xi_1 \rVert^2=1 $인 function $\xi_1(s) $를 찾는다.</li>
+<li>2nd PC부터는 mean square를 maximize함과 동시에 이전 PC loading($ \xi_1(s) $)와 orthogonal한 $ \xi_2(s),&hellip;\xi_k(s) \ (k&lt;p) $을 찾는다.</li>
+</ol>
+<ul>
+<li>Data의 mean을 뺀 후에 PCA를 하는 것이 일반적이다. (Centering $\Rightarrow \max MS = \max Var $)</li>
+<li>Weight function $\xi_i(s)$는 unique하지 않다. (Sign change)</li>
+</ul>
+<p><img src="https://github.com/statKim/FDA-Lab/blob/master/FDA/img/5.png?raw=T" alt=""></p>
+<!-- raw HTML omitted -->
+<h3 id="823-defining-an-optimal-empirical-orthonormal-basis">8.2.3 Defining an optimal empirical orthonormal basis</h3>
+<ul>
+<li>
+<p>We want to find $K$ orthonormal functions $\xi_m$.</p>
+</li>
+<li>
+<p>즉, expansion했을 때 각 curve에 가장 잘 근사하는 $K$개의 orthonormal basis functions를 찾고 싶다!</p>
+</li>
+<li>
+<p>Expansion by the orthonormal basis functions</p>
+<p>$$ \hat{x}<em>i(t) = \sum</em>{k=1}^K f_{ik}\xi_{k}(t), $$</p>
+<p>where $ f_{ik} $ is the principal component value $\int x_i\xi_k$</p>
+</li>
+<li>
+<p>Measure of approximation ($\texttt{PCASSE}$)</p>
+<p>$$ \texttt{PCASSE} = \sum_{i=1}^N \lVert x_i-\hat{x}_i \rVert^2 $$</p>
+<p>where $ \lVert x_i-\hat{x}_i \rVert^2=\int [x(s) - \hat{x}(s)]^2 ds $ (integrated squared error)</p>
+</li>
+<li>
+<p>Optimal orthonormal basis function = weight function $\xi_m$</p>
+<p>$$ \xi_m = \arg\min_\xi \texttt{PCASSE} $$</p>
+<p>where $\xi_m$ : empirical orthonormal functions</p>
+</li>
+</ul>
+<!-- raw HTML omitted -->
+<h3 id="824-pca-and-eigenanalysis">8.2.4 PCA and eigenanalysis</h3>
+<h4 id="multivariate-pca">Multivariate PCA</h4>
+<ul>
+<li>
+<p>Assumtion : $x_{ij}$ is centerized. ($x_{ij} - \frac{1}{N}\sum_i x_{ij}$)</p>
+</li>
+<li>
+<p>Mean square criterian for finding the 1st PC</p>
+<p>$$ \max_{\mathbf{\xi^{'}\xi}=1}\frac{1}{N} \mathbf{\xi^{'}X^{'}X\xi} $$</p>
+</li>
+<li>
+<p>Substitute variance-covariance matrix</p>
+<p>$$ \max_{\mathbf{\xi^{'}\xi}=1} \mathbf{\xi^{'}V\xi} $$</p>
+<p>where $\mathbf{V} = N^{-1}\mathbf{X^{'}X} $ is a $p \times p$ sample var-cov matrix\<br>
+$\Rightarrow$ We can solve maximization problem using eigen decomposition!</p>
+</li>
+<li>
+<p>Eigen equation</p>
+<p>$$ \mathbf{V\xi} = \rho\mathbf{\xi} $$</p>
+<p>where $ \rho $ is largest eigen value</p>
+</li>
+<li>
+<p>위 식을 풀면 $ (\rho_j,\mathbf{\xi}_j) $ pairs가 생기고, 각 $\mathbf{\xi}_j$는 orthogonal하다.</p>
+</li>
+<li>
+<p>$\mathbf{V}$ has $\min{p,N-1}$ nonzero eigen values $\rho_j$ \<br>
+$(\because \max(rank(\mathbf{X}))=N-1)$</p>
+</li>
+<li>
+<p>$ \mathbf{\xi}<em>j $ satisfied maximization problem and the orthogonal constraints ($ \xi_j \perp (\xi_1, \cdots, \xi</em>{j-1}) $) for $\forall j$ \<br>
+$\Rightarrow$ $\mathbf{\xi}$ is a solution of PCA</p>
+</li>
+</ul>
+<h4 id="functional-pca">Functional PCA</h4>
+<ul>
+<li>
+<p>Assumtion : $x_i(t)$ is centerized. ($x_i(t) - \frac{1}{N}\sum_i x_i(t)$)</p>
+</li>
+<li>
+<p>Covariance function</p>
+<p>$$ v(s,t) = \frac{1}{N}\sum_{i=1}^N x_i(s)x_i(t) $$</p>
+</li>
+<li>
+<p>Each of PC weight functions $\xi_j(s)$ satisfies</p>
+<p>$$ \int v(s,t)\xi(t) dt = \rho \xi(s) $$</p>
+<p>where $LHS$ is an integral transform $V$ of the weight function $\xi$ defined by $ V\xi = \int v(\cdot,t)\xi(t) dt $ (covariance operator $V$)</p>
+</li>
+<li>
+<p>Eigen equation using covariance operator $V$</p>
+<p>$$ V\xi = \rho\xi $$</p>
+<p>where $\xi$ is an eigen function</p>
+</li>
+</ul>
+<h4 id="difference-between-multivariate-and-functional-eigen-analysis-problems">Difference between multivariate and functional eigen analysis problems</h4>
+<ul>
+<li>$\max${# of different eigen pairs}가 다르다
+<ul>
+<li>multivariate : # of variables = $p$</li>
+<li>functional : # of functions = $\infty$ ($\because$ smoothed) \<br>
+but if $x_i$ are linearly independent, $rank(V)=N-1$ and only $N-1$ nonzero eigen values exist.</li>
+</ul>
+</li>
+</ul>
+<!-- raw HTML omitted -->
+<h2 id="summary---comparison-between-mpca-and-fpca">Summary - Comparison between MPCA and FPCA</h2>
+<h3 id="multivariate-pca-1">Multivariate PCA</h3>
+<ul>
+<li>
+<p>PC score</p>
+<p>$$ f_i = \sum_{j=1}^p \xi_j x_{ij} $$</p>
+</li>
+<li>
+<p>Objective function</p>
+<p>$$ Var(\xi_j) = \frac{1}{N}\sum_i f_{ij}^2 $$</p>
+</li>
+<li>
+<p>Constraints</p>
+<p>$$ \lVert\xi_i\rVert^2= \sum_j \xi_{ji}^2 = 1 $$</p>
+<p>$$ \sum_j \xi_{jk}\xi_{jm}=\mathbf{\xi}_k^{'}\mathbf{\xi}_m=0 $$</p>
+</li>
+</ul>
+<h3 id="functional-pca-1">Functional PCA</h3>
+<ul>
+<li>
+<p>PC score</p>
+<p>$$ f_i = \int \xi(s) x_i(s) ds $$</p>
+</li>
+<li>
+<p>Objective function</p>
+<p>$$ \frac{1}{N}\sum_i f_{ij}^2 = \frac{1}{N}\sum_i (\int \xi_j x_i)^2 $$</p>
+</li>
+<li>
+<p>Constarints</p>
+<p>$$ \lVert\xi_i\rVert^2=\int \xi_i(s)^2 ds = 1 $$</p>
+<p>$$ \int \xi_k\xi_m=0 $$</p>
+</li>
+</ul>
+<!-- raw HTML omitted -->
+<h2 id="reference">Reference</h2>
+<ul>
+<li>Ramsay. &amp; Silverman. (2005), <strong>Functional Data Analysis 2nd edition.</strong>  Springer</li>
+</ul>
+
+              
+            </div>
+          </div>
+          <div id="post-footer" class="post-footer main-content-wrap">
+            
+              
+                
+                
+                  <div class="post-footer-tags">
+                    <span class="text-color-light text-small">TAGGED IN</span><br/>
+                    
+  <a class="tag tag--primary tag--small" href="/tags/fda/">FDA</a>
+
+  <a class="tag tag--primary tag--small" href="/tags/fpca/">FPCA</a>
+
+  <a class="tag tag--primary tag--small" href="/tags/book/">book</a>
+
+                  </div>
+                
+              
+            
+            <div class="post-actions-wrap">
+  
+      <nav >
+        <ul class="post-actions post-action-nav">
+          
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--default tooltip--top" href="/2019/05/fda-book-chapter-8.3-~-8.5/" data-tooltip="[FDA Book] Chapter 8.3 ~ 8.5">
+              
+                  <i class="fa fa-angle-left"></i>
+                  <span class="hide-xs hide-sm text-small icon-ml">NEXT</span>
+                </a>
+            </li>
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--default tooltip--top" href="/2019/01/jupyter-notebook%EC%97%90%EC%84%9C-r-%EC%82%AC%EC%9A%A9%ED%95%98%EA%B8%B0/" data-tooltip="Jupyter notebook에서 R 사용하기">
+              
+                  <span class="hide-xs hide-sm text-small icon-mr">PREVIOUS</span>
+                  <i class="fa fa-angle-right"></i>
+                </a>
+            </li>
+          
+        </ul>
+      </nav>
+    <ul class="post-actions post-action-share" >
+      
+        <li class="post-action hide-lg hide-md hide-sm">
+          <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions">
+            <i class="fa fa-share-alt"></i>
+          </a>
+        </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=/2019/04/fda-book-chapter-2.1-~-2.3-8.1-~-8.2/">
+              <i class="fa fa-facebook-official"></i>
+            </a>
+          </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=/2019/04/fda-book-chapter-2.1-~-2.3-8.1-~-8.2/">
+              <i class="fa fa-twitter"></i>
+            </a>
+          </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=/2019/04/fda-book-chapter-2.1-~-2.3-8.1-~-8.2/">
+              <i class="fa fa-google-plus"></i>
+            </a>
+          </li>
+        
+      
+      
+        <li class="post-action">
+          <a class="post-action-btn btn btn--default" href="#disqus_thread">
+            <i class="fa fa-comment-o"></i>
+          </a>
+        </li>
+      
+      <li class="post-action">
+        
+          <a class="post-action-btn btn btn--default" href="#">
+        
+          <i class="fa fa-list"></i>
+        </a>
+      </li>
+    </ul>
+  
+</div>
+
+            
+              
+                <div id="disqus_thread">
+  <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+              
+            
+          </div>
+        </article>
+        <footer id="footer" class="main-content-wrap">
+  <span class="copyrights">
+    &copy; 2020 <a href="https://github.com/statKim">statKim</a>. All Rights Reserved
+  </span>
+</footer>
+
+      </div>
+      <div id="bottom-bar" class="post-bottom-bar" data-behavior="5">
+        <div class="post-actions-wrap">
+  
+      <nav >
+        <ul class="post-actions post-action-nav">
+          
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--default tooltip--top" href="/2019/05/fda-book-chapter-8.3-~-8.5/" data-tooltip="[FDA Book] Chapter 8.3 ~ 8.5">
+              
+                  <i class="fa fa-angle-left"></i>
+                  <span class="hide-xs hide-sm text-small icon-ml">NEXT</span>
+                </a>
+            </li>
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--default tooltip--top" href="/2019/01/jupyter-notebook%EC%97%90%EC%84%9C-r-%EC%82%AC%EC%9A%A9%ED%95%98%EA%B8%B0/" data-tooltip="Jupyter notebook에서 R 사용하기">
+              
+                  <span class="hide-xs hide-sm text-small icon-mr">PREVIOUS</span>
+                  <i class="fa fa-angle-right"></i>
+                </a>
+            </li>
+          
+        </ul>
+      </nav>
+    <ul class="post-actions post-action-share" >
+      
+        <li class="post-action hide-lg hide-md hide-sm">
+          <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions">
+            <i class="fa fa-share-alt"></i>
+          </a>
+        </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=/2019/04/fda-book-chapter-2.1-~-2.3-8.1-~-8.2/">
+              <i class="fa fa-facebook-official"></i>
+            </a>
+          </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=/2019/04/fda-book-chapter-2.1-~-2.3-8.1-~-8.2/">
+              <i class="fa fa-twitter"></i>
+            </a>
+          </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=/2019/04/fda-book-chapter-2.1-~-2.3-8.1-~-8.2/">
+              <i class="fa fa-google-plus"></i>
+            </a>
+          </li>
+        
+      
+      
+        <li class="post-action">
+          <a class="post-action-btn btn btn--default" href="#disqus_thread">
+            <i class="fa fa-comment-o"></i>
+          </a>
+        </li>
+      
+      <li class="post-action">
+        
+          <a class="post-action-btn btn btn--default" href="#">
+        
+          <i class="fa fa-list"></i>
+        </a>
+      </li>
+    </ul>
+  
+</div>
+
+      </div>
+      <div id="share-options-bar" class="share-options-bar" data-behavior="5">
+  <i id="btn-close-shareoptions" class="fa fa-close"></i>
+  <ul class="share-options">
+    
+      <li class="share-option">
+        <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=%2F2019%2F04%2Ffda-book-chapter-2.1-~-2.3-8.1-~-8.2%2F">
+          <i class="fa fa-facebook-official"></i><span>Share on Facebook</span>
+        </a>
+      </li>
+    
+      <li class="share-option">
+        <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=%2F2019%2F04%2Ffda-book-chapter-2.1-~-2.3-8.1-~-8.2%2F">
+          <i class="fa fa-twitter"></i><span>Share on Twitter</span>
+        </a>
+      </li>
+    
+      <li class="share-option">
+        <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=%2F2019%2F04%2Ffda-book-chapter-2.1-~-2.3-8.1-~-8.2%2F">
+          <i class="fa fa-google-plus"></i><span>Share on Google&#43;</span>
+        </a>
+      </li>
+    
+  </ul>
+</div>
+<div id="share-options-mask" class="share-options-mask"></div>
+    </div>
+	
+    <div id="about">
+  <div id="about-card">
+    <div id="about-btn-close">
+      <i class="fa fa-remove"></i>
+    </div>
+    
+      <img id="about-card-picture" src="/img/profile.jpg" alt="Author&#39;s picture" />
+    
+    <h4 id="about-card-name">김현성</h4>
+    
+      <div id="about-card-bio">MS student in Statistics</div>
+    
+    
+      <div id="about-card-job">
+        <i class="fa fa-briefcase"></i>
+        <br/>
+        MS student at Chung-Ang Univ
+      </div>
+    
+    
+      <div id="about-card-location">
+        <i class="fa fa-map-marker"></i>
+        <br/>
+        Seoul, Korea
+      </div>
+    
+  </div>
+</div>
+
+    
+
+    
+  
+    
+      <div id="cover" style="background-image:url('/img/background.jpg');"></div>
+    
+  
+
+
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js" integrity="sha256-/BfiIkHlHoVihZdc6TFuj7MmJ0TWcWsMXkeDFwhi0zw=" crossorigin="anonymous"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.7/js/jquery.fancybox.min.js" integrity="sha256-GEAnjcTqVP+vBp3SSc8bEDQqvWAZMiHyUSIorrWwH50=" crossorigin="anonymous"></script>
+
+
+<script src="/js/script-pcw6v3xilnxydl1vddzazdverrnn9ctynvnxgwho987mfyqkuylcb1nlt.min.js"></script>
+
+
+<script lang="javascript">
+window.onload = updateMinWidth;
+window.onresize = updateMinWidth;
+document.getElementById("sidebar").addEventListener("transitionend", updateMinWidth);
+function updateMinWidth() {
+  var sidebar = document.getElementById("sidebar");
+  var main = document.getElementById("main");
+  main.style.minWidth = "";
+  var w1 = getComputedStyle(main).getPropertyValue("min-width");
+  var w2 = getComputedStyle(sidebar).getPropertyValue("width");
+  var w3 = getComputedStyle(sidebar).getPropertyValue("left");
+  main.style.minWidth = `calc(${w1} - ${w2} - ${w3})`;
+}
+</script>
+
+<script>
+$(document).ready(function() {
+  hljs.configure({ classPrefix: '', useBR: false });
+  $('pre.code-highlight > code, pre > code').each(function(i, block) {
+    if (!$(this).hasClass('codeblock')) {
+      $(this).addClass('codeblock');
+    }
+    hljs.highlightBlock(block);
+  });
+});
+</script>
+
+
+  
+    
+      <script>
+        var disqus_config = function () {
+          this.page.url = '\/2019\/04\/fda-book-chapter-2.1-~-2.3-8.1-~-8.2\/';
+          
+            this.page.identifier = '\/2019\/04\/fda-book-chapter-2.1-~-2.3-8.1-~-8.2\/'
+          
+        };
+        (function() {
+          
+          
+          if (window.location.hostname == "localhost") {
+            return;
+          }
+          var d = document, s = d.createElement('script');
+          var disqus_shortname = 'statkim';
+          s.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+
+          s.setAttribute('data-timestamp', +new Date());
+          (d.head || d.body).appendChild(s);
+        })();
+      </script>
+    
+  
+
+
+  <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-AMS_CHTML-full" integrity="sha256-GhM+5JHb6QUzOQPXSJLEWP7R73CbkisjzK5Eyij4U9w=" crossorigin="anonymous"></script>
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      CommonHTML: { linebreaks: { automatic: true } },
+      tex2jax: { inlineMath: [ ['$', '$'], ['\\(','\\)'] ], displayMath: [ ['$$','$$'], ['\\[', '\\]'] ], processEscapes: false },
+      messageStyle: 'none'
+    });
+  </script>
+
+
+
+    
+  </body>
+</html>
+

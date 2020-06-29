@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Python on statKim</title>
+    <link>/tags/python/</link>
+    <description>Recent content in Python on statKim</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ko-kr</language>
+    <lastBuildDate>Thu, 01 Nov 2018 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/tags/python/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Python 가상환경 만들기</title>
+      <link>/2018/11/python-%EA%B0%80%EC%83%81%ED%99%98%EA%B2%BD-%EB%A7%8C%EB%93%A4%EA%B8%B0/</link>
+      <pubDate>Thu, 01 Nov 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/2018/11/python-%EA%B0%80%EC%83%81%ED%99%98%EA%B2%BD-%EB%A7%8C%EB%93%A4%EA%B8%B0/</guid>
+      <description>가상환경을 사용하는 이유 여러 사람과 협업 또는 만들어 놓은 코드를 분석할 때 각 프로젝트마다 파이썬, 라이브러리 버전이 다름 이로 인해 기존 로컬에 영향이 가지 않는 별</description>
+    </item>
+    
+  </channel>
+</rss>
