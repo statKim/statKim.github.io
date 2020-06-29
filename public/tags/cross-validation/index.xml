@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>cross-validation on statKim</title>
+    <link>/tags/cross-validation/</link>
+    <description>Recent content in cross-validation on statKim</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ko-kr</language>
+    <lastBuildDate>Tue, 24 Dec 2019 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/tags/cross-validation/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>PCA에서 최적 PC 개수를 정하기 위한 Cross-validation 방법</title>
+      <link>/2019/12/pca%EC%97%90%EC%84%9C-%EC%B5%9C%EC%A0%81-pc-%EA%B0%9C%EC%88%98%EB%A5%BC-%EC%A0%95%ED%95%98%EA%B8%B0-%EC%9C%84%ED%95%9C-cross-validation-%EB%B0%A9%EB%B2%95/</link>
+      <pubDate>Tue, 24 Dec 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/2019/12/pca%EC%97%90%EC%84%9C-%EC%B5%9C%EC%A0%81-pc-%EA%B0%9C%EC%88%98%EB%A5%BC-%EC%A0%95%ED%95%98%EA%B8%B0-%EC%9C%84%ED%95%9C-cross-validation-%EB%B0%A9%EB%B2%95/</guid>
+      <description>1. Row-wise cross-validation $$ \begin{aligned} CV(k) &amp;amp;= \sum_{i=1}^N \lvert \lvert \mathbf{x}_i - \boldsymbol{\xi} \boldsymbol{f}_i^T \lvert\vert^2 \ &amp;amp;= \sum_{i=1}^N \lvert \lvert \mathbf{x}_i - \boldsymbol{\xi} (\mathbf{x}_i^T\boldsymbol{\xi})^T \lvert\vert^2 \end{aligned} $$ where $\boldsymbol\xi$ is a PC function(PC loading) with $k$ eigenvectors and $\boldsymbol{f}_i$ is $i$th PC score with $k$ components. $\mathbf{x}_i$를 predict하는</description>
+    </item>
+    
+  </channel>
+</rss>

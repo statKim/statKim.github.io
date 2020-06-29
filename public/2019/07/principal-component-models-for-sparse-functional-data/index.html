@@ -1,0 +1,986 @@
+<!DOCTYPE html>
+<html lang="ko-kr">
+  <head>
+    
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="generator" content="Hugo 0.73.0 with theme Tranquilpeak 0.4.8-BETA">
+<meta name="author" content="김현성">
+<meta name="keywords" content="">
+<meta name="description" content="Outline Introduction The Growth Curve Data The Reduced Rank Model Fitting the Reduced Rank Model The Reduced Rank and Mixed Effects Methods Compared Model Selection and Inference Comparison of the Reduced Rank Method and Classical Principal Components Appendix 1. Introduction The problem If each curves observed different time points, it is not good way to apply method with equal time points. In this paper, present an estimation technique when the">
+
+
+<meta property="og:description" content="Outline Introduction The Growth Curve Data The Reduced Rank Model Fitting the Reduced Rank Model The Reduced Rank and Mixed Effects Methods Compared Model Selection and Inference Comparison of the Reduced Rank Method and Classical Principal Components Appendix 1. Introduction The problem If each curves observed different time points, it is not good way to apply method with equal time points. In this paper, present an estimation technique when the">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Principal Component Models for Sparse Functional Data">
+<meta name="twitter:title" content="Principal Component Models for Sparse Functional Data">
+<meta property="og:url" content="/2019/07/principal-component-models-for-sparse-functional-data/">
+<meta property="twitter:url" content="/2019/07/principal-component-models-for-sparse-functional-data/">
+<meta property="og:site_name" content="statKim">
+<meta property="og:description" content="Outline Introduction The Growth Curve Data The Reduced Rank Model Fitting the Reduced Rank Model The Reduced Rank and Mixed Effects Methods Compared Model Selection and Inference Comparison of the Reduced Rank Method and Classical Principal Components Appendix 1. Introduction The problem If each curves observed different time points, it is not good way to apply method with equal time points. In this paper, present an estimation technique when the">
+<meta name="twitter:description" content="Outline Introduction The Growth Curve Data The Reduced Rank Model Fitting the Reduced Rank Model The Reduced Rank and Mixed Effects Methods Compared Model Selection and Inference Comparison of the Reduced Rank Method and Classical Principal Components Appendix 1. Introduction The problem If each curves observed different time points, it is not good way to apply method with equal time points. In this paper, present an estimation technique when the">
+<meta property="og:locale" content="en-us">
+
+  
+    <meta property="article:published_time" content="2019-07-18T00:00:00">
+  
+  
+    <meta property="article:modified_time" content="2019-07-18T00:00:00">
+  
+  
+  
+    
+      <meta property="article:section" content="paper">
+    
+  
+  
+    
+      <meta property="article:tag" content="FPCA">
+    
+      <meta property="article:tag" content="FDA">
+    
+      <meta property="article:tag" content="sparse">
+    
+      <meta property="article:tag" content="paper">
+    
+  
+
+
+<meta name="twitter:card" content="summary">
+
+
+
+
+
+
+
+
+
+
+
+  <meta property="og:image" content="/img/profile.jpg">
+  <meta property="twitter:image" content="/img/profile.jpg">
+
+
+    <title>Principal Component Models for Sparse Functional Data</title>
+
+    <link rel="icon" href="/img/favicon.ico">
+    
+
+    
+
+    <link rel="canonical" href="/2019/07/principal-component-models-for-sparse-functional-data/">
+
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.4/jquery.fancybox.min.css" integrity="sha256-vuXZ9LGmmwtjqFX1F+EKin1ThZMub58gKULUyf0qECk=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.4/helpers/jquery.fancybox-thumbs.min.css" integrity="sha256-SEa4XYAHihTcEP1f5gARTB2K26Uk8PsndQYHQC1f4jU=" crossorigin="anonymous" />
+    
+    
+    <link rel="stylesheet" href="/css/style-twzjdbqhmnnacqs0pwwdzcdbt8yhv8giawvjqjmyfoqnvazl0dalmnhdkvp7.min.css" />
+    
+    
+
+    
+      
+    
+    
+  </head>
+
+  <body>
+    <div id="blog">
+      <header id="header" data-behavior="5">
+  <i id="btn-open-sidebar" class="fa fa-lg fa-bars"></i>
+  <div class="header-title">
+    <a class="header-title-link" href="/">statKim</a>
+  </div>
+  
+    
+      <a class="header-right-picture "
+         href="/#about">
+    
+    
+    
+      
+        <img class="header-picture" src="/img/profile.jpg" alt="Author&#39;s picture" />
+      
+    
+    </a>
+  
+</header>
+
+      <nav id="sidebar" data-behavior="5">
+  <div class="sidebar-container">
+    
+      <div class="sidebar-profile">
+        <a href="/#about">
+          <img class="sidebar-profile-picture" src="/img/profile.jpg" alt="Author&#39;s picture" />
+        </a>
+        <h4 class="sidebar-profile-name">김현성</h4>
+        
+          <h5 class="sidebar-profile-bio">MS student in Statistics</h5>
+        
+      </div>
+    
+    <ul class="sidebar-buttons">
+      
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="/">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-home"></i>
+      
+      <span class="sidebar-button-desc">Home</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="/categories">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-bookmark"></i>
+      
+      <span class="sidebar-button-desc">Categories</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="/tags">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-tags"></i>
+      
+      <span class="sidebar-button-desc">Tags</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="/archives">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-archive"></i>
+      
+      <span class="sidebar-button-desc">Archives</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="/about">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-question"></i>
+      
+      <span class="sidebar-button-desc">About</span>
+    </a>
+  </li>
+
+
+    </ul>
+    <ul class="sidebar-buttons">
+      
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://github.com/statKim">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-github"></i>
+      
+      <span class="sidebar-button-desc">GitHub</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="mailto:hyunsung1021@gmail.com" target="_blank" rel="noopener">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-envelope-o"></i>
+      
+      <span class="sidebar-button-desc">Email</span>
+    </a>
+  </li>
+
+
+    </ul>
+    <ul class="sidebar-buttons">
+      
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="/index.xml">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-rss"></i>
+      
+      <span class="sidebar-button-desc">RSS</span>
+    </a>
+  </li>
+
+
+    </ul>
+  </div>
+</nav>
+
+      
+
+      <div id="main" data-behavior="5"
+        class="
+               hasCoverMetaOut
+               ">
+        <article class="post" itemscope itemType="http://schema.org/BlogPosting">
+          
+          
+            <div class="post-header main-content-wrap text-center">
+  
+    <h1 class="post-title" itemprop="headline">
+      Principal Component Models for Sparse Functional Data
+    </h1>
+  
+  
+  <div class="postShorten-meta post-meta">
+    
+      <time itemprop="datePublished" datetime="2019-07-18T00:00:00Z">
+        
+  July 18, 2019
+
+      </time>
+    
+    
+  
+  
+    <span>in</span>
+    
+      <a class="category-link" href="/categories/paper">paper</a>
+    
+  
+
+  </div>
+
+</div>
+          
+          <div class="post-content markdown" itemprop="articleBody">
+            <div class="main-content-wrap">
+              <h2 id="outline">Outline</h2>
+<ol>
+<li>Introduction</li>
+<li>The Growth Curve Data</li>
+<li>The Reduced Rank Model</li>
+<li>Fitting the Reduced Rank Model</li>
+<li>The Reduced Rank and Mixed Effects Methods Compared</li>
+<li>Model Selection and Inference</li>
+<li>Comparison of the Reduced Rank Method and Classical Principal Components</li>
+<li>Appendix</li>
+</ol>
+<!-- raw HTML omitted -->
+<h2 id="1-introduction">1. Introduction</h2>
+<h3 id="the-problem">The problem</h3>
+<p><img src="https://github.com/statKim/FDA-Lab/blob/master/Sparse%20FPCA/img/1.png?raw=true" alt=""></p>
+<ul>
+<li>If each curves observed different time points, it is not good way to apply method with equal time points.</li>
+<li>In this paper, present an estimation technique when the data are sparse and measured at the different time points each curves.</li>
+</ul>
+<h3 id="the-direct-method">The direct method</h3>
+<p>When the curves are not measured at common time points, we estimate the curves by basis expansion and then perform PCA on the estimated curves.</p>
+<h3 id="drawbacks">Drawbacks</h3>
+<ul>
+<li>If each curves have few observation, there are not existed unique basis coefficients.</li>
+<li>The solution is not optimal ($ \because $ perform PCA onto estimated curves)</li>
+</ul>
+<h3 id="mixed-effect-model">Mixed effect model</h3>
+<p>$$
+Y_i(t) = \mathbf{b}(t)^T \mathbf{\beta} + \mathbf{b}(t)^T \mathbf{\gamma}_i + \epsilon_i(t), \ i=1, \cdots , N
+$$</p>
+<p>where $ \mathbf{b}(t)=[b_1(t), &hellip;, b_q(t)]^T $ is the vector of spline basis functions, $\mathbf \beta$ is a fixed vector of spline coefficients, $\mathbf \gamma_i$ is a random vector of spline coefficients with covariance matrix $\mathbf \Gamma$,
+$ \mathbf Y_i=\mathbf B_i \mathbf \beta + \mathbf B_i\mathbf \gamma_i + \mathbf \epsilon_i $
+where $\mathbf Y_i$ is the $n_i$-dimensional vector, $\mathbf B$ is the $n_i \times q$ spline basis matrix</p>
+<h3 id="fitting-the-mixed-effect-model">Fitting the mixed effect model</h3>
+<ul>
+<li>
+<p>$\texttt{EM}$ algorithm is used to fit the mixed effect model to estimate $\mathbf{\beta}$ and $\mathbf{\Gamma}$.</p>
+</li>
+<li>
+<p>Given these estimates $\mathbf{\beta}$ and $\mathbf{\Gamma}$, predictions are obtained  for the $\mathbf{\gamma}_i$'s using best linear unbiased prediction (BLUP)</p>
+</li>
+</ul>
+<p>$$
+\hat{\mathbf{\gamma}_i}= (\hat{\mathbf{\Gamma}}^{-1}/\hat{\sigma}^2+\mathbf{B}_i^T\mathbf{B}_i)^{-1}\mathbf{B}_i^T(\mathbf{Y}_i-\mathbf{B}_i\hat{\mathbf{\beta}})
+$$</p>
+<p>Using the estimates of $\mathbf{\beta}$ and $\mathbf{\Gamma}$, we can estimate the mean and PC curves.</p>
+<ul>
+<li>Using the estimates of $\mathbf{\beta}$ and $\mathbf{\Gamma}$ and the prediction for $\mathbf{\gamma}_i$, we can predict the individual curve $\mathbf{Y}_i(t)$.</li>
+</ul>
+<h3 id="advantages-of-the-mixed-effects-model">Advantages of the mixed effects model</h3>
+<ul>
+<li>When the curve $Y_i(t)$ is insufficient, it can be used for estimating $Y_i(t)$ because of using all observation rather than $i$th curve.</li>
+<li>Using MLE to estimate $\mathbf{\beta}, \mathbf{\Gamma}$</li>
+</ul>
+<h3 id="some-problems-with-the-mixed-effects-method">Some problems with the mixed effects method</h3>
+<ul>
+<li>The dimension of spline basis $=q$
+$\Rightarrow$ # of parameters of $\mathbf{\Gamma}= \frac{q(q+1)}{2}$</li>
+<li>When the data are sparse, the estimate of $\mathbf{\Gamma}$ is highly variable.
+$\Rightarrow \texttt{EM}$ algorithm converges to local maximum.</li>
+</ul>
+<h3 id="some-problems-with-the-mixed-effects-method-1">Some problems with the mixed effects method</h3>
+<p><img src="https://github.com/statKim/FDA-Lab/blob/master/Sparse%20FPCA/img/2.png?raw=true" alt=""></p>
+<ul>
+<li>The direct method cannot be applied. ($\because n_i \ll q(=11)$)</li>
+<li>It looks overfitting in the mixed effect model.</li>
+<li>The reduced rank method presented in this paper looks better than the mixed effect method.</li>
+</ul>
+<!-- raw HTML omitted -->
+<p><img src="https://github.com/statKim/FDA-Lab/blob/master/Sparse%20FPCA/img/3.png?raw=true" alt=""></p>
+<ul>
+<li>The curve is more wiggly as the # of knots increases.</li>
+<li>In the reduced rank model, the peak is looked clear when $Age=13$.</li>
+<li>In the mixed effect model, the peak is not looked clear.</li>
+</ul>
+<!-- raw HTML omitted -->
+<h3 id="the-reduced-rank-model">The reduced rank model</h3>
+<h4 id="generalized-additive-model">Generalized additive model</h4>
+<p>$$
+Y_i(t)=\mu(t)+\sum_{j=1}^k f_j(t)\alpha_{ij}+\epsilon_i(t) = \mu(t)+\mathbf{f}(t)^T\mathbf{\alpha}_i + \epsilon_i(t)
+$$</p>
+<p>subject to $\int f_jf_l=\delta_{jl}, \ the\ Kronecker \ \delta$, $ \delta_{jl}=
+\begin{cases}
+1, &amp; j=l \<br>
+0, &amp; j \ne l
+\end{cases} $
+where $\mu(t)$ is overall mean function, $f_j$ is the $j$th PC function, $\mathbf{f}=(f_1,\cdots,f_k)^T$, $\mathbf{\alpha}_i \sim (\mathbf{0},\Sigma)$, $\epsilon_i(t) \sim (\mathbf{0}, \sigma^2)$ and uncorrelated</p>
+<p>In this paper, we let $\Sigma$ is diagonal.</p>
+<h4 id="restrictions-when-data-measured-finite--of-time-points">Restrictions when data measured finite # of time points</h4>
+<p>$$
+\mu(t)=\mathbf{b}(t)^T\mathbf{\theta}_{\mu}, \ \ \mathbf{f}(t)^T=\mathbf{b}(t)^T\mathbf{\Theta} 
+$$</p>
+<p>where $\mathbf{b}(t)$ is a spline basis with dimension $q$, $\mathbf{\Theta}$ is $q \times k$ spline coefficients matrix, $\mathbf{\theta}_{\mu}$ is $q$-dimensional vector of spline coefficients</p>
+<h4 id="restricted-model">Restricted model</h4>
+<p>$$
+Y_i(t)=\mathbf{b}(t)^T\mathbf{\theta}_{\mu}+\mathbf{b}(t)^T\mathbf{\Theta}\mathbf{\alpha}_i + \epsilon_i(t)
+$$</p>
+<p>$$
+\epsilon_i(t) \sim (\mathbf{0},\sigma^2), \ \mathbf{\alpha}_i \sim (\mathbf{0}, \mathbf{D}) 
+$$</p>
+<p>subject to</p>
+<p>$$
+\mathbf{\Theta}^T \mathbf{\Theta}=\mathbf{I}, \ \int \mathbf{b}(t)^T\mathbf{b}(t)dt=1, \ \int\int \mathbf{b}(t)^T\mathbf{b}(s)dt=0 
+$$</p>
+<p>where $\mathbf{D}$ is diagonal.</p>
+<h4 id="reduced-rank-model">Reduced rank model</h4>
+<p>$$
+\mathbf{Y}_i=\mathbf{B}<em>i\mathbf{\theta}</em>{\mu}+\mathbf{B}_i\mathbf{\Theta}\mathbf{\alpha}_i + \mathbf{\epsilon}_i 
+$$</p>
+<p>$$
+\mathbf{\Theta}^T \mathbf{\Theta}=\mathbf{I}, \ \mathbf{\epsilon}_i \sim (\mathbf{0}, \sigma^2 \mathbf{I}), \ \mathbf{\alpha}_i \sim (\mathbf{0}, \mathbf{D}) 
+$$</p>
+<ul>
+<li>Parameters to estimate : $\mathbf{\theta}_{\mu}, \mathbf{\Theta}, \mathbf{D}, \sigma^2$</li>
+<li>mixed effect model + rank constraint on the covariance matrix (# of PCs)</li>
+</ul>
+<h3 id="mixed-effects-model">Mixed effects model</h3>
+<h4 id="random-vector-with-unrestricted-covariance-matrix">Random vector with unrestricted covariance matrix</h4>
+<p>$$
+\mathbf{\gamma}_i = [\mathbf{\Theta}, \mathbf{\Theta}^*]
+\begin{pmatrix}
+\mathbf{\alpha}_i\<br>
+\mathbf{\alpha}^*_i
+\end{pmatrix}
+$$</p>
+<p>where $\mathbf{\gamma}_i$ is $q$-dimensional vector in mixed effect model, $\mathbf{\Theta}^*$ is a $q \times (q-k)$$ matrix, $\mathbf{\alpha}_i$ is a random vector of length $q-k$ with diagonal covariance matrix.</p>
+<h4 id="mixed-effects-model-1">Mixed effects model</h4>
+<p>$$
+\mathbf{Y}_i=\mathbf{B}<em>i\mathbf{\theta}</em>{\mu}+\mathbf{B}_i\mathbf{\Theta}\mathbf{\alpha}_i + \mathbf{B}_i\mathbf{\Theta}^*\mathbf{\alpha}^*_i + \mathbf{\epsilon}_i 
+$$</p>
+<ul>
+<li>The ruduced rank model is a submodel of the mixed effects model.</li>
+<li>Set $\mathbf{\alpha}^*_i=0$, it can be simply fitting the reduced rank model using a different algorithm.</li>
+</ul>
+<p><img src="https://github.com/statKim/FDA-Lab/blob/master/Sparse%20FPCA/img/4.png?raw=true" alt=""></p>
+<ul>
+<li>The constrained mixed effects model obtained from the mixed effects model after setting the $\mathbf{\alpha}^*_i=0$.</li>
+<li>The reduced rank likelihood is strictly higer than the constrained likelihood.</li>
+</ul>
+<!-- raw HTML omitted -->
+<h3 id="preamble">Preamble</h3>
+<h4 id="goal-of-fpca">Goal of FPCA</h4>
+<ul>
+<li>Estimate $\mu$ and $f$</li>
+<li>Prediction of the basis coefficients $\mathbf{\alpha}_i$</li>
+</ul>
+<p>Assuming the spline fit to the functions, it is equivalent to estimate $\mathbf{\theta}_{\mu}$, $\mathbf{\Theta}$ and predict the $\mathbf{\alpha}_i$</p>
+<ul>
+<li>Parameters to estimate : $\mathbf{\theta}_{\mu}, \mathbf{\Theta}, \sigma^2, \mathbf{D}$</li>
+<li>$\mathbf{D}$ : variability explained by each PC curve</li>
+<li>$\sigma^2$ : variability left unexplained</li>
+</ul>
+<h4 id="two-fitting-procedures">Two fitting procedures</h4>
+<ul>
+<li>Maximum likelihood</li>
+<li>Penalized least squares</li>
+</ul>
+<h3 id="maximum-likelihood">Maximum likelihood</h3>
+<p>Assume that $\mathbf{\epsilon}_i \sim N(\mathbf{0},\sigma^2 \mathbf{I})$ and $\mathbf{\alpha}_i \sim N(\mathbf{0}, \mathbf{D})$.</p>
+<p>$$
+\mathbf{Y}_i \sim N(\mathbf{B}<em>i\mathbf{\theta}</em>{\mu}, \sigma^2\mathbf{I}+\mathbf{B}_i\mathbf{\Theta}\mathbf{D}\mathbf{\Theta}^T\mathbf{B}^T_i) 
+$$</p>
+<p>The observed likelihood of the $\mathbf{Y}_i$'s is</p>
+<p>$$
+\prod_{i=1}^N \frac{1}{(2\pi)^{n_i/2}|\sigma^2\mathbf{I}+\mathbf{B}_i\mathbf{\Theta}\mathbf{D}\mathbf{\Theta}^T\mathbf{B}^T_i|^{1/2}} \exp \bigg { -\frac{1}{2}(\mathbf{Y}_i-\mathbf{B}_i\mathbf{\theta}_{\mu})^T(\sigma^2\mathbf{I}+\mathbf{B}_i\mathbf{\Theta}\mathbf{D}\mathbf{\Theta}^T\mathbf{B}^T_i)^{-1} (\mathbf{Y}_i-\mathbf{B}_i\mathbf{\theta}_{\mu}) \bigg } 
+$$</p>
+<p>But to maximize this likelihood is a nonconvex optimization problem.</p>
+<p>If $\mathbf{\alpha}_i$'s were observed, the joint likelihood is simplified to</p>
+<p>$$
+\prod_{i=1}^N \frac{1}{(2\pi)^{(n_i+k)/2}\sigma^{n_i}|\mathbf{D}|^\frac{1}{2}} \exp \bigg { -\frac{1}{2\sigma^2}(\mathbf{Y}_i-\mathbf{B}_i\mathbf{\theta}_{\mu}-\mathbf{B}_i\mathbf{\Theta}\mathbf{\alpha}_i)^T(\mathbf{Y}_i-\mathbf{B}_i\mathbf{\theta}_{\mu}-\mathbf{B}_i\mathbf{\Theta}\mathbf{\alpha}_i) - \frac{1}{2}\mathbf{\alpha}_i^T\mathbf{D}^{-1}\mathbf{\alpha}_i \bigg } 
+$$</p>
+<p>Let $\mathbf{\alpha}_i$ is unobserved(missing), we can maximize this likelihood much easier using $\texttt{EM}$ algorithm.</p>
+<h3 id="penalized-least-squares">Penalized least squares</h3>
+<p>We choose $\mathbf{\theta}_{\mu}, \mathbf{\Theta}, \mathbf{\alpha}_i$'s to minimize the sum of squared residuals,</p>
+<p>$$
+\sum_{i=1}^N \bigg { (\mathbf{Y}_i-\mathbf{B}_i\mathbf{\theta}_{\mu}-\mathbf{B}_i\mathbf{\Theta}\mathbf{\alpha}_i)^T(\mathbf{Y}_i-\mathbf{B}_i\mathbf{\theta}_{\mu}-\mathbf{B}_i\mathbf{\Theta}\mathbf{\alpha}_i) + \sigma^2 \sum_{j=1}^K \frac{\alpha^2_{ij}}{\mathbf{D}_{jj}} \bigg } 
+$$</p>
+<ul>
+<li>Minimize SSE $\Leftrightarrow$ Maximize likelihood</li>
+<li>Distribution assumption X</li>
+<li>It can be maximized using $\texttt{EM}$ algorithm.</li>
+</ul>
+<!-- raw HTML omitted -->
+<h4 id="study-1">Study 1</h4>
+<ul>
+<li>Generate data from the mean function and PC curve corresponding to reduced rank fit using spline with knots at ages 12, 14, 16 and 18.</li>
+<li>48 curves were generated using same time points as the growth curve data.</li>
+</ul>
+<h4 id="study-2">Study 2</h4>
+<ul>
+<li>Generate data in the same way as study 1 except that using spline with 7 equally spaced knots were used.</li>
+<li>16 curves were generated using randomly selected time points of the original 48 growth curves.</li>
+</ul>
+<p>In two studies, mixed effects and reduced rank model were fitted to 10 datasets using natural cubic splines.</p>
+<h4 id="study-1-1">Study 1</h4>
+<p><img src="https://github.com/statKim/FDA-Lab/blob/master/Sparse%20FPCA/img/5.png?raw=true" alt=""></p>
+<ul>
+<li>In Figure (a), the reduced rank fit looks better than the mixed effects fit.</li>
+<li>In Figure (b),
+almost all the variance ratios for mixed effects fits $&gt; 1$
+$\Rightarrow$ mixed effects fit underestimates the variance.(overfitting)</li>
+<li>Reduced rank fits have higher likelihood on all 10 datasets.</li>
+</ul>
+<h4 id="study-2-1">Study 2</h4>
+<p><img src="https://github.com/statKim/FDA-Lab/blob/master/Sparse%20FPCA/img/6.png?raw=true" alt=""></p>
+<ul>
+<li>In Figure (c), the reduced rank fit looks better than the mixed effects fit.</li>
+<li>In Figure (d), overfitting has increased on mixed effects fit.</li>
+<li>The likelihood estmate becomes worse as the variance is underestimated.</li>
+</ul>
+<!-- raw HTML omitted -->
+<h3 id="selection-of-the-number-of-knots-in-the-spline-basis">Selection of the number of knots in the spline basis</h3>
+<p>Select the number using cross validation to maximize the loglikelihood for different numbers of knots.</p>
+<p><img src="https://github.com/statKim/FDA-Lab/blob/master/Sparse%20FPCA/img/7.png?raw=true" alt=""></p>
+<ul>
+<li>In Figure (a), the optimal number of knots is between 4 and 6, we opted 4 knots for the law of parsimony.</li>
+<li>In Figure (b), data simulated from a spline with 4 knots mathbf{u}t likelihood is maximized for 3 knots.</li>
+</ul>
+<h3 id="selection-of-the-rank-k">Selection of the rank, $k$</h3>
+<p>Selecting the rank of the covariance matrix $=$ Selecting # of PCs</p>
+<h4 id="methods-to-select-the-rank-k">Methods to select the rank, $k$</h4>
+<ul>
+<li>PVE (Proportion of Variance Explained)</li>
+<li>Comparison loglikelihood with different $k$</li>
+</ul>
+<h4 id="pve">PVE</h4>
+<ul>
+<li>PVE is difficult to compute directly in FPCA.</li>
+<li>If $\sigma^2 \rightarrow 0$ and all curves are measured at similar time points, $Var(\mathbf{Y}_i) \approx Var(\mathbf{\alpha}_i) = \mathbf{D}$</li>
+<li>PVE $= \frac{\mathbf{D}_{jj}}{tr(\mathbf{D})}, \ (\because \ \mathbf{D} \text{  is diagonal})$</li>
+</ul>
+<p><img src="https://github.com/statKim/FDA-Lab/blob/master/Sparse%20FPCA/img/8.png?raw=true" alt=""></p>
+<ul>
+<li>In 1st PC, a sharp peak indicates the puberty periods which shows the highest variability with each curves.</li>
+<li>2nd PC indicates differences in the slopes of individual curves. If the weight of PC2 increases, this curve has slope greater than average.</li>
+</ul>
+<h4 id="comparison-loglikelihood-with-different-k">Comparison loglikelihood with different $k$</h4>
+<ul>
+<li>The loglikelihood increases as $k$ increases.</li>
+<li>Pick the $k$ when the increase levelled off.</li>
+<li>Example of graphical selection</li>
+</ul>
+<p><img src="https://github.com/statKim/FDA-Lab/blob/master/Sparse%20FPCA/img/9.png?raw=true" alt=""></p>
+<ul>
+<li>
+<p>LRT test</p>
+<ul>
+<li>$H_0:k=k_0$ vs $H_1:k=k_1$</li>
+<li>$LRT = 2(\log L_{k=k_1} - \log L_{k=k_0}) \ \dot\sim \ \chi^2_{df}$,
+<!-- raw HTML omitted -->where $df=$ difference of parameters</li>
+</ul>
+</li>
+<li>
+<p>Example</p>
+<ul>
+<li>$H_0:k=1$ vs $H_1:k=2$</li>
+<li>$LRT = 2(\log L_{k=2} - \log L_{k=1}) = 19.28 \ \dot\sim \ \chi^2_5$,
+<!-- raw HTML omitted -->$p$-value $=0.002$</li>
+<li>Reject $H_0$, we choose $k=2$.</li>
+<li>But this dataset is sparse, we shoud caution when using an asymptotic result</li>
+</ul>
+</li>
+</ul>
+<h3 id="confidence-intervals">Confidence intervals</h3>
+<p>To compute confidence intervals for the overall mean function, PCs and individual curves, we use the bootstrap.</p>
+<h4 id="two-methods-to-bootstrap-curve-data">Two methods to bootstrap curve data</h4>
+<ul>
+<li>Resampling the individual curves.
+<ul>
+<li>No parametric assumption</li>
+<li>Sparse data $\Rightarrow$ performance $\downarrow$</li>
+</ul>
+</li>
+<li>Resampling the estimated $\mathbf{\alpha}_i$'s and residuals and generating new partial curves based on these values.
+<ul>
+<li>Bootstrap datasets have observations at the same time points as the original dataset.</li>
+</ul>
+</li>
+</ul>
+<h4 id="confidence-intervals-on-the-growth-curve-data">Confidence intervals on the growth curve data</h4>
+<ul>
+<li>Generate $100$ bootstrap samples and fit the reduced rank method with $k=2$ to each</li>
+<li>Using the bootstrap percentile method, we computed $80% \text{ and } 90%$ CIs.</li>
+</ul>
+<p><img src="https://github.com/statKim/FDA-Lab/blob/master/Sparse%20FPCA/img/10.png?raw=true" alt=""></p>
+<!-- raw HTML omitted -->
+<h4 id="the-linear-model">The linear model</h4>
+<p>$$
+\mathbf{X}<em>i = \mathbf{\theta}</em>{\mu}+\mathbf{\Theta}\mathbf{\alpha}_i + \mathbf{\epsilon}_i 
+$$</p>
+<p>$$
+\mathbf{\epsilon}_i \sim N(\mathbf{0}, \mathbf{\Sigma}), \ \mathbf{\alpha}_i \sim N(\mathbf{0},\mathbf{D}) 
+$$</p>
+<p>where $\mathbf{X}_i$ are $q$-dimensional data vectors, $\mathbf{\Theta}$ is an orthogonal matrix</p>
+<ul>
+<li>$\mathbf{\Sigma}$ is diagonal $\Rightarrow$ MLE of linear model is equivalent to factor analysis solution.</li>
+<li>$\mathbf{\Sigma}=\sigma^2 \mathbf{I}$ $\Rightarrow$ if $\sigma^2 \rightarrow 0$, then MLE of linear model is equivalent to classical PCA solution with minimizing</li>
+</ul>
+<p>$$
+\sum_{i=1}^N \Vert \mathbf{X}_i - \mathbf{\theta}_{\mu}-\mathbf{\Theta}\mathbf{\alpha}_i \Vert^2<br>
+$$</p>
+<h4 id="the-reduced-rank-model-1">The reduced rank model</h4>
+<p>$$
+\mathbf{Y}_i = \mathbf{B}<em>i\mathbf{\theta}</em>{\mu}+\mathbf{B}_i\mathbf{\Theta}\mathbf{\alpha}_i + \mathbf{\epsilon}_i, \ Cov(\mathbf{\epsilon}_i)=\sigma^2\mathbf{I} 
+$$</p>
+<p>where $\mathbf{\Theta}$ is the PCs and the $\mathbf{\alpha}_i$'s are weights for the PC</p>
+<ul>
+<li>
+<p>$Cov(\mathbf{\epsilon}_i)=\sigma^2 \mathbf{I}$ $\Rightarrow$ Solution of reduced rank model is equivalent to generalized PCA solution.</p>
+</li>
+<li>
+<p>On penalized least squares objective function,
+if $\sigma^2 \rightarrow 0$, then the procedure for fitting the reduced rank model simply minimizes</p>
+<p>$$
+\sum_{i=1}^N \Vert \mathbf{Y}_i - \mathbf{B}_i\mathbf{\theta}_{\mu} - \mathbf{B}_i\mathbf{\Theta}\mathbf{\alpha}_i \Vert^2
+$$</p>
+</li>
+</ul>
+<p>Let $\hat{\mathbf{\gamma}_i}=(\mathbf{B}^T_i\mathbf{B}_i)^{-1}\mathbf{B}^T_i\mathbf{Y}_i$, LSE of the spline coefficients for $i$th curve, then objective equation is</p>
+<p>$$
+\sum_{i=1}^N \Vert \mathbf{Y}_i - \mathbf{B}_i\hat{\mathbf{\gamma}_i} \Vert^2 + \sum_{i=1}^N \Vert \mathbf{B}_i\hat{\mathbf{\gamma}_i} - \mathbf{B}_i\mathbf{\theta}_{\mu} - \mathbf{B}_i\mathbf{\Theta}\mathbf{\alpha}_i \Vert^2<br>
+$$</p>
+<p>$$
+= C(\mathbf{Y}) + \sum_{i=1}^N \Vert \hat{\mathbf{\gamma}_i} - \mathbf{\theta}_{\mu} - \mathbf{\Theta}\mathbf{\alpha}_i \Vert_{\mathbf{B}^T_i\mathbf{B}_i}^2 
+$$</p>
+<p>where $C(\mathbf{Y})$ is a constant with the parameters.</p>
+<p>Therefore, we minimize
+$
+\sum_{i=1}^N \Vert \hat{\mathbf{\gamma}_i} - \mathbf{\theta}_{\mu} - \mathbf{\Theta}\mathbf{\alpha}_i \Vert_{\mathbf{B}^T_i\mathbf{B}_i}^2 
+$</p>
+<ul>
+<li>If all curves are measured at the same time points, then $\mathbf{B}_i=\mathbf{B}$.</li>
+<li>WLOG, assume $\mathbf{B&rsquo;B=I}$, minimizing the objective equation is equivalent to performing standard PCA on the spline coefficients. $\Rightarrow$ the direct method</li>
+<li>Similarly to classical PCA, When all curves are measured at the same time points, the reduced rank method finds the best plane using the Euclidean metric.</li>
+<li>Also it finds the best plane when the curves are not measured at the same time points, but the distance between the plane and each data point is measured relative to the metric $\mathbf{B}_i^T\mathbf{B}_i$.</li>
+</ul>
+<!-- raw HTML omitted -->
+<h3 id="blupbest-linear-unbiased-prediction">BLUP(Best Linear Unbiased Prediction)</h3>
+<p>The mixed model</p>
+<p>$$
+\mathbf{y} = \mathbf{X} \mathbf{\beta}+\mathbf{Z}\mathbf{u}+\mathbf{\epsilon}
+$$</p>
+<p>$$
+\mathbf{u} \sim (\mathbf{0},\mathbf{G}), \ \mathbf{\epsilon} \sim (\mathbf{0},\mathbf{R}), \ Var(\mathbf{y})=\mathbf{V}=\mathbf{Z}\mathbf{G}\mathbf{Z}^T+\mathbf{R}, \ Cov(\mathbf{u},\mathbf{\epsilon})=\mathbf{0} 
+$$</p>
+<p>Assume $\mathbf{y}|\mathbf{u} \sim N(\mathbf{X} \mathbf{\beta}+\mathbf{Z}\mathbf{u},\mathbf{R})$ and $\mathbf{u} \sim N(\mathbf{0},\mathbf{G})$,
+then likelihood function is</p>
+<p>$$
+-2\log f(\mathbf{y}|\mathbf{u})=N\log 2\pi+\log|\mathbf{R}|+(\mathbf{y}-\mathbf{X}  \mathbf{\beta}-\mathbf{Z}\mathbf{u})^T\mathbf{R}^{-1}(\mathbf{y}-\mathbf{X} \mathbf{\beta}-\mathbf{Z}\mathbf{u}) 
+$$</p>
+<p>$$
+-2\log f(\mathbf{u})= q\log 2\pi + \log|\mathbf{G}| + \mathbf{u}^T\mathbf{G}^{-1}\mathbf{u} 
+$$</p>
+<p>Maximizing 
+$ l(\mathbf{\beta},\mathbf{u}|\mathbf{y})=\log f(\mathbf{y},\mathbf{u})$ is equivalent to minimizing the sum of the two equations.</p>
+<p>Differentiating the sum of the two equations</p>
+<p>$$
+\begin{aligned}
+\frac{\partial [-2l(\mathbf{\beta},\mathbf{u}|\mathbf{y})]}{\partial \mathbf{\beta}} &amp;= -2\mathbf{X}^T\mathbf{R}^{-1}(\mathbf{y}-\mathbf{X}\mathbf{\beta}-\mathbf{Z}\mathbf{u})\<br>
+\frac{\partial [-2l(\mathbf{\beta},\mathbf{u}|\mathbf{y})]}{\partial \mathbf{u}} &amp;= -2\mathbf{Z}^T\mathbf{R}^{-1}(\mathbf{y}-\mathbf{X}\mathbf{\beta}-\mathbf{Z}\mathbf{u})+2\mathbf{G}^{-1}\mathbf{u}
+\end{aligned} 
+$$</p>
+<p>equating them to $0$ gives the following system</p>
+<p>$$
+\mathbf{X}^T\mathbf{R}^{-1}\mathbf{X}\hat{\mathbf{\beta}}+\mathbf{X}^T\mathbf{R}^{-1}\mathbf{Z}\hat{\mathbf{u}}=\mathbf{X}^T\mathbf{R}^{-1}\mathbf{y} 
+$$</p>
+<p>$$
+\mathbf{Z}^T\mathbf{R}^{-1}\mathbf{X}\hat{\mathbf{\beta}}+(\mathbf{Z}^T\mathbf{R}^{-1}\mathbf{Z}+\mathbf{G}^{-1})\hat{\mathbf{u}}=\mathbf{Z}^T\mathbf{R}^{-1}\mathbf{y} 
+$$</p>
+<p>called Henderson&rsquo;s mixed model equations (HMME)</p>
+<p>The matrix form of HMME is</p>
+<p>$$
+\begin{pmatrix}
+\mathbf{X}^T\mathbf{R}^{-1}\mathbf{X} &amp; \mathbf{X}^T\mathbf{R}^{-1}\mathbf{Z} \<br>
+\mathbf{Z}^T\mathbf{R}^{-1}\mathbf{X}&amp; \mathbf{Z}^T\mathbf{R}^{-1}\mathbf{Z}+\mathbf{G}^{-1}
+\end{pmatrix}
+\begin{pmatrix}
+\hat{\mathbf{\beta}} \<br>
+\hat{\mathbf{u}}
+\end{pmatrix} =
+\begin{pmatrix}
+\mathbf{X}^T\mathbf{R}^{-1}\mathbf{y} \<br>
+\mathbf{Z}^T\mathbf{R}^{-1}\mathbf{y}
+\end{pmatrix} 
+$$</p>
+<p>Solve this equation,</p>
+<p>$$
+\begin{aligned}
+\hat{\mathbf{\beta}} &amp;= (\mathbf{X}^T\mathbf{V}^{-1}\mathbf{X})^{-1}\mathbf{X}^T\mathbf{V}^{-1}\mathbf{y} = \hat{\mathbf{\beta}}^{GLS}\<br>
+\hat{\mathbf{u}} &amp;= (\mathbf{Z}^T\mathbf{R}^{-1}\mathbf{Z}+\mathbf{G}^{-1})^{-1}\mathbf{Z}^T\mathbf{R}^{-1}(\mathbf{y}-\mathbf{X}\hat{\mathbf{\beta}})
+\end{aligned}
+$$</p>
+<p>where $\hat{\mathbf{\beta}}$ is BLUE(Best Linear Unbiased Estimator) and $\hat{\mathbf{u}}$ is BLUP(Best Linear Unbiased Prediction)</p>
+<!-- raw HTML omitted -->
+<h2 id="reference">Reference</h2>
+<ul>
+<li>James <em>et al.</em> (2000), <strong>Principal component models for sparse functional data.</strong> <em>Biometrika</em>, 87(3), 587-602.</li>
+</ul>
+<!-- raw HTML omitted -->
+<p>이 글의 논문 요약 발표 자료는 제 <a href="https://github.com/statKim/FDA-Lab/blob/master/Sparse%20FPCA/Principal_Component_Models_for_Sparse_Functional_Data.pdf">Github</a>에서 받으실 수 있습니다.</p>
+
+              
+            </div>
+          </div>
+          <div id="post-footer" class="post-footer main-content-wrap">
+            
+              
+                
+                
+                  <div class="post-footer-tags">
+                    <span class="text-color-light text-small">TAGGED IN</span><br/>
+                    
+  <a class="tag tag--primary tag--small" href="/tags/fpca/">FPCA</a>
+
+  <a class="tag tag--primary tag--small" href="/tags/fda/">FDA</a>
+
+  <a class="tag tag--primary tag--small" href="/tags/sparse/">sparse</a>
+
+  <a class="tag tag--primary tag--small" href="/tags/paper/">paper</a>
+
+                  </div>
+                
+              
+            
+            <div class="post-actions-wrap">
+  
+      <nav >
+        <ul class="post-actions post-action-nav">
+          
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--default tooltip--top" href="/2019/11/jupyter-notebook%EC%97%90%EC%84%9C-%EA%B0%80%EC%83%81%ED%99%98%EA%B2%BD-kernel%EC%9D%B4-%EC%9D%B8%EC%8B%9D%EB%90%98%EC%A7%80-%EC%95%8A%EB%8A%94-%EC%98%A4%EB%A5%98/" data-tooltip="Jupyter notebook에서 가상환경 kernel이 인식되지 않는 오류">
+              
+                  <i class="fa fa-angle-left"></i>
+                  <span class="hide-xs hide-sm text-small icon-ml">NEXT</span>
+                </a>
+            </li>
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--default tooltip--top" href="/2019/05/fda-book-chapter-8.3-~-8.5/" data-tooltip="[FDA Book] Chapter 8.3 ~ 8.5">
+              
+                  <span class="hide-xs hide-sm text-small icon-mr">PREVIOUS</span>
+                  <i class="fa fa-angle-right"></i>
+                </a>
+            </li>
+          
+        </ul>
+      </nav>
+    <ul class="post-actions post-action-share" >
+      
+        <li class="post-action hide-lg hide-md hide-sm">
+          <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions">
+            <i class="fa fa-share-alt"></i>
+          </a>
+        </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=/2019/07/principal-component-models-for-sparse-functional-data/">
+              <i class="fa fa-facebook-official"></i>
+            </a>
+          </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=/2019/07/principal-component-models-for-sparse-functional-data/">
+              <i class="fa fa-twitter"></i>
+            </a>
+          </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=/2019/07/principal-component-models-for-sparse-functional-data/">
+              <i class="fa fa-google-plus"></i>
+            </a>
+          </li>
+        
+      
+      
+        <li class="post-action">
+          <a class="post-action-btn btn btn--default" href="#disqus_thread">
+            <i class="fa fa-comment-o"></i>
+          </a>
+        </li>
+      
+      <li class="post-action">
+        
+          <a class="post-action-btn btn btn--default" href="#">
+        
+          <i class="fa fa-list"></i>
+        </a>
+      </li>
+    </ul>
+  
+</div>
+
+            
+              
+                <div id="disqus_thread">
+  <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+              
+            
+          </div>
+        </article>
+        <footer id="footer" class="main-content-wrap">
+  <span class="copyrights">
+    &copy; 2020 <a href="https://github.com/statKim">statKim</a>. All Rights Reserved
+  </span>
+</footer>
+
+      </div>
+      <div id="bottom-bar" class="post-bottom-bar" data-behavior="5">
+        <div class="post-actions-wrap">
+  
+      <nav >
+        <ul class="post-actions post-action-nav">
+          
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--default tooltip--top" href="/2019/11/jupyter-notebook%EC%97%90%EC%84%9C-%EA%B0%80%EC%83%81%ED%99%98%EA%B2%BD-kernel%EC%9D%B4-%EC%9D%B8%EC%8B%9D%EB%90%98%EC%A7%80-%EC%95%8A%EB%8A%94-%EC%98%A4%EB%A5%98/" data-tooltip="Jupyter notebook에서 가상환경 kernel이 인식되지 않는 오류">
+              
+                  <i class="fa fa-angle-left"></i>
+                  <span class="hide-xs hide-sm text-small icon-ml">NEXT</span>
+                </a>
+            </li>
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--default tooltip--top" href="/2019/05/fda-book-chapter-8.3-~-8.5/" data-tooltip="[FDA Book] Chapter 8.3 ~ 8.5">
+              
+                  <span class="hide-xs hide-sm text-small icon-mr">PREVIOUS</span>
+                  <i class="fa fa-angle-right"></i>
+                </a>
+            </li>
+          
+        </ul>
+      </nav>
+    <ul class="post-actions post-action-share" >
+      
+        <li class="post-action hide-lg hide-md hide-sm">
+          <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions">
+            <i class="fa fa-share-alt"></i>
+          </a>
+        </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=/2019/07/principal-component-models-for-sparse-functional-data/">
+              <i class="fa fa-facebook-official"></i>
+            </a>
+          </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=/2019/07/principal-component-models-for-sparse-functional-data/">
+              <i class="fa fa-twitter"></i>
+            </a>
+          </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=/2019/07/principal-component-models-for-sparse-functional-data/">
+              <i class="fa fa-google-plus"></i>
+            </a>
+          </li>
+        
+      
+      
+        <li class="post-action">
+          <a class="post-action-btn btn btn--default" href="#disqus_thread">
+            <i class="fa fa-comment-o"></i>
+          </a>
+        </li>
+      
+      <li class="post-action">
+        
+          <a class="post-action-btn btn btn--default" href="#">
+        
+          <i class="fa fa-list"></i>
+        </a>
+      </li>
+    </ul>
+  
+</div>
+
+      </div>
+      <div id="share-options-bar" class="share-options-bar" data-behavior="5">
+  <i id="btn-close-shareoptions" class="fa fa-close"></i>
+  <ul class="share-options">
+    
+      <li class="share-option">
+        <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=%2F2019%2F07%2Fprincipal-component-models-for-sparse-functional-data%2F">
+          <i class="fa fa-facebook-official"></i><span>Share on Facebook</span>
+        </a>
+      </li>
+    
+      <li class="share-option">
+        <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=%2F2019%2F07%2Fprincipal-component-models-for-sparse-functional-data%2F">
+          <i class="fa fa-twitter"></i><span>Share on Twitter</span>
+        </a>
+      </li>
+    
+      <li class="share-option">
+        <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=%2F2019%2F07%2Fprincipal-component-models-for-sparse-functional-data%2F">
+          <i class="fa fa-google-plus"></i><span>Share on Google&#43;</span>
+        </a>
+      </li>
+    
+  </ul>
+</div>
+<div id="share-options-mask" class="share-options-mask"></div>
+    </div>
+	
+    <div id="about">
+  <div id="about-card">
+    <div id="about-btn-close">
+      <i class="fa fa-remove"></i>
+    </div>
+    
+      <img id="about-card-picture" src="/img/profile.jpg" alt="Author&#39;s picture" />
+    
+    <h4 id="about-card-name">김현성</h4>
+    
+      <div id="about-card-bio">MS student in Statistics</div>
+    
+    
+      <div id="about-card-job">
+        <i class="fa fa-briefcase"></i>
+        <br/>
+        MS student at Chung-Ang Univ
+      </div>
+    
+    
+      <div id="about-card-location">
+        <i class="fa fa-map-marker"></i>
+        <br/>
+        Seoul, Korea
+      </div>
+    
+  </div>
+</div>
+
+    
+
+    
+  
+    
+      <div id="cover" style="background-image:url('/img/background.jpg');"></div>
+    
+  
+
+
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js" integrity="sha256-/BfiIkHlHoVihZdc6TFuj7MmJ0TWcWsMXkeDFwhi0zw=" crossorigin="anonymous"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.7/js/jquery.fancybox.min.js" integrity="sha256-GEAnjcTqVP+vBp3SSc8bEDQqvWAZMiHyUSIorrWwH50=" crossorigin="anonymous"></script>
+
+
+<script src="/js/script-pcw6v3xilnxydl1vddzazdverrnn9ctynvnxgwho987mfyqkuylcb1nlt.min.js"></script>
+
+
+<script lang="javascript">
+window.onload = updateMinWidth;
+window.onresize = updateMinWidth;
+document.getElementById("sidebar").addEventListener("transitionend", updateMinWidth);
+function updateMinWidth() {
+  var sidebar = document.getElementById("sidebar");
+  var main = document.getElementById("main");
+  main.style.minWidth = "";
+  var w1 = getComputedStyle(main).getPropertyValue("min-width");
+  var w2 = getComputedStyle(sidebar).getPropertyValue("width");
+  var w3 = getComputedStyle(sidebar).getPropertyValue("left");
+  main.style.minWidth = `calc(${w1} - ${w2} - ${w3})`;
+}
+</script>
+
+<script>
+$(document).ready(function() {
+  hljs.configure({ classPrefix: '', useBR: false });
+  $('pre.code-highlight > code, pre > code').each(function(i, block) {
+    if (!$(this).hasClass('codeblock')) {
+      $(this).addClass('codeblock');
+    }
+    hljs.highlightBlock(block);
+  });
+});
+</script>
+
+
+  
+    
+      <script>
+        var disqus_config = function () {
+          this.page.url = '\/2019\/07\/principal-component-models-for-sparse-functional-data\/';
+          
+            this.page.identifier = '\/2019\/07\/principal-component-models-for-sparse-functional-data\/'
+          
+        };
+        (function() {
+          
+          
+          if (window.location.hostname == "localhost") {
+            return;
+          }
+          var d = document, s = d.createElement('script');
+          var disqus_shortname = 'statkim';
+          s.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+
+          s.setAttribute('data-timestamp', +new Date());
+          (d.head || d.body).appendChild(s);
+        })();
+      </script>
+    
+  
+
+
+  <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-AMS_CHTML-full" integrity="sha256-GhM+5JHb6QUzOQPXSJLEWP7R73CbkisjzK5Eyij4U9w=" crossorigin="anonymous"></script>
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      CommonHTML: { linebreaks: { automatic: true } },
+      tex2jax: { inlineMath: [ ['$', '$'], ['\\(','\\)'] ], displayMath: [ ['$$','$$'], ['\\[', '\\]'] ], processEscapes: false },
+      messageStyle: 'none'
+    });
+  </script>
+
+
+
+    
+  </body>
+</html>
+

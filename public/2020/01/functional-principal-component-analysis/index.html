@@ -1,0 +1,672 @@
+<!DOCTYPE html>
+<html lang="ko-kr">
+  <head>
+    
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="generator" content="Hugo 0.73.0 with theme Tranquilpeak 0.4.8-BETA">
+<meta name="author" content="김현성">
+<meta name="keywords" content="">
+<meta name="description" content="Functional Principal Component Anlaysis (FPCA)란 이름 그대로 functional data에 적용하는 PCA 방법 일반적으로 잘 알려져 있는 multivariate PCA는 \(p\)개의 변수를 \(q(\ll p)\)개의 변수로 차원축소(">
+
+
+<meta property="og:description" content="Functional Principal Component Anlaysis (FPCA)란 이름 그대로 functional data에 적용하는 PCA 방법 일반적으로 잘 알려져 있는 multivariate PCA는 \(p\)개의 변수를 \(q(\ll p)\)개의 변수로 차원축소(">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Functional Principal Component Analysis">
+<meta name="twitter:title" content="Functional Principal Component Analysis">
+<meta property="og:url" content="/2020/01/functional-principal-component-analysis/">
+<meta property="twitter:url" content="/2020/01/functional-principal-component-analysis/">
+<meta property="og:site_name" content="statKim">
+<meta property="og:description" content="Functional Principal Component Anlaysis (FPCA)란 이름 그대로 functional data에 적용하는 PCA 방법 일반적으로 잘 알려져 있는 multivariate PCA는 \(p\)개의 변수를 \(q(\ll p)\)개의 변수로 차원축소(">
+<meta name="twitter:description" content="Functional Principal Component Anlaysis (FPCA)란 이름 그대로 functional data에 적용하는 PCA 방법 일반적으로 잘 알려져 있는 multivariate PCA는 \(p\)개의 변수를 \(q(\ll p)\)개의 변수로 차원축소(">
+<meta property="og:locale" content="en-us">
+
+  
+    <meta property="article:published_time" content="2020-01-20T00:00:00">
+  
+  
+    <meta property="article:modified_time" content="2020-01-20T00:00:00">
+  
+  
+  
+    
+      <meta property="article:section" content="statistics">
+    
+      <meta property="article:section" content="FDA">
+    
+  
+  
+    
+      <meta property="article:tag" content="FPCA">
+    
+      <meta property="article:tag" content="FDA">
+    
+      <meta property="article:tag" content="sparse">
+    
+      <meta property="article:tag" content="statistics">
+    
+  
+
+
+<meta name="twitter:card" content="summary">
+
+
+
+
+
+
+
+
+
+
+
+  <meta property="og:image" content="/img/profile.jpg">
+  <meta property="twitter:image" content="/img/profile.jpg">
+
+
+    <title>Functional Principal Component Analysis</title>
+
+    <link rel="icon" href="/img/favicon.ico">
+    
+
+    
+
+    <link rel="canonical" href="/2020/01/functional-principal-component-analysis/">
+
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.4/jquery.fancybox.min.css" integrity="sha256-vuXZ9LGmmwtjqFX1F+EKin1ThZMub58gKULUyf0qECk=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.4/helpers/jquery.fancybox-thumbs.min.css" integrity="sha256-SEa4XYAHihTcEP1f5gARTB2K26Uk8PsndQYHQC1f4jU=" crossorigin="anonymous" />
+    
+    
+    <link rel="stylesheet" href="/css/style-twzjdbqhmnnacqs0pwwdzcdbt8yhv8giawvjqjmyfoqnvazl0dalmnhdkvp7.min.css" />
+    
+    
+
+    
+      
+    
+    
+  </head>
+
+  <body>
+    <div id="blog">
+      <header id="header" data-behavior="5">
+  <i id="btn-open-sidebar" class="fa fa-lg fa-bars"></i>
+  <div class="header-title">
+    <a class="header-title-link" href="/">statKim</a>
+  </div>
+  
+    
+      <a class="header-right-picture "
+         href="/#about">
+    
+    
+    
+      
+        <img class="header-picture" src="/img/profile.jpg" alt="Author&#39;s picture" />
+      
+    
+    </a>
+  
+</header>
+
+      <nav id="sidebar" data-behavior="5">
+  <div class="sidebar-container">
+    
+      <div class="sidebar-profile">
+        <a href="/#about">
+          <img class="sidebar-profile-picture" src="/img/profile.jpg" alt="Author&#39;s picture" />
+        </a>
+        <h4 class="sidebar-profile-name">김현성</h4>
+        
+          <h5 class="sidebar-profile-bio">MS student in Statistics</h5>
+        
+      </div>
+    
+    <ul class="sidebar-buttons">
+      
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="/">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-home"></i>
+      
+      <span class="sidebar-button-desc">Home</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="/categories">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-bookmark"></i>
+      
+      <span class="sidebar-button-desc">Categories</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="/tags">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-tags"></i>
+      
+      <span class="sidebar-button-desc">Tags</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="/archives">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-archive"></i>
+      
+      <span class="sidebar-button-desc">Archives</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="/about">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-question"></i>
+      
+      <span class="sidebar-button-desc">About</span>
+    </a>
+  </li>
+
+
+    </ul>
+    <ul class="sidebar-buttons">
+      
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://github.com/statKim">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-github"></i>
+      
+      <span class="sidebar-button-desc">GitHub</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="mailto:hyunsung1021@gmail.com" target="_blank" rel="noopener">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-envelope-o"></i>
+      
+      <span class="sidebar-button-desc">Email</span>
+    </a>
+  </li>
+
+
+    </ul>
+    <ul class="sidebar-buttons">
+      
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="/index.xml">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-rss"></i>
+      
+      <span class="sidebar-button-desc">RSS</span>
+    </a>
+  </li>
+
+
+    </ul>
+  </div>
+</nav>
+
+      
+
+      <div id="main" data-behavior="5"
+        class="
+               hasCoverMetaOut
+               ">
+        <article class="post" itemscope itemType="http://schema.org/BlogPosting">
+          
+          
+            <div class="post-header main-content-wrap text-center">
+  
+    <h1 class="post-title" itemprop="headline">
+      Functional Principal Component Analysis
+    </h1>
+  
+  
+  <div class="postShorten-meta post-meta">
+    
+      <time itemprop="datePublished" datetime="2020-01-20T00:00:00Z">
+        
+  January 20, 2020
+
+      </time>
+    
+    
+  
+  
+    <span>in</span>
+    
+      <a class="category-link" href="/categories/statistics">statistics</a>, 
+    
+      <a class="category-link" href="/categories/fda">FDA</a>
+    
+  
+
+  </div>
+
+</div>
+          
+          <div class="post-content markdown" itemprop="articleBody">
+            <div class="main-content-wrap">
+              
+
+
+<ul>
+<li>Functional Principal Component Anlaysis (FPCA)란 이름 그대로 functional data에 적용하는 PCA 방법</li>
+<li>일반적으로 잘 알려져 있는 multivariate PCA는 <span class="math inline">\(p\)</span>개의 변수를 <span class="math inline">\(q(\ll p)\)</span>개의 변수로 차원축소(dimension reduction)하는 방법으로 각 변수들이 uncorrelated되기 때문에 회귀분석(regression)에서 흔히 발생하는 다중공선성(multicolinearity)을 해결할 수 있는 대표적인 방법임</li>
+</ul>
+<p><br></p>
+<div id="functional-data" class="section level2">
+<h2>Functional data??</h2>
+<ul>
+<li><p>Functional data란 여러 개체가 각각 시간이나 위치 등에 따라 관측된 형태를 보이는 데이터로 보통 종단자료(longitudinal data) or 시계열(time series) 데이터를 다른 관점에서 본 경우입니다.</p></li>
+<li><p>시간에 따라 관측된 데이터를 연속(continuous)인 곡선(curve) 형태로 보고 분석하는 데이터 형태입니다.</p></li>
+<li><p>Smootheness를 가정하고 있기 때문에 smoothing 방법이 필요하게 됩니다.</p></li>
+<li><p>B-spline, wavelet basis 등의 basis function을 사용하여 smoothing하게 되고 basis 개수에 따라 smoothing 정도가 결정됨</p></li>
+<li><p>하지만 형태가 복잡해지는 경우, smooth basis function의 개수가 많아져 차원이 커지는 문제 발생 <span class="math inline">\(\Rightarrow\)</span> <strong>차원축소 방법이 필요!!</strong></p>
+<p><img src="http://www.psych.mcgill.ca/misc/fda/images/examples/ex-weather-afig1.jpg"></p></li>
+</ul>
+<p><em>캐나다 35개 지점의 월별 기온 데이터(출처: Functional Data Analysis Website)</em></p>
+<p><br></p>
+</div>
+<div id="functional-pca" class="section level2">
+<h2>Functional PCA</h2>
+<ul>
+<li><p>Functional PCA도 역시 dimension reduction 방법으로 basis fuction의 dimension을 줄여주는 방법</p></li>
+<li><p>PCA와 마찬가지로 covariance matrix를 고유값 분해(eigenvalue decomposition)를 통해 구하게 됨</p></li>
+<li><p>Smoothness를 가정하기 때문에 inner product가 새롭게 정의됨
+<span class="math display">\[
+  \langle x, y \rangle = \int x(t)y(t)dt
+  \]</span></p></li>
+</ul>
+<p><br></p>
+</div>
+<div id="how-to-solve-functional-pca" class="section level2">
+<h2>How to solve Functional PCA??</h2>
+<ul>
+<li>PCA와 마찬가지로 데이터의 평균(mean)을 빼어 centering한 후에 계산된 covariance matrix를 고유값 분해(eigenvalue decomposition)하여 구할 수 있음</li>
+</ul>
+<ol style="list-style-type: decimal">
+<li><p>Define the covariance function</p>
+<p><span class="math display">\[
+  v(s,t) = \frac{1}{N}\sum_{i=1}^N x_i(s)x_i(t) 
+ \]</span>
+where <span class="math inline">\(x_i(t)\)</span> is centerized.</p></li>
+<li><p>Each of PC weight functions(or loadings) satisfies follow eigenequation</p>
+<p><span class="math display">\[
+ \int v(s,t)\xi(t)dt = \rho \xi(s)
+ \]</span>
+or another form using covariance overator <span class="math inline">\(V\)</span>,</p>
+<p><span class="math display">\[
+ V\xi = \rho \xi
+ \]</span>
+where $ V= v(,t)(t)dt $ and <span class="math inline">\(\xi\)</span> is an eigenfunction.</p></li>
+<li><p>Apply eigenvalue decomposition to above eigenequation</p>
+<ul>
+<li>The eigenfunction <span class="math inline">\(\xi\)</span> be the PC weight function.</li>
+</ul></li>
+</ol>
+<p><br></p>
+</div>
+<div id="multivariate-pca-vs-functional-pca" class="section level2">
+<h2>Multivariate PCA vs Functional PCA</h2>
+<ul>
+<li>구할 수 있는 eigen pairs의 개수가 다름
+<ul>
+<li>Multivariate : # of eigen pairs = <span class="math inline">\(p\)</span> (raw data의 dimension)</li>
+<li>Functional : # of eigen pairs = <span class="math inline">\(\infty\)</span> (<span class="math inline">\(\because\)</span> smootheness)</li>
+</ul></li>
+<li>Smoothness 가정
+<ul>
+<li>이 가정으로 인해 multivariate PCA에서 <span class="math inline">\(\sum\)</span>으로 구하게 되는 inner product가 functional PCA에서는 <span class="math inline">\(\int\)</span>로 구하게 됨</li>
+</ul></li>
+</ul>
+<p><br></p>
+</div>
+<div id="reference" class="section level2">
+<h2>Reference</h2>
+<ul>
+<li>Ramsay. &amp; Silverman. (2005), <strong>Functional Data Analysis 2nd edition.</strong> Springer</li>
+<li><a href="http://www.psych.mcgill.ca/misc/fda/index.html">Functional Data Analysis Website</a></li>
+</ul>
+</div>
+
+              
+            </div>
+          </div>
+          <div id="post-footer" class="post-footer main-content-wrap">
+            
+              
+                
+                
+                  <div class="post-footer-tags">
+                    <span class="text-color-light text-small">TAGGED IN</span><br/>
+                    
+  <a class="tag tag--primary tag--small" href="/tags/fpca/">FPCA</a>
+
+  <a class="tag tag--primary tag--small" href="/tags/fda/">FDA</a>
+
+  <a class="tag tag--primary tag--small" href="/tags/sparse/">sparse</a>
+
+  <a class="tag tag--primary tag--small" href="/tags/statistics/">statistics</a>
+
+                  </div>
+                
+              
+            
+            <div class="post-actions-wrap">
+  
+      <nav >
+        <ul class="post-actions post-action-nav">
+          
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--default tooltip--top" href="/2020/02/tensorflow-2.0-gpu-%EC%84%A4%EC%B9%98%ED%95%98%EA%B8%B0/" data-tooltip="Tensorflow 2.0 GPU 설치하기">
+              
+                  <i class="fa fa-angle-left"></i>
+                  <span class="hide-xs hide-sm text-small icon-ml">NEXT</span>
+                </a>
+            </li>
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--default tooltip--top" href="/2019/12/r-markdown%EC%9C%BC%EB%A1%9C-beamer-%EC%8A%AC%EB%9D%BC%EC%9D%B4%EB%93%9C-%EB%A7%8C%EB%93%A4%EA%B8%B0/" data-tooltip="R markdown으로 Beamer 슬라이드 만들기">
+              
+                  <span class="hide-xs hide-sm text-small icon-mr">PREVIOUS</span>
+                  <i class="fa fa-angle-right"></i>
+                </a>
+            </li>
+          
+        </ul>
+      </nav>
+    <ul class="post-actions post-action-share" >
+      
+        <li class="post-action hide-lg hide-md hide-sm">
+          <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions">
+            <i class="fa fa-share-alt"></i>
+          </a>
+        </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=/2020/01/functional-principal-component-analysis/">
+              <i class="fa fa-facebook-official"></i>
+            </a>
+          </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=/2020/01/functional-principal-component-analysis/">
+              <i class="fa fa-twitter"></i>
+            </a>
+          </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=/2020/01/functional-principal-component-analysis/">
+              <i class="fa fa-google-plus"></i>
+            </a>
+          </li>
+        
+      
+      
+        <li class="post-action">
+          <a class="post-action-btn btn btn--default" href="#disqus_thread">
+            <i class="fa fa-comment-o"></i>
+          </a>
+        </li>
+      
+      <li class="post-action">
+        
+          <a class="post-action-btn btn btn--default" href="#">
+        
+          <i class="fa fa-list"></i>
+        </a>
+      </li>
+    </ul>
+  
+</div>
+
+            
+              
+                <div id="disqus_thread">
+  <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+              
+            
+          </div>
+        </article>
+        <footer id="footer" class="main-content-wrap">
+  <span class="copyrights">
+    &copy; 2020 <a href="https://github.com/statKim">statKim</a>. All Rights Reserved
+  </span>
+</footer>
+
+      </div>
+      <div id="bottom-bar" class="post-bottom-bar" data-behavior="5">
+        <div class="post-actions-wrap">
+  
+      <nav >
+        <ul class="post-actions post-action-nav">
+          
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--default tooltip--top" href="/2020/02/tensorflow-2.0-gpu-%EC%84%A4%EC%B9%98%ED%95%98%EA%B8%B0/" data-tooltip="Tensorflow 2.0 GPU 설치하기">
+              
+                  <i class="fa fa-angle-left"></i>
+                  <span class="hide-xs hide-sm text-small icon-ml">NEXT</span>
+                </a>
+            </li>
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--default tooltip--top" href="/2019/12/r-markdown%EC%9C%BC%EB%A1%9C-beamer-%EC%8A%AC%EB%9D%BC%EC%9D%B4%EB%93%9C-%EB%A7%8C%EB%93%A4%EA%B8%B0/" data-tooltip="R markdown으로 Beamer 슬라이드 만들기">
+              
+                  <span class="hide-xs hide-sm text-small icon-mr">PREVIOUS</span>
+                  <i class="fa fa-angle-right"></i>
+                </a>
+            </li>
+          
+        </ul>
+      </nav>
+    <ul class="post-actions post-action-share" >
+      
+        <li class="post-action hide-lg hide-md hide-sm">
+          <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions">
+            <i class="fa fa-share-alt"></i>
+          </a>
+        </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=/2020/01/functional-principal-component-analysis/">
+              <i class="fa fa-facebook-official"></i>
+            </a>
+          </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=/2020/01/functional-principal-component-analysis/">
+              <i class="fa fa-twitter"></i>
+            </a>
+          </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=/2020/01/functional-principal-component-analysis/">
+              <i class="fa fa-google-plus"></i>
+            </a>
+          </li>
+        
+      
+      
+        <li class="post-action">
+          <a class="post-action-btn btn btn--default" href="#disqus_thread">
+            <i class="fa fa-comment-o"></i>
+          </a>
+        </li>
+      
+      <li class="post-action">
+        
+          <a class="post-action-btn btn btn--default" href="#">
+        
+          <i class="fa fa-list"></i>
+        </a>
+      </li>
+    </ul>
+  
+</div>
+
+      </div>
+      <div id="share-options-bar" class="share-options-bar" data-behavior="5">
+  <i id="btn-close-shareoptions" class="fa fa-close"></i>
+  <ul class="share-options">
+    
+      <li class="share-option">
+        <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=%2F2020%2F01%2Ffunctional-principal-component-analysis%2F">
+          <i class="fa fa-facebook-official"></i><span>Share on Facebook</span>
+        </a>
+      </li>
+    
+      <li class="share-option">
+        <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=%2F2020%2F01%2Ffunctional-principal-component-analysis%2F">
+          <i class="fa fa-twitter"></i><span>Share on Twitter</span>
+        </a>
+      </li>
+    
+      <li class="share-option">
+        <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=%2F2020%2F01%2Ffunctional-principal-component-analysis%2F">
+          <i class="fa fa-google-plus"></i><span>Share on Google&#43;</span>
+        </a>
+      </li>
+    
+  </ul>
+</div>
+<div id="share-options-mask" class="share-options-mask"></div>
+    </div>
+	
+    <div id="about">
+  <div id="about-card">
+    <div id="about-btn-close">
+      <i class="fa fa-remove"></i>
+    </div>
+    
+      <img id="about-card-picture" src="/img/profile.jpg" alt="Author&#39;s picture" />
+    
+    <h4 id="about-card-name">김현성</h4>
+    
+      <div id="about-card-bio">MS student in Statistics</div>
+    
+    
+      <div id="about-card-job">
+        <i class="fa fa-briefcase"></i>
+        <br/>
+        MS student at Chung-Ang Univ
+      </div>
+    
+    
+      <div id="about-card-location">
+        <i class="fa fa-map-marker"></i>
+        <br/>
+        Seoul, Korea
+      </div>
+    
+  </div>
+</div>
+
+    
+
+    
+  
+    
+      <div id="cover" style="background-image:url('/img/background.jpg');"></div>
+    
+  
+
+
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js" integrity="sha256-/BfiIkHlHoVihZdc6TFuj7MmJ0TWcWsMXkeDFwhi0zw=" crossorigin="anonymous"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.7/js/jquery.fancybox.min.js" integrity="sha256-GEAnjcTqVP+vBp3SSc8bEDQqvWAZMiHyUSIorrWwH50=" crossorigin="anonymous"></script>
+
+
+<script src="/js/script-pcw6v3xilnxydl1vddzazdverrnn9ctynvnxgwho987mfyqkuylcb1nlt.min.js"></script>
+
+
+<script lang="javascript">
+window.onload = updateMinWidth;
+window.onresize = updateMinWidth;
+document.getElementById("sidebar").addEventListener("transitionend", updateMinWidth);
+function updateMinWidth() {
+  var sidebar = document.getElementById("sidebar");
+  var main = document.getElementById("main");
+  main.style.minWidth = "";
+  var w1 = getComputedStyle(main).getPropertyValue("min-width");
+  var w2 = getComputedStyle(sidebar).getPropertyValue("width");
+  var w3 = getComputedStyle(sidebar).getPropertyValue("left");
+  main.style.minWidth = `calc(${w1} - ${w2} - ${w3})`;
+}
+</script>
+
+<script>
+$(document).ready(function() {
+  hljs.configure({ classPrefix: '', useBR: false });
+  $('pre.code-highlight > code, pre > code').each(function(i, block) {
+    if (!$(this).hasClass('codeblock')) {
+      $(this).addClass('codeblock');
+    }
+    hljs.highlightBlock(block);
+  });
+});
+</script>
+
+
+  
+    
+      <script>
+        var disqus_config = function () {
+          this.page.url = '\/2020\/01\/functional-principal-component-analysis\/';
+          
+            this.page.identifier = '\/2020\/01\/functional-principal-component-analysis\/'
+          
+        };
+        (function() {
+          
+          
+          if (window.location.hostname == "localhost") {
+            return;
+          }
+          var d = document, s = d.createElement('script');
+          var disqus_shortname = 'statkim';
+          s.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+
+          s.setAttribute('data-timestamp', +new Date());
+          (d.head || d.body).appendChild(s);
+        })();
+      </script>
+    
+  
+
+
+  <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-AMS_CHTML-full" integrity="sha256-GhM+5JHb6QUzOQPXSJLEWP7R73CbkisjzK5Eyij4U9w=" crossorigin="anonymous"></script>
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      CommonHTML: { linebreaks: { automatic: true } },
+      tex2jax: { inlineMath: [ ['$', '$'], ['\\(','\\)'] ], displayMath: [ ['$$','$$'], ['\\[', '\\]'] ], processEscapes: false },
+      messageStyle: 'none'
+    });
+  </script>
+
+
+
+    
+  </body>
+</html>
+
