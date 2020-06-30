@@ -1,0 +1,139 @@
+---
+title: blogdown으로 Github Blog 만들기 1/2
+date: '2020-06-30'
+coverImage: 
+coverMeta: out
+metaAlignment: center
+categories:
+  - blog
+tags:
+  - blogdown
+  - Rmarkdown
+---
+
+![](https://d33wubrfki0l68.cloudfront.net/b3944faeecdd4e2dc44d458701033a59bd2d4af3/daac7/resources/webinars/introducing-blogdown-a-new-r-package-to-make-blogs-and-websites-with-r-markdown/thumbnail_hu201a346444119137837514267e1750cf_14631_500x0_resize_q75_box.jpg)
+
+`blogdown`이란 `Jekyll`과 더불어 최근 인기가 많아지고 있는 `Hugo` 엔진을 사용하여 정적 페이지를 만들어주는 `R` 패키지입니다.
+특히, `R`을 자주 사용하는 사람들은 Rstudio에서 코딩하고 Rmarkdown을 많이 사용하게 되는데, `blogdown`은 Rmarkdown을 html로 변환시켜 페이지에 띄워주는 역할을 해줍니다. (`R`을 자주 사용하는 사람으로서 매우 편리하다고 생각!!)
+
+게다가 온라인에 [blogdown 책](https://bookdown.org/yihui/blogdown/)도 배포되어 있습니다!! (단, 영어...)
+
+<br>
+
+## 순서
+1. ##### R project 생성
+2. ##### `blogdown` 설치
+3. ##### `Hugo` 설치
+4. ##### Site 생성 (로컬에서 호스팅)
+5. ##### 기본 설정
+6. Github에 commit
+
+이번 글에서는 1~5번 까지의 과정을 설명해드리겠습니다. (6번은 좀 많이 복잡한듯 해서...)
+
+<br>
+
+### 1. R project 생성
+Rstudio를 켜고 R project를 만들어줍니다.
+저는 `blogdown_test`라는 이름의 project를 생성했습니다.
+생성된 후에는 폴더 안에 아무 파일도 없을겁니다. (이제 이것저것 생길거에요 ㅎㅎ)
+![](/img/blogdown_1.png)
+
+> `README.md`는 Github에 commit 했을 때, repository 메인에 나타나게 하는 문서로 여기서는 신경쓰지 않으셔도 됩니다.
+
+<br>
+
+### 2. `blogdown` 설치
+이제 `blogdown`을 설치합시다.
+```r
+install.packages("blogdown")
+library(blogdown)
+```
+
+<br>
+
+### 3. `Hugo` 설치
+`blogdown`은 Hugo 기반이기 때문에 Hugo를 설치해주어야 합니다.
+하지만 우리의 `blogdown`에는 Hugo를 설치해주는 함수가 있습니다!!
+```r
+# Hugo 다운로드
+install_hugo()
+```
+
+<br>
+
+### 4. Site 생성 (로컬에서 호스팅)
+기본 theme을 사용해서 테스트해보겠습니다.
+```r
+# Site 생성
+new_site()   # 기본 theme : hugo-lithium
+```
+기본 theme을 다운받으면서 자동으로 build 및 호스팅해주며 [http://127.0.0.1:4321/](http://127.0.0.1:4321/)에 들어가보면 다음의 심플한 페이지가 나옵니다.
+![](/img/blogdown_3.png)
+
+`blogdown_test` 폴더에도 파일이 많이 생겼죠?
+![](/img/blogdown_2.png)
+이중에 실제로 호스팅은 `public/` 폴더에 있는 파일들이 호스팅 됩니다.
+나머지 파일을 사용해서 페이지를 build해주고 build된 파일들이 `public/` 폴더에 들어가게 되요.
+
+이후에 블로그를 수정하거나 글을 작성할 때에는 다음과 같이 사용하면 됩니다.
+```r
+library(blogdown)
+
+build_site()    # Rmd를 html로 변환 (public/ 폴더가 수정됨)
+serve_site()    # 로컬에서 호스팅
+
+stop_server()   # 호스팅 종료 (또는 Rstudio를 꺼도 됨)
+```
+
+
+<br>
+
+### 5. 기본 설정
+기본적인 setting은 `config.toml`에서 설정할 수 있습니다.
+
+```yaml
+baseurl = "/"
+languageCode = "en-us"
+title = "A Hugo website"
+theme = "hugo-lithium"
+googleAnalytics = ""
+disqusShortname = ""
+ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_files$", "_cache$"]
+.
+.
+.
+
+```
+
+- `base_url` : Github 페이지로 사용하기 위해서는 `https://github계정.github.io/`로 설정해주어야 함
+- `title` : Site 제목
+- `theme` : Hugo theme
+- `googleAnalytics` : Google Analytics 설정
+- `disqusShortname` : disqus ID (disqus에 로그인 했을 때, 나오는 `@shortname`)
+
+
+
+<br>
+
+### 참고 - Theme 설정
+이 글에서는 기본 theme을 사용했지만 사실 Hugo에는 아주 많은 theme이 있습니다. (**[Hugo Themes](https://themes.gohugo.io/)에서 맘에 드는 것을 찾으면 됩니다.**)
+
+theme을 찾아서 다운받아 사용해도 되지만, build할 때 에러가 뜨는 경우가 많다고 합니다. (아마 theme마다 설정이 달라서 그런 것 같아요.)
+그럴 때에는 R project안의 파일을 지우고(혹시 blog 게시글 써놓은 것이 있다면 다른 곳에 저장해두세요!!) 다음의 코드로 site를 새로 build하면 됩니다.
+```r
+# theme 옵션 사용하여 site build
+# new_site(theme = "github_id/theme_repository")
+new_site(theme = "kakawait/hugo-tranquilpeak-theme")   # tranquilpeak theme 적용
+```
+
+
+
+<br>
+
+## Reference
+- [R blogdown을 사용한 나만의 블로그 만들기 1](https://www.youtube.com/watch?v=E3W6UmaItQo)
+- [R blogdown을 사용한 나만의 블로그 만들기 2](https://www.youtube.com/watch?v=ZcdDsRUT00U)
+- [R blogdown을 사용한 나만의 블로그 만들기 3](https://www.youtube.com/watch?v=OG8PYuCUfOQ)
+- [[R코홀릭!] R로 블로그를 만들어보자! blogdown](https://www.youtube.com/watch?v=zeYn0maX1nQ&t=2891s)
+- [Hosting a Hugo generated site on GitHub](https://tolikcode.github.io/post/hugoOnGitHub/)
+- [Deploying a hugo-based website on GitHub user pages](https://varmara.github.io/post/2019-01-15-deploying-a-hugo-based-website-on-github-user-pages/)
