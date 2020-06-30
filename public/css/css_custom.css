@@ -12,13 +12,11 @@ img {
     display: block;
 }
 
-
-
 code {
     font-family: 'D2 coding Ligature', monospace;
-    padding: 0.1em;
+    /* padding: 0.1em; */
     color: #c7254e;
-    background-color: #f9f2f4;
+    /* background-color: #f9f2f4;*/ 
 }
 
 .hljs {
@@ -74,3 +72,7 @@ blockquote span{
   font-weight: bold;
   margin-top:1em;
 }
+
+/* a tag css 수정 */
+a:link{}
+a:active,a:hover,a:visited{cursor:pointer;color:#349ef3;text-decoration:none}a:hover{color:#349ef3;text-decoration:underline}
