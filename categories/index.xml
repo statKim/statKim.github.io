@@ -2,111 +2,111 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Categories on statKim</title>
-    <link>/categories/</link>
+    <link>https://statkim.github.io/categories/</link>
     <description>Recent content in Categories on statKim</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko-kr</language>
-    <lastBuildDate>Sat, 01 Feb 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 30 Jun 2020 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="/categories/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://statkim.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
+      <title>blog</title>
+      <link>https://statkim.github.io/categories/blog/</link>
+      <pubDate>Tue, 30 Jun 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://statkim.github.io/categories/blog/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Python</title>
-      <link>/categories/python/</link>
+      <link>https://statkim.github.io/categories/python/</link>
       <pubDate>Sat, 01 Feb 2020 00:00:00 +0000</pubDate>
       
-      <guid>/categories/python/</guid>
+      <guid>https://statkim.github.io/categories/python/</guid>
       <description></description>
     </item>
     
     <item>
       <title>tensorflow</title>
-      <link>/categories/tensorflow/</link>
+      <link>https://statkim.github.io/categories/tensorflow/</link>
       <pubDate>Sat, 01 Feb 2020 00:00:00 +0000</pubDate>
       
-      <guid>/categories/tensorflow/</guid>
+      <guid>https://statkim.github.io/categories/tensorflow/</guid>
       <description></description>
     </item>
     
     <item>
       <title>FDA</title>
-      <link>/categories/fda/</link>
+      <link>https://statkim.github.io/categories/fda/</link>
       <pubDate>Mon, 20 Jan 2020 00:00:00 +0000</pubDate>
       
-      <guid>/categories/fda/</guid>
+      <guid>https://statkim.github.io/categories/fda/</guid>
       <description></description>
     </item>
     
     <item>
       <title>statistics</title>
-      <link>/categories/statistics/</link>
+      <link>https://statkim.github.io/categories/statistics/</link>
       <pubDate>Mon, 20 Jan 2020 00:00:00 +0000</pubDate>
       
-      <guid>/categories/statistics/</guid>
+      <guid>https://statkim.github.io/categories/statistics/</guid>
       <description></description>
     </item>
     
     <item>
       <title>R</title>
-      <link>/categories/r/</link>
+      <link>https://statkim.github.io/categories/r/</link>
       <pubDate>Fri, 27 Dec 2019 00:00:00 +0000</pubDate>
       
-      <guid>/categories/r/</guid>
+      <guid>https://statkim.github.io/categories/r/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Rmarkdown</title>
-      <link>/categories/rmarkdown/</link>
+      <link>https://statkim.github.io/categories/rmarkdown/</link>
       <pubDate>Fri, 27 Dec 2019 00:00:00 +0000</pubDate>
       
-      <guid>/categories/rmarkdown/</guid>
+      <guid>https://statkim.github.io/categories/rmarkdown/</guid>
       <description></description>
     </item>
     
     <item>
       <title>paper</title>
-      <link>/categories/paper/</link>
+      <link>https://statkim.github.io/categories/paper/</link>
       <pubDate>Tue, 24 Dec 2019 00:00:00 +0000</pubDate>
       
-      <guid>/categories/paper/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>blog</title>
-      <link>/categories/blog/</link>
-      <pubDate>Sun, 03 Nov 2019 00:00:00 +0000</pubDate>
-      
-      <guid>/categories/blog/</guid>
+      <guid>https://statkim.github.io/categories/paper/</guid>
       <description></description>
     </item>
     
     <item>
       <title>jekyll</title>
-      <link>/categories/jekyll/</link>
+      <link>https://statkim.github.io/categories/jekyll/</link>
       <pubDate>Sun, 03 Nov 2019 00:00:00 +0000</pubDate>
       
-      <guid>/categories/jekyll/</guid>
+      <guid>https://statkim.github.io/categories/jekyll/</guid>
       <description></description>
     </item>
     
     <item>
       <title>error</title>
-      <link>/categories/error/</link>
+      <link>https://statkim.github.io/categories/error/</link>
       <pubDate>Fri, 01 Nov 2019 00:00:00 +0000</pubDate>
       
-      <guid>/categories/error/</guid>
+      <guid>https://statkim.github.io/categories/error/</guid>
       <description></description>
     </item>
     
     <item>
       <title>book</title>
-      <link>/categories/book/</link>
+      <link>https://statkim.github.io/categories/book/</link>
       <pubDate>Thu, 09 May 2019 00:00:00 +0000</pubDate>
       
-      <guid>/categories/book/</guid>
+      <guid>https://statkim.github.io/categories/book/</guid>
       <description></description>
     </item>
     

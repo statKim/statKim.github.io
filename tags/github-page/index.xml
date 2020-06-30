@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>github-page on statKim</title>
-    <link>/tags/github-page/</link>
+    <link>https://statkim.github.io/tags/github-page/</link>
     <description>Recent content in github-page on statKim</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko-kr</language>
     <lastBuildDate>Sun, 03 Nov 2019 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="/tags/github-page/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://statkim.github.io/tags/github-page/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Jekyll 테마로 Github Blog 만들기</title>
-      <link>/2019/11/jekyll-%ED%85%8C%EB%A7%88%EB%A1%9C-github-blog-%EB%A7%8C%EB%93%A4%EA%B8%B0/</link>
+      <link>https://statkim.github.io/2019/11/jekyll-%ED%85%8C%EB%A7%88%EB%A1%9C-github-blog-%EB%A7%8C%EB%93%A4%EA%B8%B0/</link>
       <pubDate>Sun, 03 Nov 2019 00:00:00 +0000</pubDate>
       
-      <guid>/2019/11/jekyll-%ED%85%8C%EB%A7%88%EB%A1%9C-github-blog-%EB%A7%8C%EB%93%A4%EA%B8%B0/</guid>
+      <guid>https://statkim.github.io/2019/11/jekyll-%ED%85%8C%EB%A7%88%EB%A1%9C-github-blog-%EB%A7%8C%EB%93%A4%EA%B8%B0/</guid>
       <description>1. Ruby 설치 RubyInstaller for Windows에서 Ruby+Devkit 설치 프로그램 다운 및 설치 Ruby의 경우 최신버전보다는 이하 버전 사용을 권장 최신 버전의 경우 jekyll 인스톨시 호환성 문제가 있다</description>
     </item>
     

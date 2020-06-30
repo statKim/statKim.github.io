@@ -1,0 +1,693 @@
+<!DOCTYPE html>
+<html lang="ko-kr">
+  <head>
+    
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="generator" content="Hugo 0.73.0 with theme Tranquilpeak 0.4.8-BETA">
+<meta name="author" content="김현성">
+<meta name="keywords" content="">
+<meta name="description" content="blogdown이란 Jekyll과 더불어 최근 인기가 많아지고 있는 Hugo 엔진을 사용하여 정적 페이지를 만들어주는 R 패키지입니다. 특히, R을 자주 사용하는 사">
+
+
+<meta property="og:description" content="blogdown이란 Jekyll과 더불어 최근 인기가 많아지고 있는 Hugo 엔진을 사용하여 정적 페이지를 만들어주는 R 패키지입니다. 특히, R을 자주 사용하는 사">
+<meta property="og:type" content="article">
+<meta property="og:title" content="blogdown으로 Github Blog 만들기 1/2">
+<meta name="twitter:title" content="blogdown으로 Github Blog 만들기 1/2">
+<meta property="og:url" content="https://statkim.github.io/2020/06/blogdown%EC%9C%BC%EB%A1%9C-github-blog-%EB%A7%8C%EB%93%A4%EA%B8%B0-1/2/">
+<meta property="twitter:url" content="https://statkim.github.io/2020/06/blogdown%EC%9C%BC%EB%A1%9C-github-blog-%EB%A7%8C%EB%93%A4%EA%B8%B0-1/2/">
+<meta property="og:site_name" content="statKim">
+<meta property="og:description" content="blogdown이란 Jekyll과 더불어 최근 인기가 많아지고 있는 Hugo 엔진을 사용하여 정적 페이지를 만들어주는 R 패키지입니다. 특히, R을 자주 사용하는 사">
+<meta name="twitter:description" content="blogdown이란 Jekyll과 더불어 최근 인기가 많아지고 있는 Hugo 엔진을 사용하여 정적 페이지를 만들어주는 R 패키지입니다. 특히, R을 자주 사용하는 사">
+<meta property="og:locale" content="en-us">
+
+  
+    <meta property="article:published_time" content="2020-06-30T00:00:00">
+  
+  
+    <meta property="article:modified_time" content="2020-06-30T00:00:00">
+  
+  
+  
+    
+      <meta property="article:section" content="blog">
+    
+  
+  
+    
+      <meta property="article:tag" content="blogdown">
+    
+      <meta property="article:tag" content="Rmarkdown">
+    
+  
+
+
+<meta name="twitter:card" content="summary">
+
+
+
+
+
+
+
+
+
+
+
+  <meta property="og:image" content="https://statkim.github.io/img/profile.jpg">
+  <meta property="twitter:image" content="https://statkim.github.io/img/profile.jpg">
+
+
+    <title>blogdown으로 Github Blog 만들기 1/2</title>
+
+    <link rel="icon" href="https://statkim.github.io/img/favicon.ico">
+    
+
+    
+
+    <link rel="canonical" href="https://statkim.github.io/2020/06/blogdown%EC%9C%BC%EB%A1%9C-github-blog-%EB%A7%8C%EB%93%A4%EA%B8%B0-1/2/">
+
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.4/jquery.fancybox.min.css" integrity="sha256-vuXZ9LGmmwtjqFX1F+EKin1ThZMub58gKULUyf0qECk=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.4/helpers/jquery.fancybox-thumbs.min.css" integrity="sha256-SEa4XYAHihTcEP1f5gARTB2K26Uk8PsndQYHQC1f4jU=" crossorigin="anonymous" />
+    
+    
+    <link rel="stylesheet" href="https://statkim.github.io/css/style-twzjdbqhmnnacqs0pwwdzcdbt8yhv8giawvjqjmyfoqnvazl0dalmnhdkvp7.min.css" />
+    
+    
+      
+        <link rel="stylesheet"  href="https://statkim.github.io/css/css_custom.css">
+      
+    
+
+    
+      
+    
+    
+  </head>
+
+  <body>
+    <div id="blog">
+      <header id="header" data-behavior="5">
+  <i id="btn-open-sidebar" class="fa fa-lg fa-bars"></i>
+  <div class="header-title">
+    <a class="header-title-link" href="https://statkim.github.io/">statKim</a>
+  </div>
+  
+    
+      <a class="header-right-picture "
+         href="https://statkim.github.io/#about">
+    
+    
+    
+      
+        <img class="header-picture" src="https://statkim.github.io/img/profile.jpg" alt="Author&#39;s picture" />
+      
+    
+    </a>
+  
+</header>
+
+      <nav id="sidebar" data-behavior="5">
+  <div class="sidebar-container">
+    
+      <div class="sidebar-profile">
+        <a href="https://statkim.github.io/#about">
+          <img class="sidebar-profile-picture" src="https://statkim.github.io/img/profile.jpg" alt="Author&#39;s picture" />
+        </a>
+        <h4 class="sidebar-profile-name">김현성</h4>
+        
+          <h5 class="sidebar-profile-bio">MS student in Statistics</h5>
+        
+      </div>
+    
+    <ul class="sidebar-buttons">
+      
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://statkim.github.io/">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-home"></i>
+      
+      <span class="sidebar-button-desc">Home</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://statkim.github.io/categories">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-bookmark"></i>
+      
+      <span class="sidebar-button-desc">Categories</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://statkim.github.io/tags">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-tags"></i>
+      
+      <span class="sidebar-button-desc">Tags</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://statkim.github.io/archives">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-archive"></i>
+      
+      <span class="sidebar-button-desc">Archives</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://statkim.github.io/about">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-question"></i>
+      
+      <span class="sidebar-button-desc">About</span>
+    </a>
+  </li>
+
+
+    </ul>
+    <ul class="sidebar-buttons">
+      
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://github.com/statKim" target="_blank" rel="noopener">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-github"></i>
+      
+      <span class="sidebar-button-desc">GitHub</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="mailto:hyunsung1021@gmail.com" target="_blank" rel="noopener">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-envelope-o"></i>
+      
+      <span class="sidebar-button-desc">Email</span>
+    </a>
+  </li>
+
+
+    </ul>
+    <ul class="sidebar-buttons">
+      
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://statkim.github.io/index.xml">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-rss"></i>
+      
+      <span class="sidebar-button-desc">RSS</span>
+    </a>
+  </li>
+
+
+    </ul>
+  </div>
+</nav>
+
+      
+
+      <div id="main" data-behavior="5"
+        class="
+               hasCoverMetaOut
+               ">
+        <article class="post" itemscope itemType="http://schema.org/BlogPosting">
+          
+          
+            <div class="post-header main-content-wrap text-center">
+  
+    <h1 class="post-title" itemprop="headline">
+      blogdown으로 Github Blog 만들기 1/2
+    </h1>
+  
+  
+  <div class="postShorten-meta post-meta">
+    
+      <time itemprop="datePublished" datetime="2020-06-30T00:00:00Z">
+        
+  June 30, 2020
+
+      </time>
+    
+    
+  
+  
+    <span>in</span>
+    
+      <a class="category-link" href="https://statkim.github.io/categories/blog">blog</a>
+    
+  
+
+  </div>
+
+</div>
+          
+          <div class="post-content markdown" itemprop="articleBody">
+            <div class="main-content-wrap">
+              
+
+
+<p><img src="https://d33wubrfki0l68.cloudfront.net/b3944faeecdd4e2dc44d458701033a59bd2d4af3/daac7/resources/webinars/introducing-blogdown-a-new-r-package-to-make-blogs-and-websites-with-r-markdown/thumbnail_hu201a346444119137837514267e1750cf_14631_500x0_resize_q75_box.jpg" /></p>
+<p><code>blogdown</code>이란 <code>Jekyll</code>과 더불어 최근 인기가 많아지고 있는 <code>Hugo</code> 엔진을 사용하여 정적 페이지를 만들어주는 <code>R</code> 패키지입니다.
+특히, <code>R</code>을 자주 사용하는 사람들은 Rstudio에서 코딩하고 Rmarkdown을 많이 사용하게 되는데, <code>blogdown</code>은 Rmarkdown을 html로 변환시켜 페이지에 띄워주는 역할을 해줍니다. (<code>R</code>을 자주 사용하는 사람으로서 매우 편리하다고 생각!!)</p>
+<p>게다가 온라인에 <a href="https://bookdown.org/yihui/blogdown/">blogdown 책</a>도 배포되어 있습니다!! (단, 영어…)</p>
+<p><br></p>
+<div id="순서" class="section level2">
+<h2>순서</h2>
+<ol style="list-style-type: decimal">
+<li><h5 id="r-project-생성">R project 생성</h5></li>
+<li><h5 id="blogdown-설치"><code>blogdown</code> 설치</h5></li>
+<li><h5 id="hugo-설치"><code>Hugo</code> 설치</h5></li>
+<li><h5 id="site-생성-로컬에서-호스팅">Site 생성 (로컬에서 호스팅)</h5></li>
+<li><h5 id="기본-설정">기본 설정</h5></li>
+<li>Github에 commit</li>
+</ol>
+<p>이번 글에서는 1~5번 까지의 과정을 설명해드리겠습니다. (6번은 좀 많이 복잡한듯 해서…)</p>
+<p><br></p>
+<div id="r-project-생성-1" class="section level3">
+<h3>1. R project 생성</h3>
+<p>Rstudio를 켜고 R project를 만들어줍니다.
+저는 <code>blogdown_test</code>라는 이름의 project를 생성했습니다.
+생성된 후에는 폴더 안에 아무 파일도 없을겁니다. (이제 이것저것 생길거에요 ㅎㅎ)
+<img src="https://statkim.github.io/img/blogdown_1.png" /></p>
+<blockquote>
+<p><code>README.md</code>는 Github에 commit 했을 때, repository 메인에 나타나게 하는 문서로 여기서는 신경쓰지 않으셔도 됩니다.</p>
+</blockquote>
+<p><br></p>
+</div>
+<div id="blogdown-설치-1" class="section level3">
+<h3>2. <code>blogdown</code> 설치</h3>
+<p>이제 <code>blogdown</code>을 설치합시다.</p>
+<pre class="r"><code>install.packages(&quot;blogdown&quot;)
+library(blogdown)</code></pre>
+<p><br></p>
+</div>
+<div id="hugo-설치-1" class="section level3">
+<h3>3. <code>Hugo</code> 설치</h3>
+<p><code>blogdown</code>은 Hugo 기반이기 때문에 Hugo를 설치해주어야 합니다.
+하지만 우리의 <code>blogdown</code>에는 Hugo를 설치해주는 함수가 있습니다!!</p>
+<pre class="r"><code># Hugo 다운로드
+install_hugo()</code></pre>
+<p><br></p>
+</div>
+<div id="site-생성-로컬에서-호스팅-1" class="section level3">
+<h3>4. Site 생성 (로컬에서 호스팅)</h3>
+<p>기본 theme을 사용해서 테스트해보겠습니다.</p>
+<pre class="r"><code># Site 생성
+new_site()   # 기본 theme : hugo-lithium</code></pre>
+<p>기본 theme을 다운받으면서 자동으로 build 및 호스팅해주며 <a href="http://127.0.0.1:4321/">http://127.0.0.1:4321/</a>에 들어가보면 다음의 심플한 페이지가 나옵니다.
+<img src="https://statkim.github.io/img/blogdown_3.png" /></p>
+<p><code>blogdown_test</code> 폴더에도 파일이 많이 생겼죠?
+<img src="https://statkim.github.io/img/blogdown_2.png" />
+이중에 실제로 호스팅은 <code>public/</code> 폴더에 있는 파일들이 호스팅 됩니다.
+나머지 파일을 사용해서 페이지를 build해주고 build된 파일들이 <code>public/</code> 폴더에 들어가게 되요.</p>
+<p>이후에 블로그를 수정하거나 글을 작성할 때에는 다음과 같이 사용하면 됩니다.</p>
+<pre class="r"><code>library(blogdown)
+
+build_site()    # Rmd를 html로 변환 (public/ 폴더가 수정됨)
+serve_site()    # 로컬에서 호스팅
+
+stop_server()   # 호스팅 종료 (또는 Rstudio를 꺼도 됨)</code></pre>
+<p><br></p>
+</div>
+<div id="기본-설정-1" class="section level3">
+<h3>5. 기본 설정</h3>
+<p>기본적인 setting은 <code>config.toml</code>에서 설정할 수 있습니다.</p>
+<pre class="yaml"><code>baseurl = &quot;/&quot;
+languageCode = &quot;en-us&quot;
+title = &quot;A Hugo website&quot;
+theme = &quot;hugo-lithium&quot;
+googleAnalytics = &quot;&quot;
+disqusShortname = &quot;&quot;
+ignoreFiles = [&quot;\\.Rmd$&quot;, &quot;\\.Rmarkdown$&quot;, &quot;_files$&quot;, &quot;_cache$&quot;]
+.
+.
+.
+</code></pre>
+<ul>
+<li><code>base_url</code> : Github 페이지로 사용하기 위해서는 <code>https://github계정.github.io/</code>로 설정해주어야 함</li>
+<li><code>title</code> : Site 제목</li>
+<li><code>theme</code> : Hugo theme</li>
+<li><code>googleAnalytics</code> : Google Analytics 설정</li>
+<li><code>disqusShortname</code> : disqus ID (disqus에 로그인 했을 때, 나오는 <code>@shortname</code>)</li>
+</ul>
+<p><br></p>
+</div>
+<div id="참고---theme-설정" class="section level3">
+<h3>참고 - Theme 설정</h3>
+<p>이 글에서는 기본 theme을 사용했지만 사실 Hugo에는 아주 많은 theme이 있습니다. (<strong><a href="https://themes.gohugo.io/">Hugo Themes</a>에서 맘에 드는 것을 찾으면 됩니다.</strong>)</p>
+<p>theme을 찾아서 다운받아 사용해도 되지만, build할 때 에러가 뜨는 경우가 많다고 합니다. (아마 theme마다 설정이 달라서 그런 것 같아요.)
+그럴 때에는 R project안의 파일을 지우고(혹시 blog 게시글 써놓은 것이 있다면 다른 곳에 저장해두세요!!) 다음의 코드로 site를 새로 build하면 됩니다.</p>
+<pre class="r"><code># theme 옵션 사용하여 site build
+# new_site(theme = &quot;github_id/theme_repository&quot;)
+new_site(theme = &quot;kakawait/hugo-tranquilpeak-theme&quot;)   # tranquilpeak theme 적용</code></pre>
+<p><br></p>
+</div>
+</div>
+<div id="reference" class="section level2">
+<h2>Reference</h2>
+<ul>
+<li><a href="https://www.youtube.com/watch?v=E3W6UmaItQo">R blogdown을 사용한 나만의 블로그 만들기 1</a></li>
+<li><a href="https://www.youtube.com/watch?v=ZcdDsRUT00U">R blogdown을 사용한 나만의 블로그 만들기 2</a></li>
+<li><a href="https://www.youtube.com/watch?v=OG8PYuCUfOQ">R blogdown을 사용한 나만의 블로그 만들기 3</a></li>
+<li><a href="https://www.youtube.com/watch?v=zeYn0maX1nQ&amp;t=2891s">[R코홀릭!] R로 블로그를 만들어보자! blogdown</a></li>
+<li><a href="https://tolikcode.github.io/post/hugoOnGitHub/">Hosting a Hugo generated site on GitHub</a></li>
+<li><a href="https://varmara.github.io/post/2019-01-15-deploying-a-hugo-based-website-on-github-user-pages/">Deploying a hugo-based website on GitHub user pages</a></li>
+</ul>
+</div>
+
+              
+            </div>
+          </div>
+          <div id="post-footer" class="post-footer main-content-wrap">
+            
+              
+                
+                
+                  <div class="post-footer-tags">
+                    <span class="text-color-light text-small">TAGGED IN</span><br/>
+                    
+  <a class="tag tag--primary tag--small" href="https://statkim.github.io/tags/blogdown/">blogdown</a>
+
+  <a class="tag tag--primary tag--small" href="https://statkim.github.io/tags/rmarkdown/">Rmarkdown</a>
+
+                  </div>
+                
+              
+            
+            <div class="post-actions-wrap">
+  
+      <nav >
+        <ul class="post-actions post-action-nav">
+          
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--disabled">
+              
+                  <i class="fa fa-angle-left"></i>
+                  <span class="hide-xs hide-sm text-small icon-ml">NEXT</span>
+                </a>
+            </li>
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://statkim.github.io/2020/02/tensorflow-2.0-gpu-%EC%84%A4%EC%B9%98%ED%95%98%EA%B8%B0/" data-tooltip="Tensorflow 2.0 GPU 설치하기">
+              
+                  <span class="hide-xs hide-sm text-small icon-mr">PREVIOUS</span>
+                  <i class="fa fa-angle-right"></i>
+                </a>
+            </li>
+          
+        </ul>
+      </nav>
+    <ul class="post-actions post-action-share" >
+      
+        <li class="post-action hide-lg hide-md hide-sm">
+          <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions">
+            <i class="fa fa-share-alt"></i>
+          </a>
+        </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://statkim.github.io/2020/06/blogdown%EC%9C%BC%EB%A1%9C-github-blog-%EB%A7%8C%EB%93%A4%EA%B8%B0-1/2/">
+              <i class="fa fa-facebook-official"></i>
+            </a>
+          </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://statkim.github.io/2020/06/blogdown%EC%9C%BC%EB%A1%9C-github-blog-%EB%A7%8C%EB%93%A4%EA%B8%B0-1/2/">
+              <i class="fa fa-twitter"></i>
+            </a>
+          </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://statkim.github.io/2020/06/blogdown%EC%9C%BC%EB%A1%9C-github-blog-%EB%A7%8C%EB%93%A4%EA%B8%B0-1/2/">
+              <i class="fa fa-google-plus"></i>
+            </a>
+          </li>
+        
+      
+      
+        <li class="post-action">
+          <a class="post-action-btn btn btn--default" href="#disqus_thread">
+            <i class="fa fa-comment-o"></i>
+          </a>
+        </li>
+      
+      <li class="post-action">
+        
+          <a class="post-action-btn btn btn--default" href="#">
+        
+          <i class="fa fa-list"></i>
+        </a>
+      </li>
+    </ul>
+  
+</div>
+
+            
+              
+                <div id="disqus_thread">
+  <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+              
+            
+          </div>
+        </article>
+        <footer id="footer" class="main-content-wrap">
+  <span class="copyrights">
+    &copy; 2020 <a href="https://github.com/statKim">statKim</a>. All Rights Reserved
+  </span>
+</footer>
+
+      </div>
+      <div id="bottom-bar" class="post-bottom-bar" data-behavior="5">
+        <div class="post-actions-wrap">
+  
+      <nav >
+        <ul class="post-actions post-action-nav">
+          
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--disabled">
+              
+                  <i class="fa fa-angle-left"></i>
+                  <span class="hide-xs hide-sm text-small icon-ml">NEXT</span>
+                </a>
+            </li>
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://statkim.github.io/2020/02/tensorflow-2.0-gpu-%EC%84%A4%EC%B9%98%ED%95%98%EA%B8%B0/" data-tooltip="Tensorflow 2.0 GPU 설치하기">
+              
+                  <span class="hide-xs hide-sm text-small icon-mr">PREVIOUS</span>
+                  <i class="fa fa-angle-right"></i>
+                </a>
+            </li>
+          
+        </ul>
+      </nav>
+    <ul class="post-actions post-action-share" >
+      
+        <li class="post-action hide-lg hide-md hide-sm">
+          <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions">
+            <i class="fa fa-share-alt"></i>
+          </a>
+        </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://statkim.github.io/2020/06/blogdown%EC%9C%BC%EB%A1%9C-github-blog-%EB%A7%8C%EB%93%A4%EA%B8%B0-1/2/">
+              <i class="fa fa-facebook-official"></i>
+            </a>
+          </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://statkim.github.io/2020/06/blogdown%EC%9C%BC%EB%A1%9C-github-blog-%EB%A7%8C%EB%93%A4%EA%B8%B0-1/2/">
+              <i class="fa fa-twitter"></i>
+            </a>
+          </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://statkim.github.io/2020/06/blogdown%EC%9C%BC%EB%A1%9C-github-blog-%EB%A7%8C%EB%93%A4%EA%B8%B0-1/2/">
+              <i class="fa fa-google-plus"></i>
+            </a>
+          </li>
+        
+      
+      
+        <li class="post-action">
+          <a class="post-action-btn btn btn--default" href="#disqus_thread">
+            <i class="fa fa-comment-o"></i>
+          </a>
+        </li>
+      
+      <li class="post-action">
+        
+          <a class="post-action-btn btn btn--default" href="#">
+        
+          <i class="fa fa-list"></i>
+        </a>
+      </li>
+    </ul>
+  
+</div>
+
+      </div>
+      <div id="share-options-bar" class="share-options-bar" data-behavior="5">
+  <i id="btn-close-shareoptions" class="fa fa-close"></i>
+  <ul class="share-options">
+    
+      <li class="share-option">
+        <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fstatkim.github.io%2F2020%2F06%2Fblogdown%25EC%259C%25BC%25EB%25A1%259C-github-blog-%25EB%25A7%258C%25EB%2593%25A4%25EA%25B8%25B0-1%2F2%2F">
+          <i class="fa fa-facebook-official"></i><span>Share on Facebook</span>
+        </a>
+      </li>
+    
+      <li class="share-option">
+        <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=https%3A%2F%2Fstatkim.github.io%2F2020%2F06%2Fblogdown%25EC%259C%25BC%25EB%25A1%259C-github-blog-%25EB%25A7%258C%25EB%2593%25A4%25EA%25B8%25B0-1%2F2%2F">
+          <i class="fa fa-twitter"></i><span>Share on Twitter</span>
+        </a>
+      </li>
+    
+      <li class="share-option">
+        <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=https%3A%2F%2Fstatkim.github.io%2F2020%2F06%2Fblogdown%25EC%259C%25BC%25EB%25A1%259C-github-blog-%25EB%25A7%258C%25EB%2593%25A4%25EA%25B8%25B0-1%2F2%2F">
+          <i class="fa fa-google-plus"></i><span>Share on Google&#43;</span>
+        </a>
+      </li>
+    
+  </ul>
+</div>
+<div id="share-options-mask" class="share-options-mask"></div>
+    </div>
+	
+    <div id="about">
+  <div id="about-card">
+    <div id="about-btn-close">
+      <i class="fa fa-remove"></i>
+    </div>
+    
+      <img id="about-card-picture" src="https://statkim.github.io/img/profile.jpg" alt="Author&#39;s picture" />
+    
+    <h4 id="about-card-name">김현성</h4>
+    
+      <div id="about-card-bio">MS student in Statistics</div>
+    
+    
+      <div id="about-card-job">
+        <i class="fa fa-briefcase"></i>
+        <br/>
+        MS student at Chung-Ang Univ
+      </div>
+    
+    
+      <div id="about-card-location">
+        <i class="fa fa-map-marker"></i>
+        <br/>
+        Seoul, Korea
+      </div>
+    
+  </div>
+</div>
+
+    
+
+    
+  
+    
+      <div id="cover" style="background-image:url('https://statkim.github.io/img/background.jpg');"></div>
+    
+  
+
+
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js" integrity="sha256-/BfiIkHlHoVihZdc6TFuj7MmJ0TWcWsMXkeDFwhi0zw=" crossorigin="anonymous"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.7/js/jquery.fancybox.min.js" integrity="sha256-GEAnjcTqVP+vBp3SSc8bEDQqvWAZMiHyUSIorrWwH50=" crossorigin="anonymous"></script>
+
+
+<script src="https://statkim.github.io/js/script-pcw6v3xilnxydl1vddzazdverrnn9ctynvnxgwho987mfyqkuylcb1nlt.min.js"></script>
+
+
+<script lang="javascript">
+window.onload = updateMinWidth;
+window.onresize = updateMinWidth;
+document.getElementById("sidebar").addEventListener("transitionend", updateMinWidth);
+function updateMinWidth() {
+  var sidebar = document.getElementById("sidebar");
+  var main = document.getElementById("main");
+  main.style.minWidth = "";
+  var w1 = getComputedStyle(main).getPropertyValue("min-width");
+  var w2 = getComputedStyle(sidebar).getPropertyValue("width");
+  var w3 = getComputedStyle(sidebar).getPropertyValue("left");
+  main.style.minWidth = `calc(${w1} - ${w2} - ${w3})`;
+}
+</script>
+
+<script>
+$(document).ready(function() {
+  hljs.configure({ classPrefix: '', useBR: false });
+  $('pre.code-highlight > code, pre > code').each(function(i, block) {
+    if (!$(this).hasClass('codeblock')) {
+      $(this).addClass('codeblock');
+    }
+    hljs.highlightBlock(block);
+  });
+});
+</script>
+
+
+  
+    
+      <script>
+        var disqus_config = function () {
+          this.page.url = 'https:\/\/statkim.github.io\/2020\/06\/blogdown%EC%9C%BC%EB%A1%9C-github-blog-%EB%A7%8C%EB%93%A4%EA%B8%B0-1\/2\/';
+          
+            this.page.identifier = '\/2020\/06\/blogdown%EC%9C%BC%EB%A1%9C-github-blog-%EB%A7%8C%EB%93%A4%EA%B8%B0-1\/2\/'
+          
+        };
+        (function() {
+          
+          
+          if (window.location.hostname == "localhost") {
+            return;
+          }
+          var d = document, s = d.createElement('script');
+          var disqus_shortname = 'statkim';
+          s.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+
+          s.setAttribute('data-timestamp', +new Date());
+          (d.head || d.body).appendChild(s);
+        })();
+      </script>
+    
+  
+
+
+  <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-AMS_CHTML-full" integrity="sha256-GhM+5JHb6QUzOQPXSJLEWP7R73CbkisjzK5Eyij4U9w=" crossorigin="anonymous"></script>
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      CommonHTML: { linebreaks: { automatic: true } },
+      tex2jax: { inlineMath: [ ['$', '$'], ['\\(','\\)'] ], displayMath: [ ['$$','$$'], ['\\[', '\\]'] ], processEscapes: false },
+      messageStyle: 'none'
+    });
+  </script>
+
+
+
+    
+  </body>
+</html>
+
