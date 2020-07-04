@@ -9,7 +9,7 @@ date: "2020-06-28"
 
 I'm a master's student of the Department of Statistics at Chung-Ang University and I work in [Multivariate Statistics Lab](https://sites.google.com/site/yaejilim/).
 
-My research interests are `Principal Component Analysis(PCA)`, `Functional Data Analysis(FDA)`, `Machine Learning`, and I'm working on `Functional principal component analysis(FPCA)`.
+My research interests are `Functional Data Analysis(FDA)`, `Spatio-temporal Data Analysis`, `Principal Component Analysis(PCA)`, `Machine Learning`, and I'm working on `Functional principal component analysis(FPCA)`.
 
 I love `R` to handle the data, but I sometimes use `Python`.
 
@@ -22,10 +22,8 @@ I love `R` to handle the data, but I sometimes use `Python`.
 <br>
 
 ## Project
-- **An Analysis of the Effectiveness of Hypertension and Diabetes Registration Management Project in Gyeonggi Province**, 2019.07 - 2020.02
+- **경기도 고혈압·당뇨병 등록관리사업 효과평가 분석**, 2019.07 - 2020.02
 - **Industry-Academic Cooperation Project(Hyundai Mobis)**, *빅데이터 기반 서비스부품 수요예측 강화*, 2019.02 - 2019.09
-- [**Da Vinci SW Hackathon 2018**](https://github.com/statKim/Da_Vinci_SW_Hackathon), *눈치싸움 대작전*, 2018.11 - 2018.12
-- [**Web Application Development using Big Data**](https://github.com/statKim/2018_Multicampus_Project), *창업 with Data*, 2018.07 - 2018.08
 
 <br>
 
@@ -43,12 +41,12 @@ I love `R` to handle the data, but I sometimes use `Python`.
 <br>
 
 ## Research Interests
-- `Principal Component Analysis`
 - `Functional Data Analysis`
+- `Spatio-temporal Data Analysis`
+- `Principal Component Analysis`
 - `Machine Learning`
-- `Statistical Learning`
 
 <br>
 
 ## Teaching Experience
-- Teaching assistant, 53994, Introduction to Statistical Learning, Chung-Ang University, 2019 Fall
+- Teaching Assistant, 53994, Introduction to Statistical Learning, Chung-Ang University, 2019 Fall
