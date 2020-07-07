@@ -1,0 +1,145 @@
+---
+title: blogdown으로 Github Blog 만들기 2/2
+date: '2020-07-07'
+coverImage: 
+coverMeta: out
+metaAlignment: center
+categories:
+  - blog
+tags:
+  - blogdown
+  - Rmarkdown
+  - Hugo
+---
+
+![](https://d33wubrfki0l68.cloudfront.net/b3944faeecdd4e2dc44d458701033a59bd2d4af3/daac7/resources/webinars/introducing-blogdown-a-new-r-package-to-make-blogs-and-websites-with-r-markdown/thumbnail_hu201a346444119137837514267e1750cf_14631_500x0_resize_q75_box.jpg)
+
+
+## 순서
+1. R project 생성
+2. `blogdown` 설치
+3. `Hugo` 설치
+4. Site 생성 (로컬에서 호스팅)
+5. 기본 설정
+6. ##### Github에 push (subtree 이용)
+7. ##### Git으로 블로그 관리
+
+이번 글에서는 지난 글에 이어서 Github에 push하여 블로그를 완성해보겠습니다.
+
+<br>
+
+### 6. Github에 push (subtree 이용)
+우선 [Github](https://github.com/)에 `계정명.github.io`라는 repository를 하나 만들어야합니다.
+저 같은 경우, github 계정이 `statKim`이기 때문에 `statKim.github.io`라는 이름의 repo를 만들었습니다.
+
+> repo도 만들었겠다! 이제 commit만 하면 내 블로그 생긴다~~
+
+라고 생각하실 수 있지만 몇 가지 큰 문제가 남았습니다...
+
+Github은 jekyll 기반으로 만들어져 있어 Hugo로 만들어진 페이지를 그대로 올리면 제대로 작동하지 않는다고 합니다.
+그래서 build해줄 repo가 1개 필요하고 build된 사이트를 띄워줄 repo(`계정명.github.io`), **총 2개의 repo**가 필요하게 됩니다.
+
+하지만 저는 repo 2개를 만들어서 관리하는게 깔끔해보이지 않기 때문에, 여기서는 Git의 `subtree`라는 방법을 사용하여 1개 repo(`계정명.github.io`)에서 build와 호스팅 모두 가능하도록 해보겠습니다. (사실 subtree에 대해 잘 아는 것이 아니지만 구글링으로 찾은 방법을 소개해드리려 합니다.)
+
+결론부터 말씀드리면 `master` branch에는 build된 페이지(`public/`)가 들어가게 되고 `source` branch에는 전체 폴더가 들어가게 됩니다.
+즉, 다음의 구조를 가지게 됩니다.
+```
+github계정명.github.io/ (source)
+  └ .gitignore
+  └ README.md
+  └ config.toml
+  └ content/
+  └ static/
+  └ theme/
+  └ public/ (master)
+```
+
+
+이제, 본격적으로 subtree를 사용하여 Github에 push해보겠습니다.
+
+#### 6-1. `master` branch에 initial commit
+```bash
+git add README.md
+git commit -m "Initial commit on master"
+```
+
+#### 6-2. `source` branch 생성 및 initial commit
+```bash
+# 기존 히스토리와 상관없이 비어있는 branch 생성
+git checkout --orphan source
+
+# public/ 폴더 제거 (master branch를 subtree로 만들기 위함)
+rm -rf public
+
+git add .
+git commit -m "Initial commit on source branch"
+```
+
+#### 6-3. `github계정명.github.io` repo에 push
+```bash
+git remote add origin https://github.com/github계정명/github계정명.github.io.
+
+git push origin master
+git push origin source
+```
+
+#### 6-4. subtree 지정 (`public/` 폴더 없이 실행해야합니다.)
+```bash
+git subtree add --prefix=public https://github.com/github계정명/github계정명.github.io.git master --squash
+```
+
+#### 6-5. 블로그 build (잠깐 다시 R에서 실행해줘야 해요!!)
+```R
+library(blogdown)
+build_site()
+```
+
+#### 6-6. 생성된 블로그 Github에 push
+```bash
+git add .
+git commit -m "블로그 생성"
+git push origin source
+
+git subtree push --prefix=public https://github.com/github계정명/github계정명.github.io.git master
+```
+
+
+<br>
+
+### 7. Git으로 블로그 관리
+이후에 블로그 수정사항을 반영할 때에는 **6-6** 방법대로 실행하면 됩니다.
+하지만 저는 코드 4줄 타이핑하는 것도 귀찮기 때문에...(사실 subtree 구문이 잘 안외워지더라구요 ㅠㅠ)
+
+그리하여 shell script를 이용하여 자동화(?)를 해봤습니다.
+저는 `subtree_push.sh`라는 파일로 만들어서 아주 잘 사용하고 있습니다 ㅎㅎ
+
+사용할 때에는 Git bash에서 `bash subtree_push.sh "commit 메시지"`와 같이 사용하면 됩니다!!
+
+- `subtree_push.sh`
+  ```bash
+  #!/bin/bash
+  
+  commit_msg=$1
+  
+  # commit to source branch
+  git add .
+  git commit -m "${commit_msg}"
+  git push origin source
+  
+  # commit to master branch(blog)
+  git subtree push --prefix=public https://github.com/github계정명/github계정명.github.io.git master
+  
+  echo "Blog update 완료"
+  ```
+
+
+
+<br>
+
+## Reference
+- [R blogdown을 사용한 나만의 블로그 만들기 1](https://www.youtube.com/watch?v=E3W6UmaItQo)
+- [R blogdown을 사용한 나만의 블로그 만들기 2](https://www.youtube.com/watch?v=ZcdDsRUT00U)
+- [R blogdown을 사용한 나만의 블로그 만들기 3](https://www.youtube.com/watch?v=OG8PYuCUfOQ)
+- [[R코홀릭!] R로 블로그를 만들어보자! blogdown](https://www.youtube.com/watch?v=zeYn0maX1nQ&t=2891s)
+- [Hosting a Hugo generated site on GitHub](https://tolikcode.github.io/post/hugoOnGitHub/)
+- [Deploying a hugo-based website on GitHub user pages](https://varmara.github.io/post/2019-01-15-deploying-a-hugo-based-website-on-github-user-pages/)
