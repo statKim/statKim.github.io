@@ -330,36 +330,36 @@ if (!doNotTrack) {
 <li>아래와 같이 <code>##</code>으로 슬라이드를 구분</li>
 <li>수식의 경우, LaTeX 코드 사용</li>
 </ul>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-markdown" data-lang="markdown"><span style="color:#75715e">## Slide with Math
-</span><span style="color:#75715e"></span>
-<span style="color:#66d9ef">-</span> inline math : $\widehat X = \sum_{i=1}^n X_i$
-<span style="color:#66d9ef">-</span> math block
+<pre><code>## Slide with Math
+
+- inline math : $\widehat X = \sum_{i=1}^n X_i$
+- math block
   $$
   \widehat X = \sum_{i=1}^n X_i
   $$
-</code></pre></div><p><img src="https://github.com/statKim/TIL/blob/master/R/images/rmd_beamer2.png?raw=true" alt=""></p>
+</code></pre><p><img src="https://github.com/statKim/TIL/blob/master/R/images/rmd_beamer2.png?raw=true" alt=""></p>
 <!-- raw HTML omitted -->
 <h3 id="r-output-넣기">R output 넣기</h3>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-markdown" data-lang="markdown"><span style="color:#75715e">## Slide with R Output
-</span><span style="color:#75715e"></span>
-```{r cars, echo = TRUE}
+<pre><code>## Slide with R Output
+
+```{r cars, echo = TRUE}
 summary(cars)
-```
-</code></pre></div><p><img src="https://github.com/statKim/TIL/blob/master/R/images/rmd_beamer3.png?raw=true" alt=""></p>
+```
+</code></pre><p><img src="https://github.com/statKim/TIL/blob/master/R/images/rmd_beamer3.png?raw=true" alt=""></p>
 <!-- raw HTML omitted -->
 <h3 id="그래프-넣기">그래프 넣기</h3>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-markdown" data-lang="markdown"><span style="color:#75715e">## Slide with Plot
-</span><span style="color:#75715e"></span>
-```{r pressure}
+<pre><code>## Slide with Plot
+
+```{r pressure}
 plot(pressure)
-```
-</code></pre></div><p><img src="https://github.com/statKim/TIL/blob/master/R/images/rmd_beamer4.png?raw=true" alt=""></p>
+```
+</code></pre><p><img src="https://github.com/statKim/TIL/blob/master/R/images/rmd_beamer4.png?raw=true" alt=""></p>
 <!-- raw HTML omitted -->
 <h3 id="그래프-caption-및-크기-조절">그래프 caption 및 크기 조절</h3>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-markdown" data-lang="markdown">```{r pressure, fig.cap=&#34;caption&#34;, out.width=&#34;250px&#34;, out.height=&#34;180px&#34;}
+<pre><code>```{r pressure, fig.cap=&quot;caption&quot;, out.width=&quot;250px&quot;, out.height=&quot;180px&quot;}
 plot(pressure)
-​```
-</code></pre></div><p><img src="https://github.com/statKim/TIL/blob/master/R/images/rmd_beamer5.png?raw=true" alt=""></p>
+```
+</code></pre><p><img src="https://github.com/statKim/TIL/blob/master/R/images/rmd_beamer5.png?raw=true" alt=""></p>
 
               
             </div>

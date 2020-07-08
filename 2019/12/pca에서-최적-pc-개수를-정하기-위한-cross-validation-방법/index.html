@@ -353,7 +353,7 @@ $$</p>
 <ol>
 <li>
 <p>$x_{ij}$를 cross-validation하기 위해 2개의 PCA model를 fit</p>
-<p><img src="img/EK_cv.png" alt="EK cross-validation"></p>
+<p><img src="https://github.com/statKim/TIL/blob/master/Statistics/img/EK_cv.png?raw=true" alt="EK cross-validation"></p>
 <ul>
 <li>
 <p>$i$th row를 제외한 PCA model
@@ -371,19 +371,17 @@ $$
 </ul>
 </li>
 <li>
-<p>Proposed method to combine 2 models by Eastement and Krzanowski</p>
-</li>
-</ol>
-<p>$$
+<p>Proposed method to combine 2 models by Eastement and Krzanowski
+$$
 \hat{x}_{ij}(k) = \sum^k u_i^{(-j)}(k)\sqrt{s^{(-j)}(k)} \sqrt{s^{(-i)}(k)} v_j^{(-i)}(k)
 $$</p>
-<ol start="3">
-<li>Calculate CV error</li>
-</ol>
-<p>$$
-CV(k) = \frac{1}{IJ}\sum_i \sum_j (\hat{x}<em>{ij}(k) - x</em>{ij})^2
+</li>
+<li>
+<p>Calculate CV error
+$$
+CV(k) = \frac{1}{IJ} \sum_i \sum_j \left( \hat x_{ij}(k) - x_{ij} \right)^2
 $$</p>
-<ol start="4">
+</li>
 <li>
 <p>Compare the model complexity
 $$

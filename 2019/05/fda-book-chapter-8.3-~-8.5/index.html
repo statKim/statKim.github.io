@@ -328,7 +328,7 @@ $$</p>
 </li>
 <li>
 <p>Let $\mathbf{B}$ : $K \times n$ matrix representing the first $K$ PC functions $\xi_1,&hellip;,\xi_K$,</p>
-<p>지금은 $\mathbf{B}_{m \times n}$의 $m$th row가 구간 $\mathbf{\tau}$에서 $n$개의 equally spaced argument values, $\xi_m(t_1),&hellip;,\xi_m(t_n)$를 가진다고 가정</p>
+<p>지금은 $\mathbf{B}_{m \times n}$의 $m$th row가 구간 $\boldsymbol{\tau}$에서 $n$개의 equally spaced argument values, $\xi_m(t_1),&hellip;,\xi_m(t_n)$를 가진다고 가정</p>
 <p>values of the rotated basis functions $\psi=\mathbf{T}\xi$의 대응되는 matrix $\mathbf{A}$ will be given by</p>
 <p>$$
 \mathbf{A}=\mathbf{TB}
@@ -361,7 +361,7 @@ $$</p>
 <h3 id="841-discretizing-the-functions">8.4.1 Discretizing the functions</h3>
 <ul>
 <li>
-<p>$x_i \rightarrow s_j,$ where $s_j$ is $n$ equally spaced values that spans the interval $\mathbf \tau$</p>
+<p>$x_i \rightarrow s_j,$ where $s_j$ is $n$ equally spaced values that spans the interval $\boldsymbol \tau$</p>
 <p>=&gt; 변환된 $N \times n$ matrix $\mathbf X$로 standard multivariate PCA를 할 수 있음</p>
 <p>$$ \mathbf{Vu=\lambda u} $$</p>
 </li>
@@ -384,18 +384,18 @@ $$</p>
 <p>Let</p>
 <ul>
 <li>sample var-cov matrix $\mathbf V=\frac{1}{N}\mathbf{X&rsquo;X}$ have elements $v(s_j,s_k)$ where $v(s,t)$ is the sample covariance function.</li>
-<li>$\tilde{\mathbf \xi}$ : $n$-vector of values $\xi(s_j)$ =&gt; $n \times 1$ vector (after discritization)</li>
-<li>$w=\frac{T}{n}$ where $T$ is the length of the interval $\mathbf \tau$ (discretization된 points의 간격)</li>
+<li>$\tilde{\boldsymbol \xi}$ : $n$-vector of values $\xi(s_j)$ =&gt; $n \times 1$ vector (after discritization)</li>
+<li>$w=\frac{T}{n}$ where $T$ is the length of the interval $\boldsymbol \tau$ (discretization된 points의 간격)</li>
 </ul>
 </li>
 <li>
 <p>For each $s_j,$</p>
 <p>$$
-V\xi(s_j)=\int v(s_j,s)\xi(s)ds \approx w\sum v(s_j,s_k) \tilde{\mathbf \xi_k},
+V\xi(s_j)=\int v(s_j,s)\xi(s)ds \approx w\sum v(s_j,s_k) \tilde{\boldsymbol \xi_k},
 $$</p>
 <p>=&gt; functional eigen equation $V\xi=\rho\xi$ has the approximte discrete form</p>
 <p>$$
-w\mathbf V \tilde{\mathbf \xi}=\rho\tilde{\mathbf \xi}
+w\mathbf V \tilde{\boldsymbol \xi}=\rho\tilde{\boldsymbol \xi}
 $$</p>
 </li>
 <li>
@@ -405,13 +405,13 @@ $$</p>
 <p>eigen values $\rho=w\lambda$</p>
 </li>
 <li>
-<p>$\int \xi(s)^2ds=1 \Longleftrightarrow w \lVert \tilde{\mathbf \xi} \rVert^2=1$
-=&gt; $\tilde{\mathbf \xi}=w^{-1/2}\mathbf u$ if $\mathbf u$ is a normalized eigen vector of $\mathbf V$</p>
+<p>$\int \xi(s)^2ds=1 \Longleftrightarrow w \lVert \tilde{\boldsymbol \xi} \rVert^2=1$
+=&gt; $\tilde{\boldsymbol \xi}=w^{-1/2}\mathbf u$ if $\mathbf u$ is a normalized eigen vector of $\mathbf V$</p>
 </li>
 </ul>
 </li>
 <li>
-<p>Discrete values $\tilde{\mathbf \xi}$로부터 the eigen function $\xi$의 approximate을 구하기 위해서는 interpolation을 해야함</p>
+<p>Discrete values $\tilde{\boldsymbol \xi}$로부터 the eigen function $\xi$의 approximate을 구하기 위해서는 interpolation을 해야함</p>
 <ul>
 <li>만약 the discretization values $s_j$의 간격이 좁다면(closely spaced), interpolation method 선택이 큰 효과를 주지 못한다.(어떤 방법을 쓰더라도 비슷비슷하다)</li>
 </ul>
@@ -448,7 +448,7 @@ $$</p>
 <li>
 <p>Variance-covariance function (matrix form; $N^{-1}X&rsquo;X$ 형태)</p>
 <p>$$
-v(s,t)=\frac{1}{N}\mathbf \phi(s)'\mathbf {C&rsquo;C\phi}(t)
+v(s,t)=\frac{1}{N}\boldsymbol \phi(s)'\mathbf{C&rsquo;C} \boldsymbol\phi(t)
 $$</p>
 <p>Define the order $K$ symmetric matrix $W$ to have entries(성분)</p>
 <p>$$
@@ -456,7 +456,7 @@ w_{k_1,k_2}=\int \phi_{k_1}\phi_{k_2}
 $$</p>
 <p>or</p>
 <p>$$
-\mathbf W=\int \mathbf{\phi\phi&rsquo;} \ \text{(matrix version)}
+\mathbf W=\int \boldsymbol{\phi\phi&rsquo;} \ \text{(matrix version)}
 $$</p>
 <p>The eigen function $\xi$ for the eigen equation has an expansion</p>
 <p>$$
@@ -464,18 +464,18 @@ $$</p>
 $$</p>
 <p>or</p>
 <p>$$
-\mathbf \xi(s) = \mathbf \phi(s)'\mathbf b \ \text{(matrix  version)}
+\boldsymbol \xi(s) = \boldsymbol \phi(s)'\mathbf b \ \text{(matrix  version)}
 $$</p>
 <p>This yields</p>
 <p>$$
 \begin{align}
-\int v(s,t)\xi(t)dt &amp;= \int \frac{1}{N}\mathbf \phi(s)'\mathbf{C&rsquo;C\phi}(t)\mathbf \phi(t)'\mathbf b dt\<br>
-&amp;= \mathbf \phi(s)&lsquo;N^{-1}\mathbf{C&rsquo;CWb}
+\int v(s,t)\xi(t)dt &amp;= \int \frac{1}{N}\boldsymbol \phi(s)'\mathbf{C&rsquo;C} \boldsymbol\phi(t)\boldsymbol \phi(t)'\mathbf b dt \\<br>
+&amp;= \boldsymbol \phi(s)&lsquo;N^{-1}\mathbf{C&rsquo;CWb}
 \end{align}
 $$</p>
 <p>Therefore the eigen equation $\int v(s,t)\xi(t)dt=\rho \xi(s)$ can be expressed as</p>
 <p>$$
-\mathbf \phi(s)&lsquo;N^{-1}\mathbf{C&rsquo;CWb} = \rho\phi(s)'\mathbf b
+\boldsymbol \phi(s)&lsquo;N^{-1}\mathbf{C&rsquo;CWb} = \rho\phi(s)'\mathbf b
 $$</p>
 <p>Since this equation must hold for all $s$, this implies the purely matrix equation</p>
 <p>$$
@@ -577,21 +577,20 @@ $$</p>
 </li>
 </ul>
 <p>$$
-V\xi \approx \mathbf{VW }\tilde{\mathbf{\xi}}
+V\xi \approx \mathbf{VW}\tilde{\boldsymbol{\xi}}
 $$</p>
 <p>where matrix $\mathbf V$ contains the values $v(s_j,s_k)$ of the covariance function at the quadrature points</p>
-<p>and $\tilde{\mathbf{\xi}} = (\xi(s_1),&hellip;,\xi(s_n))$</p>
+<p>and $\tilde{\boldsymbol{\xi}} = (\xi(s_1),&hellip;,\xi(s_n))$</p>
 <p>and matrix $\mathbf W$ is a diagonal matrix with diagonal values being the quadrature weights $w_j$</p>
 <ul>
 <li>The approximately matrix eigen analysis problem is</li>
 </ul>
 <p>$$
-\mathbf{VW}\tilde{\mathbf{\xi}}=\rho \tilde{\mathbf{\xi}}
+\mathbf{VW}\tilde{\boldsymbol{\xi}}=\rho \tilde{\boldsymbol{\xi}}
 $$</p>
 <p>where the orthonormality condition is</p>
 <p>$$
-\tilde{\mathbf{\xi}}<em>m&rsquo;\mathbf{W}\tilde{\mathbf{\xi}}<em>m=1 \text{ and } 
-\tilde{\mathbf{\xi}}</em>{m_1}'\mathbf{W}\tilde{\mathbf{\xi}}</em>{m_2}=0, \ m_1 \ne m_2
+\tilde{\boldsymbol \xi}_m&rsquo;\mathbf{W}\tilde{\boldsymbol \xi}_m = 1 \text{ and } \tilde{\boldsymbol \xi}_{m_1}&rsquo; \mathbf{W} \tilde{\boldsymbol \xi}_{m_2} = 0, ~ m_1 \ne m_2
 $$</p>
 <ul>
 <li>대부분의 quadrature schemes는 positive weights를 쓰기 때문에 8.4.2의 계산과 유사하게 approximate eigen equation의 standard form을 얻을 수 있다.</li>
@@ -599,14 +598,14 @@ $$</p>
 <p>$$
 \mathbf{W^{1/2}VW^{1/2}u}=\rho\mathbf u
 $$</p>
-<p>where $\mathbf u=\mathbf W^{1/2} \tilde{\mathbf{\xi}}$ and $\mathbf{u&rsquo;u}=1$</p>
+<p>where $\mathbf u=\mathbf W^{1/2} \tilde{\boldsymbol{\xi}}$ and $\mathbf{u&rsquo;u}=1$</p>
 <ul>
 <li>
 <p>Procedure</p>
 <ol>
 <li>Choose $n$, the $w_j$'s, and the $s_j$'s</li>
 <li>Compute the eigen values $\rho_m$ and eigen vectors $\mathbf u_m$ of $\mathbf{W^{1/2}VW^{1/2}}$</li>
-<li>Compute $\tilde{\mathbf{\xi}}_m=\mathbf{W^{-1/2}u}_m$</li>
+<li>Compute $\tilde{\boldsymbol{\xi}}_m=\mathbf{W^{-1/2}u}_m$</li>
 <li>If needed, use an interpolation technique to convert each vector $\tilde \xi_m$ to a function $\xi_m$</li>
 </ol>
 </li>
