@@ -83,7 +83,7 @@ $$
 
   1. $x_{ij}$를 cross-validation하기 위해 2개의 PCA model를 fit
 
-     ![EK cross-validation](img/EK_cv.png)
+     ![EK cross-validation](https://github.com/statKim/TIL/blob/master/Statistics/img/EK_cv.png?raw=true)
 
      - $i$th row를 제외한 PCA model
        $$
@@ -97,16 +97,14 @@ $$
        => $x_{ij}$와 independent
 
   2. Proposed method to combine 2 models by Eastement and Krzanowski
-
-  $$
-  \hat{x}_{ij}(k) = \sum^k u_i^{(-j)}(k)\sqrt{s^{(-j)}(k)} \sqrt{s^{(-i)}(k)} v_j^{(-i)}(k)
-  $$
+    $$
+    \hat{x}_{ij}(k) = \sum^k u_i^{(-j)}(k)\sqrt{s^{(-j)}(k)} \sqrt{s^{(-i)}(k)} v_j^{(-i)}(k)
+    $$
 
   3. Calculate CV error
-
-  $$
-  CV(k) = \frac{1}{IJ}\sum_i \sum_j (\hat{x}_{ij}(k) - x_{ij})^2
-  $$
+    $$
+    CV(k) = \frac{1}{IJ} \sum_i \sum_j \left( \hat x_{ij}(k) - x_{ij} \right)^2
+    $$
 
   4. Compare the model complexity
      $$

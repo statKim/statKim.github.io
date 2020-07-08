@@ -283,10 +283,10 @@ if (!doNotTrack) {
 <h2 id="22-some-notation">2.2 Some notation</h2>
 <h3 id="221-scalars-vectors-functions-and-matrices">2.2.1 Scalars, vectors, functions and matrices</h3>
 <ul>
-<li>$x$ : a vector \<br>
+<li>$x$ : a vector<br>
 $\Rightarrow x_i$ : scalar (the elements of vector $x$)</li>
-<li>$x$ : a function \<br>
-$\Rightarrow x(t)$ : scalar (the values of function $x$) \<br>
+<li>$x$ : a function<br>
+$\Rightarrow x(t)$ : scalar (the values of function $x$)<br>
 $\Rightarrow x(\mathbf{t})$ : vector $\mathbf{t}$에 대한 function value ($p$-dim function)</li>
 <li>If $x_i$ or $x(t)$ is a vector, we use $\mathbf{x}_i$ or $\mathbf{x}(t)$</li>
 <li>Standard notation을 요약하여 사용
@@ -303,8 +303,8 @@ $\Rightarrow x(\mathbf{t})$ : vector $\mathbf{t}$에 대한 function value ($p$-
 <ul>
 <li>$D$ : operator (함수 $x$를 함수 $Dx$로 변환하는 operator)</li>
 <li>$D^m x$ : the derivative of order m of a function $x$ ($\frac{d^mx}{dt^m}$와 동일)</li>
-<li>$D^0 x$ : $x$ \<br>
-$s.t. \ D^{1}D^{-1}x=D^0x=x$,\<br>
+<li>$D^0 x$ : $x$<br>
+$s.t. \ D^{1}D^{-1}x=D^0x=x$,<br>
 when $D^{-1}x$가 $x$의 부정적분(indefinite integral)</li>
 <li>$\int x$ : $\int_{a}^{b} x(t)dt$ ($t$의 적분 범위가 clear할 때)</li>
 </ul>
@@ -413,31 +413,31 @@ ex) $D$ : $x \rightarrow Dx$</p>
 </li>
 <li>
 <p>Vectorized form</p>
-<p>$$ f_i = \mathbf{\beta}^{'} \mathbf{x}_i, \ i=1,&hellip;,N $$</p>
-<p>where $ \mathbf{\beta}=(\beta_1,&hellip;,\beta_p)^{'}, \ \mathbf{x}<em>i=(x</em>{i1},&hellip;,x_{ip})^{'} $</p>
+<p>$$ f_i = \boldsymbol{\beta}^{'} \mathbf{x}_i, \ i=1,&hellip;,N $$</p>
+<p>where $ \boldsymbol{\beta}=(\beta_1,&hellip;,\beta_p)^{'}, ~ \mathbf x_i=(x_{i1},&hellip;,x_{ip})^{'} $</p>
 </li>
 </ul>
 <h4 id="how-to-find-pc">How to find PC</h4>
 <ol>
 <li>
 <p>Find the weight vector $\xi_1 = (\xi_{11},&hellip;,\xi_{p1})^{'}$ for</p>
-<p>$$ f_{i1}=\sum_j \xi_{j1}x_{ij}=\mathbf{\xi}_1^{'} \mathbf{x}_i $$</p>
+<p>$$ f_{i1}=\sum_j \xi_{j1}x_{ij}=\boldsymbol{\xi}_1^{'} \mathbf{x}_i $$</p>
 <p>s.t. maximize $ \frac{1}{N}\sum_if_{i1}^2 $ subject to $\sum_j \xi_{j1}^2 = \lVert \xi_1 \rVert^2 = 1 $</p>
 </li>
 <li>
 <p>1번 과정을 반복하며 동시에</p>
-<p>$$ \sum_j \xi_{jk}\xi_{jm} = \mathbf{\xi}_k^{'} \mathbf{\xi}_m=0, \ k&lt;m $$</p>
+<p>$$ \sum_j \xi_{jk}\xi_{jm} = \boldsymbol{\xi}_k^{'} \boldsymbol{\xi}_m=0, \ k&lt;m $$</p>
 <p>을 만족하는 $ \xi_2,&hellip;,\xi_m $을 찾는다.</p>
 </li>
 </ol>
 <h4 id="summary">Summary</h4>
 <ol>
-<li>Mean square(변수들 간 variation)를 maximize하는 방향의 unit vector $\mathbf{\xi}_1 $을 찾는다.</li>
-<li>2nd PC부터는 mean square를 maximize함과 동시에 이전 PC loading($ \mathbf{\xi}_i $)과 orthogonal한 $ \mathbf{\xi}_2,&hellip;\mathbf{\xi}_k \ (k&lt;p) $을 찾는다.</li>
+<li>Mean square(변수들 간 variation)를 maximize하는 방향의 unit vector $\boldsymbol{\xi}_1 $을 찾는다.</li>
+<li>2nd PC부터는 mean square를 maximize함과 동시에 이전 PC loading($ \boldsymbol{\xi}_i $)과 orthogonal한 $ \boldsymbol{\xi}_2,&hellip;\boldsymbol{\xi}_k \ (k&lt;p) $을 찾는다.</li>
 </ol>
 <ul>
 <li>Data의 mean을 뺀 후에 PCA를 하는 것이 일반적이다. (Centering $\Rightarrow \max MS(f_{ij}) = \max Var(f_{ij}) $)</li>
-<li>Weight vector $\mathbf{\xi}_i$는 unique하지 않다. (Sign change)</li>
+<li>Weight vector $\boldsymbol{\xi}_i$는 unique하지 않다. (Sign change)</li>
 <li>PC score $f_{im}$은 특정 사례 또는 반복실험의 특징 측면에서 변동(variation)의 의미를 설명하는데 도움을 준다.</li>
 </ul>
 <!-- raw HTML omitted -->
@@ -459,7 +459,7 @@ ex) $D$ : $x \rightarrow Dx$</p>
 <li>
 <p>Find the weight function $\xi_1(s)$ for</p>
 <p>$$ f_i = \int \xi_1(s) x_i(s) ds $$</p>
-<p>s.t. maximize $ \frac{1}{N}\sum_i f_{i1}^2 = \frac{1}{N}\sum_i (\int \xi_1 x_i)^2 $ \<br>
+<p>s.t. maximize $ \frac{1}{N}\sum_i f_{i1}^2 = \frac{1}{N}\sum_i (\int \xi_1 x_i)^2 $<br>
 subject to $ \lVert \xi_1 \rVert^2 =\int \xi_1(s)^2ds = \int \xi_1^2 = 1 $</p>
 </li>
 <li>
@@ -489,7 +489,7 @@ subject to $ \lVert \xi_1 \rVert^2 =\int \xi_1(s)^2ds = \int \xi_1^2 = 1 $</p>
 </li>
 <li>
 <p>Expansion by the orthonormal basis functions</p>
-<p>$$ \hat{x}<em>i(t) = \sum</em>{k=1}^K f_{ik}\xi_{k}(t), $$</p>
+<p>$$ \hat x_i(t) = \sum_{k=1}^K f_{ik}\xi_k(t), $$</p>
 <p>where $ f_{ik} $ is the principal component value $\int x_i\xi_k$</p>
 </li>
 <li>
@@ -512,29 +512,29 @@ subject to $ \lVert \xi_1 \rVert^2 =\int \xi_1(s)^2ds = \int \xi_1^2 = 1 $</p>
 </li>
 <li>
 <p>Mean square criterian for finding the 1st PC</p>
-<p>$$ \max_{\mathbf{\xi^{'}\xi}=1}\frac{1}{N} \mathbf{\xi^{'}X^{'}X\xi} $$</p>
+<p>$$ \max_{\boldsymbol{\xi^{'}\xi}=1}\frac{1}{N} \boldsymbol{\xi^{'}X^{'}X\xi} $$</p>
 </li>
 <li>
 <p>Substitute variance-covariance matrix</p>
-<p>$$ \max_{\mathbf{\xi^{'}\xi}=1} \mathbf{\xi^{'}V\xi} $$</p>
-<p>where $\mathbf{V} = N^{-1}\mathbf{X^{'}X} $ is a $p \times p$ sample var-cov matrix\<br>
+<p>$$ \max_{\boldsymbol{\xi^{'}\xi}=1} \boldsymbol{\xi^{'}V\xi} $$</p>
+<p>where $\mathbf{V} = N^{-1}\mathbf{X^{'}X} $ is a $p \times p$ sample var-cov matrix<br>
 $\Rightarrow$ We can solve maximization problem using eigen decomposition!</p>
 </li>
 <li>
 <p>Eigen equation</p>
-<p>$$ \mathbf{V\xi} = \rho\mathbf{\xi} $$</p>
+<p>$$ \boldsymbol{V\xi} = \rho\boldsymbol{\xi} $$</p>
 <p>where $ \rho $ is largest eigen value</p>
 </li>
 <li>
-<p>위 식을 풀면 $ (\rho_j,\mathbf{\xi}_j) $ pairs가 생기고, 각 $\mathbf{\xi}_j$는 orthogonal하다.</p>
+<p>위 식을 풀면 $ (\rho_j,\boldsymbol{\xi}_j) $ pairs가 생기고, 각 $\boldsymbol{\xi}_j$는 orthogonal하다.</p>
 </li>
 <li>
-<p>$\mathbf{V}$ has $\min{p,N-1}$ nonzero eigen values $\rho_j$ \<br>
+<p>$\mathbf{V}$ has $\min{p,N-1}$ nonzero eigen values $\rho_j$<br>
 $(\because \max(rank(\mathbf{X}))=N-1)$</p>
 </li>
 <li>
-<p>$ \mathbf{\xi}<em>j $ satisfied maximization problem and the orthogonal constraints ($ \xi_j \perp (\xi_1, \cdots, \xi</em>{j-1}) $) for $\forall j$ \<br>
-$\Rightarrow$ $\mathbf{\xi}$ is a solution of PCA</p>
+<p>$ \boldsymbol \xi_j $ satisfied maximization problem and the orthogonal constraints ($ \xi_j \perp (\xi_1, \cdots, \xi_{j-1}) $) for $\forall j$<br>
+$\Rightarrow$ $\boldsymbol{\xi}$ is a solution of PCA</p>
 </li>
 </ul>
 <h4 id="functional-pca">Functional PCA</h4>
@@ -562,7 +562,7 @@ $\Rightarrow$ $\mathbf{\xi}$ is a solution of PCA</p>
 <li>$\max${# of different eigen pairs}가 다르다
 <ul>
 <li>multivariate : # of variables = $p$</li>
-<li>functional : # of functions = $\infty$ ($\because$ smoothed) \<br>
+<li>functional : # of functions = $\infty$ ($\because$ smoothed)<br>
 but if $x_i$ are linearly independent, $rank(V)=N-1$ and only $N-1$ nonzero eigen values exist.</li>
 </ul>
 </li>
@@ -582,7 +582,7 @@ but if $x_i$ are linearly independent, $rank(V)=N-1$ and only $N-1$ nonzero eige
 <li>
 <p>Constraints</p>
 <p>$$ \lVert\xi_i\rVert^2= \sum_j \xi_{ji}^2 = 1 $$</p>
-<p>$$ \sum_j \xi_{jk}\xi_{jm}=\mathbf{\xi}_k^{'}\mathbf{\xi}_m=0 $$</p>
+<p>$$ \sum_j \xi_{jk}\xi_{jm}=\boldsymbol{\xi}_k^{'}\boldsymbol{\xi}_m=0 $$</p>
 </li>
 </ul>
 <h3 id="functional-pca-1">Functional PCA</h3>

@@ -57,7 +57,7 @@ output:
 - 아래와 같이 `##`으로 슬라이드를 구분
 - 수식의 경우, LaTeX 코드 사용
 
-```markdown
+```
 ## Slide with Math
 
 - inline math : $\widehat X = \sum_{i=1}^n X_i$
@@ -73,13 +73,13 @@ output:
 
 ### R output 넣기
 
-```markdown
+~~~
 ## Slide with R Output
 
-```{r cars, echo = TRUE}
+```{r cars, echo = TRUE}
 summary(cars)
-```
 ```
+~~~
 
 ![](https://github.com/statKim/TIL/blob/master/R/images/rmd_beamer3.png?raw=true)
 
@@ -87,24 +87,24 @@ summary(cars)
 
 ### 그래프 넣기
 
-```markdown
+~~~
 ## Slide with Plot
 
-```{r pressure}
+```{r pressure}
 plot(pressure)
-```
 ```
+~~~
 
 ![](https://github.com/statKim/TIL/blob/master/R/images/rmd_beamer4.png?raw=true)
 
 <br>
 
 ### 그래프 caption 및 크기 조절
-```markdown
-```{r pressure, fig.cap="caption", out.width="250px", out.height="180px"}
+~~~
+```{r pressure, fig.cap="caption", out.width="250px", out.height="180px"}
 plot(pressure)
-​```
 ```
+~~~
 
 ![](https://github.com/statKim/TIL/blob/master/R/images/rmd_beamer5.png?raw=true)
 
