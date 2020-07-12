@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://statkim.github.io/about/</loc>
+    <lastmod>2020-07-12T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://statkim.github.io/categories/blog/</loc>
     <lastmod>2020-07-07T00:00:00+00:00</lastmod>
   </url>
@@ -50,11 +55,6 @@
   <url>
     <loc>https://statkim.github.io/2020/06/blogdown%EC%9C%BC%EB%A1%9C-github-blog-%EB%A7%8C%EB%93%A4%EA%B8%B0-1/2/</loc>
     <lastmod>2020-06-30T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://statkim.github.io/about/</loc>
-    <lastmod>2020-06-28T00:00:00+00:00</lastmod>
   </url>
   
   <url>
