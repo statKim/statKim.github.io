@@ -1,11 +1,11 @@
 ---
 title: "About"
 sidemenu: "true"
-date: "2020-06-28"
+date: "2020-07-12"
 ---
 
 
-[English version](/about_eng)
+[Full CV](/cv_KHS.pdf)
 
 현재 [중앙대학교 통계학과](https://stat.cau.ac.kr/)에서 석사과정을 하고 있으며 [다변량 통계 연구실(Multivariate Statistics Lab)](https://sites.google.com/site/yaejilim/)에서 연구하고 있습니다.
 
@@ -16,14 +16,19 @@ date: "2020-06-28"
 <br>
 
 ## Education
-- **중앙대학교 통계학과 석사과정**, 2019.03 - 
+- **중앙대학교 통계학과 석사과정**, 2019.03 - Present
 - **중앙대학교 응용통계학 학사**, 2013.03 - 2019.02
 
 <br>
 
-## Project
-- **경기도 고혈압·당뇨병 등록관리사업 효과평가 분석**, 2019.07 - 2020.02
-- **산학 협력 프로젝트(현대모비스)**, *빅데이터 기반 서비스부품 수요예측 강화*, 2019.02 - 2019.09
+## Publications
+- **H. Kim** and Y. Lim. Bootstrap aggregated classification for sparse functional data. Submitted.
+
+<br>
+
+## Projects
+- **경기도 고혈압·당뇨병 등록관리사업 효과평가 분석**, *중앙의대 예방의학교실*, 2019.07 - 2020.02
+- **빅데이터 기반 서비스부품 수요예측 강화 (산학과제)**, *부품운영팀, 현대모비스*, 2019.02 - 2019.09
 
 <br>
 
@@ -44,5 +49,6 @@ date: "2020-06-28"
 <br>
 
 ## Teaching Experience
-- Teaching Assistant, Introduction to Statistical Learning (53994), Chung-Ang University, Fall 2019.
+#### Teaching Assistant
+- **53994: Introduction to Statistical Learning**, *Department of Applied Statistics, Chung-Ang University*, 2019 Fall
 

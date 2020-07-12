@@ -16,19 +16,19 @@ I love `R` to handle the data, but I sometimes use `Python`.
 <br>
 
 ## Education
-- **Master's student in Statistics, Chung-Ang University**, 2019.03 -
+- **Master's student in Statistics, Chung-Ang University**, 2019.03 - Present
 - **B.A. in Applied Statistics, Chung-Ang University**, 2019.02
 
 <br>
 
 ## Project
-- **경기도 고혈압·당뇨병 등록관리사업 효과평가 분석**, 2019.07 - 2020.02
-- **Industry-Academic Cooperation Project(Hyundai Mobis)**, *빅데이터 기반 서비스부품 수요예측 강화*, 2019.02 - 2019.09
+- **경기도 고혈압·당뇨병 등록관리사업 효과평가 분석**, *중앙의대 예방의학교실*, 2019.07 - 2020.02
+- **빅데이터 기반 서비스부품 수요예측 강화 (산학과제)**, *부품운영팀, 현대모비스*, 2019.02 - 2019.09
 
 <br>
 
 ## Publication
-**H. Kim** and Y. Lim. Bootstrap aggregated classification for sparse functional data. Submitted.
+- **H. Kim** and Y. Lim. Bootstrap aggregated classification for sparse functional data. Submitted.
 
 <br>
 
@@ -49,4 +49,4 @@ I love `R` to handle the data, but I sometimes use `Python`.
 <br>
 
 ## Teaching Experience
-- Teaching Assistant, 53994, Introduction to Statistical Learning, Chung-Ang University, 2019 Fall
+- Teaching Assistant, 53994: Introduction to Statistical Learning, *Department of Applied Statistics, Chung-Ang University*, 2019 Fall
