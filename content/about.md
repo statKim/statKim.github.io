@@ -1,15 +1,13 @@
 ---
 title: "About"
 sidemenu: "true"
-date: "2020-07-12"
+date: "2020-09-03"
 ---
 
 
-[Full CV](/cv_KHS.pdf)
-
 현재 [중앙대학교 통계학과](https://stat.cau.ac.kr/)에서 석사과정을 하고 있으며 [다변량 통계 연구실(Multivariate Statistics Lab)](https://sites.google.com/site/yaejilim/)에서 연구하고 있습니다.
 
-`Functional Data Analysis(FDA)`, `Spatio-temporal Data Analysis`, `Principal Component Analysis(PCA)`, `Machine Learning` 분야에 관심을 가지고 있으며, 현재 `Functional principal component analysis(FPCA)`에 대해 연구하고 있습니다.
+`Functional Data Analysis(FDA)`, `Spatio-temporal Data Analysis`, `High-dimensional Data Analysis` 분야에 관심을 가지고 있으며, 현재 `Functional principal component analysis(FPCA)`에 대해 연구하고 있습니다.
 
 `R`로 데이터 다루는 것을 좋아하며, 때에 따라 `Python`을 병행하여 사용하고 있습니다.
 
@@ -43,12 +41,14 @@ date: "2020-07-12"
 ## Research Interests
 - `Functional Data Analysis`
 - `Spatio-temporal Data Analysis`
-- `Principal Component Analysis`
-- `Machine Learning`
+- `High-dimensional Data Analysis`
 
 <br>
 
 ## Teaching Experience
 #### Teaching Assistant
-- **53994: Introduction to Statistical Learning**, *Department of Applied Statistics, Chung-Ang University*, 2019 Fall
+- **Introduction to Statistical Learning**, *Department of Applied Statistics, Chung-Ang University*, 2019 Fall
 
+<br>
+
+[Full CV](/cv_KHS.pdf)
