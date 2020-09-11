@@ -15,8 +15,8 @@
 <meta property="og:type" content="article">
 <meta property="og:title" content="PCA에서 최적 PC 개수를 정하기 위한 Cross-validation 방법">
 <meta name="twitter:title" content="PCA에서 최적 PC 개수를 정하기 위한 Cross-validation 방법">
-<meta property="og:url" content="https://statkim.github.io/2019/12/pca%EC%97%90%EC%84%9C-%EC%B5%9C%EC%A0%81-pc-%EA%B0%9C%EC%88%98%EB%A5%BC-%EC%A0%95%ED%95%98%EA%B8%B0-%EC%9C%84%ED%95%9C-cross-validation-%EB%B0%A9%EB%B2%95/">
-<meta property="twitter:url" content="https://statkim.github.io/2019/12/pca%EC%97%90%EC%84%9C-%EC%B5%9C%EC%A0%81-pc-%EA%B0%9C%EC%88%98%EB%A5%BC-%EC%A0%95%ED%95%98%EA%B8%B0-%EC%9C%84%ED%95%9C-cross-validation-%EB%B0%A9%EB%B2%95/">
+<meta property="og:url" content="/2019/12/pca%EC%97%90%EC%84%9C-%EC%B5%9C%EC%A0%81-pc-%EA%B0%9C%EC%88%98%EB%A5%BC-%EC%A0%95%ED%95%98%EA%B8%B0-%EC%9C%84%ED%95%9C-cross-validation-%EB%B0%A9%EB%B2%95/">
+<meta property="twitter:url" content="/2019/12/pca%EC%97%90%EC%84%9C-%EC%B5%9C%EC%A0%81-pc-%EA%B0%9C%EC%88%98%EB%A5%BC-%EC%A0%95%ED%95%98%EA%B8%B0-%EC%9C%84%ED%95%9C-cross-validation-%EB%B0%A9%EB%B2%95/">
 <meta property="og:site_name" content="statKim">
 <meta property="og:description" content="1. Row-wise cross-validation $$ \begin{aligned} CV(k) &amp;= \sum_{i=1}^N \lvert \lvert \mathbf{x}_i - \boldsymbol{\xi} \boldsymbol{f}_i^T \lvert\vert^2 \ &amp;= \sum_{i=1}^N \lvert \lvert \mathbf{x}_i - \boldsymbol{\xi} (\mathbf{x}_i^T\boldsymbol{\xi})^T \lvert\vert^2 \end{aligned} $$ where $\boldsymbol\xi$ is a PC function(PC loading) with $k$ eigenvectors and $\boldsymbol{f}_i$ is $i$th PC score with $k$ components. $\mathbf{x}_i$를 predict하는">
 <meta name="twitter:description" content="1. Row-wise cross-validation $$ \begin{aligned} CV(k) &amp;= \sum_{i=1}^N \lvert \lvert \mathbf{x}_i - \boldsymbol{\xi} \boldsymbol{f}_i^T \lvert\vert^2 \ &amp;= \sum_{i=1}^N \lvert \lvert \mathbf{x}_i - \boldsymbol{\xi} (\mathbf{x}_i^T\boldsymbol{\xi})^T \lvert\vert^2 \end{aligned} $$ where $\boldsymbol\xi$ is a PC function(PC loading) with $k$ eigenvectors and $\boldsymbol{f}_i$ is $i$th PC score with $k$ components. $\mathbf{x}_i$를 predict하는">
@@ -57,18 +57,18 @@
 
 
 
-  <meta property="og:image" content="https://statkim.github.io/img/profile.jpg">
-  <meta property="twitter:image" content="https://statkim.github.io/img/profile.jpg">
+  <meta property="og:image" content="/img/profile.jpg">
+  <meta property="twitter:image" content="/img/profile.jpg">
 
 
     <title>PCA에서 최적 PC 개수를 정하기 위한 Cross-validation 방법</title>
 
-    <link rel="icon" href="https://statkim.github.io/img/favicon.ico">
+    <link rel="icon" href="/img/favicon.ico">
     
 
     
 
-    <link rel="canonical" href="https://statkim.github.io/2019/12/pca%EC%97%90%EC%84%9C-%EC%B5%9C%EC%A0%81-pc-%EA%B0%9C%EC%88%98%EB%A5%BC-%EC%A0%95%ED%95%98%EA%B8%B0-%EC%9C%84%ED%95%9C-cross-validation-%EB%B0%A9%EB%B2%95/">
+    <link rel="canonical" href="/2019/12/pca%EC%97%90%EC%84%9C-%EC%B5%9C%EC%A0%81-pc-%EA%B0%9C%EC%88%98%EB%A5%BC-%EC%A0%95%ED%95%98%EA%B8%B0-%EC%9C%84%ED%95%9C-cross-validation-%EB%B0%A9%EB%B2%95/">
 
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
@@ -76,11 +76,11 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.4/helpers/jquery.fancybox-thumbs.min.css" integrity="sha256-SEa4XYAHihTcEP1f5gARTB2K26Uk8PsndQYHQC1f4jU=" crossorigin="anonymous" />
     
     
-    <link rel="stylesheet" href="https://statkim.github.io/css/style-twzjdbqhmnnacqs0pwwdzcdbt8yhv8giawvjqjmyfoqnvazl0dalmnhdkvp7.min.css" />
+    <link rel="stylesheet" href="/css/style-twzjdbqhmnnacqs0pwwdzcdbt8yhv8giawvjqjmyfoqnvazl0dalmnhdkvp7.min.css" />
     
     
       
-        <link rel="stylesheet"  href="https://statkim.github.io/css/css_custom.css">
+        <link rel="stylesheet"  href="/css/css_custom.css">
       
     
 
@@ -108,17 +108,17 @@ if (!doNotTrack) {
       <header id="header" data-behavior="5">
   <i id="btn-open-sidebar" class="fa fa-lg fa-bars"></i>
   <div class="header-title">
-    <a class="header-title-link" href="https://statkim.github.io/">statKim</a>
+    <a class="header-title-link" href="/">statKim</a>
   </div>
   
     
       <a class="header-right-picture "
-         href="https://statkim.github.io/#about">
+         href="/#about">
     
     
     
       
-        <img class="header-picture" src="https://statkim.github.io/img/profile.jpg" alt="Author&#39;s picture" />
+        <img class="header-picture" src="/img/profile.jpg" alt="Author&#39;s picture" />
       
     
     </a>
@@ -129,8 +129,8 @@ if (!doNotTrack) {
   <div class="sidebar-container">
     
       <div class="sidebar-profile">
-        <a href="https://statkim.github.io/#about">
-          <img class="sidebar-profile-picture" src="https://statkim.github.io/img/profile.jpg" alt="Author&#39;s picture" />
+        <a href="/#about">
+          <img class="sidebar-profile-picture" src="/img/profile.jpg" alt="Author&#39;s picture" />
         </a>
         <h4 class="sidebar-profile-name">김현성</h4>
         
@@ -142,7 +142,7 @@ if (!doNotTrack) {
       
   <li class="sidebar-button">
     
-      <a class="sidebar-button-link " href="https://statkim.github.io/">
+      <a class="sidebar-button-link " href="/">
     
       <i class="sidebar-button-icon fa fa-lg fa-home"></i>
       
@@ -152,7 +152,7 @@ if (!doNotTrack) {
 
   <li class="sidebar-button">
     
-      <a class="sidebar-button-link " href="https://statkim.github.io/categories">
+      <a class="sidebar-button-link " href="/categories">
     
       <i class="sidebar-button-icon fa fa-lg fa-bookmark"></i>
       
@@ -162,7 +162,7 @@ if (!doNotTrack) {
 
   <li class="sidebar-button">
     
-      <a class="sidebar-button-link " href="https://statkim.github.io/tags">
+      <a class="sidebar-button-link " href="/tags">
     
       <i class="sidebar-button-icon fa fa-lg fa-tags"></i>
       
@@ -172,7 +172,7 @@ if (!doNotTrack) {
 
   <li class="sidebar-button">
     
-      <a class="sidebar-button-link " href="https://statkim.github.io/archives">
+      <a class="sidebar-button-link " href="/archives">
     
       <i class="sidebar-button-icon fa fa-lg fa-archive"></i>
       
@@ -182,7 +182,7 @@ if (!doNotTrack) {
 
   <li class="sidebar-button">
     
-      <a class="sidebar-button-link " href="https://statkim.github.io/about">
+      <a class="sidebar-button-link " href="/about">
     
       <i class="sidebar-button-icon fa fa-lg fa-question"></i>
       
@@ -196,7 +196,7 @@ if (!doNotTrack) {
       
   <li class="sidebar-button">
     
-      <a class="sidebar-button-link " href="https://github.com/statKim" target="_blank" rel="noopener">
+      <a class="sidebar-button-link " href="https://github.com/statKim">
     
       <i class="sidebar-button-icon fa fa-lg fa-github"></i>
       
@@ -220,7 +220,7 @@ if (!doNotTrack) {
       
   <li class="sidebar-button">
     
-      <a class="sidebar-button-link " href="https://statkim.github.io/index.xml">
+      <a class="sidebar-button-link " href="/index.xml">
     
       <i class="sidebar-button-icon fa fa-lg fa-rss"></i>
       
@@ -262,7 +262,7 @@ if (!doNotTrack) {
   
     <span>in</span>
     
-      <a class="category-link" href="https://statkim.github.io/categories/paper">paper</a>
+      <a class="category-link" href="/categories/paper">paper</a>
     
   
 
@@ -538,11 +538,11 @@ $$</p>
                   <div class="post-footer-tags">
                     <span class="text-color-light text-small">TAGGED IN</span><br/>
                     
-  <a class="tag tag--primary tag--small" href="https://statkim.github.io/tags/pca/">PCA</a>
+  <a class="tag tag--primary tag--small" href="/tags/pca/">PCA</a>
 
-  <a class="tag tag--primary tag--small" href="https://statkim.github.io/tags/cross-validation/">cross-validation</a>
+  <a class="tag tag--primary tag--small" href="/tags/cross-validation/">cross-validation</a>
 
-  <a class="tag tag--primary tag--small" href="https://statkim.github.io/tags/paper/">paper</a>
+  <a class="tag tag--primary tag--small" href="/tags/paper/">paper</a>
 
                   </div>
                 
@@ -555,7 +555,7 @@ $$</p>
           
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--default tooltip--top" href="https://statkim.github.io/2019/12/r-markdown%EC%9C%BC%EB%A1%9C-beamer-%EC%8A%AC%EB%9D%BC%EC%9D%B4%EB%93%9C-%EB%A7%8C%EB%93%A4%EA%B8%B0/" data-tooltip="R markdown으로 Beamer 슬라이드 만들기">
+                <a class="post-action-btn btn btn--default tooltip--top" href="/2019/12/r-markdown%EC%9C%BC%EB%A1%9C-beamer-%EC%8A%AC%EB%9D%BC%EC%9D%B4%EB%93%9C-%EB%A7%8C%EB%93%A4%EA%B8%B0/" data-tooltip="R markdown으로 Beamer 슬라이드 만들기">
               
                   <i class="fa fa-angle-left"></i>
                   <span class="hide-xs hide-sm text-small icon-ml">NEXT</span>
@@ -563,7 +563,7 @@ $$</p>
             </li>
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--default tooltip--top" href="https://statkim.github.io/2019/11/jekyll-%ED%85%8C%EB%A7%88%EB%A1%9C-github-blog-%EB%A7%8C%EB%93%A4%EA%B8%B0/" data-tooltip="Jekyll 테마로 Github Blog 만들기">
+                <a class="post-action-btn btn btn--default tooltip--top" href="/2019/11/jekyll-%ED%85%8C%EB%A7%88%EB%A1%9C-github-blog-%EB%A7%8C%EB%93%A4%EA%B8%B0/" data-tooltip="Jekyll 테마로 Github Blog 만들기">
               
                   <span class="hide-xs hide-sm text-small icon-mr">PREVIOUS</span>
                   <i class="fa fa-angle-right"></i>
@@ -581,19 +581,19 @@ $$</p>
         </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://statkim.github.io/2019/12/pca%EC%97%90%EC%84%9C-%EC%B5%9C%EC%A0%81-pc-%EA%B0%9C%EC%88%98%EB%A5%BC-%EC%A0%95%ED%95%98%EA%B8%B0-%EC%9C%84%ED%95%9C-cross-validation-%EB%B0%A9%EB%B2%95/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=/2019/12/pca%EC%97%90%EC%84%9C-%EC%B5%9C%EC%A0%81-pc-%EA%B0%9C%EC%88%98%EB%A5%BC-%EC%A0%95%ED%95%98%EA%B8%B0-%EC%9C%84%ED%95%9C-cross-validation-%EB%B0%A9%EB%B2%95/">
               <i class="fa fa-facebook-official"></i>
             </a>
           </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://statkim.github.io/2019/12/pca%EC%97%90%EC%84%9C-%EC%B5%9C%EC%A0%81-pc-%EA%B0%9C%EC%88%98%EB%A5%BC-%EC%A0%95%ED%95%98%EA%B8%B0-%EC%9C%84%ED%95%9C-cross-validation-%EB%B0%A9%EB%B2%95/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=/2019/12/pca%EC%97%90%EC%84%9C-%EC%B5%9C%EC%A0%81-pc-%EA%B0%9C%EC%88%98%EB%A5%BC-%EC%A0%95%ED%95%98%EA%B8%B0-%EC%9C%84%ED%95%9C-cross-validation-%EB%B0%A9%EB%B2%95/">
               <i class="fa fa-twitter"></i>
             </a>
           </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://statkim.github.io/2019/12/pca%EC%97%90%EC%84%9C-%EC%B5%9C%EC%A0%81-pc-%EA%B0%9C%EC%88%98%EB%A5%BC-%EC%A0%95%ED%95%98%EA%B8%B0-%EC%9C%84%ED%95%9C-cross-validation-%EB%B0%A9%EB%B2%95/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=/2019/12/pca%EC%97%90%EC%84%9C-%EC%B5%9C%EC%A0%81-pc-%EA%B0%9C%EC%88%98%EB%A5%BC-%EC%A0%95%ED%95%98%EA%B8%B0-%EC%9C%84%ED%95%9C-cross-validation-%EB%B0%A9%EB%B2%95/">
               <i class="fa fa-google-plus"></i>
             </a>
           </li>
@@ -641,7 +641,7 @@ $$</p>
           
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--default tooltip--top" href="https://statkim.github.io/2019/12/r-markdown%EC%9C%BC%EB%A1%9C-beamer-%EC%8A%AC%EB%9D%BC%EC%9D%B4%EB%93%9C-%EB%A7%8C%EB%93%A4%EA%B8%B0/" data-tooltip="R markdown으로 Beamer 슬라이드 만들기">
+                <a class="post-action-btn btn btn--default tooltip--top" href="/2019/12/r-markdown%EC%9C%BC%EB%A1%9C-beamer-%EC%8A%AC%EB%9D%BC%EC%9D%B4%EB%93%9C-%EB%A7%8C%EB%93%A4%EA%B8%B0/" data-tooltip="R markdown으로 Beamer 슬라이드 만들기">
               
                   <i class="fa fa-angle-left"></i>
                   <span class="hide-xs hide-sm text-small icon-ml">NEXT</span>
@@ -649,7 +649,7 @@ $$</p>
             </li>
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--default tooltip--top" href="https://statkim.github.io/2019/11/jekyll-%ED%85%8C%EB%A7%88%EB%A1%9C-github-blog-%EB%A7%8C%EB%93%A4%EA%B8%B0/" data-tooltip="Jekyll 테마로 Github Blog 만들기">
+                <a class="post-action-btn btn btn--default tooltip--top" href="/2019/11/jekyll-%ED%85%8C%EB%A7%88%EB%A1%9C-github-blog-%EB%A7%8C%EB%93%A4%EA%B8%B0/" data-tooltip="Jekyll 테마로 Github Blog 만들기">
               
                   <span class="hide-xs hide-sm text-small icon-mr">PREVIOUS</span>
                   <i class="fa fa-angle-right"></i>
@@ -667,19 +667,19 @@ $$</p>
         </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://statkim.github.io/2019/12/pca%EC%97%90%EC%84%9C-%EC%B5%9C%EC%A0%81-pc-%EA%B0%9C%EC%88%98%EB%A5%BC-%EC%A0%95%ED%95%98%EA%B8%B0-%EC%9C%84%ED%95%9C-cross-validation-%EB%B0%A9%EB%B2%95/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=/2019/12/pca%EC%97%90%EC%84%9C-%EC%B5%9C%EC%A0%81-pc-%EA%B0%9C%EC%88%98%EB%A5%BC-%EC%A0%95%ED%95%98%EA%B8%B0-%EC%9C%84%ED%95%9C-cross-validation-%EB%B0%A9%EB%B2%95/">
               <i class="fa fa-facebook-official"></i>
             </a>
           </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://statkim.github.io/2019/12/pca%EC%97%90%EC%84%9C-%EC%B5%9C%EC%A0%81-pc-%EA%B0%9C%EC%88%98%EB%A5%BC-%EC%A0%95%ED%95%98%EA%B8%B0-%EC%9C%84%ED%95%9C-cross-validation-%EB%B0%A9%EB%B2%95/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=/2019/12/pca%EC%97%90%EC%84%9C-%EC%B5%9C%EC%A0%81-pc-%EA%B0%9C%EC%88%98%EB%A5%BC-%EC%A0%95%ED%95%98%EA%B8%B0-%EC%9C%84%ED%95%9C-cross-validation-%EB%B0%A9%EB%B2%95/">
               <i class="fa fa-twitter"></i>
             </a>
           </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://statkim.github.io/2019/12/pca%EC%97%90%EC%84%9C-%EC%B5%9C%EC%A0%81-pc-%EA%B0%9C%EC%88%98%EB%A5%BC-%EC%A0%95%ED%95%98%EA%B8%B0-%EC%9C%84%ED%95%9C-cross-validation-%EB%B0%A9%EB%B2%95/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=/2019/12/pca%EC%97%90%EC%84%9C-%EC%B5%9C%EC%A0%81-pc-%EA%B0%9C%EC%88%98%EB%A5%BC-%EC%A0%95%ED%95%98%EA%B8%B0-%EC%9C%84%ED%95%9C-cross-validation-%EB%B0%A9%EB%B2%95/">
               <i class="fa fa-google-plus"></i>
             </a>
           </li>
@@ -709,19 +709,19 @@ $$</p>
   <ul class="share-options">
     
       <li class="share-option">
-        <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fstatkim.github.io%2F2019%2F12%2Fpca%25EC%2597%2590%25EC%2584%259C-%25EC%25B5%259C%25EC%25A0%2581-pc-%25EA%25B0%259C%25EC%2588%2598%25EB%25A5%25BC-%25EC%25A0%2595%25ED%2595%2598%25EA%25B8%25B0-%25EC%259C%2584%25ED%2595%259C-cross-validation-%25EB%25B0%25A9%25EB%25B2%2595%2F">
+        <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=%2F2019%2F12%2Fpca%25EC%2597%2590%25EC%2584%259C-%25EC%25B5%259C%25EC%25A0%2581-pc-%25EA%25B0%259C%25EC%2588%2598%25EB%25A5%25BC-%25EC%25A0%2595%25ED%2595%2598%25EA%25B8%25B0-%25EC%259C%2584%25ED%2595%259C-cross-validation-%25EB%25B0%25A9%25EB%25B2%2595%2F">
           <i class="fa fa-facebook-official"></i><span>Share on Facebook</span>
         </a>
       </li>
     
       <li class="share-option">
-        <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=https%3A%2F%2Fstatkim.github.io%2F2019%2F12%2Fpca%25EC%2597%2590%25EC%2584%259C-%25EC%25B5%259C%25EC%25A0%2581-pc-%25EA%25B0%259C%25EC%2588%2598%25EB%25A5%25BC-%25EC%25A0%2595%25ED%2595%2598%25EA%25B8%25B0-%25EC%259C%2584%25ED%2595%259C-cross-validation-%25EB%25B0%25A9%25EB%25B2%2595%2F">
+        <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=%2F2019%2F12%2Fpca%25EC%2597%2590%25EC%2584%259C-%25EC%25B5%259C%25EC%25A0%2581-pc-%25EA%25B0%259C%25EC%2588%2598%25EB%25A5%25BC-%25EC%25A0%2595%25ED%2595%2598%25EA%25B8%25B0-%25EC%259C%2584%25ED%2595%259C-cross-validation-%25EB%25B0%25A9%25EB%25B2%2595%2F">
           <i class="fa fa-twitter"></i><span>Share on Twitter</span>
         </a>
       </li>
     
       <li class="share-option">
-        <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=https%3A%2F%2Fstatkim.github.io%2F2019%2F12%2Fpca%25EC%2597%2590%25EC%2584%259C-%25EC%25B5%259C%25EC%25A0%2581-pc-%25EA%25B0%259C%25EC%2588%2598%25EB%25A5%25BC-%25EC%25A0%2595%25ED%2595%2598%25EA%25B8%25B0-%25EC%259C%2584%25ED%2595%259C-cross-validation-%25EB%25B0%25A9%25EB%25B2%2595%2F">
+        <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=%2F2019%2F12%2Fpca%25EC%2597%2590%25EC%2584%259C-%25EC%25B5%259C%25EC%25A0%2581-pc-%25EA%25B0%259C%25EC%2588%2598%25EB%25A5%25BC-%25EC%25A0%2595%25ED%2595%2598%25EA%25B8%25B0-%25EC%259C%2584%25ED%2595%259C-cross-validation-%25EB%25B0%25A9%25EB%25B2%2595%2F">
           <i class="fa fa-google-plus"></i><span>Share on Google&#43;</span>
         </a>
       </li>
@@ -737,7 +737,7 @@ $$</p>
       <i class="fa fa-remove"></i>
     </div>
     
-      <img id="about-card-picture" src="https://statkim.github.io/img/profile.jpg" alt="Author&#39;s picture" />
+      <img id="about-card-picture" src="/img/profile.jpg" alt="Author&#39;s picture" />
     
     <h4 id="about-card-name">김현성</h4>
     
@@ -765,7 +765,7 @@ $$</p>
     
   
     
-      <div id="cover" style="background-image:url('https://statkim.github.io/img/background.jpg');"></div>
+      <div id="cover" style="background-image:url('/img/background.jpg');"></div>
     
   
 
@@ -778,7 +778,7 @@ $$</p>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.7/js/jquery.fancybox.min.js" integrity="sha256-GEAnjcTqVP+vBp3SSc8bEDQqvWAZMiHyUSIorrWwH50=" crossorigin="anonymous"></script>
 
 
-<script src="https://statkim.github.io/js/script-pcw6v3xilnxydl1vddzazdverrnn9ctynvnxgwho987mfyqkuylcb1nlt.min.js"></script>
+<script src="/js/script-pcw6v3xilnxydl1vddzazdverrnn9ctynvnxgwho987mfyqkuylcb1nlt.min.js"></script>
 
 
 <script lang="javascript">
@@ -813,7 +813,7 @@ $(document).ready(function() {
     
       <script>
         var disqus_config = function () {
-          this.page.url = 'https:\/\/statkim.github.io\/2019\/12\/pca%EC%97%90%EC%84%9C-%EC%B5%9C%EC%A0%81-pc-%EA%B0%9C%EC%88%98%EB%A5%BC-%EC%A0%95%ED%95%98%EA%B8%B0-%EC%9C%84%ED%95%9C-cross-validation-%EB%B0%A9%EB%B2%95\/';
+          this.page.url = '\/2019\/12\/pca%EC%97%90%EC%84%9C-%EC%B5%9C%EC%A0%81-pc-%EA%B0%9C%EC%88%98%EB%A5%BC-%EC%A0%95%ED%95%98%EA%B8%B0-%EC%9C%84%ED%95%9C-cross-validation-%EB%B0%A9%EB%B2%95\/';
           
             this.page.identifier = '\/2019\/12\/pca%EC%97%90%EC%84%9C-%EC%B5%9C%EC%A0%81-pc-%EA%B0%9C%EC%88%98%EB%A5%BC-%EC%A0%95%ED%95%98%EA%B8%B0-%EC%9C%84%ED%95%9C-cross-validation-%EB%B0%A9%EB%B2%95\/'
           
