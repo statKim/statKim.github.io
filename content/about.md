@@ -4,7 +4,7 @@ sidemenu: "true"
 date: "2020-09-11"
 ---
 
-##### [Full CV](/cv_KHS.pdf)
+[Full CV](https://nbviewer.jupyter.org/github/statKim/CV_KHS/blob/master/CV.pdf)
 
 현재 [중앙대학교 통계학과](https://stat.cau.ac.kr/)에서 석사과정을 하고 있으며 [다변량 분석 연구실(Multivariate Analysis Lab)](https://sites.google.com/site/yaejilim/)에서 연구하고 있습니다.
 
