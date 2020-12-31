@@ -83,7 +83,8 @@ themesDir = "themes"
   identifier = "about"
   name = "About"
   pre = "<i class=\"sidebar-button-icon fa fa-lg fa-question\"></i>"
-  url = "/about"
+  # url = "/about"
+  url = "/#about"
 
 [[menu.links]]
   weight = 1
