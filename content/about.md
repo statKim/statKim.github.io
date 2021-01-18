@@ -1,10 +1,8 @@
 ---
 title: "About"
 sidemenu: "true"
-date: "2020-09-11"
+date: "2021-01-18"
 ---
-
-[Full CV](https://nbviewer.jupyter.org/github/statKim/CV_KHS/blob/master/CV.pdf)
 
 현재 [중앙대학교 통계학과](https://stat.cau.ac.kr/)에서 석사과정을 하고 있으며 [다변량 분석 연구실(Multivariate Analysis Lab)](https://sites.google.com/site/yaejilim/)에서 연구하고 있습니다.
 
@@ -23,12 +21,15 @@ date: "2020-09-11"
 
 ## Education
 - **중앙대학교 통계학과 석사과정**, 2019.03 - Present
+  - Thesis : Bootstrap aggregated classification for sparse functional data.
 - **중앙대학교 응용통계학 학사**, 2013.03 - 2019.02
 
 <br>
 
 ## Publications
-- **H. Kim** and Y. Lim. Bootstrap aggregated classification for sparse functional data. Submitted.
+- **H. Kim**, X. Li and Y. Lim. (2021). Robust group independent component analysis. *The Korean Journal
+of Applied Statistics*, Accepted.
+- **H. Kim** and Y. Lim. Bootstrap aggregated classification for sparse functional data. Under review.
 
 <br>
 
@@ -38,14 +39,9 @@ date: "2020-09-11"
 
 <br>
 
-## Technical Skils
-- `R`
-- `Python`
-- `SQL`
-- `SAS`
-
-<br>
-
 ## Teaching Experience
 - **Teaching Assistant**, Introduction to Statistical Learning, *Department of Applied Statistics, Chung-Ang University*, 2019 Fall
 
+<br>
+
+[Full CV](https://nbviewer.jupyter.org/github/statKim/CV_KHS/blob/master/CV.pdf)

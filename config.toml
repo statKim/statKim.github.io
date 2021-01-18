@@ -40,7 +40,7 @@ themesDir = "themes"
 [author]
   name = "김현성"
   bio = "MS student in Statistics"
-  job = "MS student at Chung-Ang University"
+  job = "Chung-Ang University"
   location = "Seoul, Korea"
   # Your Gravatar email. Overwrite `author.picture` everywhere in the blog
   # gravatarEmail = "hyunsung1021@gmail.com"
@@ -83,8 +83,8 @@ themesDir = "themes"
   identifier = "about"
   name = "About"
   pre = "<i class=\"sidebar-button-icon fa fa-lg fa-question\"></i>"
-  # url = "/about"
-  url = "/#about"
+  url = "/about"
+  # url = "/#about"
 
 [[menu.links]]
   weight = 1
