@@ -2,30 +2,30 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>book on statKim</title>
-    <link>/tags/book/</link>
+    <link>https://statkim.github.io/tags/book/</link>
     <description>Recent content in book on statKim</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko-kr</language>
     <lastBuildDate>Thu, 09 May 2019 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="/tags/book/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://statkim.github.io/tags/book/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>[FDA Book] Chapter 8.3 ~ 8.5</title>
-      <link>/2019/05/fda-book-chapter-8.3-~-8.5/</link>
+      <link>https://statkim.github.io/2019/05/fda-book-chapter-8.3-~-8.5/</link>
       <pubDate>Thu, 09 May 2019 00:00:00 +0000</pubDate>
       
-      <guid>/2019/05/fda-book-chapter-8.3-~-8.5/</guid>
+      <guid>https://statkim.github.io/2019/05/fda-book-chapter-8.3-~-8.5/</guid>
       <description>8.3 Visualizing the results 8.3.1 Plotting components as perturbations of the mean (mean의 작은 변동 요소를 plotting) Overall mean function과 PC function의 적절한 배수를 더하거나 나눈 function을 pl</description>
     </item>
     
     <item>
       <title>[FDA Book] Chapter 2.1 ~ 2.3 &amp; 8.1 ~ 8.2</title>
-      <link>/2019/04/fda-book-chapter-2.1-~-2.3-8.1-~-8.2/</link>
+      <link>https://statkim.github.io/2019/04/fda-book-chapter-2.1-~-2.3-8.1-~-8.2/</link>
       <pubDate>Fri, 26 Apr 2019 00:00:00 +0000</pubDate>
       
-      <guid>/2019/04/fda-book-chapter-2.1-~-2.3-8.1-~-8.2/</guid>
+      <guid>https://statkim.github.io/2019/04/fda-book-chapter-2.1-~-2.3-8.1-~-8.2/</guid>
       <description>2. Tools for exploring functional data 2.1 Introduction FDA의 notation과 concept 정의 FDA에서 사용하는 statistics 정의 Matrix decompositions, projections, and the constrained maximization of quadratic forms에 대한 자세한 내용은 Appendix 참고 2.2 Some notation 2.2.1 Scalars, vectors, functions and</description>
     </item>
     

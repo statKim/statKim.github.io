@@ -2,30 +2,30 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>blogdown on statKim</title>
-    <link>/tags/blogdown/</link>
+    <link>https://statkim.github.io/tags/blogdown/</link>
     <description>Recent content in blogdown on statKim</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko-kr</language>
     <lastBuildDate>Tue, 07 Jul 2020 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="/tags/blogdown/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://statkim.github.io/tags/blogdown/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>blogdown으로 Github Blog 만들기 2/2</title>
-      <link>/2020/07/blogdown%EC%9C%BC%EB%A1%9C-github-blog-%EB%A7%8C%EB%93%A4%EA%B8%B0-2/2/</link>
+      <link>https://statkim.github.io/2020/07/blogdown%EC%9C%BC%EB%A1%9C-github-blog-%EB%A7%8C%EB%93%A4%EA%B8%B0-2/2/</link>
       <pubDate>Tue, 07 Jul 2020 00:00:00 +0000</pubDate>
       
-      <guid>/2020/07/blogdown%EC%9C%BC%EB%A1%9C-github-blog-%EB%A7%8C%EB%93%A4%EA%B8%B0-2/2/</guid>
+      <guid>https://statkim.github.io/2020/07/blogdown%EC%9C%BC%EB%A1%9C-github-blog-%EB%A7%8C%EB%93%A4%EA%B8%B0-2/2/</guid>
       <description>순서 R project 생성 blogdown 설치 Hugo 설치 Site 생성 (로컬에서 호스팅) 기본 설정 Github에 push (subtree 이용) Git으로 블로그 관리 이번 글에서는 지난 글에 이어서 Github에</description>
     </item>
     
     <item>
       <title>blogdown으로 Github Blog 만들기 1/2</title>
-      <link>/2020/06/blogdown%EC%9C%BC%EB%A1%9C-github-blog-%EB%A7%8C%EB%93%A4%EA%B8%B0-1/2/</link>
+      <link>https://statkim.github.io/2020/06/blogdown%EC%9C%BC%EB%A1%9C-github-blog-%EB%A7%8C%EB%93%A4%EA%B8%B0-1/2/</link>
       <pubDate>Tue, 30 Jun 2020 00:00:00 +0000</pubDate>
       
-      <guid>/2020/06/blogdown%EC%9C%BC%EB%A1%9C-github-blog-%EB%A7%8C%EB%93%A4%EA%B8%B0-1/2/</guid>
+      <guid>https://statkim.github.io/2020/06/blogdown%EC%9C%BC%EB%A1%9C-github-blog-%EB%A7%8C%EB%93%A4%EA%B8%B0-1/2/</guid>
       <description>blogdown이란 Jekyll과 더불어 최근 인기가 많아지고 있는 Hugo 엔진을 사용하여 정적 페이지를 만들어주는 R 패키지입니다. 특히, R을 자주 사용하는 사</description>
     </item>
     
