@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>beamer on statKim</title>
-    <link>/tags/beamer/</link>
+    <link>https://statkim.github.io/tags/beamer/</link>
     <description>Recent content in beamer on statKim</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko-kr</language>
     <lastBuildDate>Fri, 27 Dec 2019 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="/tags/beamer/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://statkim.github.io/tags/beamer/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>R markdown으로 Beamer 슬라이드 만들기</title>
-      <link>/2019/12/r-markdown%EC%9C%BC%EB%A1%9C-beamer-%EC%8A%AC%EB%9D%BC%EC%9D%B4%EB%93%9C-%EB%A7%8C%EB%93%A4%EA%B8%B0/</link>
+      <link>https://statkim.github.io/2019/12/r-markdown%EC%9C%BC%EB%A1%9C-beamer-%EC%8A%AC%EB%9D%BC%EC%9D%B4%EB%93%9C-%EB%A7%8C%EB%93%A4%EA%B8%B0/</link>
       <pubDate>Fri, 27 Dec 2019 00:00:00 +0000</pubDate>
       
-      <guid>/2019/12/r-markdown%EC%9C%BC%EB%A1%9C-beamer-%EC%8A%AC%EB%9D%BC%EC%9D%B4%EB%93%9C-%EB%A7%8C%EB%93%A4%EA%B8%B0/</guid>
+      <guid>https://statkim.github.io/2019/12/r-markdown%EC%9C%BC%EB%A1%9C-beamer-%EC%8A%AC%EB%9D%BC%EC%9D%B4%EB%93%9C-%EB%A7%8C%EB%93%A4%EA%B8%B0/</guid>
       <description>Beamer란 $\LaTeX$ 문서의 발표자료 형식으로 강의록에서 많이 사용됨 특히, 수식이 많은 자료를 presentation 형태로 만들 때 유용 $\LaTeX$이 설치되어 있는 경우, R ma</description>
     </item>
     

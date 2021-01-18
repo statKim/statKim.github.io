@@ -2,30 +2,30 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>statistics on statKim</title>
-    <link>/tags/statistics/</link>
+    <link>https://statkim.github.io/tags/statistics/</link>
     <description>Recent content in statistics on statKim</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko-kr</language>
     <lastBuildDate>Mon, 20 Jan 2020 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="/tags/statistics/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://statkim.github.io/tags/statistics/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Functional Principal Component Analysis</title>
-      <link>/2020/01/functional-principal-component-analysis/</link>
+      <link>https://statkim.github.io/2020/01/functional-principal-component-analysis/</link>
       <pubDate>Mon, 20 Jan 2020 00:00:00 +0000</pubDate>
       
-      <guid>/2020/01/functional-principal-component-analysis/</guid>
+      <guid>https://statkim.github.io/2020/01/functional-principal-component-analysis/</guid>
       <description>Functional Principal Component Anlaysis (FPCA)란 이름 그대로 functional data에 적용하는 PCA 방법 일반적으로 잘 알려져 있는 multivariate PCA는 \(p\)개의 변수를 \(q(\ll p)\)개의 변수로 차원축소(</description>
     </item>
     
     <item>
       <title>Generalized Estimating Equations (GEE)</title>
-      <link>/2019/11/generalized-estimating-equations-gee/</link>
+      <link>https://statkim.github.io/2019/11/generalized-estimating-equations-gee/</link>
       <pubDate>Fri, 01 Nov 2019 00:00:00 +0000</pubDate>
       
-      <guid>/2019/11/generalized-estimating-equations-gee/</guid>
+      <guid>https://statkim.github.io/2019/11/generalized-estimating-equations-gee/</guid>
       <description>GLM으로 다루기 어려운 repeated measured data를 다룰 수 있는 분석방법 (Liang &amp;amp; Zeger, 1986) Independence 가정이 있는 GLM에서 non-independence (or clustered)인 경우를 허용 (반복 측정된 데이터이</description>
     </item>
     

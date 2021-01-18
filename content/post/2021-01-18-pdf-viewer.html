@@ -1,0 +1,41 @@
+---
+title: Github에 있는 pdf 파일 링크 지정하여 공유하기
+date: '2021-01-18'
+coverImage: 
+coverMeta: out
+metaAlignment: center
+categories:
+  - blog
+tags:
+  - Nbviewer
+  - Github
+---
+
+
+
+<p>블로그 포스팅을 비롯해서 간혹 Github repo에 있는 pdf 파일을 링크 지정하거나 간단히 url로 공유해야할 때가 있습니다.
+사실 그럴 때마다 <strong>Github에서 pdf를 열거나</strong> 아예 <strong>파일을 다운로드</strong> 받아야 하기 때문에 <del>귀찮을 뿐 아니라</del> 그다지 깔끔해 보이지 않았습니다.</p>
+<p>기존에 제가 알고 있던 방법은 <code>https://github.com/statKim/TIL/blob/master/R/Rmd_beamer.pdf</code>의 링크로 들어가서 직접 Github에서 파일을 열어서 확인하거나, 이 링크 마지막에 <code>?raw=True</code> 옵션을 추가하여 파일을 다운받는 방법입니다.</p>
+<p>하지만 저는 위와 같은 방식보다 <strong>새 탭에서 깔끔하게 파일을 열어 확인하고 싶었기 때문에</strong> 열심히 구글링을 해보았고, 제가 찾은 2가지 방법에 대해 소개하겠습니다. 그리고 테스트해보지는 않았지만… 이 방법들은 pdf 파일뿐 아니라 다른 유형의 파일도 가능할 것 같습니다. (<code>.docx</code>, <code>.ipynb</code> 등)</p>
+<p><br></p>
+<div id="google-드라이브-뷰어" class="section level3">
+<h3>1. Google 드라이브 뷰어</h3>
+<p>첫 번째로, Google 드라이브 뷰어를 사용하는 방법입니다. 사용방법은 <code>https://docs.google.com/viewer?url=pdf파일url?raw=True</code> 에서 <code>pdf파일url</code>만 수정하여 사용하면 됩니다.</p>
+<p>예를 들어, <a href="https://docs.google.com/viewer?url=https://github.com/statKim/TIL/blob/master/R/Rmd_beamer.pdf?raw=T" class="uri">https://docs.google.com/viewer?url=https://github.com/statKim/TIL/blob/master/R/Rmd_beamer.pdf?raw=T</a> 처럼 사용할 수 있습니다.</p>
+<p><br></p>
+</div>
+<div id="nbviewer" class="section level3">
+<h3>2. Nbviewer</h3>
+<p><a href="https://nbviewer.jupyter.org/">https://nbviewer.jupyter.org/</a>에 가서 pdf 파일의 주소를 입력하고 <code>Go</code>를 클릭하면 <code>Nbviewer</code>에서 파일이 열리고 이 url을 복사하여 파일을 공유할 수 있습니다.</p>
+<p><img src="/img/pdf_viewer.png" /></p>
+<p><code>Nbviewer</code>는 Jupyter에서 만든 viewer로써, pdf뿐 아니라 <code>jupyter notebook 파일(.ipynb)</code>도 열 수 있어 굉장히 편리합니다!!</p>
+<p>예를 들어, <a href="https://nbviewer.jupyter.org/github/statKim/TIL/blob/master/R/Rmd_beamer.pdf" class="uri">https://nbviewer.jupyter.org/github/statKim/TIL/blob/master/R/Rmd_beamer.pdf</a> 와 같은 url을 얻을 수 있습니다.</p>
+<p><br></p>
+</div>
+<div id="reference" class="section level2">
+<h2>Reference</h2>
+<ul>
+<li><a href="https://codefit.tistory.com/27">[web]iframe google docs gview 사용하여 PDF뷰어 사용하기</a></li>
+<li><a href="https://3months.tistory.com/12">NbViewer를 통해 Jupyter Notebook Share하기</a></li>
+</ul>
+</div>
