@@ -2,48 +2,39 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>blog on statKim</title>
-    <link>https://statkim.github.io/categories/blog/</link>
+    <link>/categories/blog/</link>
     <description>Recent content in blog on statKim</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko-kr</language>
-    <lastBuildDate>Mon, 18 Jan 2021 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 07 Jul 2020 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="https://statkim.github.io/categories/blog/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/categories/blog/index.xml" rel="self" type="application/rss+xml" />
     
-    
-    <item>
-      <title>Github에 있는 pdf 파일 링크 지정하여 공유하기</title>
-      <link>https://statkim.github.io/2021/01/github%EC%97%90-%EC%9E%88%EB%8A%94-pdf-%ED%8C%8C%EC%9D%BC-%EB%A7%81%ED%81%AC-%EC%A7%80%EC%A0%95%ED%95%98%EC%97%AC-%EA%B3%B5%EC%9C%A0%ED%95%98%EA%B8%B0/</link>
-      <pubDate>Mon, 18 Jan 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://statkim.github.io/2021/01/github%EC%97%90-%EC%9E%88%EB%8A%94-pdf-%ED%8C%8C%EC%9D%BC-%EB%A7%81%ED%81%AC-%EC%A7%80%EC%A0%95%ED%95%98%EC%97%AC-%EA%B3%B5%EC%9C%A0%ED%95%98%EA%B8%B0/</guid>
-      <description>블로그 포스팅을 비롯해서 간혹 Github repo에 있는 pdf 파일을 링크 지정하거나 간단히 url로 공유해야할 때가 있습니다. 사실 그럴 때마다 Github에서 pdf를</description>
-    </item>
     
     <item>
       <title>blogdown으로 Github Blog 만들기 2/2</title>
-      <link>https://statkim.github.io/2020/07/blogdown%EC%9C%BC%EB%A1%9C-github-blog-%EB%A7%8C%EB%93%A4%EA%B8%B0-2/2/</link>
+      <link>/2020/07/blogdown%EC%9C%BC%EB%A1%9C-github-blog-%EB%A7%8C%EB%93%A4%EA%B8%B0-2/2/</link>
       <pubDate>Tue, 07 Jul 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://statkim.github.io/2020/07/blogdown%EC%9C%BC%EB%A1%9C-github-blog-%EB%A7%8C%EB%93%A4%EA%B8%B0-2/2/</guid>
+      <guid>/2020/07/blogdown%EC%9C%BC%EB%A1%9C-github-blog-%EB%A7%8C%EB%93%A4%EA%B8%B0-2/2/</guid>
       <description>순서 R project 생성 blogdown 설치 Hugo 설치 Site 생성 (로컬에서 호스팅) 기본 설정 Github에 push (subtree 이용) Git으로 블로그 관리 이번 글에서는 지난 글에 이어서 Github에</description>
     </item>
     
     <item>
       <title>blogdown으로 Github Blog 만들기 1/2</title>
-      <link>https://statkim.github.io/2020/06/blogdown%EC%9C%BC%EB%A1%9C-github-blog-%EB%A7%8C%EB%93%A4%EA%B8%B0-1/2/</link>
+      <link>/2020/06/blogdown%EC%9C%BC%EB%A1%9C-github-blog-%EB%A7%8C%EB%93%A4%EA%B8%B0-1/2/</link>
       <pubDate>Tue, 30 Jun 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://statkim.github.io/2020/06/blogdown%EC%9C%BC%EB%A1%9C-github-blog-%EB%A7%8C%EB%93%A4%EA%B8%B0-1/2/</guid>
+      <guid>/2020/06/blogdown%EC%9C%BC%EB%A1%9C-github-blog-%EB%A7%8C%EB%93%A4%EA%B8%B0-1/2/</guid>
       <description>blogdown이란 Jekyll과 더불어 최근 인기가 많아지고 있는 Hugo 엔진을 사용하여 정적 페이지를 만들어주는 R 패키지입니다. 특히, R을 자주 사용하는 사</description>
     </item>
     
     <item>
       <title>Jekyll 테마로 Github Blog 만들기</title>
-      <link>https://statkim.github.io/2019/11/jekyll-%ED%85%8C%EB%A7%88%EB%A1%9C-github-blog-%EB%A7%8C%EB%93%A4%EA%B8%B0/</link>
+      <link>/2019/11/jekyll-%ED%85%8C%EB%A7%88%EB%A1%9C-github-blog-%EB%A7%8C%EB%93%A4%EA%B8%B0/</link>
       <pubDate>Sun, 03 Nov 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://statkim.github.io/2019/11/jekyll-%ED%85%8C%EB%A7%88%EB%A1%9C-github-blog-%EB%A7%8C%EB%93%A4%EA%B8%B0/</guid>
+      <guid>/2019/11/jekyll-%ED%85%8C%EB%A7%88%EB%A1%9C-github-blog-%EB%A7%8C%EB%93%A4%EA%B8%B0/</guid>
       <description>1. Ruby 설치 RubyInstaller for Windows에서 Ruby+Devkit 설치 프로그램 다운 및 설치 Ruby의 경우 최신버전보다는 이하 버전 사용을 권장 최신 버전의 경우 jekyll 인스톨시 호환성 문제가 있다</description>
     </item>
     

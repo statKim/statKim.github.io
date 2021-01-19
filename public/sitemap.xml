@@ -3,317 +3,327 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://statkim.github.io/about/</loc>
+    <loc>/about/</loc>
     <lastmod>2021-01-18T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://statkim.github.io/categories/blog/</loc>
+    <loc>/categories/</loc>
     <lastmod>2021-01-18T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://statkim.github.io/categories/</loc>
+    <loc>/tags/github/</loc>
     <lastmod>2021-01-18T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://statkim.github.io/tags/github/</loc>
+    <loc>/categories/github/</loc>
     <lastmod>2021-01-18T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://statkim.github.io/2021/01/github%EC%97%90-%EC%9E%88%EB%8A%94-pdf-%ED%8C%8C%EC%9D%BC-%EB%A7%81%ED%81%AC-%EC%A7%80%EC%A0%95%ED%95%98%EC%97%AC-%EA%B3%B5%EC%9C%A0%ED%95%98%EA%B8%B0/</loc>
+    <loc>/2021/01/github%EC%97%90-%EC%9E%88%EB%8A%94-pdf-%ED%8C%8C%EC%9D%BC-%EB%A7%81%ED%81%AC-%EC%A7%80%EC%A0%95%ED%95%98%EC%97%AC-%EA%B3%B5%EC%9C%A0%ED%95%98%EA%B8%B0/</loc>
     <lastmod>2021-01-18T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://statkim.github.io/tags/nbviewer/</loc>
+    <loc>/tags/nbviewer/</loc>
     <lastmod>2021-01-18T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://statkim.github.io/post/</loc>
+    <loc>/post/</loc>
     <lastmod>2021-01-18T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://statkim.github.io/</loc>
+    <loc>/</loc>
     <lastmod>2021-01-18T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://statkim.github.io/tags/</loc>
+    <loc>/tags/</loc>
     <lastmod>2021-01-18T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://statkim.github.io/tags/blogdown/</loc>
+    <loc>/categories/blog/</loc>
     <lastmod>2020-07-07T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://statkim.github.io/2020/07/blogdown%EC%9C%BC%EB%A1%9C-github-blog-%EB%A7%8C%EB%93%A4%EA%B8%B0-2/2/</loc>
+    <loc>/tags/blogdown/</loc>
     <lastmod>2020-07-07T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://statkim.github.io/tags/hugo/</loc>
+    <loc>/categories/blogdown/</loc>
     <lastmod>2020-07-07T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://statkim.github.io/tags/rmarkdown/</loc>
+    <loc>/2020/07/blogdown%EC%9C%BC%EB%A1%9C-github-blog-%EB%A7%8C%EB%93%A4%EA%B8%B0-2/2/</loc>
     <lastmod>2020-07-07T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://statkim.github.io/2020/06/blogdown%EC%9C%BC%EB%A1%9C-github-blog-%EB%A7%8C%EB%93%A4%EA%B8%B0-1/2/</loc>
+    <loc>/tags/hugo/</loc>
+    <lastmod>2020-07-07T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/rmarkdown/</loc>
+    <lastmod>2020-07-07T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/2020/06/blogdown%EC%9C%BC%EB%A1%9C-github-blog-%EB%A7%8C%EB%93%A4%EA%B8%B0-1/2/</loc>
     <lastmod>2020-06-30T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://statkim.github.io/about_eng/</loc>
+    <loc>/about_eng/</loc>
     <lastmod>2020-06-28T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://statkim.github.io/tags/gpu/</loc>
+    <loc>/tags/gpu/</loc>
     <lastmod>2020-02-01T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://statkim.github.io/categories/python/</loc>
+    <loc>/categories/python/</loc>
     <lastmod>2020-02-01T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://statkim.github.io/tags/tensorflow/</loc>
+    <loc>/tags/tensorflow/</loc>
     <lastmod>2020-02-01T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://statkim.github.io/categories/tensorflow/</loc>
+    <loc>/categories/tensorflow/</loc>
     <lastmod>2020-02-01T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://statkim.github.io/2020/02/tensorflow-2.0-gpu-%EC%84%A4%EC%B9%98%ED%95%98%EA%B8%B0/</loc>
+    <loc>/2020/02/tensorflow-2.0-gpu-%EC%84%A4%EC%B9%98%ED%95%98%EA%B8%B0/</loc>
     <lastmod>2020-02-01T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://statkim.github.io/tags/fda/</loc>
+    <loc>/tags/fda/</loc>
     <lastmod>2020-01-20T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://statkim.github.io/categories/fda/</loc>
+    <loc>/categories/fda/</loc>
     <lastmod>2020-01-20T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://statkim.github.io/tags/fpca/</loc>
+    <loc>/tags/fpca/</loc>
     <lastmod>2020-01-20T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://statkim.github.io/2020/01/functional-principal-component-analysis/</loc>
+    <loc>/2020/01/functional-principal-component-analysis/</loc>
     <lastmod>2020-01-20T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://statkim.github.io/tags/sparse/</loc>
+    <loc>/tags/sparse/</loc>
     <lastmod>2020-01-20T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://statkim.github.io/tags/statistics/</loc>
+    <loc>/tags/statistics/</loc>
     <lastmod>2020-01-20T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://statkim.github.io/categories/statistics/</loc>
+    <loc>/categories/statistics/</loc>
     <lastmod>2020-01-20T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://statkim.github.io/tags/beamer/</loc>
+    <loc>/tags/beamer/</loc>
     <lastmod>2019-12-27T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://statkim.github.io/tags/latex/</loc>
+    <loc>/tags/latex/</loc>
     <lastmod>2019-12-27T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://statkim.github.io/tags/r/</loc>
+    <loc>/tags/r/</loc>
     <lastmod>2019-12-27T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://statkim.github.io/categories/r/</loc>
+    <loc>/categories/r/</loc>
     <lastmod>2019-12-27T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://statkim.github.io/2019/12/r-markdown%EC%9C%BC%EB%A1%9C-beamer-%EC%8A%AC%EB%9D%BC%EC%9D%B4%EB%93%9C-%EB%A7%8C%EB%93%A4%EA%B8%B0/</loc>
+    <loc>/2019/12/r-markdown%EC%9C%BC%EB%A1%9C-beamer-%EC%8A%AC%EB%9D%BC%EC%9D%B4%EB%93%9C-%EB%A7%8C%EB%93%A4%EA%B8%B0/</loc>
     <lastmod>2019-12-27T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://statkim.github.io/categories/rmarkdown/</loc>
+    <loc>/categories/rmarkdown/</loc>
     <lastmod>2019-12-27T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://statkim.github.io/tags/rmd/</loc>
+    <loc>/tags/rmd/</loc>
     <lastmod>2019-12-27T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://statkim.github.io/tags/cross-validation/</loc>
+    <loc>/tags/cross-validation/</loc>
     <lastmod>2019-12-24T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://statkim.github.io/tags/paper/</loc>
+    <loc>/tags/paper/</loc>
     <lastmod>2019-12-24T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://statkim.github.io/categories/paper/</loc>
+    <loc>/categories/paper/</loc>
     <lastmod>2019-12-24T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://statkim.github.io/tags/pca/</loc>
+    <loc>/tags/pca/</loc>
     <lastmod>2019-12-24T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://statkim.github.io/2019/12/pca%EC%97%90%EC%84%9C-%EC%B5%9C%EC%A0%81-pc-%EA%B0%9C%EC%88%98%EB%A5%BC-%EC%A0%95%ED%95%98%EA%B8%B0-%EC%9C%84%ED%95%9C-cross-validation-%EB%B0%A9%EB%B2%95/</loc>
+    <loc>/2019/12/pca%EC%97%90%EC%84%9C-%EC%B5%9C%EC%A0%81-pc-%EA%B0%9C%EC%88%98%EB%A5%BC-%EC%A0%95%ED%95%98%EA%B8%B0-%EC%9C%84%ED%95%9C-cross-validation-%EB%B0%A9%EB%B2%95/</loc>
     <lastmod>2019-12-24T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://statkim.github.io/tags/blog/</loc>
+    <loc>/tags/blog/</loc>
     <lastmod>2019-11-03T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://statkim.github.io/tags/github-page/</loc>
+    <loc>/tags/github-page/</loc>
     <lastmod>2019-11-03T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://statkim.github.io/tags/jekyll/</loc>
+    <loc>/tags/jekyll/</loc>
     <lastmod>2019-11-03T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://statkim.github.io/categories/jekyll/</loc>
+    <loc>/categories/jekyll/</loc>
     <lastmod>2019-11-03T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://statkim.github.io/2019/11/jekyll-%ED%85%8C%EB%A7%88%EB%A1%9C-github-blog-%EB%A7%8C%EB%93%A4%EA%B8%B0/</loc>
+    <loc>/2019/11/jekyll-%ED%85%8C%EB%A7%88%EB%A1%9C-github-blog-%EB%A7%8C%EB%93%A4%EA%B8%B0/</loc>
     <lastmod>2019-11-03T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://statkim.github.io/tags/biostatistics/</loc>
+    <loc>/tags/biostatistics/</loc>
     <lastmod>2019-11-01T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://statkim.github.io/tags/error/</loc>
+    <loc>/tags/error/</loc>
     <lastmod>2019-11-01T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://statkim.github.io/categories/error/</loc>
+    <loc>/categories/error/</loc>
     <lastmod>2019-11-01T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://statkim.github.io/2019/11/generalized-estimating-equations-gee/</loc>
+    <loc>/2019/11/generalized-estimating-equations-gee/</loc>
     <lastmod>2019-11-01T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://statkim.github.io/tags/jupyter-notebook/</loc>
+    <loc>/tags/jupyter-notebook/</loc>
     <lastmod>2019-11-01T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://statkim.github.io/2019/11/jupyter-notebook%EC%97%90%EC%84%9C-%EA%B0%80%EC%83%81%ED%99%98%EA%B2%BD-kernel%EC%9D%B4-%EC%9D%B8%EC%8B%9D%EB%90%98%EC%A7%80-%EC%95%8A%EB%8A%94-%EC%98%A4%EB%A5%98/</loc>
+    <loc>/2019/11/jupyter-notebook%EC%97%90%EC%84%9C-%EA%B0%80%EC%83%81%ED%99%98%EA%B2%BD-kernel%EC%9D%B4-%EC%9D%B8%EC%8B%9D%EB%90%98%EC%A7%80-%EC%95%8A%EB%8A%94-%EC%98%A4%EB%A5%98/</loc>
     <lastmod>2019-11-01T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://statkim.github.io/tags/kernel/</loc>
+    <loc>/tags/kernel/</loc>
     <lastmod>2019-11-01T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://statkim.github.io/2019/07/principal-component-models-for-sparse-functional-data/</loc>
+    <loc>/2019/07/principal-component-models-for-sparse-functional-data/</loc>
     <lastmod>2019-07-18T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://statkim.github.io/2019/05/fda-book-chapter-8.3-~-8.5/</loc>
+    <loc>/2019/05/fda-book-chapter-8.3-~-8.5/</loc>
     <lastmod>2019-05-09T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://statkim.github.io/tags/book/</loc>
+    <loc>/tags/book/</loc>
     <lastmod>2019-05-09T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://statkim.github.io/categories/book/</loc>
+    <loc>/categories/book/</loc>
     <lastmod>2019-05-09T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://statkim.github.io/2019/04/fda-book-chapter-2.1-~-2.3-8.1-~-8.2/</loc>
+    <loc>/2019/04/fda-book-chapter-2.1-~-2.3-8.1-~-8.2/</loc>
     <lastmod>2019-04-26T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://statkim.github.io/2019/01/jupyter-notebook%EC%97%90%EC%84%9C-r-%EC%82%AC%EC%9A%A9%ED%95%98%EA%B8%B0/</loc>
+    <loc>/2019/01/jupyter-notebook%EC%97%90%EC%84%9C-r-%EC%82%AC%EC%9A%A9%ED%95%98%EA%B8%B0/</loc>
     <lastmod>2019-01-08T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://statkim.github.io/tags/conda/</loc>
+    <loc>/tags/conda/</loc>
     <lastmod>2018-11-01T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://statkim.github.io/tags/python/</loc>
+    <loc>/tags/python/</loc>
     <lastmod>2018-11-01T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://statkim.github.io/2018/11/python-%EA%B0%80%EC%83%81%ED%99%98%EA%B2%BD-%EB%A7%8C%EB%93%A4%EA%B8%B0/</loc>
+    <loc>/2018/11/python-%EA%B0%80%EC%83%81%ED%99%98%EA%B2%BD-%EB%A7%8C%EB%93%A4%EA%B8%B0/</loc>
     <lastmod>2018-11-01T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://statkim.github.io/tags/virtualenv/</loc>
+    <loc>/tags/virtualenv/</loc>
     <lastmod>2018-11-01T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://statkim.github.io/tags/%EA%B0%80%EC%83%81%ED%99%98%EA%B2%BD/</loc>
+    <loc>/tags/%EA%B0%80%EC%83%81%ED%99%98%EA%B2%BD/</loc>
     <lastmod>2018-11-01T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://statkim.github.io/archives/</loc>
+    <loc>/archives/</loc>
   </url>
   
 </urlset>

@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>FDA on statKim</title>
-    <link>https://statkim.github.io/categories/fda/</link>
+    <link>/categories/fda/</link>
     <description>Recent content in FDA on statKim</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko-kr</language>
     <lastBuildDate>Mon, 20 Jan 2020 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="https://statkim.github.io/categories/fda/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/categories/fda/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Functional Principal Component Analysis</title>
-      <link>https://statkim.github.io/2020/01/functional-principal-component-analysis/</link>
+      <link>/2020/01/functional-principal-component-analysis/</link>
       <pubDate>Mon, 20 Jan 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://statkim.github.io/2020/01/functional-principal-component-analysis/</guid>
+      <guid>/2020/01/functional-principal-component-analysis/</guid>
       <description>Functional Principal Component Anlaysis (FPCA)란 이름 그대로 functional data에 적용하는 PCA 방법 일반적으로 잘 알려져 있는 multivariate PCA는 \(p\)개의 변수를 \(q(\ll p)\)개의 변수로 차원축소(</description>
     </item>
     
