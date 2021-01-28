@@ -8,18 +8,18 @@
 <meta name="generator" content="Hugo 0.73.0 with theme Tranquilpeak 0.4.8-BETA">
 <meta name="author" content="김현성">
 <meta name="keywords" content="">
-<meta name="description" content="R에서 데이터를 다루면서 어쩌면 다음과 같은 경험을 해보신 적이 있으실 겁니다. 변수명이 weather_Jeju, weather_Seoul, weather_Busan, ... 으로 되어있습니다. 우리는 이 데이터에 같은 처리를 해주고 싶은데">
+<meta name="description" content="R에서 데이터를 다루면서 어쩌면 다음과 같은 경험을 해보신 적이 있으실 겁니다. 변수명이 weather_Jeju, weather_Seoul, weather_Busan, ... 으로 되어있고, 우리는 이 데이터에 같은 처리를 해주고 싶습니다.">
 
 
-<meta property="og:description" content="R에서 데이터를 다루면서 어쩌면 다음과 같은 경험을 해보신 적이 있으실 겁니다. 변수명이 weather_Jeju, weather_Seoul, weather_Busan, ... 으로 되어있습니다. 우리는 이 데이터에 같은 처리를 해주고 싶은데">
+<meta property="og:description" content="R에서 데이터를 다루면서 어쩌면 다음과 같은 경험을 해보신 적이 있으실 겁니다. 변수명이 weather_Jeju, weather_Seoul, weather_Busan, ... 으로 되어있고, 우리는 이 데이터에 같은 처리를 해주고 싶습니다.">
 <meta property="og:type" content="article">
 <meta property="og:title" content="변수명을 문자열 형식으로 자유롭게 다루기 - get과 assign">
 <meta name="twitter:title" content="변수명을 문자열 형식으로 자유롭게 다루기 - get과 assign">
 <meta property="og:url" content="https://statkim.github.io/2021/01/%EB%B3%80%EC%88%98%EB%AA%85%EC%9D%84-%EB%AC%B8%EC%9E%90%EC%97%B4-%ED%98%95%EC%8B%9D%EC%9C%BC%EB%A1%9C-%EC%9E%90%EC%9C%A0%EB%A1%AD%EA%B2%8C-%EB%8B%A4%EB%A3%A8%EA%B8%B0-get%EA%B3%BC-assign/">
 <meta property="twitter:url" content="https://statkim.github.io/2021/01/%EB%B3%80%EC%88%98%EB%AA%85%EC%9D%84-%EB%AC%B8%EC%9E%90%EC%97%B4-%ED%98%95%EC%8B%9D%EC%9C%BC%EB%A1%9C-%EC%9E%90%EC%9C%A0%EB%A1%AD%EA%B2%8C-%EB%8B%A4%EB%A3%A8%EA%B8%B0-get%EA%B3%BC-assign/">
 <meta property="og:site_name" content="statKim">
-<meta property="og:description" content="R에서 데이터를 다루면서 어쩌면 다음과 같은 경험을 해보신 적이 있으실 겁니다. 변수명이 weather_Jeju, weather_Seoul, weather_Busan, ... 으로 되어있습니다. 우리는 이 데이터에 같은 처리를 해주고 싶은데">
-<meta name="twitter:description" content="R에서 데이터를 다루면서 어쩌면 다음과 같은 경험을 해보신 적이 있으실 겁니다. 변수명이 weather_Jeju, weather_Seoul, weather_Busan, ... 으로 되어있습니다. 우리는 이 데이터에 같은 처리를 해주고 싶은데">
+<meta property="og:description" content="R에서 데이터를 다루면서 어쩌면 다음과 같은 경험을 해보신 적이 있으실 겁니다. 변수명이 weather_Jeju, weather_Seoul, weather_Busan, ... 으로 되어있고, 우리는 이 데이터에 같은 처리를 해주고 싶습니다.">
+<meta name="twitter:description" content="R에서 데이터를 다루면서 어쩌면 다음과 같은 경험을 해보신 적이 있으실 겁니다. 변수명이 weather_Jeju, weather_Seoul, weather_Busan, ... 으로 되어있고, 우리는 이 데이터에 같은 처리를 해주고 싶습니다.">
 <meta property="og:locale" content="en-us">
 
   
@@ -274,10 +274,10 @@ if (!doNotTrack) {
 <script src="https://statkim.github.io/rmarkdown-libs/header-attrs/header-attrs.js"></script>
 
 
-<p><code>R</code>에서 데이터를 다루면서 어쩌면 다음과 같은 경험을 해보신 적이 있으실 겁니다.</p>
-<p>변수명이 <code>weather_Jeju, weather_Seoul, weather_Busan, ...</code> 으로 되어있습니다.
-우리는 이 데이터에 같은 처리를 해주고 싶은데, 각 변수마다 같은 코드를 작성하게 되면 코드가 너무 길어지게 되죠. . .</p>
-<p>이런 경우에 변수명을 <code>character</code> type으로 자유롭게 가져오고 다시 할당해줄 때 사용하는 R 함수가 <code>get()</code>과 <code>assign()</code>입니다. 이 두 함수는 R base에 있는 함수로 따로 패키지 설치 없이 활용할 수 있습니다.</p>
+<p><strong>R</strong>에서 데이터를 다루면서 어쩌면 다음과 같은 경험을 해보신 적이 있으실 겁니다.</p>
+<p>변수명이 <code>weather_Jeju, weather_Seoul, weather_Busan, ...</code> 으로 되어있고, 우리는 이 데이터에 같은 처리를 해주고 싶습니다.
+하지만 각 변수마다 같은 코드를 반복하여 작성하게 되면 코드가 너무 길어지게 되죠. . .</p>
+<p>이런 경우에 변수명을 <strong>문자열 형식</strong>으로 자유롭게 가져오고 다시 할당해줄 때 사용하는 <strong>R</strong> 함수가 <code>get()</code>과 <code>assign()</code>입니다. 이 두 함수는 R base에 있는 함수로 따로 패키지 설치 없이 활용할 수 있습니다.</p>
 <p><br></p>
 <div id="get---문자열-형식으로-되어있는-변수-불러오기" class="section level1">
 <h1>get - 문자열 형식으로 되어있는 변수 불러오기</h1>
@@ -291,7 +291,7 @@ data_C &lt;- 21:25</code></pre>
 <p>즉, <code>data_A</code>를 가져오는 방법은 다음과 같습니다.</p>
 <pre class="r"><code>get(&quot;data_A&quot;)</code></pre>
 <pre><code>## [1] 1 2 3 4 5</code></pre>
-<p>또는 변수명이 비슷한 형태를 따른다면 <code>paste()</code> 함수를 활용하여 다음과 같이 반복문에 적용할 수도 있습니다. (사실 저는 여기서 큰 감동을 받았었습니다. . .)</p>
+<p>또는 변수명이 비슷한 형태를 따른다면 <code>paste()</code> 함수를 활용하여 다음과 같이 반복문에 적용할 수도 있습니다. (사실 저는 여기서 굉장히 큰 감동을 받았었습니다. . .)</p>
 <pre class="r"><code>for (i in c(&quot;A&quot;,&quot;B&quot;,&quot;C&quot;)) {
   var_name &lt;- paste(&quot;data_&quot;, i, sep = &quot;&quot;)
   
@@ -309,7 +309,7 @@ data_C &lt;- 21:25</code></pre>
 <div id="assign---문자열-형식으로-되어있는-변수에-새로운-값-할당하기" class="section level1">
 <h1>assign - 문자열 형식으로 되어있는 변수에 새로운 값 할당하기</h1>
 <p><code>assign()</code>은 <code>get()</code>과 반대로 문자열 형태로 되어있는 변수에 값을 할당할 때 사용할 수 있습니다.</p>
-<p>2개의 argument가 필요한데, 첫 번째 argument에는 “문자열 형태의 변수명”, 두 번째 argument에는 “변수에 넣을 값”을 넣어주면 됩니다.</p>
+<p>2개의 argument가 필요한데, 첫 번째 argument에는 <strong>“문자열 형태의 변수명”</strong>, 두 번째 argument에는 <strong>“변수에 넣을 값”</strong>을 넣어주면 됩니다.</p>
 <pre class="r"><code>assign(&quot;문자열 형태의 변수명&quot;, &quot;변수에 넣을 값&quot;)</code></pre>
 <p>예를 들어, 새로운 변수 <code>data_D</code>에 <code>c(1:5)*5</code> 값을 할당하는 법은 다음과 같습니다.</p>
 <pre class="r"><code># data_D &lt;- c(1:5)*5   # 아래와 같은 결과
