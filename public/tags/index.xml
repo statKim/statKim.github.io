@@ -2,291 +2,291 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on statKim</title>
-    <link>https://statkim.github.io/tags/</link>
+    <link>/tags/</link>
     <description>Recent content in Tags on statKim</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko-kr</language>
     <lastBuildDate>Thu, 28 Jan 2021 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="https://statkim.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>R</title>
-      <link>https://statkim.github.io/tags/r/</link>
+      <link>/tags/r/</link>
       <pubDate>Thu, 28 Jan 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://statkim.github.io/tags/r/</guid>
+      <guid>/tags/r/</guid>
       <description></description>
     </item>
     
     <item>
       <title>R 꿀팁</title>
-      <link>https://statkim.github.io/tags/r-%EA%BF%80%ED%8C%81/</link>
+      <link>/tags/r-%EA%BF%80%ED%8C%81/</link>
       <pubDate>Thu, 28 Jan 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://statkim.github.io/tags/r-%EA%BF%80%ED%8C%81/</guid>
+      <guid>/tags/r-%EA%BF%80%ED%8C%81/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Github</title>
-      <link>https://statkim.github.io/tags/github/</link>
+      <link>/tags/github/</link>
       <pubDate>Mon, 18 Jan 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://statkim.github.io/tags/github/</guid>
+      <guid>/tags/github/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Nbviewer</title>
-      <link>https://statkim.github.io/tags/nbviewer/</link>
+      <link>/tags/nbviewer/</link>
       <pubDate>Mon, 18 Jan 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://statkim.github.io/tags/nbviewer/</guid>
+      <guid>/tags/nbviewer/</guid>
       <description></description>
     </item>
     
     <item>
       <title>blogdown</title>
-      <link>https://statkim.github.io/tags/blogdown/</link>
+      <link>/tags/blogdown/</link>
       <pubDate>Tue, 07 Jul 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://statkim.github.io/tags/blogdown/</guid>
+      <guid>/tags/blogdown/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Hugo</title>
-      <link>https://statkim.github.io/tags/hugo/</link>
+      <link>/tags/hugo/</link>
       <pubDate>Tue, 07 Jul 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://statkim.github.io/tags/hugo/</guid>
+      <guid>/tags/hugo/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Rmarkdown</title>
-      <link>https://statkim.github.io/tags/rmarkdown/</link>
+      <link>/tags/rmarkdown/</link>
       <pubDate>Tue, 07 Jul 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://statkim.github.io/tags/rmarkdown/</guid>
+      <guid>/tags/rmarkdown/</guid>
       <description></description>
     </item>
     
     <item>
       <title>gpu</title>
-      <link>https://statkim.github.io/tags/gpu/</link>
+      <link>/tags/gpu/</link>
       <pubDate>Sat, 01 Feb 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://statkim.github.io/tags/gpu/</guid>
+      <guid>/tags/gpu/</guid>
       <description></description>
     </item>
     
     <item>
       <title>tensorflow</title>
-      <link>https://statkim.github.io/tags/tensorflow/</link>
+      <link>/tags/tensorflow/</link>
       <pubDate>Sat, 01 Feb 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://statkim.github.io/tags/tensorflow/</guid>
+      <guid>/tags/tensorflow/</guid>
       <description></description>
     </item>
     
     <item>
       <title>FDA</title>
-      <link>https://statkim.github.io/tags/fda/</link>
+      <link>/tags/fda/</link>
       <pubDate>Mon, 20 Jan 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://statkim.github.io/tags/fda/</guid>
+      <guid>/tags/fda/</guid>
       <description></description>
     </item>
     
     <item>
       <title>FPCA</title>
-      <link>https://statkim.github.io/tags/fpca/</link>
+      <link>/tags/fpca/</link>
       <pubDate>Mon, 20 Jan 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://statkim.github.io/tags/fpca/</guid>
+      <guid>/tags/fpca/</guid>
       <description></description>
     </item>
     
     <item>
       <title>sparse</title>
-      <link>https://statkim.github.io/tags/sparse/</link>
+      <link>/tags/sparse/</link>
       <pubDate>Mon, 20 Jan 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://statkim.github.io/tags/sparse/</guid>
+      <guid>/tags/sparse/</guid>
       <description></description>
     </item>
     
     <item>
       <title>statistics</title>
-      <link>https://statkim.github.io/tags/statistics/</link>
+      <link>/tags/statistics/</link>
       <pubDate>Mon, 20 Jan 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://statkim.github.io/tags/statistics/</guid>
+      <guid>/tags/statistics/</guid>
       <description></description>
     </item>
     
     <item>
       <title>beamer</title>
-      <link>https://statkim.github.io/tags/beamer/</link>
+      <link>/tags/beamer/</link>
       <pubDate>Fri, 27 Dec 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://statkim.github.io/tags/beamer/</guid>
+      <guid>/tags/beamer/</guid>
       <description></description>
     </item>
     
     <item>
       <title>latex</title>
-      <link>https://statkim.github.io/tags/latex/</link>
+      <link>/tags/latex/</link>
       <pubDate>Fri, 27 Dec 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://statkim.github.io/tags/latex/</guid>
+      <guid>/tags/latex/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Rmd</title>
-      <link>https://statkim.github.io/tags/rmd/</link>
+      <link>/tags/rmd/</link>
       <pubDate>Fri, 27 Dec 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://statkim.github.io/tags/rmd/</guid>
+      <guid>/tags/rmd/</guid>
       <description></description>
     </item>
     
     <item>
       <title>cross-validation</title>
-      <link>https://statkim.github.io/tags/cross-validation/</link>
+      <link>/tags/cross-validation/</link>
       <pubDate>Tue, 24 Dec 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://statkim.github.io/tags/cross-validation/</guid>
+      <guid>/tags/cross-validation/</guid>
       <description></description>
     </item>
     
     <item>
       <title>paper</title>
-      <link>https://statkim.github.io/tags/paper/</link>
+      <link>/tags/paper/</link>
       <pubDate>Tue, 24 Dec 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://statkim.github.io/tags/paper/</guid>
+      <guid>/tags/paper/</guid>
       <description></description>
     </item>
     
     <item>
       <title>PCA</title>
-      <link>https://statkim.github.io/tags/pca/</link>
+      <link>/tags/pca/</link>
       <pubDate>Tue, 24 Dec 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://statkim.github.io/tags/pca/</guid>
+      <guid>/tags/pca/</guid>
       <description></description>
     </item>
     
     <item>
       <title>blog</title>
-      <link>https://statkim.github.io/tags/blog/</link>
+      <link>/tags/blog/</link>
       <pubDate>Sun, 03 Nov 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://statkim.github.io/tags/blog/</guid>
+      <guid>/tags/blog/</guid>
       <description></description>
     </item>
     
     <item>
       <title>github-page</title>
-      <link>https://statkim.github.io/tags/github-page/</link>
+      <link>/tags/github-page/</link>
       <pubDate>Sun, 03 Nov 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://statkim.github.io/tags/github-page/</guid>
+      <guid>/tags/github-page/</guid>
       <description></description>
     </item>
     
     <item>
       <title>jekyll</title>
-      <link>https://statkim.github.io/tags/jekyll/</link>
+      <link>/tags/jekyll/</link>
       <pubDate>Sun, 03 Nov 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://statkim.github.io/tags/jekyll/</guid>
+      <guid>/tags/jekyll/</guid>
       <description></description>
     </item>
     
     <item>
       <title>biostatistics</title>
-      <link>https://statkim.github.io/tags/biostatistics/</link>
+      <link>/tags/biostatistics/</link>
       <pubDate>Fri, 01 Nov 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://statkim.github.io/tags/biostatistics/</guid>
+      <guid>/tags/biostatistics/</guid>
       <description></description>
     </item>
     
     <item>
       <title>error</title>
-      <link>https://statkim.github.io/tags/error/</link>
+      <link>/tags/error/</link>
       <pubDate>Fri, 01 Nov 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://statkim.github.io/tags/error/</guid>
+      <guid>/tags/error/</guid>
       <description></description>
     </item>
     
     <item>
       <title>jupyter notebook</title>
-      <link>https://statkim.github.io/tags/jupyter-notebook/</link>
+      <link>/tags/jupyter-notebook/</link>
       <pubDate>Fri, 01 Nov 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://statkim.github.io/tags/jupyter-notebook/</guid>
+      <guid>/tags/jupyter-notebook/</guid>
       <description></description>
     </item>
     
     <item>
       <title>kernel</title>
-      <link>https://statkim.github.io/tags/kernel/</link>
+      <link>/tags/kernel/</link>
       <pubDate>Fri, 01 Nov 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://statkim.github.io/tags/kernel/</guid>
+      <guid>/tags/kernel/</guid>
       <description></description>
     </item>
     
     <item>
       <title>book</title>
-      <link>https://statkim.github.io/tags/book/</link>
+      <link>/tags/book/</link>
       <pubDate>Thu, 09 May 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://statkim.github.io/tags/book/</guid>
+      <guid>/tags/book/</guid>
       <description></description>
     </item>
     
     <item>
       <title>conda</title>
-      <link>https://statkim.github.io/tags/conda/</link>
+      <link>/tags/conda/</link>
       <pubDate>Thu, 01 Nov 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://statkim.github.io/tags/conda/</guid>
+      <guid>/tags/conda/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Python</title>
-      <link>https://statkim.github.io/tags/python/</link>
+      <link>/tags/python/</link>
       <pubDate>Thu, 01 Nov 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://statkim.github.io/tags/python/</guid>
+      <guid>/tags/python/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Virtualenv</title>
-      <link>https://statkim.github.io/tags/virtualenv/</link>
+      <link>/tags/virtualenv/</link>
       <pubDate>Thu, 01 Nov 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://statkim.github.io/tags/virtualenv/</guid>
+      <guid>/tags/virtualenv/</guid>
       <description></description>
     </item>
     
     <item>
       <title>가상환경</title>
-      <link>https://statkim.github.io/tags/%EA%B0%80%EC%83%81%ED%99%98%EA%B2%BD/</link>
+      <link>/tags/%EA%B0%80%EC%83%81%ED%99%98%EA%B2%BD/</link>
       <pubDate>Thu, 01 Nov 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://statkim.github.io/tags/%EA%B0%80%EC%83%81%ED%99%98%EA%B2%BD/</guid>
+      <guid>/tags/%EA%B0%80%EC%83%81%ED%99%98%EA%B2%BD/</guid>
       <description></description>
     </item>
     

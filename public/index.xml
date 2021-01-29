@@ -2,174 +2,174 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>statKim</title>
-    <link>https://statkim.github.io/</link>
+    <link>/</link>
     <description>Recent content on statKim</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko-kr</language>
     <lastBuildDate>Thu, 28 Jan 2021 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="https://statkim.github.io/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>변수명을 문자열 형식으로 자유롭게 다루기 - get과 assign</title>
-      <link>https://statkim.github.io/2021/01/%EB%B3%80%EC%88%98%EB%AA%85%EC%9D%84-%EB%AC%B8%EC%9E%90%EC%97%B4-%ED%98%95%EC%8B%9D%EC%9C%BC%EB%A1%9C-%EC%9E%90%EC%9C%A0%EB%A1%AD%EA%B2%8C-%EB%8B%A4%EB%A3%A8%EA%B8%B0-get%EA%B3%BC-assign/</link>
+      <link>/2021/01/%EB%B3%80%EC%88%98%EB%AA%85%EC%9D%84-%EB%AC%B8%EC%9E%90%EC%97%B4-%ED%98%95%EC%8B%9D%EC%9C%BC%EB%A1%9C-%EC%9E%90%EC%9C%A0%EB%A1%AD%EA%B2%8C-%EB%8B%A4%EB%A3%A8%EA%B8%B0-get%EA%B3%BC-assign/</link>
       <pubDate>Thu, 28 Jan 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://statkim.github.io/2021/01/%EB%B3%80%EC%88%98%EB%AA%85%EC%9D%84-%EB%AC%B8%EC%9E%90%EC%97%B4-%ED%98%95%EC%8B%9D%EC%9C%BC%EB%A1%9C-%EC%9E%90%EC%9C%A0%EB%A1%AD%EA%B2%8C-%EB%8B%A4%EB%A3%A8%EA%B8%B0-get%EA%B3%BC-assign/</guid>
+      <guid>/2021/01/%EB%B3%80%EC%88%98%EB%AA%85%EC%9D%84-%EB%AC%B8%EC%9E%90%EC%97%B4-%ED%98%95%EC%8B%9D%EC%9C%BC%EB%A1%9C-%EC%9E%90%EC%9C%A0%EB%A1%AD%EA%B2%8C-%EB%8B%A4%EB%A3%A8%EA%B8%B0-get%EA%B3%BC-assign/</guid>
       <description>R에서 데이터를 다루면서 어쩌면 다음과 같은 경험을 해보신 적이 있으실 겁니다. 변수명이 weather_Jeju, weather_Seoul, weather_Busan, ... 으로 되어있고, 우리는 이 데이터에 같은 처리를 해주고 싶습니다.</description>
     </item>
     
     <item>
       <title>About</title>
-      <link>https://statkim.github.io/about/</link>
+      <link>/about/</link>
       <pubDate>Mon, 18 Jan 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://statkim.github.io/about/</guid>
+      <guid>/about/</guid>
       <description>현재 중앙대학교 통계학과에서 석사과정을 하고 있으며 다변량 분석 연구실(Multivariate Analysis Lab)에서 연구하고 있습니다. Functional Data Analysis(FDA), Spatio-temporal Data Analysis, High-dimensional Data Analysis 분</description>
     </item>
     
     <item>
-      <title>Github에 있는 pdf 파일 링크 지정하여 공유하기</title>
-      <link>https://statkim.github.io/2021/01/github%EC%97%90-%EC%9E%88%EB%8A%94-pdf-%ED%8C%8C%EC%9D%BC-%EB%A7%81%ED%81%AC-%EC%A7%80%EC%A0%95%ED%95%98%EC%97%AC-%EA%B3%B5%EC%9C%A0%ED%95%98%EA%B8%B0/</link>
+      <title>Github에 있는 문서 파일 외부 viewer로 공유하기</title>
+      <link>/2021/01/github%EC%97%90-%EC%9E%88%EB%8A%94-%EB%AC%B8%EC%84%9C-%ED%8C%8C%EC%9D%BC-%EC%99%B8%EB%B6%80-viewer%EB%A1%9C-%EA%B3%B5%EC%9C%A0%ED%95%98%EA%B8%B0/</link>
       <pubDate>Mon, 18 Jan 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://statkim.github.io/2021/01/github%EC%97%90-%EC%9E%88%EB%8A%94-pdf-%ED%8C%8C%EC%9D%BC-%EB%A7%81%ED%81%AC-%EC%A7%80%EC%A0%95%ED%95%98%EC%97%AC-%EA%B3%B5%EC%9C%A0%ED%95%98%EA%B8%B0/</guid>
-      <description>블로그 포스팅을 비롯해서 간혹 Github repo에 있는 pdf 파일을 링크 지정하거나 간단히 url로 공유해야할 때가 있습니다. 사실 그럴 때마다 Github에서 pdf를</description>
+      <guid>/2021/01/github%EC%97%90-%EC%9E%88%EB%8A%94-%EB%AC%B8%EC%84%9C-%ED%8C%8C%EC%9D%BC-%EC%99%B8%EB%B6%80-viewer%EB%A1%9C-%EA%B3%B5%EC%9C%A0%ED%95%98%EA%B8%B0/</guid>
+      <description>블로그 포스팅을 비롯해서 간혹 Github repo에 있는 pdf나 html 파일 등을 간단히 url로 공유할 때가 있습니다. 사실 그럴 때마다 Github 자체에서 pdf를 열거나 아예 파일</description>
     </item>
     
     <item>
       <title>blogdown으로 Github Blog 만들기 2/2</title>
-      <link>https://statkim.github.io/2020/07/blogdown%EC%9C%BC%EB%A1%9C-github-blog-%EB%A7%8C%EB%93%A4%EA%B8%B0-2/2/</link>
+      <link>/2020/07/blogdown%EC%9C%BC%EB%A1%9C-github-blog-%EB%A7%8C%EB%93%A4%EA%B8%B0-2/2/</link>
       <pubDate>Tue, 07 Jul 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://statkim.github.io/2020/07/blogdown%EC%9C%BC%EB%A1%9C-github-blog-%EB%A7%8C%EB%93%A4%EA%B8%B0-2/2/</guid>
+      <guid>/2020/07/blogdown%EC%9C%BC%EB%A1%9C-github-blog-%EB%A7%8C%EB%93%A4%EA%B8%B0-2/2/</guid>
       <description>순서 R project 생성 blogdown 설치 Hugo 설치 Site 생성 (로컬에서 호스팅) 기본 설정 Github에 push (subtree 이용) Git으로 블로그 관리 이번 글에서는 지난 글에 이어서 Github에</description>
     </item>
     
     <item>
       <title>blogdown으로 Github Blog 만들기 1/2</title>
-      <link>https://statkim.github.io/2020/06/blogdown%EC%9C%BC%EB%A1%9C-github-blog-%EB%A7%8C%EB%93%A4%EA%B8%B0-1/2/</link>
+      <link>/2020/06/blogdown%EC%9C%BC%EB%A1%9C-github-blog-%EB%A7%8C%EB%93%A4%EA%B8%B0-1/2/</link>
       <pubDate>Tue, 30 Jun 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://statkim.github.io/2020/06/blogdown%EC%9C%BC%EB%A1%9C-github-blog-%EB%A7%8C%EB%93%A4%EA%B8%B0-1/2/</guid>
+      <guid>/2020/06/blogdown%EC%9C%BC%EB%A1%9C-github-blog-%EB%A7%8C%EB%93%A4%EA%B8%B0-1/2/</guid>
       <description>blogdown이란 Jekyll과 더불어 최근 인기가 많아지고 있는 Hugo 엔진을 사용하여 정적 페이지를 만들어주는 R 패키지입니다. 특히, R을 자주 사용하는 사</description>
     </item>
     
     <item>
       <title>About</title>
-      <link>https://statkim.github.io/about_eng/</link>
+      <link>/about_eng/</link>
       <pubDate>Sun, 28 Jun 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://statkim.github.io/about_eng/</guid>
+      <guid>/about_eng/</guid>
       <description>Korean version I&amp;rsquo;m a master&amp;rsquo;s student of the Department of Statistics at Chung-Ang University and I work in Multivariate Statistics Lab. My research interests are Functional Data Analysis(FDA), Spatio-temporal Data Analysis, Principal Component Analysis(PCA), Machine Learning, and I&amp;rsquo;m working on Functional principal component analysis(FPCA). I love R to handle the data, but I sometimes use Python. Education Master&amp;rsquo;s student in Statistics, Chung-Ang University, 2019.03 - Present B.A. in Applied Statistics,</description>
     </item>
     
     <item>
       <title>Tensorflow 2.0 GPU 설치하기</title>
-      <link>https://statkim.github.io/2020/02/tensorflow-2.0-gpu-%EC%84%A4%EC%B9%98%ED%95%98%EA%B8%B0/</link>
+      <link>/2020/02/tensorflow-2.0-gpu-%EC%84%A4%EC%B9%98%ED%95%98%EA%B8%B0/</link>
       <pubDate>Sat, 01 Feb 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://statkim.github.io/2020/02/tensorflow-2.0-gpu-%EC%84%A4%EC%B9%98%ED%95%98%EA%B8%B0/</guid>
+      <guid>/2020/02/tensorflow-2.0-gpu-%EC%84%A4%EC%B9%98%ED%95%98%EA%B8%B0/</guid>
       <description>0. 컴퓨터 사양 확인 설치 전, 자신의 컴퓨터의 운영체제, GPU를 먼저 확인 제 컴퓨터 사양 운영체제 : Windows 10 GPU : Quadro P600 1. NVIDIA driver 설치 NVIDIA driver Download : https://www.nvidia.co.kr/Download/index.aspx?lang=kr 자신의 GPU에 맞는 드라</description>
     </item>
     
     <item>
       <title>Functional Principal Component Analysis</title>
-      <link>https://statkim.github.io/2020/01/functional-principal-component-analysis/</link>
+      <link>/2020/01/functional-principal-component-analysis/</link>
       <pubDate>Mon, 20 Jan 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://statkim.github.io/2020/01/functional-principal-component-analysis/</guid>
+      <guid>/2020/01/functional-principal-component-analysis/</guid>
       <description>Functional Principal Component Anlaysis (FPCA)란 이름 그대로 functional data에 적용하는 PCA 방법 일반적으로 잘 알려져 있는 multivariate PCA는 \(p\)개의 변수를 \(q(\ll p)\)개의 변수로 차원축소(</description>
     </item>
     
     <item>
       <title>R markdown으로 Beamer 슬라이드 만들기</title>
-      <link>https://statkim.github.io/2019/12/r-markdown%EC%9C%BC%EB%A1%9C-beamer-%EC%8A%AC%EB%9D%BC%EC%9D%B4%EB%93%9C-%EB%A7%8C%EB%93%A4%EA%B8%B0/</link>
+      <link>/2019/12/r-markdown%EC%9C%BC%EB%A1%9C-beamer-%EC%8A%AC%EB%9D%BC%EC%9D%B4%EB%93%9C-%EB%A7%8C%EB%93%A4%EA%B8%B0/</link>
       <pubDate>Fri, 27 Dec 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://statkim.github.io/2019/12/r-markdown%EC%9C%BC%EB%A1%9C-beamer-%EC%8A%AC%EB%9D%BC%EC%9D%B4%EB%93%9C-%EB%A7%8C%EB%93%A4%EA%B8%B0/</guid>
+      <guid>/2019/12/r-markdown%EC%9C%BC%EB%A1%9C-beamer-%EC%8A%AC%EB%9D%BC%EC%9D%B4%EB%93%9C-%EB%A7%8C%EB%93%A4%EA%B8%B0/</guid>
       <description>Beamer란 $\LaTeX$ 문서의 발표자료 형식으로 강의록에서 많이 사용됨 특히, 수식이 많은 자료를 presentation 형태로 만들 때 유용 $\LaTeX$이 설치되어 있는 경우, R ma</description>
     </item>
     
     <item>
       <title>PCA에서 최적 PC 개수를 정하기 위한 Cross-validation 방법</title>
-      <link>https://statkim.github.io/2019/12/pca%EC%97%90%EC%84%9C-%EC%B5%9C%EC%A0%81-pc-%EA%B0%9C%EC%88%98%EB%A5%BC-%EC%A0%95%ED%95%98%EA%B8%B0-%EC%9C%84%ED%95%9C-cross-validation-%EB%B0%A9%EB%B2%95/</link>
+      <link>/2019/12/pca%EC%97%90%EC%84%9C-%EC%B5%9C%EC%A0%81-pc-%EA%B0%9C%EC%88%98%EB%A5%BC-%EC%A0%95%ED%95%98%EA%B8%B0-%EC%9C%84%ED%95%9C-cross-validation-%EB%B0%A9%EB%B2%95/</link>
       <pubDate>Tue, 24 Dec 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://statkim.github.io/2019/12/pca%EC%97%90%EC%84%9C-%EC%B5%9C%EC%A0%81-pc-%EA%B0%9C%EC%88%98%EB%A5%BC-%EC%A0%95%ED%95%98%EA%B8%B0-%EC%9C%84%ED%95%9C-cross-validation-%EB%B0%A9%EB%B2%95/</guid>
+      <guid>/2019/12/pca%EC%97%90%EC%84%9C-%EC%B5%9C%EC%A0%81-pc-%EA%B0%9C%EC%88%98%EB%A5%BC-%EC%A0%95%ED%95%98%EA%B8%B0-%EC%9C%84%ED%95%9C-cross-validation-%EB%B0%A9%EB%B2%95/</guid>
       <description>1. Row-wise cross-validation $$ \begin{aligned} CV(k) &amp;amp;= \sum_{i=1}^N \lvert \lvert \mathbf{x}_i - \boldsymbol{\xi} \boldsymbol{f}_i^T \lvert\vert^2 \ &amp;amp;= \sum_{i=1}^N \lvert \lvert \mathbf{x}_i - \boldsymbol{\xi} (\mathbf{x}_i^T\boldsymbol{\xi})^T \lvert\vert^2 \end{aligned} $$ where $\boldsymbol\xi$ is a PC function(PC loading) with $k$ eigenvectors and $\boldsymbol{f}_i$ is $i$th PC score with $k$ components. $\mathbf{x}_i$를 predict하는</description>
     </item>
     
     <item>
       <title>Jekyll 테마로 Github Blog 만들기</title>
-      <link>https://statkim.github.io/2019/11/jekyll-%ED%85%8C%EB%A7%88%EB%A1%9C-github-blog-%EB%A7%8C%EB%93%A4%EA%B8%B0/</link>
+      <link>/2019/11/jekyll-%ED%85%8C%EB%A7%88%EB%A1%9C-github-blog-%EB%A7%8C%EB%93%A4%EA%B8%B0/</link>
       <pubDate>Sun, 03 Nov 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://statkim.github.io/2019/11/jekyll-%ED%85%8C%EB%A7%88%EB%A1%9C-github-blog-%EB%A7%8C%EB%93%A4%EA%B8%B0/</guid>
+      <guid>/2019/11/jekyll-%ED%85%8C%EB%A7%88%EB%A1%9C-github-blog-%EB%A7%8C%EB%93%A4%EA%B8%B0/</guid>
       <description>1. Ruby 설치 RubyInstaller for Windows에서 Ruby+Devkit 설치 프로그램 다운 및 설치 Ruby의 경우 최신버전보다는 이하 버전 사용을 권장 최신 버전의 경우 jekyll 인스톨시 호환성 문제가 있다</description>
     </item>
     
     <item>
       <title>Generalized Estimating Equations (GEE)</title>
-      <link>https://statkim.github.io/2019/11/generalized-estimating-equations-gee/</link>
+      <link>/2019/11/generalized-estimating-equations-gee/</link>
       <pubDate>Fri, 01 Nov 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://statkim.github.io/2019/11/generalized-estimating-equations-gee/</guid>
+      <guid>/2019/11/generalized-estimating-equations-gee/</guid>
       <description>GLM으로 다루기 어려운 repeated measured data를 다룰 수 있는 분석방법 (Liang &amp;amp; Zeger, 1986) Independence 가정이 있는 GLM에서 non-independence (or clustered)인 경우를 허용 (반복 측정된 데이터이</description>
     </item>
     
     <item>
       <title>Jupyter notebook에서 가상환경 kernel이 인식되지 않는 오류</title>
-      <link>https://statkim.github.io/2019/11/jupyter-notebook%EC%97%90%EC%84%9C-%EA%B0%80%EC%83%81%ED%99%98%EA%B2%BD-kernel%EC%9D%B4-%EC%9D%B8%EC%8B%9D%EB%90%98%EC%A7%80-%EC%95%8A%EB%8A%94-%EC%98%A4%EB%A5%98/</link>
+      <link>/2019/11/jupyter-notebook%EC%97%90%EC%84%9C-%EA%B0%80%EC%83%81%ED%99%98%EA%B2%BD-kernel%EC%9D%B4-%EC%9D%B8%EC%8B%9D%EB%90%98%EC%A7%80-%EC%95%8A%EB%8A%94-%EC%98%A4%EB%A5%98/</link>
       <pubDate>Fri, 01 Nov 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://statkim.github.io/2019/11/jupyter-notebook%EC%97%90%EC%84%9C-%EA%B0%80%EC%83%81%ED%99%98%EA%B2%BD-kernel%EC%9D%B4-%EC%9D%B8%EC%8B%9D%EB%90%98%EC%A7%80-%EC%95%8A%EB%8A%94-%EC%98%A4%EB%A5%98/</guid>
+      <guid>/2019/11/jupyter-notebook%EC%97%90%EC%84%9C-%EA%B0%80%EC%83%81%ED%99%98%EA%B2%BD-kernel%EC%9D%B4-%EC%9D%B8%EC%8B%9D%EB%90%98%EC%A7%80-%EC%95%8A%EB%8A%94-%EC%98%A4%EB%A5%98/</guid>
       <description>오류 발생 Jupyter notebook 실행 후, 가상환경 kernel이 인식되지 않음 동시에 터미널의 Log 메시지에 다음의 오류 발생 ImportError: DLL load failed: 지정된 프로시저를 찾을 수 없습니다. 해결방법</description>
     </item>
     
     <item>
       <title>Principal Component Models for Sparse Functional Data</title>
-      <link>https://statkim.github.io/2019/07/principal-component-models-for-sparse-functional-data/</link>
+      <link>/2019/07/principal-component-models-for-sparse-functional-data/</link>
       <pubDate>Thu, 18 Jul 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://statkim.github.io/2019/07/principal-component-models-for-sparse-functional-data/</guid>
+      <guid>/2019/07/principal-component-models-for-sparse-functional-data/</guid>
       <description>Outline Introduction The Growth Curve Data The Reduced Rank Model Fitting the Reduced Rank Model The Reduced Rank and Mixed Effects Methods Compared Model Selection and Inference Comparison of the Reduced Rank Method and Classical Principal Components Appendix 1. Introduction The problem If each curves observed different time points, it is not good way to apply method with equal time points. In this paper, present an estimation technique when the</description>
     </item>
     
     <item>
       <title>[FDA Book] Chapter 8.3 ~ 8.5</title>
-      <link>https://statkim.github.io/2019/05/fda-book-chapter-8.3-~-8.5/</link>
+      <link>/2019/05/fda-book-chapter-8.3-~-8.5/</link>
       <pubDate>Thu, 09 May 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://statkim.github.io/2019/05/fda-book-chapter-8.3-~-8.5/</guid>
+      <guid>/2019/05/fda-book-chapter-8.3-~-8.5/</guid>
       <description>8.3 Visualizing the results 8.3.1 Plotting components as perturbations of the mean (mean의 작은 변동 요소를 plotting) Overall mean function과 PC function의 적절한 배수를 더하거나 나눈 function을 pl</description>
     </item>
     
     <item>
       <title>[FDA Book] Chapter 2.1 ~ 2.3 &amp; 8.1 ~ 8.2</title>
-      <link>https://statkim.github.io/2019/04/fda-book-chapter-2.1-~-2.3-8.1-~-8.2/</link>
+      <link>/2019/04/fda-book-chapter-2.1-~-2.3-8.1-~-8.2/</link>
       <pubDate>Fri, 26 Apr 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://statkim.github.io/2019/04/fda-book-chapter-2.1-~-2.3-8.1-~-8.2/</guid>
+      <guid>/2019/04/fda-book-chapter-2.1-~-2.3-8.1-~-8.2/</guid>
       <description>2. Tools for exploring functional data 2.1 Introduction FDA의 notation과 concept 정의 FDA에서 사용하는 statistics 정의 Matrix decompositions, projections, and the constrained maximization of quadratic forms에 대한 자세한 내용은 Appendix 참고 2.2 Some notation 2.2.1 Scalars, vectors, functions and</description>
     </item>
     
     <item>
       <title>Jupyter notebook에서 R 사용하기</title>
-      <link>https://statkim.github.io/2019/01/jupyter-notebook%EC%97%90%EC%84%9C-r-%EC%82%AC%EC%9A%A9%ED%95%98%EA%B8%B0/</link>
+      <link>/2019/01/jupyter-notebook%EC%97%90%EC%84%9C-r-%EC%82%AC%EC%9A%A9%ED%95%98%EA%B8%B0/</link>
       <pubDate>Tue, 08 Jan 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://statkim.github.io/2019/01/jupyter-notebook%EC%97%90%EC%84%9C-r-%EC%82%AC%EC%9A%A9%ED%95%98%EA%B8%B0/</guid>
+      <guid>/2019/01/jupyter-notebook%EC%97%90%EC%84%9C-r-%EC%82%AC%EC%9A%A9%ED%95%98%EA%B8%B0/</guid>
       <description>1. 준비사항 Anaconda (Jupyter) R 2. R에서 Packages 설치 Rstudio가 아닌 R Console에서 실행!! install.packages(&amp;#39;devtools&amp;#39;) devtools::install_github(&amp;#39;IRkernel/IRkernel&amp;#39;) IRkernel::installspec() 3. Jupyter kernel에 추가되었는지 확인 cmd 창에서 jupyter kernel list 확인 $ jupyter</description>
     </item>
     
     <item>
       <title>Python 가상환경 만들기</title>
-      <link>https://statkim.github.io/2018/11/python-%EA%B0%80%EC%83%81%ED%99%98%EA%B2%BD-%EB%A7%8C%EB%93%A4%EA%B8%B0/</link>
+      <link>/2018/11/python-%EA%B0%80%EC%83%81%ED%99%98%EA%B2%BD-%EB%A7%8C%EB%93%A4%EA%B8%B0/</link>
       <pubDate>Thu, 01 Nov 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://statkim.github.io/2018/11/python-%EA%B0%80%EC%83%81%ED%99%98%EA%B2%BD-%EB%A7%8C%EB%93%A4%EA%B8%B0/</guid>
+      <guid>/2018/11/python-%EA%B0%80%EC%83%81%ED%99%98%EA%B2%BD-%EB%A7%8C%EB%93%A4%EA%B8%B0/</guid>
       <description>가상환경을 사용하는 이유 여러 사람과 협업 또는 만들어 놓은 코드를 분석할 때 각 프로젝트마다 파이썬, 라이브러리 버전이 다름 이로 인해 기존 로컬에 영향이 가지 않는 별</description>
     </item>
     

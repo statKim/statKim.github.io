@@ -1,5 +1,5 @@
 ---
-title: Github에 있는 pdf 파일 링크 지정하여 공유하기
+title: Github에 있는 문서 파일 외부 viewer로 공유하기
 date: '2021-01-18'
 coverImage: 
 coverMeta: out
@@ -12,17 +12,18 @@ tags:
 ---
 
 
-블로그 포스팅을 비롯해서 간혹 Github repo에 있는 pdf 파일을 링크 지정하거나 간단히 url로 공유해야할 때가 있습니다.
-사실 그럴 때마다 **Github에서 pdf를 열거나** 아예 **파일을 다운로드** 받아야 하기 때문에 ~~귀찮을 뿐 아니라~~ 그다지 깔끔해 보이지 않았습니다.
+블로그 포스팅을 비롯해서 간혹 Github repo에 있는 pdf나 html 파일 등을 간단히 url로 공유할 때가 있습니다.
+사실 그럴 때마다 **Github 자체에서 pdf를 열거나** 아예 **파일을 다운로드** 받아야 하고, html의 경우는 Github에서는 source code만 보여주기 때문에 좋은 방법이 아니라는 생각을 하게 되었습니다.
 
-기존에 제가 알고 있던 방법은 `https://github.com/statKim/TIL/blob/master/R/Rmd_beamer.pdf`의 링크로 들어가서 직접 Github에서 파일을 열어서 확인하거나, 이 링크 마지막에 `?raw=True` 옵션을 추가하여 파일을 다운받는 방법입니다.
+기존에 알고 있던 url을 통한 방법은 `https://github.com/statKim/TIL/blob/master/R/Rmd_beamer.pdf`의 링크로 들어가서 직접 Github에서 파일을 열어서 확인하거나, 이 링크 마지막에 `?raw=True` 옵션을 추가하여 파일을 다운받는 방법이었습니다.
 
-하지만 저는 위와 같은 방식보다 **새 탭에서 깔끔하게 파일을 열어 확인하고 싶었기 때문에** 열심히 구글링을 해보았고, 제가 찾은 2가지 방법에 대해 소개하겠습니다. 그리고 테스트해보지는 않았지만... 이 방법들은 pdf 파일뿐 아니라 다른 유형의 파일도 가능할 것 같습니다. (`.docx`, `.ipynb` 등)
+오늘은 많은 우여곡절 끝에 제가 찾은 2가지 방법에 대해 소개해보려 합니다. 
+그리고 테스트해보지는 않았지만... 이 방법들은 pdf 파일뿐 아니라 다른 유형의 파일도 가능할 것 같습니다. (`.docx`, `.ipynb`, `.html` 등)
 
 <br>
 
 ### 1. Google 드라이브 뷰어
-첫 번째로, Google 드라이브 뷰어를 사용하는 방법입니다. 사용방법은 `https://docs.google.com/viewer?url=pdf파일url?raw=True` 에서 `pdf파일url`만 수정하여 사용하면 됩니다.
+첫 번째로, Google 드라이브 뷰어를 사용하는 방법입니다. 사용방법은 `https://docs.google.com/viewer?url=파일url?raw=True` 에서 `파일url`만 수정하여 사용하면 됩니다.
 
 예를 들어, https://docs.google.com/viewer?url=https://github.com/statKim/TIL/blob/master/R/Rmd_beamer.pdf?raw=T 처럼 사용할 수 있습니다.
 
@@ -34,7 +35,7 @@ tags:
 
 ![](/img/pdf_viewer.png)
 
-`Nbviewer`는 Jupyter에서 만든 viewer로써, pdf뿐 아니라 `jupyter notebook 파일(.ipynb)`도 열 수 있어 굉장히 편리합니다!!
+`Nbviewer`는 Jupyter에서 만든 viewer로써, `pdf`같은 문서만이 아니라 `jupyter notebook 파일(.ipynb)`과 `html`도 열 수 있어 굉장히 편리합니다!!
 
 예를 들어, https://nbviewer.jupyter.org/github/statKim/TIL/blob/master/R/Rmd_beamer.pdf 와 같은 url을 얻을 수 있습니다.
 
