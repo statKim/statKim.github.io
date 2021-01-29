@@ -2,48 +2,48 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>FPCA on statKim</title>
-    <link>https://statkim.github.io/tags/fpca/</link>
+    <link>/tags/fpca/</link>
     <description>Recent content in FPCA on statKim</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko-kr</language>
     <lastBuildDate>Mon, 20 Jan 2020 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="https://statkim.github.io/tags/fpca/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/tags/fpca/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Functional Principal Component Analysis</title>
-      <link>https://statkim.github.io/2020/01/functional-principal-component-analysis/</link>
+      <link>/2020/01/functional-principal-component-analysis/</link>
       <pubDate>Mon, 20 Jan 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://statkim.github.io/2020/01/functional-principal-component-analysis/</guid>
+      <guid>/2020/01/functional-principal-component-analysis/</guid>
       <description>Functional Principal Component Anlaysis (FPCA)란 이름 그대로 functional data에 적용하는 PCA 방법 일반적으로 잘 알려져 있는 multivariate PCA는 \(p\)개의 변수를 \(q(\ll p)\)개의 변수로 차원축소(</description>
     </item>
     
     <item>
       <title>Principal Component Models for Sparse Functional Data</title>
-      <link>https://statkim.github.io/2019/07/principal-component-models-for-sparse-functional-data/</link>
+      <link>/2019/07/principal-component-models-for-sparse-functional-data/</link>
       <pubDate>Thu, 18 Jul 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://statkim.github.io/2019/07/principal-component-models-for-sparse-functional-data/</guid>
+      <guid>/2019/07/principal-component-models-for-sparse-functional-data/</guid>
       <description>Outline Introduction The Growth Curve Data The Reduced Rank Model Fitting the Reduced Rank Model The Reduced Rank and Mixed Effects Methods Compared Model Selection and Inference Comparison of the Reduced Rank Method and Classical Principal Components Appendix 1. Introduction The problem If each curves observed different time points, it is not good way to apply method with equal time points. In this paper, present an estimation technique when the</description>
     </item>
     
     <item>
       <title>[FDA Book] Chapter 8.3 ~ 8.5</title>
-      <link>https://statkim.github.io/2019/05/fda-book-chapter-8.3-~-8.5/</link>
+      <link>/2019/05/fda-book-chapter-8.3-~-8.5/</link>
       <pubDate>Thu, 09 May 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://statkim.github.io/2019/05/fda-book-chapter-8.3-~-8.5/</guid>
+      <guid>/2019/05/fda-book-chapter-8.3-~-8.5/</guid>
       <description>8.3 Visualizing the results 8.3.1 Plotting components as perturbations of the mean (mean의 작은 변동 요소를 plotting) Overall mean function과 PC function의 적절한 배수를 더하거나 나눈 function을 pl</description>
     </item>
     
     <item>
       <title>[FDA Book] Chapter 2.1 ~ 2.3 &amp; 8.1 ~ 8.2</title>
-      <link>https://statkim.github.io/2019/04/fda-book-chapter-2.1-~-2.3-8.1-~-8.2/</link>
+      <link>/2019/04/fda-book-chapter-2.1-~-2.3-8.1-~-8.2/</link>
       <pubDate>Fri, 26 Apr 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://statkim.github.io/2019/04/fda-book-chapter-2.1-~-2.3-8.1-~-8.2/</guid>
+      <guid>/2019/04/fda-book-chapter-2.1-~-2.3-8.1-~-8.2/</guid>
       <description>2. Tools for exploring functional data 2.1 Introduction FDA의 notation과 concept 정의 FDA에서 사용하는 statistics 정의 Matrix decompositions, projections, and the constrained maximization of quadratic forms에 대한 자세한 내용은 Appendix 참고 2.2 Some notation 2.2.1 Scalars, vectors, functions and</description>
     </item>
     
