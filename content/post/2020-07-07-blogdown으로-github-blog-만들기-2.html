@@ -25,12 +25,13 @@ tags:
 <li><code>Hugo</code> 설치</li>
 <li>Site 생성 (로컬에서 호스팅)</li>
 <li>기본 설정</li>
-<li><h5 id="github에-push-subtree-이용">Github에 push (subtree 이용)</h5></li>
-<li><h5 id="git으로-블로그-관리">Git으로 블로그 관리</h5></li>
+<li><strong>Github에 push (subtree 이용)</strong></li>
+<li><strong>Git으로 블로그 관리</strong></li>
 </ol>
-<p>이번 글에서는 지난 글에 이어서 Github에 push하여 블로그를 완성해보겠습니다.</p>
+<p>오늘은 지난 글에 이어서 Github에 push하여 블로그를 호스팅하고, 이후에 관리하는 방법까지 알아보겠습니다.
+혹시 이전 글을 못보신 분들께서는 <a href="https://statkim.github.io/2020/06/blogdown%EC%9C%BC%EB%A1%9C-github-blog-%EB%A7%8C%EB%93%A4%EA%B8%B0-1/2/">blogdown으로 Github Blog 만들기 1/2</a>을 보시면 됩니다.</p>
 <p><br></p>
-<div id="github에-push-subtree-이용-1" class="section level3">
+<div id="github에-push-subtree-이용" class="section level3">
 <h3>6. Github에 push (subtree 이용)</h3>
 <p>우선 <a href="https://github.com/">Github</a>에 <code>계정명.github.io</code>라는 repository를 하나 만들어야합니다.
 저 같은 경우, github 계정이 <code>statKim</code>이기 때문에 <code>statKim.github.io</code>라는 이름의 repo를 만들었습니다.</p>
@@ -43,7 +44,7 @@ tags:
 <p>하지만 저는 repo 2개를 만들어서 관리하는게 깔끔해보이지 않기 때문에, 여기서는 Git의 <code>subtree</code>라는 방법을 사용하여 1개 repo(<code>계정명.github.io</code>)에서 build와 호스팅 모두 가능하도록 해보겠습니다. (사실 subtree에 대해 잘 아는 것이 아니지만 구글링으로 찾은 방법을 소개해드리려 합니다.)</p>
 <p>결론부터 말씀드리면 <code>master</code> branch에는 build된 페이지(<code>public/</code>)가 들어가게 되고 <code>source</code> branch에는 전체 폴더가 들어가게 됩니다.
 즉, 다음의 구조를 가지게 됩니다.</p>
-<pre><code>github계정명.github.io/ (source)
+<pre><code>&lt;github계정명&gt;.github.io/ (source)
   └ .gitignore
   └ README.md
   └ config.toml
@@ -70,14 +71,14 @@ git commit -m &quot;Initial commit on source branch&quot;</code></pre>
 </div>
 <div id="github계정명.github.io-repo에-push" class="section level4">
 <h4>6-3. <code>github계정명.github.io</code> repo에 push</h4>
-<pre class="bash"><code>git remote add origin https://github.com/github계정명/github계정명.github.io.
+<pre class="bash"><code>git remote add origin https://github.com/&lt;github계정명&gt;/&lt;github계정명&gt;.github.io.git
 
 git push origin master
 git push origin source</code></pre>
 </div>
 <div id="subtree-지정-public-폴더-없이-실행해야합니다." class="section level4">
 <h4>6-4. subtree 지정 (<code>public/</code> 폴더 없이 실행해야합니다.)</h4>
-<pre class="bash"><code>git subtree add --prefix=public https://github.com/github계정명/github계정명.github.io.git master --squash</code></pre>
+<pre class="bash"><code>git subtree add --prefix=public https://github.com/&lt;github계정명&gt;/&lt;github계정명&gt;.github.io.git master --squash</code></pre>
 </div>
 <div id="블로그-build-잠깐-다시-r에서-실행해줘야-해요" class="section level4">
 <h4>6-5. 블로그 build (잠깐 다시 R에서 실행해줘야 해요!!)</h4>
@@ -90,19 +91,18 @@ build_site()</code></pre>
 git commit -m &quot;블로그 생성&quot;
 git push origin source
 
-git subtree push --prefix=public https://github.com/github계정명/github계정명.github.io.git master</code></pre>
+git subtree push --prefix=public https://github.com/&lt;github계정명&gt;/&lt;github계정명&gt;.github.io.git master</code></pre>
 <p><br></p>
 </div>
 </div>
-<div id="git으로-블로그-관리-1" class="section level3">
-<h3>7. Git으로 블로그 관리</h3>
+<div id="git으로-블로그-관리-2021.01.30-수정" class="section level3">
+<h3>7. Git으로 블로그 관리 <del>(2021.01.30 수정)</del></h3>
+<div id="블로그-업데이트" class="section level4">
+<h4>7-1. 블로그 업데이트</h4>
 <p>이후에 블로그 수정사항을 반영할 때에는 <strong>6-6</strong> 방법대로 실행하면 됩니다.
-하지만 저는 코드 4줄 타이핑하는 것도 귀찮기 때문에…(사실 subtree 구문이 잘 안외워지더라구요 ㅠㅠ)</p>
-<p>그리하여 shell script를 이용하여 자동화(?)를 해봤습니다.
-저는 <code>subtree_push.sh</code>라는 파일로 만들어서 아주 잘 사용하고 있습니다 ㅎㅎ</p>
-<p>사용할 때에는 Git bash에서 <code>bash subtree_push.sh "commit 메시지"</code>와 같이 사용하면 됩니다!!</p>
-<ul>
-<li><p><code>subtree_push.sh</code></p>
+하지만 저는 코드 4줄 타이핑하는 것도 귀찮기 때문에. . .<del>(사실 subtree 구문이 잘 안외워져서. . .)</del> shell script를 이용하여 자동화(?)를 하여 사용하고 있습니다.</p>
+<p>저는 다음의 bash 코드를 <code>subtree_push.sh</code>라는 파일로 만들어서 아주 잘 사용하고 있습니다 ㅎㅎ
+이는 각 branch마다 commit을 하고 원격저장소에 push까지 해주게 됩니다.</p>
 <pre class="bash"><code>#!/bin/bash
 
 commit_msg=$1
@@ -113,11 +113,36 @@ git commit -m &quot;${commit_msg}&quot;
 git push origin source
 
 # commit to master branch(blog)
-git subtree push --prefix=public https://github.com/github계정명/github계정명.github.io.git master
+git subtree push --prefix=public https://github.com/&lt;github계정명&gt;/&lt;github계정명&gt;.github.io.git master
 
-echo &quot;Blog update 완료&quot;</code></pre></li>
-</ul>
+echo &quot;Blog update 완료&quot;</code></pre>
+<p>사용할 때에는 Git bash에서 <code>bash subtree_push.sh "commit 메시지"</code>와 같이 사용하면 됩니다!!</p>
+</div>
+<div id="다른-기기에서도-수정하기-위해-clone" class="section level4">
+<h4>7-2. 다른 기기에서도 수정하기 위해 clone</h4>
+<p>사실 한 컴퓨터에서만 블로그를 관리하면 7-2 ~ 7-2 단계는 굳이 필요없지만, 예를 들어 데스크탑과 노트북에서 왔다갔다하면서 관리할 때에는 다음의 과정이 필요합니다.
+우선 repo를 clone하는 방법은 간단합니다.</p>
+<pre class="bash"><code># 블로그 repository clone
+git clone https://github.com/&lt;github계정명&gt;/&lt;github계정명&gt;.github.io.git
+
+# branch 목록 확인
+git branch -a
+
+# branch 전환하면서 폴더 내용 확인
+git checkout master   # build된 파일
+git checkout source   # 블로그 소스파일</code></pre>
+</div>
+<div id="다른-기기에서-업데이트한-내용-로컬에-pull" class="section level4">
+<h4>7-3. 다른 기기에서 업데이트한 내용 로컬에 pull</h4>
+<p>원격저장소에 올라간 내용을 pull하는 것은 일반적인 repo를 pull할 때와 같지만, 주의해야할 사항이 있는데 이는 각 branch마다 pull을 해주어야한다는 것입니다.</p>
+<pre class="bash"><code># source branch에서 pull
+git pull
+
+# master branch로 전환 후 pull
+git checkout master
+git pull</code></pre>
 <p><br></p>
+</div>
 </div>
 </div>
 <div id="reference" class="section level2">

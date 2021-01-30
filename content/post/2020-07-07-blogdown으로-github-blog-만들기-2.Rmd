@@ -22,10 +22,12 @@ tags:
 3. `Hugo` 설치
 4. Site 생성 (로컬에서 호스팅)
 5. 기본 설정
-6. ##### Github에 push (subtree 이용)
-7. ##### Git으로 블로그 관리
+6. **Github에 push (subtree 이용)**
+7. **Git으로 블로그 관리**
 
-이번 글에서는 지난 글에 이어서 Github에 push하여 블로그를 완성해보겠습니다.
+오늘은 지난 글에 이어서 Github에 push하여 블로그를 호스팅하고, 이후에 관리하는 방법까지 알아보겠습니다.
+혹시 이전 글을 못보신 분들께서는 [blogdown으로 Github Blog 만들기 1/2](https://statkim.github.io/2020/06/blogdown%EC%9C%BC%EB%A1%9C-github-blog-%EB%A7%8C%EB%93%A4%EA%B8%B0-1/2/)을 보시면 됩니다.
+
 
 <br>
 
@@ -45,7 +47,7 @@ Github은 jekyll 기반으로 만들어져 있어 Hugo로 만들어진 페이지
 결론부터 말씀드리면 `master` branch에는 build된 페이지(`public/`)가 들어가게 되고 `source` branch에는 전체 폴더가 들어가게 됩니다.
 즉, 다음의 구조를 가지게 됩니다.
 ```
-github계정명.github.io/ (source)
+<github계정명>.github.io/ (source)
   └ .gitignore
   └ README.md
   └ config.toml
@@ -78,7 +80,7 @@ git commit -m "Initial commit on source branch"
 
 #### 6-3. `github계정명.github.io` repo에 push
 ```bash
-git remote add origin https://github.com/github계정명/github계정명.github.io.
+git remote add origin https://github.com/<github계정명>/<github계정명>.github.io.git
 
 git push origin master
 git push origin source
@@ -86,7 +88,7 @@ git push origin source
 
 #### 6-4. subtree 지정 (`public/` 폴더 없이 실행해야합니다.)
 ```bash
-git subtree add --prefix=public https://github.com/github계정명/github계정명.github.io.git master --squash
+git subtree add --prefix=public https://github.com/<github계정명>/<github계정명>.github.io.git master --squash
 ```
 
 #### 6-5. 블로그 build (잠깐 다시 R에서 실행해줘야 해요!!)
@@ -101,37 +103,64 @@ git add .
 git commit -m "블로그 생성"
 git push origin source
 
-git subtree push --prefix=public https://github.com/github계정명/github계정명.github.io.git master
+git subtree push --prefix=public https://github.com/<github계정명>/<github계정명>.github.io.git master
 ```
 
 
 <br>
 
-### 7. Git으로 블로그 관리
+### 7. Git으로 블로그 관리 ~~(2021.01.30 수정)~~
+#### 7-1. 블로그 업데이트
 이후에 블로그 수정사항을 반영할 때에는 **6-6** 방법대로 실행하면 됩니다.
-하지만 저는 코드 4줄 타이핑하는 것도 귀찮기 때문에...(사실 subtree 구문이 잘 안외워지더라구요 ㅠㅠ)
+하지만 저는 코드 4줄 타이핑하는 것도 귀찮기 때문에. . .~~(사실 subtree 구문이 잘 안외워져서. . .)~~ shell script를 이용하여 자동화(?)를 하여 사용하고 있습니다.
 
-그리하여 shell script를 이용하여 자동화(?)를 해봤습니다.
-저는 `subtree_push.sh`라는 파일로 만들어서 아주 잘 사용하고 있습니다 ㅎㅎ
+저는 다음의 bash 코드를 `subtree_push.sh`라는 파일로 만들어서 아주 잘 사용하고 있습니다 ㅎㅎ
+이는 각 branch마다 commit을 하고 원격저장소에 push까지 해주게 됩니다.
+
+```bash
+#!/bin/bash
+
+commit_msg=$1
+
+# commit to source branch
+git add .
+git commit -m "${commit_msg}"
+git push origin source
+
+# commit to master branch(blog)
+git subtree push --prefix=public https://github.com/<github계정명>/<github계정명>.github.io.git master
+
+echo "Blog update 완료"
+```
 
 사용할 때에는 Git bash에서 `bash subtree_push.sh "commit 메시지"`와 같이 사용하면 됩니다!!
 
-- `subtree_push.sh`
-  ```bash
-  #!/bin/bash
-  
-  commit_msg=$1
-  
-  # commit to source branch
-  git add .
-  git commit -m "${commit_msg}"
-  git push origin source
-  
-  # commit to master branch(blog)
-  git subtree push --prefix=public https://github.com/github계정명/github계정명.github.io.git master
-  
-  echo "Blog update 완료"
-  ```
+
+#### 7-2. 다른 기기에서도 수정하기 위해 clone
+사실 한 컴퓨터에서만 블로그를 관리하면 7-2 ~ 7-2 단계는 굳이 필요없지만, 예를 들어 데스크탑과 노트북에서 왔다갔다하면서 관리할 때에는 다음의 과정이 필요합니다.
+우선 repo를 clone하는 방법은 간단합니다.
+```bash
+# 블로그 repository clone
+git clone https://github.com/<github계정명>/<github계정명>.github.io.git
+
+# branch 목록 확인
+git branch -a
+
+# branch 전환하면서 폴더 내용 확인
+git checkout master   # build된 파일
+git checkout source   # 블로그 소스파일
+```
+
+#### 7-3. 다른 기기에서 업데이트한 내용 로컬에 pull
+원격저장소에 올라간 내용을 pull하는 것은 일반적인 repo를 pull할 때와 같지만, 주의해야할 사항이 있는데 이는 각 branch마다 pull을 해주어야한다는 것입니다.
+```bash
+# source branch에서 pull
+git pull
+
+# master branch로 전환 후 pull
+git checkout master
+git pull
+```
 
 
 

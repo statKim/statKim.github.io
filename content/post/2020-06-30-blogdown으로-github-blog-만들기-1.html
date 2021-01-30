@@ -24,17 +24,17 @@ tags:
 <div id="순서" class="section level2">
 <h2>순서</h2>
 <ol style="list-style-type: decimal">
-<li><h5 id="r-project-생성">R project 생성</h5></li>
-<li><h5 id="blogdown-설치"><code>blogdown</code> 설치</h5></li>
-<li><h5 id="hugo-설치"><code>Hugo</code> 설치</h5></li>
-<li><h5 id="site-생성-로컬에서-호스팅">Site 생성 (로컬에서 호스팅)</h5></li>
-<li><h5 id="기본-설정">기본 설정</h5></li>
+<li><strong>R project 생성</strong></li>
+<li><strong><code>blogdown</code> 설치</strong></li>
+<li><strong><code>Hugo</code> 설치</strong></li>
+<li><strong>Site 생성 (로컬에서 호스팅)</strong></li>
+<li><strong>기본 설정</strong></li>
 <li>Github에 push (subtree 이용)</li>
 <li>Git으로 블로그 관리</li>
 </ol>
-<p>이번 글에서는 1~5번 까지의 과정을 설명해드리겠습니다. (6~7번은 좀 많이 복잡한듯 해서…)</p>
+<p>이번 글에서는 1~5번 까지의 과정을 설명해드리겠습니다. (6~7번은 좀 많이 복잡한듯 해서. . . 다음 포스팅에서 설명해보겠습니다.)</p>
 <p><br></p>
-<div id="r-project-생성-1" class="section level3">
+<div id="r-project-생성" class="section level3">
 <h3>1. R project 생성</h3>
 <p>Rstudio를 켜고 R project를 만들어줍니다.
 저는 <code>blogdown_test</code>라는 이름의 project를 생성했습니다.
@@ -45,14 +45,14 @@ tags:
 </blockquote>
 <p><br></p>
 </div>
-<div id="blogdown-설치-1" class="section level3">
+<div id="blogdown-설치" class="section level3">
 <h3>2. <code>blogdown</code> 설치</h3>
 <p>이제 <code>blogdown</code>을 설치합시다.</p>
 <pre class="r"><code>install.packages(&quot;blogdown&quot;)
 library(blogdown)</code></pre>
 <p><br></p>
 </div>
-<div id="hugo-설치-1" class="section level3">
+<div id="hugo-설치" class="section level3">
 <h3>3. <code>Hugo</code> 설치</h3>
 <p><code>blogdown</code>은 Hugo 기반이기 때문에 Hugo를 설치해주어야 합니다.
 하지만 우리의 <code>blogdown</code>에는 Hugo를 설치해주는 함수가 있습니다!!</p>
@@ -60,7 +60,7 @@ library(blogdown)</code></pre>
 install_hugo()</code></pre>
 <p><br></p>
 </div>
-<div id="site-생성-로컬에서-호스팅-1" class="section level3">
+<div id="site-생성-로컬에서-호스팅" class="section level3">
 <h3>4. Site 생성 (로컬에서 호스팅)</h3>
 <p>기본 theme을 사용해서 테스트해보겠습니다.</p>
 <pre class="r"><code># Site 생성
@@ -80,7 +80,7 @@ serve_site()    # 로컬에서 호스팅
 stop_server()   # 호스팅 종료 (또는 Rstudio를 꺼도 됨)</code></pre>
 <p><br></p>
 </div>
-<div id="기본-설정-1" class="section level3">
+<div id="기본-설정" class="section level3">
 <h3>5. 기본 설정</h3>
 <p>기본적인 setting은 <code>config.toml</code>에서 설정할 수 있습니다.</p>
 <pre class="yaml"><code>baseurl = &quot;/&quot;
@@ -95,7 +95,7 @@ ignoreFiles = [&quot;\\.Rmd$&quot;, &quot;\\.Rmarkdown$&quot;, &quot;_files$&quo
 .
 </code></pre>
 <ul>
-<li><code>base_url</code> : Github 페이지로 사용하기 위해서는 <code>https://github계정.github.io/</code>로 설정해주어야 함</li>
+<li><code>base_url</code> : Github 페이지로 사용하기 위해서는 <code>https://&lt;github계정&gt;.github.io/</code>로 설정해주어야 함</li>
 <li><code>title</code> : Site 제목</li>
 <li><code>theme</code> : Hugo theme</li>
 <li><code>googleAnalytics</code> : Google Analytics 설정</li>

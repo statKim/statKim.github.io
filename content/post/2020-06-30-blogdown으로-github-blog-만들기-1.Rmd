@@ -23,15 +23,15 @@ tags:
 <br>
 
 ## 순서
-1. ##### R project 생성
-2. ##### `blogdown` 설치
-3. ##### `Hugo` 설치
-4. ##### Site 생성 (로컬에서 호스팅)
-5. ##### 기본 설정
+1. **R project 생성**
+2. **`blogdown` 설치**
+3. **`Hugo` 설치**
+4. **Site 생성 (로컬에서 호스팅)**
+5. **기본 설정**
 6. Github에 push (subtree 이용)
 7. Git으로 블로그 관리
 
-이번 글에서는 1~5번 까지의 과정을 설명해드리겠습니다. (6~7번은 좀 많이 복잡한듯 해서...)
+이번 글에서는 1~5번 까지의 과정을 설명해드리겠습니다. (6~7번은 좀 많이 복잡한듯 해서. . . 다음 포스팅에서 설명해보겠습니다.)
 
 <br>
 
@@ -108,7 +108,7 @@ ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_files$", "_cache$"]
 
 ```
 
-- `base_url` : Github 페이지로 사용하기 위해서는 `https://github계정.github.io/`로 설정해주어야 함
+- `base_url` : Github 페이지로 사용하기 위해서는 `https://<github계정>.github.io/`로 설정해주어야 함
 - `title` : Site 제목
 - `theme` : Hugo theme
 - `googleAnalytics` : Google Analytics 설정
