@@ -2,30 +2,30 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>jupyter notebook on statKim</title>
-    <link>/tags/jupyter-notebook/</link>
+    <link>https://statkim.github.io/tags/jupyter-notebook/</link>
     <description>Recent content in jupyter notebook on statKim</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko-kr</language>
     <lastBuildDate>Fri, 01 Nov 2019 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="/tags/jupyter-notebook/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://statkim.github.io/tags/jupyter-notebook/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Jupyter notebook에서 가상환경 kernel이 인식되지 않는 오류</title>
-      <link>/2019/11/jupyter-notebook%EC%97%90%EC%84%9C-%EA%B0%80%EC%83%81%ED%99%98%EA%B2%BD-kernel%EC%9D%B4-%EC%9D%B8%EC%8B%9D%EB%90%98%EC%A7%80-%EC%95%8A%EB%8A%94-%EC%98%A4%EB%A5%98/</link>
+      <link>https://statkim.github.io/2019/11/jupyter-notebook%EC%97%90%EC%84%9C-%EA%B0%80%EC%83%81%ED%99%98%EA%B2%BD-kernel%EC%9D%B4-%EC%9D%B8%EC%8B%9D%EB%90%98%EC%A7%80-%EC%95%8A%EB%8A%94-%EC%98%A4%EB%A5%98/</link>
       <pubDate>Fri, 01 Nov 2019 00:00:00 +0000</pubDate>
       
-      <guid>/2019/11/jupyter-notebook%EC%97%90%EC%84%9C-%EA%B0%80%EC%83%81%ED%99%98%EA%B2%BD-kernel%EC%9D%B4-%EC%9D%B8%EC%8B%9D%EB%90%98%EC%A7%80-%EC%95%8A%EB%8A%94-%EC%98%A4%EB%A5%98/</guid>
+      <guid>https://statkim.github.io/2019/11/jupyter-notebook%EC%97%90%EC%84%9C-%EA%B0%80%EC%83%81%ED%99%98%EA%B2%BD-kernel%EC%9D%B4-%EC%9D%B8%EC%8B%9D%EB%90%98%EC%A7%80-%EC%95%8A%EB%8A%94-%EC%98%A4%EB%A5%98/</guid>
       <description>오류 발생 Jupyter notebook 실행 후, 가상환경 kernel이 인식되지 않음 동시에 터미널의 Log 메시지에 다음의 오류 발생 ImportError: DLL load failed: 지정된 프로시저를 찾을 수 없습니다. 해결방법</description>
     </item>
     
     <item>
       <title>Jupyter notebook에서 R 사용하기</title>
-      <link>/2019/01/jupyter-notebook%EC%97%90%EC%84%9C-r-%EC%82%AC%EC%9A%A9%ED%95%98%EA%B8%B0/</link>
+      <link>https://statkim.github.io/2019/01/jupyter-notebook%EC%97%90%EC%84%9C-r-%EC%82%AC%EC%9A%A9%ED%95%98%EA%B8%B0/</link>
       <pubDate>Tue, 08 Jan 2019 00:00:00 +0000</pubDate>
       
-      <guid>/2019/01/jupyter-notebook%EC%97%90%EC%84%9C-r-%EC%82%AC%EC%9A%A9%ED%95%98%EA%B8%B0/</guid>
+      <guid>https://statkim.github.io/2019/01/jupyter-notebook%EC%97%90%EC%84%9C-r-%EC%82%AC%EC%9A%A9%ED%95%98%EA%B8%B0/</guid>
       <description>1. 준비사항 Anaconda (Jupyter) R 2. R에서 Packages 설치 Rstudio가 아닌 R Console에서 실행!! install.packages(&amp;#39;devtools&amp;#39;) devtools::install_github(&amp;#39;IRkernel/IRkernel&amp;#39;) IRkernel::installspec() 3. Jupyter kernel에 추가되었는지 확인 cmd 창에서 jupyter kernel list 확인 $ jupyter</description>
     </item>
     

@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>tensorflow on statKim</title>
-    <link>/tags/tensorflow/</link>
+    <link>https://statkim.github.io/tags/tensorflow/</link>
     <description>Recent content in tensorflow on statKim</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko-kr</language>
     <lastBuildDate>Sat, 01 Feb 2020 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="/tags/tensorflow/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://statkim.github.io/tags/tensorflow/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Tensorflow 2.0 GPU 설치하기</title>
-      <link>/2020/02/tensorflow-2.0-gpu-%EC%84%A4%EC%B9%98%ED%95%98%EA%B8%B0/</link>
+      <link>https://statkim.github.io/2020/02/tensorflow-2.0-gpu-%EC%84%A4%EC%B9%98%ED%95%98%EA%B8%B0/</link>
       <pubDate>Sat, 01 Feb 2020 00:00:00 +0000</pubDate>
       
-      <guid>/2020/02/tensorflow-2.0-gpu-%EC%84%A4%EC%B9%98%ED%95%98%EA%B8%B0/</guid>
+      <guid>https://statkim.github.io/2020/02/tensorflow-2.0-gpu-%EC%84%A4%EC%B9%98%ED%95%98%EA%B8%B0/</guid>
       <description>0. 컴퓨터 사양 확인 설치 전, 자신의 컴퓨터의 운영체제, GPU를 먼저 확인 제 컴퓨터 사양 운영체제 : Windows 10 GPU : Quadro P600 1. NVIDIA driver 설치 NVIDIA driver Download : https://www.nvidia.co.kr/Download/index.aspx?lang=kr 자신의 GPU에 맞는 드라</description>
     </item>
     
