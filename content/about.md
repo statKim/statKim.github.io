@@ -8,7 +8,7 @@ date: "2021-01-18"
 
 `Functional Data Analysis(FDA)`, `Spatio-temporal Data Analysis`, `High-dimensional Data Analysis` 분야에 관심을 가지고 있으며, 현재 `Functional principal component analysis(FPCA)`에 대해 연구하고 있습니다.
 
-`R`로 데이터 다루는 것을 좋아하며, 때에 따라 `Python`을 병행하여 사용하고 있습니다.
+`R`로 코딩하고, `Rmarkdown`으로 문서 작성하는 것을 좋아하며, 필요에 따라 `Python`을 사용하고 있습니다.
 
 <br>
 
@@ -20,22 +20,23 @@ date: "2021-01-18"
 <br>
 
 ## Education
-- **중앙대학교 통계학과 석사과정**, 2019.03 - Present
+- **중앙대학교 통계학과 석사과정**, 2019.03 - 2021.02
   - Thesis : Bootstrap aggregated classification for sparse functional data.
 - **중앙대학교 응용통계학 학사**, 2013.03 - 2019.02
 
 <br>
 
 ## Publications
-- **H. Kim**, X. Li and Y. Lim. (2021). Robust group independent component analysis. *The Korean Journal
+- **Kim, H.**, & Lim, Y. (2021). Bootstrap aggregated classification for sparse functional data. *The Journal
 of Applied Statistics*, Accepted.
-- **H. Kim** and Y. Lim. Bootstrap aggregated classification for sparse functional data. Under review.
+- **Kim, H.**, Li, X., & Lim, Y. (2021). Robust group independent component analysis. *The Korean Journal
+of Applied Statistics*, Accepted.
 
 <br>
 
 ## Projects
 - **경기도 고혈압·당뇨병 등록관리사업 효과평가 분석**, *중앙의대 예방의학교실*, 2019.07 - 2020.02
-- **빅데이터 기반 서비스부품 수요예측 강화 (산학과제)**, *부품운영팀, 현대모비스*, 2019.02 - 2019.09
+- **빅데이터 기반 서비스부품 수요예측 강화**, *부품운영팀, 현대모비스*, 2019.02 - 2019.09
 
 <br>
 
