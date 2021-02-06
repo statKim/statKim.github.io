@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Git on statKim</title>
+    <link>https://statkim.github.io/categories/git/</link>
+    <description>Recent content in Git on statKim</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ko-kr</language>
+    <lastBuildDate>Sat, 06 Feb 2021 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://statkim.github.io/categories/git/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Fork한 repository 최신버전으로 업데이트하기</title>
+      <link>https://statkim.github.io/2021/02/fork%ED%95%9C-repository-%EC%B5%9C%EC%8B%A0%EB%B2%84%EC%A0%84%EC%9C%BC%EB%A1%9C-%EC%97%85%EB%8D%B0%EC%9D%B4%ED%8A%B8%ED%95%98%EA%B8%B0/</link>
+      <pubDate>Sat, 06 Feb 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://statkim.github.io/2021/02/fork%ED%95%9C-repository-%EC%B5%9C%EC%8B%A0%EB%B2%84%EC%A0%84%EC%9C%BC%EB%A1%9C-%EC%97%85%EB%8D%B0%EC%9D%B4%ED%8A%B8%ED%95%98%EA%B8%B0/</guid>
+      <description>패키지 개발이나 코드 수정을 위해 Github에서 repository를 fork하고 내용을 수정하여 다시 pull request함으로써 패키지 개발에 관여할 수</description>
+    </item>
+    
+  </channel>
+</rss>
