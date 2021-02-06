@@ -8,39 +8,39 @@
 <meta name="generator" content="Hugo 0.73.0 with theme Tranquilpeak 0.4.8-BETA">
 <meta name="author" content="김현성">
 <meta name="keywords" content="">
-<meta name="description" content="R에서 for 문의 느린 속도를 개선하기 위해 가장 많이 사용하는 방법 중 하나가 doParallel 패키지의 foreach()를 통해 병렬로 연산하는 것인데요. 하지만 seed를 설정">
+<meta name="description" content="패키지 개발이나 코드 수정을 위해 Github에서 repository를 fork하고 내용을 수정하여 다시 pull request함으로써 패키지 개발에 관여할 수">
 
 
-<meta property="og:description" content="R에서 for 문의 느린 속도를 개선하기 위해 가장 많이 사용하는 방법 중 하나가 doParallel 패키지의 foreach()를 통해 병렬로 연산하는 것인데요. 하지만 seed를 설정">
+<meta property="og:description" content="패키지 개발이나 코드 수정을 위해 Github에서 repository를 fork하고 내용을 수정하여 다시 pull request함으로써 패키지 개발에 관여할 수">
 <meta property="og:type" content="article">
-<meta property="og:title" content="doRNG 패키지로 foreach를 재현가능하도록 사용하기">
-<meta name="twitter:title" content="doRNG 패키지로 foreach를 재현가능하도록 사용하기">
-<meta property="og:url" content="https://statkim.github.io/2021/02/dorng-%ED%8C%A8%ED%82%A4%EC%A7%80%EB%A1%9C-foreach%EB%A5%BC-%EC%9E%AC%ED%98%84%EA%B0%80%EB%8A%A5%ED%95%98%EB%8F%84%EB%A1%9D-%EC%82%AC%EC%9A%A9%ED%95%98%EA%B8%B0/">
-<meta property="twitter:url" content="https://statkim.github.io/2021/02/dorng-%ED%8C%A8%ED%82%A4%EC%A7%80%EB%A1%9C-foreach%EB%A5%BC-%EC%9E%AC%ED%98%84%EA%B0%80%EB%8A%A5%ED%95%98%EB%8F%84%EB%A1%9D-%EC%82%AC%EC%9A%A9%ED%95%98%EA%B8%B0/">
+<meta property="og:title" content="Fork한 repository 최신버전으로 업데이트하기">
+<meta name="twitter:title" content="Fork한 repository 최신버전으로 업데이트하기">
+<meta property="og:url" content="https://statkim.github.io/2021/02/fork%ED%95%9C-repository-%EC%B5%9C%EC%8B%A0%EB%B2%84%EC%A0%84%EC%9C%BC%EB%A1%9C-%EC%97%85%EB%8D%B0%EC%9D%B4%ED%8A%B8%ED%95%98%EA%B8%B0/">
+<meta property="twitter:url" content="https://statkim.github.io/2021/02/fork%ED%95%9C-repository-%EC%B5%9C%EC%8B%A0%EB%B2%84%EC%A0%84%EC%9C%BC%EB%A1%9C-%EC%97%85%EB%8D%B0%EC%9D%B4%ED%8A%B8%ED%95%98%EA%B8%B0/">
 <meta property="og:site_name" content="statKim">
-<meta property="og:description" content="R에서 for 문의 느린 속도를 개선하기 위해 가장 많이 사용하는 방법 중 하나가 doParallel 패키지의 foreach()를 통해 병렬로 연산하는 것인데요. 하지만 seed를 설정">
-<meta name="twitter:description" content="R에서 for 문의 느린 속도를 개선하기 위해 가장 많이 사용하는 방법 중 하나가 doParallel 패키지의 foreach()를 통해 병렬로 연산하는 것인데요. 하지만 seed를 설정">
+<meta property="og:description" content="패키지 개발이나 코드 수정을 위해 Github에서 repository를 fork하고 내용을 수정하여 다시 pull request함으로써 패키지 개발에 관여할 수">
+<meta name="twitter:description" content="패키지 개발이나 코드 수정을 위해 Github에서 repository를 fork하고 내용을 수정하여 다시 pull request함으로써 패키지 개발에 관여할 수">
 <meta property="og:locale" content="en-us">
 
   
-    <meta property="article:published_time" content="2021-02-03T00:00:00">
+    <meta property="article:published_time" content="2021-02-06T00:00:00">
   
   
-    <meta property="article:modified_time" content="2021-02-03T00:00:00">
+    <meta property="article:modified_time" content="2021-02-06T00:00:00">
   
-  
-  
-    
-      <meta property="article:section" content="R">
-    
   
   
     
-      <meta property="article:tag" content="R">
+      <meta property="article:section" content="Git">
     
-      <meta property="article:tag" content="R 꿀팁">
+  
+  
     
-      <meta property="article:tag" content="병렬처리">
+      <meta property="article:tag" content="Git">
+    
+      <meta property="article:tag" content="Github">
+    
+      <meta property="article:tag" content="fork">
     
   
 
@@ -61,14 +61,14 @@
   <meta property="twitter:image" content="https://statkim.github.io/img/profile.jpg">
 
 
-    <title>doRNG 패키지로 foreach를 재현가능하도록 사용하기</title>
+    <title>Fork한 repository 최신버전으로 업데이트하기</title>
 
     <link rel="icon" href="https://statkim.github.io/img/favicon.ico">
     
 
     
 
-    <link rel="canonical" href="https://statkim.github.io/2021/02/dorng-%ED%8C%A8%ED%82%A4%EC%A7%80%EB%A1%9C-foreach%EB%A5%BC-%EC%9E%AC%ED%98%84%EA%B0%80%EB%8A%A5%ED%95%98%EB%8F%84%EB%A1%9D-%EC%82%AC%EC%9A%A9%ED%95%98%EA%B8%B0/">
+    <link rel="canonical" href="https://statkim.github.io/2021/02/fork%ED%95%9C-repository-%EC%B5%9C%EC%8B%A0%EB%B2%84%EC%A0%84%EC%9C%BC%EB%A1%9C-%EC%97%85%EB%8D%B0%EC%9D%B4%ED%8A%B8%ED%95%98%EA%B8%B0/">
 
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
@@ -245,15 +245,15 @@ if (!doNotTrack) {
             <div class="post-header main-content-wrap text-center">
   
     <h1 class="post-title" itemprop="headline">
-      doRNG 패키지로 foreach를 재현가능하도록 사용하기
+      Fork한 repository 최신버전으로 업데이트하기
     </h1>
   
   
   <div class="postShorten-meta post-meta">
     
-      <time itemprop="datePublished" datetime="2021-02-03T00:00:00Z">
+      <time itemprop="datePublished" datetime="2021-02-06T00:00:00Z">
         
-  February 3, 2021
+  February 6, 2021
 
       </time>
     
@@ -262,7 +262,7 @@ if (!doNotTrack) {
   
     <span>in</span>
     
-      <a class="category-link" href="https://statkim.github.io/categories/r">R</a>
+      <a class="category-link" href="https://statkim.github.io/categories/git">Git</a>
     
   
 
@@ -276,91 +276,56 @@ if (!doNotTrack) {
 <script src="https://statkim.github.io/rmarkdown-libs/header-attrs/header-attrs.js"></script>
 
 
-<p><strong>R</strong>에서 for 문의 느린 속도를 개선하기 위해 가장 많이 사용하는 방법 중 하나가 <strong>doParallel</strong> 패키지의 <code>foreach()</code>를 통해 병렬로 연산하는 것인데요.
-하지만 seed를 설정하여 이후 같은 결과를 얻게 하는 <strong>재현성(reproducibility)을 위해서 <code>foreach()</code>를 사용할 때에는 주의할 필요</strong>가 있습니다.
-보통 seed를 설정할 때 사용하는 <code>set.seed()</code>가 제대로 적용되지 않기 때문이죠.</p>
-<p>다음의 예제를 확인해볼까요? <em>(본문에서 사용한 예제 코드는 doRNG 패키지의 RDocument를 참고하였습니다.)</em></p>
-<p>각 반복마다 <span class="math inline">\(Uniform(0,1)\)</span>에서 sample 1개씩을 뽑는 과정을 <code>foreach()</code> 함수를 사용한 예제입니다.
-그리고 재현성을 위해 <code>set.seed(1234)</code>를 설정해주었습니다.</p>
-<pre class="r"><code>library(doParallel)
-cl &lt;- makeCluster(2)
-registerDoParallel(cl)
-
-# foreach에서 %dopar% 구문으로 생성
-set.seed(1234)
-s1 &lt;- foreach(i = 1:4) %dopar% { 
-  runif(1) 
-}
-
-set.seed(1234)
-s2 &lt;- foreach(i = 1:4) %dopar% { 
-  runif(1) 
-}
-
-# 두 벡터가 같은지 비교
-identical(s1, s2)</code></pre>
-<pre><code>## [1] FALSE</code></pre>
-<p>하지만 예상과 달리 seed를 지정해주었음에도 <code>runif()</code>에서 뽑힌 값이 다른 것을 확인할 수 있습니다. (<del>정확한 이유는 잘 모르겠습니다. . .</del>)</p>
-<p><strong>그렇다면 이 문제는 어떻게 해결할 수 있을까요?</strong></p>
-<blockquote>
-<p>바로 <strong>doRNG</strong> 패키지를 사용하면 됩니다!!!</p>
-</blockquote>
-<p><br></p>
-<div id="dorng-패키지" class="section level2">
-<h2>doRNG 패키지</h2>
-<p>앞에서의 문제는 <strong>doRNG</strong> 패키지 내의 <code>%dorng%</code> 또는 <code>registerDoRNG()</code>를 활용하여 해결할 수 있으며, 이제 두 방법을 하나씩 살펴보겠습니다.</p>
-<div id="dorng-.options.rng" class="section level3">
-<h3>1. %dorng% + .options.RNG</h3>
-<p>첫 번째 방법은 <code>%dopar%</code>대신 <code>%dorng%</code>를 사용하는 것인데요.
-이와 더불어 <code>.options.RNG</code> 옵션으로 seed를 설정해주어야 합니다.</p>
-<p>다음에서 사용법과 간단한 예제를 확인해보겠습니다.
-다음은 <code>%dorng% + .options.RNG = 1234</code>가 같은 값을 생성하는지 비교하는 예제입니다.</p>
-<pre class="r"><code># 패키지 load
-library(doRNG)
-
-# %dorng% 구문으로 생성
-r1 &lt;- foreach(i = 1:4, .options.RNG = 1234) %dorng% { 
-  runif(1) 
-}
-
-r2 &lt;- foreach(i = 1:4, .options.RNG = 1234) %dorng% { 
-  runif(1) 
-}
-
-# 두 벡터가 같은지 비교
-identical(r1, r2)</code></pre>
-<pre><code>## [1] TRUE</code></pre>
-<p><code>set.seed()</code>를 사용했을 때와 달리 <code>%dorng% + .options.RNG</code>를 적용하여 생성된 두 벡터가 같은 것을 확인할 수 있습니다.</p>
-</div>
-<div id="registerdorng" class="section level3">
-<h3>2. registerDoRNG</h3>
-<p>두 번째 방법은 <code>registerDoRNG()</code> 함수를 사용하여 seed를 설정하는 것입니다.
-<code>set.seed()</code>와 마찬가지로 함수 argument로 seed를 설정해주면 됩니다.</p>
-<p>다음은 같은 seed로 <code>%dorng% + .options.RNG</code>와 <code>registerDoRNG()</code>가 같은 값을 생성하는지 비교하는 예제입니다.</p>
-<pre class="r"><code># registerDoRNG로 seed 설정
-registerDoRNG(1234)
-r1 &lt;- foreach(i = 1:4) %dopar% { 
-  runif(1) 
-}
-
-# %dorng% 구문으로 seed 설정
-r2 &lt;- foreach(i = 1:4, .options.RNG = 1234) %dorng% { 
-  runif(1) 
-}
-
-# 두 벡터가 같은지 비교
-identical(r1, r2)</code></pre>
-<pre><code>## [1] TRUE</code></pre>
-<p>사용하는 방법이 약간 다르지만, 두 방법에서 생성된 벡터가 서로 같다는 것을 확인할 수 있습니다.</p>
+<p>패키지 개발이나 코드 수정을 위해 Github에서 repository를 <em>fork</em>하고 내용을 수정하여 다시 <em>pull request</em>함으로써 패키지 개발에 관여할 수 있습니다. (마침내 이 패키지의 <strong>contributor</strong>가 되는 것이죠!)
+그리고 이 과정이 한 번 하고 끝나는 것이 아니라, 이후 지속적으로 코드 개발 및 수정에 참여하기 위해서는 <strong>fork한 repo를 자주 최신버전으로 업데이트</strong> 해주어야합니다.</p>
+<p>따라서 이번 포스팅에서는 <strong>fork한 repo를 최신버전으로 업데이트하는 방법</strong>에 대해 알아보겠습니다.
+아무래도 예를 들어 설명하는 것이 쉬울 것 같아, 여기서는 <del>제가 처음으로 패키지의 contributor가 된</del> <a href="https://github.com/mitchelloharawild/vitae"><em>vitae</em></a>라는 <strong>R</strong> 패키지를 예제로 활용하였습니다.</p>
+<div id="upstream-지정하기" class="section level2">
+<h2>upstream 지정하기</h2>
+<p>우선 fork한 repository를 업데이트하기 위해서는, 원본 repo의 주소를 지정해주어야 하는데 이를 보통 <em>upstream</em>이라 합니다.
+현재 제 repo의 지정된 주소를 확인해보면 다음과 같이 <em>origin</em>에 제 repo 주소만 지정되어 있을 것입니다.</p>
+<pre class="bash"><code>$ git remote -v
+origin  https://github.com/statKim/vitae.git (fetch)
+origin  https://github.com/statKim/vitae.git (push)</code></pre>
+<p>여기서 여러분은 <code>https://github.com/&lt;본인 GithubID&gt;/&lt;Repo 이름&gt;.git</code>과 같이 나오겠죠?</p>
+<p>이제 다음과 같이 원본 repo 주소를 <em>“upstream”</em>이라는 이름으로 추가해줄 것인데요.
+즉, <code>https://github.com/&lt;원본 GithubID&gt;/&lt;Repo 이름&gt;.git</code>의 주소를 <em>upstream</em>으로 추가해주었습니다.</p>
+<pre class="bash"><code>$ git remote add upstream https://github.com/mitchelloharawild/vitae.git</code></pre>
+<p>다시 <code>git remote</code> 명령어를 통해 확인해보면 다음과 같이 <em>upstream</em>이라는 이름으로 원본 repo 주소가 추가되어 있을 것입니다.</p>
+<pre class="bash"><code>$ git remote -v
+origin  https://github.com/statKim/vitae.git (fetch)
+origin  https://github.com/statKim/vitae.git (push)
+upstream        https://github.com/mitchelloharawild/vitae.git (fetch)
+upstream        https://github.com/mitchelloharawild/vitae.git (push)</code></pre>
 <p><br></p>
 </div>
+<div id="fork한-repository-최신버전으로-업데이트" class="section level2">
+<h2>Fork한 repository 최신버전으로 업데이트</h2>
+<p>이제 원본 주소를 추가해주었으니 업데이트를 해볼까요?
+<code>git fetch</code> 명령어를 통해 그동안 <em>upstream</em>(원본 repo)에서 수정된 내용들을 내려받을 수 있습니다.</p>
+<pre class="bash"><code>$ git fetch upstream
+remote: Enumerating objects: 78, done.
+remote: Counting objects: 100% (78/78), done.
+remote: Compressing objects: 100% (4/4), done.
+remote: Total 39 (delta 34), reused 38 (delta 34), pack-reused 0
+Unpacking objects: 100% (39/39), done.
+From https://github.com/mitchelloharawild/vitae
+ * [new branch]      gh-pages   -&gt; upstream/gh-pages
+ * [new branch]      master     -&gt; upstream/master</code></pre>
+<p>그리고 내려받은 <em>upstream</em>(원본 repo)의 수정사항을 현재 repo에 merge해주면 됩니다.</p>
+<pre class="bash"><code>$ git merge upstream/master
+Updating 203e3b8..3fe2a6d
+Fast-forward</code></pre>
+<p>단, 이는 지금까지 제 로컬에서만 작업된 사항들이죠.</p>
+<p>따라서 마지막으로 로컬에서 업데이트된 사항을 Github 원격저장소에 push해주면 끝입니다!!</p>
+<pre class="bash"><code>$ git push origin master</code></pre>
+<p><br></p>
 </div>
 <div id="reference" class="section level2">
 <h2>Reference</h2>
 <ul>
-<li><a href="https://www.stat.colostate.edu/~scharfh/CSP_parallel/handouts/foreach_handout.html">moving from for to foreach</a></li>
-<li><a href="https://www.rdocumentation.org/packages/doRNG/versions/1.8.2/topics/%25dorng%25">RDocumentation - %dorng%</a></li>
-<li><a href="https://www.rdocumentation.org/packages/doRNG/versions/1.8.2/topics/registerDoRNG">RDocumentation - registerDoRNG</a></li>
+<li><a href="https://jybaek.tistory.com/775">[GitHub] fork repository 최신 버전으로 유지하기</a></li>
+<li><a href="https://json.postype.com/post/210431">[Git] Fork 한 repository 최신으로 동기화하기</a></li>
 </ul>
 </div>
 
@@ -375,11 +340,11 @@ identical(r1, r2)</code></pre>
                   <div class="post-footer-tags">
                     <span class="text-color-light text-small">TAGGED IN</span><br/>
                     
-  <a class="tag tag--primary tag--small" href="https://statkim.github.io/tags/r/">R</a>
+  <a class="tag tag--primary tag--small" href="https://statkim.github.io/tags/git/">Git</a>
 
-  <a class="tag tag--primary tag--small" href="https://statkim.github.io/tags/r-%EA%BF%80%ED%8C%81/">R 꿀팁</a>
+  <a class="tag tag--primary tag--small" href="https://statkim.github.io/tags/github/">Github</a>
 
-  <a class="tag tag--primary tag--small" href="https://statkim.github.io/tags/%EB%B3%91%EB%A0%AC%EC%B2%98%EB%A6%AC/">병렬처리</a>
+  <a class="tag tag--primary tag--small" href="https://statkim.github.io/tags/fork/">fork</a>
 
                   </div>
                 
@@ -392,7 +357,7 @@ identical(r1, r2)</code></pre>
           
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--default tooltip--top" href="https://statkim.github.io/2021/02/fork%ED%95%9C-repository-%EC%B5%9C%EC%8B%A0%EB%B2%84%EC%A0%84%EC%9C%BC%EB%A1%9C-%EC%97%85%EB%8D%B0%EC%9D%B4%ED%8A%B8%ED%95%98%EA%B8%B0/" data-tooltip="Fork한 repository 최신버전으로 업데이트하기">
+                <a class="post-action-btn btn btn--disabled">
               
                   <i class="fa fa-angle-left"></i>
                   <span class="hide-xs hide-sm text-small icon-ml">NEXT</span>
@@ -400,7 +365,7 @@ identical(r1, r2)</code></pre>
             </li>
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--default tooltip--top" href="https://statkim.github.io/2021/01/%EB%B3%80%EC%88%98%EB%AA%85%EC%9D%84-%EB%AC%B8%EC%9E%90%EC%97%B4-%ED%98%95%EC%8B%9D%EC%9C%BC%EB%A1%9C-%EC%9E%90%EC%9C%A0%EB%A1%AD%EA%B2%8C-%EB%8B%A4%EB%A3%A8%EA%B8%B0-get%EA%B3%BC-assign/" data-tooltip="변수명을 문자열 형식으로 자유롭게 다루기 - get과 assign">
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://statkim.github.io/2021/02/dorng-%ED%8C%A8%ED%82%A4%EC%A7%80%EB%A1%9C-foreach%EB%A5%BC-%EC%9E%AC%ED%98%84%EA%B0%80%EB%8A%A5%ED%95%98%EB%8F%84%EB%A1%9D-%EC%82%AC%EC%9A%A9%ED%95%98%EA%B8%B0/" data-tooltip="doRNG 패키지로 foreach를 재현가능하도록 사용하기">
               
                   <span class="hide-xs hide-sm text-small icon-mr">PREVIOUS</span>
                   <i class="fa fa-angle-right"></i>
@@ -418,19 +383,19 @@ identical(r1, r2)</code></pre>
         </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://statkim.github.io/2021/02/dorng-%ED%8C%A8%ED%82%A4%EC%A7%80%EB%A1%9C-foreach%EB%A5%BC-%EC%9E%AC%ED%98%84%EA%B0%80%EB%8A%A5%ED%95%98%EB%8F%84%EB%A1%9D-%EC%82%AC%EC%9A%A9%ED%95%98%EA%B8%B0/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://statkim.github.io/2021/02/fork%ED%95%9C-repository-%EC%B5%9C%EC%8B%A0%EB%B2%84%EC%A0%84%EC%9C%BC%EB%A1%9C-%EC%97%85%EB%8D%B0%EC%9D%B4%ED%8A%B8%ED%95%98%EA%B8%B0/">
               <i class="fa fa-facebook-official"></i>
             </a>
           </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://statkim.github.io/2021/02/dorng-%ED%8C%A8%ED%82%A4%EC%A7%80%EB%A1%9C-foreach%EB%A5%BC-%EC%9E%AC%ED%98%84%EA%B0%80%EB%8A%A5%ED%95%98%EB%8F%84%EB%A1%9D-%EC%82%AC%EC%9A%A9%ED%95%98%EA%B8%B0/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://statkim.github.io/2021/02/fork%ED%95%9C-repository-%EC%B5%9C%EC%8B%A0%EB%B2%84%EC%A0%84%EC%9C%BC%EB%A1%9C-%EC%97%85%EB%8D%B0%EC%9D%B4%ED%8A%B8%ED%95%98%EA%B8%B0/">
               <i class="fa fa-twitter"></i>
             </a>
           </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://statkim.github.io/2021/02/dorng-%ED%8C%A8%ED%82%A4%EC%A7%80%EB%A1%9C-foreach%EB%A5%BC-%EC%9E%AC%ED%98%84%EA%B0%80%EB%8A%A5%ED%95%98%EB%8F%84%EB%A1%9D-%EC%82%AC%EC%9A%A9%ED%95%98%EA%B8%B0/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://statkim.github.io/2021/02/fork%ED%95%9C-repository-%EC%B5%9C%EC%8B%A0%EB%B2%84%EC%A0%84%EC%9C%BC%EB%A1%9C-%EC%97%85%EB%8D%B0%EC%9D%B4%ED%8A%B8%ED%95%98%EA%B8%B0/">
               <i class="fa fa-google-plus"></i>
             </a>
           </li>
@@ -478,7 +443,7 @@ identical(r1, r2)</code></pre>
           
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--default tooltip--top" href="https://statkim.github.io/2021/02/fork%ED%95%9C-repository-%EC%B5%9C%EC%8B%A0%EB%B2%84%EC%A0%84%EC%9C%BC%EB%A1%9C-%EC%97%85%EB%8D%B0%EC%9D%B4%ED%8A%B8%ED%95%98%EA%B8%B0/" data-tooltip="Fork한 repository 최신버전으로 업데이트하기">
+                <a class="post-action-btn btn btn--disabled">
               
                   <i class="fa fa-angle-left"></i>
                   <span class="hide-xs hide-sm text-small icon-ml">NEXT</span>
@@ -486,7 +451,7 @@ identical(r1, r2)</code></pre>
             </li>
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--default tooltip--top" href="https://statkim.github.io/2021/01/%EB%B3%80%EC%88%98%EB%AA%85%EC%9D%84-%EB%AC%B8%EC%9E%90%EC%97%B4-%ED%98%95%EC%8B%9D%EC%9C%BC%EB%A1%9C-%EC%9E%90%EC%9C%A0%EB%A1%AD%EA%B2%8C-%EB%8B%A4%EB%A3%A8%EA%B8%B0-get%EA%B3%BC-assign/" data-tooltip="변수명을 문자열 형식으로 자유롭게 다루기 - get과 assign">
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://statkim.github.io/2021/02/dorng-%ED%8C%A8%ED%82%A4%EC%A7%80%EB%A1%9C-foreach%EB%A5%BC-%EC%9E%AC%ED%98%84%EA%B0%80%EB%8A%A5%ED%95%98%EB%8F%84%EB%A1%9D-%EC%82%AC%EC%9A%A9%ED%95%98%EA%B8%B0/" data-tooltip="doRNG 패키지로 foreach를 재현가능하도록 사용하기">
               
                   <span class="hide-xs hide-sm text-small icon-mr">PREVIOUS</span>
                   <i class="fa fa-angle-right"></i>
@@ -504,19 +469,19 @@ identical(r1, r2)</code></pre>
         </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://statkim.github.io/2021/02/dorng-%ED%8C%A8%ED%82%A4%EC%A7%80%EB%A1%9C-foreach%EB%A5%BC-%EC%9E%AC%ED%98%84%EA%B0%80%EB%8A%A5%ED%95%98%EB%8F%84%EB%A1%9D-%EC%82%AC%EC%9A%A9%ED%95%98%EA%B8%B0/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://statkim.github.io/2021/02/fork%ED%95%9C-repository-%EC%B5%9C%EC%8B%A0%EB%B2%84%EC%A0%84%EC%9C%BC%EB%A1%9C-%EC%97%85%EB%8D%B0%EC%9D%B4%ED%8A%B8%ED%95%98%EA%B8%B0/">
               <i class="fa fa-facebook-official"></i>
             </a>
           </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://statkim.github.io/2021/02/dorng-%ED%8C%A8%ED%82%A4%EC%A7%80%EB%A1%9C-foreach%EB%A5%BC-%EC%9E%AC%ED%98%84%EA%B0%80%EB%8A%A5%ED%95%98%EB%8F%84%EB%A1%9D-%EC%82%AC%EC%9A%A9%ED%95%98%EA%B8%B0/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://statkim.github.io/2021/02/fork%ED%95%9C-repository-%EC%B5%9C%EC%8B%A0%EB%B2%84%EC%A0%84%EC%9C%BC%EB%A1%9C-%EC%97%85%EB%8D%B0%EC%9D%B4%ED%8A%B8%ED%95%98%EA%B8%B0/">
               <i class="fa fa-twitter"></i>
             </a>
           </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://statkim.github.io/2021/02/dorng-%ED%8C%A8%ED%82%A4%EC%A7%80%EB%A1%9C-foreach%EB%A5%BC-%EC%9E%AC%ED%98%84%EA%B0%80%EB%8A%A5%ED%95%98%EB%8F%84%EB%A1%9D-%EC%82%AC%EC%9A%A9%ED%95%98%EA%B8%B0/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://statkim.github.io/2021/02/fork%ED%95%9C-repository-%EC%B5%9C%EC%8B%A0%EB%B2%84%EC%A0%84%EC%9C%BC%EB%A1%9C-%EC%97%85%EB%8D%B0%EC%9D%B4%ED%8A%B8%ED%95%98%EA%B8%B0/">
               <i class="fa fa-google-plus"></i>
             </a>
           </li>
@@ -546,19 +511,19 @@ identical(r1, r2)</code></pre>
   <ul class="share-options">
     
       <li class="share-option">
-        <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fstatkim.github.io%2F2021%2F02%2Fdorng-%25ED%258C%25A8%25ED%2582%25A4%25EC%25A7%2580%25EB%25A1%259C-foreach%25EB%25A5%25BC-%25EC%259E%25AC%25ED%2598%2584%25EA%25B0%2580%25EB%258A%25A5%25ED%2595%2598%25EB%258F%2584%25EB%25A1%259D-%25EC%2582%25AC%25EC%259A%25A9%25ED%2595%2598%25EA%25B8%25B0%2F">
+        <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fstatkim.github.io%2F2021%2F02%2Ffork%25ED%2595%259C-repository-%25EC%25B5%259C%25EC%258B%25A0%25EB%25B2%2584%25EC%25A0%2584%25EC%259C%25BC%25EB%25A1%259C-%25EC%2597%2585%25EB%258D%25B0%25EC%259D%25B4%25ED%258A%25B8%25ED%2595%2598%25EA%25B8%25B0%2F">
           <i class="fa fa-facebook-official"></i><span>Share on Facebook</span>
         </a>
       </li>
     
       <li class="share-option">
-        <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=https%3A%2F%2Fstatkim.github.io%2F2021%2F02%2Fdorng-%25ED%258C%25A8%25ED%2582%25A4%25EC%25A7%2580%25EB%25A1%259C-foreach%25EB%25A5%25BC-%25EC%259E%25AC%25ED%2598%2584%25EA%25B0%2580%25EB%258A%25A5%25ED%2595%2598%25EB%258F%2584%25EB%25A1%259D-%25EC%2582%25AC%25EC%259A%25A9%25ED%2595%2598%25EA%25B8%25B0%2F">
+        <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=https%3A%2F%2Fstatkim.github.io%2F2021%2F02%2Ffork%25ED%2595%259C-repository-%25EC%25B5%259C%25EC%258B%25A0%25EB%25B2%2584%25EC%25A0%2584%25EC%259C%25BC%25EB%25A1%259C-%25EC%2597%2585%25EB%258D%25B0%25EC%259D%25B4%25ED%258A%25B8%25ED%2595%2598%25EA%25B8%25B0%2F">
           <i class="fa fa-twitter"></i><span>Share on Twitter</span>
         </a>
       </li>
     
       <li class="share-option">
-        <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=https%3A%2F%2Fstatkim.github.io%2F2021%2F02%2Fdorng-%25ED%258C%25A8%25ED%2582%25A4%25EC%25A7%2580%25EB%25A1%259C-foreach%25EB%25A5%25BC-%25EC%259E%25AC%25ED%2598%2584%25EA%25B0%2580%25EB%258A%25A5%25ED%2595%2598%25EB%258F%2584%25EB%25A1%259D-%25EC%2582%25AC%25EC%259A%25A9%25ED%2595%2598%25EA%25B8%25B0%2F">
+        <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=https%3A%2F%2Fstatkim.github.io%2F2021%2F02%2Ffork%25ED%2595%259C-repository-%25EC%25B5%259C%25EC%258B%25A0%25EB%25B2%2584%25EC%25A0%2584%25EC%259C%25BC%25EB%25A1%259C-%25EC%2597%2585%25EB%258D%25B0%25EC%259D%25B4%25ED%258A%25B8%25ED%2595%2598%25EA%25B8%25B0%2F">
           <i class="fa fa-google-plus"></i><span>Share on Google&#43;</span>
         </a>
       </li>
@@ -650,9 +615,9 @@ $(document).ready(function() {
     
       <script>
         var disqus_config = function () {
-          this.page.url = 'https:\/\/statkim.github.io\/2021\/02\/dorng-%ED%8C%A8%ED%82%A4%EC%A7%80%EB%A1%9C-foreach%EB%A5%BC-%EC%9E%AC%ED%98%84%EA%B0%80%EB%8A%A5%ED%95%98%EB%8F%84%EB%A1%9D-%EC%82%AC%EC%9A%A9%ED%95%98%EA%B8%B0\/';
+          this.page.url = 'https:\/\/statkim.github.io\/2021\/02\/fork%ED%95%9C-repository-%EC%B5%9C%EC%8B%A0%EB%B2%84%EC%A0%84%EC%9C%BC%EB%A1%9C-%EC%97%85%EB%8D%B0%EC%9D%B4%ED%8A%B8%ED%95%98%EA%B8%B0\/';
           
-            this.page.identifier = '\/2021\/02\/dorng-%ED%8C%A8%ED%82%A4%EC%A7%80%EB%A1%9C-foreach%EB%A5%BC-%EC%9E%AC%ED%98%84%EA%B0%80%EB%8A%A5%ED%95%98%EB%8F%84%EB%A1%9D-%EC%82%AC%EC%9A%A9%ED%95%98%EA%B8%B0\/'
+            this.page.identifier = '\/2021\/02\/fork%ED%95%9C-repository-%EC%B5%9C%EC%8B%A0%EB%B2%84%EC%A0%84%EC%9C%BC%EB%A1%9C-%EC%97%85%EB%8D%B0%EC%9D%B4%ED%8A%B8%ED%95%98%EA%B8%B0\/'
           
         };
         (function() {
