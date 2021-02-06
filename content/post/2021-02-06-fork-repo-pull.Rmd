@@ -1,0 +1,88 @@
+---
+title: Fork한 repository 최신버전으로 업데이트하기
+date: '2021-02-06'
+coverImage: 
+coverMeta: out
+metaAlignment: center
+categories:
+  - Git
+tags:
+  - Git
+  - Github
+  - fork
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, message = FALSE, warning = FALSE, 
+                      # cache = T,
+                      fig.align = "center", fig.width = 12, fig.height = 6)
+```
+
+
+패키지 개발이나 코드 수정을 위해 Github에서 repository를 *fork*하고 내용을 수정하여 다시 *pull request*함으로써 패키지 개발에 관여할 수 있습니다. (마침내 이 패키지의 **contributor**가 되는 것이죠!) 
+그리고 이 과정이 한 번 하고 끝나는 것이 아니라, 이후 지속적으로 코드 개발 및 수정에 참여하기 위해서는 **fork한 repo를 자주 최신버전으로 업데이트** 해주어야합니다.
+
+따라서 이번 포스팅에서는 **fork한 repo를 최신버전으로 업데이트하는 방법**에 대해 알아보겠습니다.
+아무래도 예를 들어 설명하는 것이 쉬울 것 같아, 여기서는 ~~제가 처음으로 패키지의 contributor가 된~~ [*vitae*](https://github.com/mitchelloharawild/vitae)라는 **R** 패키지를 예제로 활용하였습니다.
+
+
+## upstream 지정하기
+우선 fork한 repository를 업데이트하기 위해서는, 원본 repo의 주소를 지정해주어야 하는데 이를 보통 *upstream*이라 합니다.
+현재 제 repo의 지정된 주소를 확인해보면 다음과 같이 *origin*에 제 repo 주소만 지정되어 있을 것입니다.
+```bash
+$ git remote -v
+origin  https://github.com/statKim/vitae.git (fetch)
+origin  https://github.com/statKim/vitae.git (push)
+```
+여기서 여러분은 `https://github.com/<본인 GithubID>/<Repo 이름>.git`과 같이 나오겠죠?
+
+이제 다음과 같이 원본 repo 주소를 *"upstream"*이라는 이름으로 추가해줄 것인데요.
+즉, `https://github.com/<원본 GithubID>/<Repo 이름>.git`의 주소를 *upstream*으로 추가해주었습니다.
+```bash
+$ git remote add upstream https://github.com/mitchelloharawild/vitae.git
+```
+
+다시 `git remote` 명령어를 통해 확인해보면 다음과 같이 *upstream*이라는 이름으로 원본 repo 주소가 추가되어 있을 것입니다.
+```bash
+$ git remote -v
+origin  https://github.com/statKim/vitae.git (fetch)
+origin  https://github.com/statKim/vitae.git (push)
+upstream        https://github.com/mitchelloharawild/vitae.git (fetch)
+upstream        https://github.com/mitchelloharawild/vitae.git (push)
+```
+
+<br>
+
+## Fork한 repository 최신버전으로 업데이트
+이제 원본 주소를 추가해주었으니 업데이트를 해볼까요?
+`git fetch` 명령어를 통해 그동안 *upstream*(원본 repo)에서 수정된 내용들을 내려받을 수 있습니다.
+```bash
+$ git fetch upstream
+remote: Enumerating objects: 78, done.
+remote: Counting objects: 100% (78/78), done.
+remote: Compressing objects: 100% (4/4), done.
+remote: Total 39 (delta 34), reused 38 (delta 34), pack-reused 0
+Unpacking objects: 100% (39/39), done.
+From https://github.com/mitchelloharawild/vitae
+ * [new branch]      gh-pages   -> upstream/gh-pages
+ * [new branch]      master     -> upstream/master
+```
+
+그리고 내려받은 *upstream*(원본 repo)의 수정사항을 현재 repo에 merge해주면 됩니다.
+```bash
+$ git merge upstream/master
+Updating 203e3b8..3fe2a6d
+Fast-forward
+```
+단, 이는 지금까지 제 로컬에서만 작업된 사항들이죠.
+
+따라서 마지막으로 로컬에서 업데이트된 사항을 Github 원격저장소에 push해주면 끝입니다!!
+```bash
+$ git push origin master
+```
+
+<br>
+
+## Reference
+- [[GitHub] fork repository 최신 버전으로 유지하기](https://jybaek.tistory.com/775)
+- [[Git] Fork 한 repository 최신으로 동기화하기](https://json.postype.com/post/210431)

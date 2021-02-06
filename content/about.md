@@ -20,14 +20,14 @@ date: "2021-01-18"
 <br>
 
 ## Education
-- **중앙대학교 통계학과 석사과정**, 2019.03 - 2021.02
+- **중앙대학교 통계학과 석사과정**, 2019.03 - Present
   - Thesis : Bootstrap aggregated classification for sparse functional data.
 - **중앙대학교 응용통계학 학사**, 2013.03 - 2019.02
 
 <br>
 
 ## Publications
-- **Kim, H.**, & Lim, Y. (2021). Bootstrap aggregated classification for sparse functional data. *The Journal
+- **Kim, H.**, & Lim, Y. (2021). Bootstrap aggregated classification for sparse functional data. *Journal
 of Applied Statistics*, Accepted.
 - **Kim, H.**, Li, X., & Lim, Y. (2021). Robust group independent component analysis. *The Korean Journal
 of Applied Statistics*, Accepted.
