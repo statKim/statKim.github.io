@@ -1,6 +1,7 @@
 ---
 title: "About"
 sidemenu: "true"
+# date: "`r format(Sys.time(), '%B %d, %Y')`"
 date: "2021-01-18"
 ---
 
