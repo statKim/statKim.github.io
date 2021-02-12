@@ -6,10 +6,37 @@
     <description>Recent content in Tags on statKim</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko-kr</language>
-    <lastBuildDate>Sat, 06 Feb 2021 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 12 Feb 2021 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://statkim.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>latex</title>
+      <link>https://statkim.github.io/tags/latex/</link>
+      <pubDate>Fri, 12 Feb 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://statkim.github.io/tags/latex/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>R</title>
+      <link>https://statkim.github.io/tags/r/</link>
+      <pubDate>Fri, 12 Feb 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://statkim.github.io/tags/r/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>R 꿀팁</title>
+      <link>https://statkim.github.io/tags/r-%EA%BF%80%ED%8C%81/</link>
+      <pubDate>Fri, 12 Feb 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://statkim.github.io/tags/r-%EA%BF%80%ED%8C%81/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>fork</title>
@@ -35,24 +62,6 @@
       <pubDate>Sat, 06 Feb 2021 00:00:00 +0000</pubDate>
       
       <guid>https://statkim.github.io/tags/github/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>R</title>
-      <link>https://statkim.github.io/tags/r/</link>
-      <pubDate>Wed, 03 Feb 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://statkim.github.io/tags/r/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>R 꿀팁</title>
-      <link>https://statkim.github.io/tags/r-%EA%BF%80%ED%8C%81/</link>
-      <pubDate>Wed, 03 Feb 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://statkim.github.io/tags/r-%EA%BF%80%ED%8C%81/</guid>
       <description></description>
     </item>
     
@@ -161,15 +170,6 @@
       <pubDate>Fri, 27 Dec 2019 00:00:00 +0000</pubDate>
       
       <guid>https://statkim.github.io/tags/beamer/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>latex</title>
-      <link>https://statkim.github.io/tags/latex/</link>
-      <pubDate>Fri, 27 Dec 2019 00:00:00 +0000</pubDate>
-      
-      <guid>https://statkim.github.io/tags/latex/</guid>
       <description></description>
     </item>
     

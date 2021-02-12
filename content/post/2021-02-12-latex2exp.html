@@ -1,0 +1,59 @@
+---
+title: latex2exp - LaTeX 구문으로 R 그래프에 수식 넣기
+date: '2021-02-12'
+coverImage: 
+coverMeta: out
+metaAlignment: center
+categories:
+  - R
+tags:
+  - R
+  - R 꿀팁
+  - LaTeX
+---
+
+<script src="/rmarkdown-libs/header-attrs/header-attrs.js"></script>
+
+
+<p><strong>R</strong>로 그래프를 그리다보면 제목, 축, 범례 등에 수식을 작성하여 표현하는 경우가 종종 있는데요.
+그동안 그래프에 수식을 표현하기 위해서는 <code>expression()</code> 함수를 사용해야하는 것으로 알고 있었지만, 최근 유튜브 <a href="https://www.youtube.com/watch?v=Gs3OUF6E0JE">슬기로운 통계생활</a>에서 굉장히 유용한 패키지를 알게 되었습니다.</p>
+<p>바로 <strong>latex2exp</strong>라는 패키지이죠.
+저는 논문이나 <em>Rmarkdown</em>을 작성하면서 수식을 표현할 때 <em>LaTeX</em> 구문을 자주 사용하는데요.
+이 패키지는 <em>LaTeX</em> 구문을 사용하여 그래프에 수식을 작성할 수 있는 굉장히 유용한 패키지입니다.</p>
+<p><br></p>
+<div id="사용방법" class="section level2">
+<h2>사용방법</h2>
+<p>사용법은 굉장히 간단합니다.
+우선 패키지를 load하고, <code>TeX()</code> 함수에 인자로 <em>LaTeX</em> 구문을 문자열 형식으로 넣어주면 되는데요.</p>
+<pre class="r"><code>library(latex2exp)
+
+TeX(&quot;$x + y = z$&quot;)</code></pre>
+<pre><code>## expression(`$x + y = z$` = paste(&quot;&quot;, &quot;x&quot;, phantom() + phantom(), 
+##     &quot;y&quot;, phantom() == phantom(), &quot;z&quot;, &quot;&quot;))</code></pre>
+<p>결과창을 보시면 다음과 같이 작성한 <em>LaTeX</em> 구문을 <code>expression()</code> 코드로 반환해주는 것을 알 수 있습니다.
+사실 <code>expression()</code>은 <em>LaTeX</em> 구문과 비슷한 듯 하지만 또 다른 점이 많다보니 원하는 수식을 작성할 때마다 검색하여 찾아야했지만, <code>latex2exp</code> 패키지의 <code>TeX()</code> 함수를 이용하면 제가 익숙한 <em>LaTeX</em> 구문을 간단하게 <code>expression()</code> 코드로 변환해주는 역할을 하는 것입니다.</p>
+<p>이젠 그래프에 수식을 넣어볼까요?</p>
+<pre class="r"><code>x &lt;- seq(-1, 1, length.out = 10)
+y &lt;- exp(x)
+
+plot(x, y, type = &quot;l&quot;, main = TeX(&quot;y = $e^x$&quot;))</code></pre>
+<p><img src="/post/2021-02-12-latex2exp_files/figure-html/unnamed-chunk-2-1.png" width="576" style="display: block; margin: auto;" />
+그림과 같이 수식이 잘 들어가 있는 것을 확인할 수 있습니다.</p>
+<p>한 가지 주의해야할 사항이 있다면, escape 문자를 사용하는 <em>LaTeX</em> 구문을 사용할 때에는 다음과 같이 에러가 발생하게 됩니다.</p>
+<pre class="r"><code>TeX(&quot;$\alpha + \beta = \gamma$&quot;)</code></pre>
+<pre><code>## Error: &#39;\g&#39; is an unrecognized escape in character string starting &quot;&quot;$\alpha + \beta = \g&quot;</code></pre>
+<p>따라서 이 때에는 backslash를 2번 사용하면 정상적으로 적용되며, 그래프에도 제대로 들어가게 됩니다.</p>
+<pre class="r"><code>TeX(&quot;$\\alpha + \\beta = \\gamma$&quot;)</code></pre>
+<pre><code>## expression(`$\alpha + \beta = \gamma$` = paste(&quot;&quot;, &quot;&quot;, alpha, 
+##     , , , phantom() + phantom(), &quot;&quot;, beta, , , , phantom() == 
+##         phantom(), &quot;&quot;, gamma, , , , &quot;&quot;))</code></pre>
+<pre class="r"><code>plot(x, y, type = &quot;l&quot;, main = TeX(&quot;$\\alpha + \\beta = \\gamma$&quot;))</code></pre>
+<p><img src="/post/2021-02-12-latex2exp_files/figure-html/unnamed-chunk-5-1.png" width="576" style="display: block; margin: auto;" /></p>
+<p><br></p>
+</div>
+<div id="reference" class="section level2">
+<h2>Reference</h2>
+<ul>
+<li><a href="https://www.youtube.com/watch?v=Gs3OUF6E0JE">R 그래프에 LaTex으로 수식을 넣어보자! - 꿀 R패키지 소개 (보너스 강의)</a></li>
+</ul>
+</div>
