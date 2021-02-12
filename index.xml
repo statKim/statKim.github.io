@@ -6,15 +6,24 @@
     <description>Recent content on statKim</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko-kr</language>
-    <lastBuildDate>Sat, 06 Feb 2021 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 12 Feb 2021 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://statkim.github.io/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
+      <title>latex2exp - LaTeX 구문으로 R 그래프에 수식 넣기</title>
+      <link>https://statkim.github.io/2021/02/latex2exp-latex-%EA%B5%AC%EB%AC%B8%EC%9C%BC%EB%A1%9C-r-%EA%B7%B8%EB%9E%98%ED%94%84%EC%97%90-%EC%88%98%EC%8B%9D-%EB%84%A3%EA%B8%B0/</link>
+      <pubDate>Fri, 12 Feb 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://statkim.github.io/2021/02/latex2exp-latex-%EA%B5%AC%EB%AC%B8%EC%9C%BC%EB%A1%9C-r-%EA%B7%B8%EB%9E%98%ED%94%84%EC%97%90-%EC%88%98%EC%8B%9D-%EB%84%A3%EA%B8%B0/</guid>
+      <description>R로 그래프를 그리다보면 제목, 축, 범례 등에 수식을 작성하여 표현하는 경우가 종종 있는데요. 그동안 그래프에 수식을 표현하기 위해서는 expression() 함수를 사용해야하는 것</description>
+    </item>
+    
+    <item>
       <title>About</title>
       <link>https://statkim.github.io/about/</link>
-      <pubDate>Mon, 08 Feb 2021 00:00:00 +0000</pubDate>
+      <pubDate>Tue, 09 Feb 2021 00:00:00 +0000</pubDate>
       
       <guid>https://statkim.github.io/about/</guid>
       <description>현재 중앙대학교 통계학과에서 석사과정을 하고 있으며 다변량 분석 연구실(Multivariate Analysis Lab)에서 연구하고 있습니다. Functional Data Analysis(FDA), Spatio-temporal Data Analysis, High-dimensional Data Analysis 분</description>

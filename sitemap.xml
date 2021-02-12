@@ -3,13 +3,53 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://statkim.github.io/about/</loc>
-    <lastmod>2021-02-08T00:00:00+00:00</lastmod>
+    <loc>https://statkim.github.io/categories/</loc>
+    <lastmod>2021-02-12T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://statkim.github.io/categories/</loc>
-    <lastmod>2021-02-06T00:00:00+00:00</lastmod>
+    <loc>https://statkim.github.io/tags/latex/</loc>
+    <lastmod>2021-02-12T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://statkim.github.io/2021/02/latex2exp-latex-%EA%B5%AC%EB%AC%B8%EC%9C%BC%EB%A1%9C-r-%EA%B7%B8%EB%9E%98%ED%94%84%EC%97%90-%EC%88%98%EC%8B%9D-%EB%84%A3%EA%B8%B0/</loc>
+    <lastmod>2021-02-12T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://statkim.github.io/post/</loc>
+    <lastmod>2021-02-12T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://statkim.github.io/tags/r/</loc>
+    <lastmod>2021-02-12T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://statkim.github.io/categories/r/</loc>
+    <lastmod>2021-02-12T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://statkim.github.io/tags/r-%EA%BF%80%ED%8C%81/</loc>
+    <lastmod>2021-02-12T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://statkim.github.io/</loc>
+    <lastmod>2021-02-12T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://statkim.github.io/tags/</loc>
+    <lastmod>2021-02-12T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://statkim.github.io/about/</loc>
+    <lastmod>2021-02-09T00:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -38,37 +78,7 @@
   </url>
   
   <url>
-    <loc>https://statkim.github.io/post/</loc>
-    <lastmod>2021-02-06T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://statkim.github.io/</loc>
-    <lastmod>2021-02-06T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://statkim.github.io/tags/</loc>
-    <lastmod>2021-02-06T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://statkim.github.io/2021/02/dorng-%ED%8C%A8%ED%82%A4%EC%A7%80%EB%A1%9C-foreach%EB%A5%BC-%EC%9E%AC%ED%98%84%EA%B0%80%EB%8A%A5%ED%95%98%EB%8F%84%EB%A1%9D-%EC%82%AC%EC%9A%A9%ED%95%98%EA%B8%B0/</loc>
-    <lastmod>2021-02-03T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://statkim.github.io/tags/r/</loc>
-    <lastmod>2021-02-03T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://statkim.github.io/categories/r/</loc>
-    <lastmod>2021-02-03T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://statkim.github.io/tags/r-%EA%BF%80%ED%8C%81/</loc>
     <lastmod>2021-02-03T00:00:00+00:00</lastmod>
   </url>
   
@@ -209,11 +219,6 @@
   
   <url>
     <loc>https://statkim.github.io/tags/beamer/</loc>
-    <lastmod>2019-12-27T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://statkim.github.io/tags/latex/</loc>
     <lastmod>2019-12-27T00:00:00+00:00</lastmod>
   </url>
   
