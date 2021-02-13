@@ -1,10 +1,10 @@
 ---
 title: "About"
-# sidemenu: "true"
+sidemenu: "true"
 date: "`r Sys.Date()`"
 ---
 
-현재 [중앙대학교 통계학과](https://stat.cau.ac.kr/)에서 석사과정을 하고 있으며 [다변량 분석 연구실(Multivariate Analysis Lab)](https://sites.google.com/site/yaejilim/)에서 연구하고 있습니다.
+현재 [중앙대학교 통계학과](https://stat.cau.ac.kr/)에서 박사과정을 하고 있으며 [다변량 분석 연구실(Multivariate Data Analysis Lab)](https://sites.google.com/site/yaejilim/)에서 연구하고 있습니다.
 
 `Functional Data Analysis(FDA)`, `Spatio-temporal Data Analysis`, `High-dimensional Data Analysis` 분야에 관심을 가지고 있으며, 현재 `Functional principal component analysis(FPCA)`에 대해 연구하고 있습니다.
 
@@ -20,6 +20,7 @@ date: "`r Sys.Date()`"
 <br>
 
 ## Education
+- **중앙대학교 통계학 박사과정**, 2021.03 - Present
 - **중앙대학교 통계학 석사**, 2019.03 - 2021.02
   - Thesis : Bootstrap aggregated classification for sparse functional data.
 - **중앙대학교 응용통계학 학사**, 2013.03 - 2019.02

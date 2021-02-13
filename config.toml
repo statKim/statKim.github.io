@@ -39,7 +39,7 @@ themesDir = "themes"
 
 [author]
   name = "김현성"
-  bio = "MS student in Statistics"
+  bio = "Ph.D. Student in Statistics"
   job = "Chung-Ang University"
   location = "Seoul, Korea"
   # Your Gravatar email. Overwrite `author.picture` everywhere in the blog

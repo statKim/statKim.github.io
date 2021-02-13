@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://statkim.github.io/about/</loc>
+    <lastmod>2021-02-13T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://statkim.github.io/categories/</loc>
     <lastmod>2021-02-12T00:00:00+00:00</lastmod>
   </url>
@@ -45,11 +50,6 @@
   <url>
     <loc>https://statkim.github.io/tags/</loc>
     <lastmod>2021-02-12T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://statkim.github.io/about/</loc>
-    <lastmod>2021-02-09T00:00:00+00:00</lastmod>
   </url>
   
   <url>
