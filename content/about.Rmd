@@ -6,7 +6,7 @@ date: "`r Sys.Date()`"
 
 저는 **통계학**을 공부하고 있는 박사과정 학생이며, 현재 [중앙대학교 통계학과](https://stat.cau.ac.kr/) [다변량 분석 연구실(Multivariate Data Analysis Lab)](https://sites.google.com/site/yaejilim/)에서 `Functional Data Analysis`에 대한 연구를 하고 있습니다.
 
-**R**로 코딩하고, **Rmarkdown**으로 문서 작성하는 것을 좋아하며, **통계학**이나 **R programming**에 대해 공부하며 알게된 내용들을 가끔식 블로그에 정리하고 있습니다.
+**R**로 코딩하고, **Rmarkdown**으로 문서 작성하는 것을 좋아하며, **통계학**이나 **R programming**에 대해 공부하며 알게된 내용들을 가끔식 블로그에 정리하고 있습니다. 
 
 
 ## Research Interests
