@@ -6,7 +6,7 @@
     <description>Recent content on statKim</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko-kr</language>
-    <lastBuildDate>Fri, 12 Feb 2021 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 15 Apr 2021 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://statkim.github.io/index.xml" rel="self" type="application/rss+xml" />
     
@@ -14,10 +14,19 @@
     <item>
       <title>About</title>
       <link>https://statkim.github.io/about/</link>
-      <pubDate>Sat, 06 Mar 2021 00:00:00 +0000</pubDate>
+      <pubDate>Thu, 15 Apr 2021 00:00:00 +0000</pubDate>
       
       <guid>https://statkim.github.io/about/</guid>
-      <description>저는 통계학을 공부하고 있는 박사과정 학생이며, 현재 중앙대학교 통계학과 다변량 분석 연구실(Multivariate Data Analysis Lab)에서 Functional Data Analysi</description>
+      <description>안녕하세요. 저는 중앙대학교 통계학과에서 통계학을 공부하고 있는 박사과정 학생입니다. 현재 다변량 분석 연구실(Multivariate Data Analysis Lab)에서</description>
+    </item>
+    
+    <item>
+      <title>Github 소스코드 Visual Studio Code처럼 보기</title>
+      <link>https://statkim.github.io/2021/04/github-%EC%86%8C%EC%8A%A4%EC%BD%94%EB%93%9C-visual-studio-code%EC%B2%98%EB%9F%BC-%EB%B3%B4%EA%B8%B0/</link>
+      <pubDate>Thu, 15 Apr 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://statkim.github.io/2021/04/github-%EC%86%8C%EC%8A%A4%EC%BD%94%EB%93%9C-visual-studio-code%EC%B2%98%EB%9F%BC-%EB%B3%B4%EA%B8%B0/</guid>
+      <description>공부를 하거나 연구를 하면서 내가 짠 코드가 아닌 다른 Github에 올라와있는 코드들을 보게 되는 경우가 생기는데요. 이 코드들을 더 예쁘게(?) 볼 수 있는 방법이</description>
     </item>
     
     <item>
