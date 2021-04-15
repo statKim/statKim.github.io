@@ -8,39 +8,39 @@
 <meta name="generator" content="Hugo 0.73.0 with theme Tranquilpeak 0.4.8-BETA">
 <meta name="author" content="김현성">
 <meta name="keywords" content="">
-<meta name="description" content="R로 그래프를 그리다보면 제목, 축, 범례 등에 수식을 작성하여 표현하는 경우가 종종 있는데요. 그동안 그래프에 수식을 표현하기 위해서는 expression() 함수를 사용해야하는 것">
+<meta name="description" content="공부를 하거나 연구를 하면서 내가 짠 코드가 아닌 다른 Github에 올라와있는 코드들을 보게 되는 경우가 생기는데요. 이 코드들을 더 예쁘게(?) 볼 수 있는 방법이">
 
 
-<meta property="og:description" content="R로 그래프를 그리다보면 제목, 축, 범례 등에 수식을 작성하여 표현하는 경우가 종종 있는데요. 그동안 그래프에 수식을 표현하기 위해서는 expression() 함수를 사용해야하는 것">
+<meta property="og:description" content="공부를 하거나 연구를 하면서 내가 짠 코드가 아닌 다른 Github에 올라와있는 코드들을 보게 되는 경우가 생기는데요. 이 코드들을 더 예쁘게(?) 볼 수 있는 방법이">
 <meta property="og:type" content="article">
-<meta property="og:title" content="latex2exp - LaTeX 구문으로 R 그래프에 수식 넣기">
-<meta name="twitter:title" content="latex2exp - LaTeX 구문으로 R 그래프에 수식 넣기">
-<meta property="og:url" content="https://statkim.github.io/2021/02/latex2exp-latex-%EA%B5%AC%EB%AC%B8%EC%9C%BC%EB%A1%9C-r-%EA%B7%B8%EB%9E%98%ED%94%84%EC%97%90-%EC%88%98%EC%8B%9D-%EB%84%A3%EA%B8%B0/">
-<meta property="twitter:url" content="https://statkim.github.io/2021/02/latex2exp-latex-%EA%B5%AC%EB%AC%B8%EC%9C%BC%EB%A1%9C-r-%EA%B7%B8%EB%9E%98%ED%94%84%EC%97%90-%EC%88%98%EC%8B%9D-%EB%84%A3%EA%B8%B0/">
+<meta property="og:title" content="Github 소스코드 Visual Studio Code처럼 보기">
+<meta name="twitter:title" content="Github 소스코드 Visual Studio Code처럼 보기">
+<meta property="og:url" content="https://statkim.github.io/2021/04/github-%EC%86%8C%EC%8A%A4%EC%BD%94%EB%93%9C-visual-studio-code%EC%B2%98%EB%9F%BC-%EB%B3%B4%EA%B8%B0/">
+<meta property="twitter:url" content="https://statkim.github.io/2021/04/github-%EC%86%8C%EC%8A%A4%EC%BD%94%EB%93%9C-visual-studio-code%EC%B2%98%EB%9F%BC-%EB%B3%B4%EA%B8%B0/">
 <meta property="og:site_name" content="statKim">
-<meta property="og:description" content="R로 그래프를 그리다보면 제목, 축, 범례 등에 수식을 작성하여 표현하는 경우가 종종 있는데요. 그동안 그래프에 수식을 표현하기 위해서는 expression() 함수를 사용해야하는 것">
-<meta name="twitter:description" content="R로 그래프를 그리다보면 제목, 축, 범례 등에 수식을 작성하여 표현하는 경우가 종종 있는데요. 그동안 그래프에 수식을 표현하기 위해서는 expression() 함수를 사용해야하는 것">
+<meta property="og:description" content="공부를 하거나 연구를 하면서 내가 짠 코드가 아닌 다른 Github에 올라와있는 코드들을 보게 되는 경우가 생기는데요. 이 코드들을 더 예쁘게(?) 볼 수 있는 방법이">
+<meta name="twitter:description" content="공부를 하거나 연구를 하면서 내가 짠 코드가 아닌 다른 Github에 올라와있는 코드들을 보게 되는 경우가 생기는데요. 이 코드들을 더 예쁘게(?) 볼 수 있는 방법이">
 <meta property="og:locale" content="en-us">
 
   
-    <meta property="article:published_time" content="2021-02-12T00:00:00">
+    <meta property="article:published_time" content="2021-04-15T00:00:00">
   
   
-    <meta property="article:modified_time" content="2021-02-12T00:00:00">
+    <meta property="article:modified_time" content="2021-04-15T00:00:00">
   
-  
-  
-    
-      <meta property="article:section" content="R">
-    
   
   
     
-      <meta property="article:tag" content="R">
+      <meta property="article:section" content="Github">
     
-      <meta property="article:tag" content="R 꿀팁">
+  
+  
     
-      <meta property="article:tag" content="LaTeX">
+      <meta property="article:tag" content="github1s">
+    
+      <meta property="article:tag" content="Github">
+    
+      <meta property="article:tag" content="vscode">
     
   
 
@@ -61,14 +61,14 @@
   <meta property="twitter:image" content="https://statkim.github.io/img/profile.jpg">
 
 
-    <title>latex2exp - LaTeX 구문으로 R 그래프에 수식 넣기</title>
+    <title>Github 소스코드 Visual Studio Code처럼 보기</title>
 
     <link rel="icon" href="https://statkim.github.io/img/favicon.ico">
     
 
     
 
-    <link rel="canonical" href="https://statkim.github.io/2021/02/latex2exp-latex-%EA%B5%AC%EB%AC%B8%EC%9C%BC%EB%A1%9C-r-%EA%B7%B8%EB%9E%98%ED%94%84%EC%97%90-%EC%88%98%EC%8B%9D-%EB%84%A3%EA%B8%B0/">
+    <link rel="canonical" href="https://statkim.github.io/2021/04/github-%EC%86%8C%EC%8A%A4%EC%BD%94%EB%93%9C-visual-studio-code%EC%B2%98%EB%9F%BC-%EB%B3%B4%EA%B8%B0/">
 
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
@@ -245,15 +245,15 @@ if (!doNotTrack) {
             <div class="post-header main-content-wrap text-center">
   
     <h1 class="post-title" itemprop="headline">
-      latex2exp - LaTeX 구문으로 R 그래프에 수식 넣기
+      Github 소스코드 Visual Studio Code처럼 보기
     </h1>
   
   
   <div class="postShorten-meta post-meta">
     
-      <time itemprop="datePublished" datetime="2021-02-12T00:00:00Z">
+      <time itemprop="datePublished" datetime="2021-04-15T00:00:00Z">
         
-  February 12, 2021
+  April 15, 2021
 
       </time>
     
@@ -262,7 +262,7 @@ if (!doNotTrack) {
   
     <span>in</span>
     
-      <a class="category-link" href="https://statkim.github.io/categories/r">R</a>
+      <a class="category-link" href="https://statkim.github.io/categories/github">Github</a>
     
   
 
@@ -276,46 +276,27 @@ if (!doNotTrack) {
 <script src="https://statkim.github.io/rmarkdown-libs/header-attrs/header-attrs.js"></script>
 
 
-<p><strong>R</strong>로 그래프를 그리다보면 제목, 축, 범례 등에 수식을 작성하여 표현하는 경우가 종종 있는데요.
-그동안 그래프에 수식을 표현하기 위해서는 <code>expression()</code> 함수를 사용해야하는 것으로 알고 있었지만, 최근 유튜브 <a href="https://www.youtube.com/watch?v=Gs3OUF6E0JE">슬기로운 통계생활</a>에서 굉장히 유용한 패키지를 알게 되었습니다.</p>
-<p>바로 <strong>latex2exp</strong>라는 패키지이죠.
-저는 논문이나 <em>Rmarkdown</em>을 작성하면서 수식을 표현할 때 <em>LaTeX</em> 구문을 자주 사용하는데요.
-이 패키지는 <em>LaTeX</em> 구문을 사용하여 그래프에 수식을 작성할 수 있는 굉장히 유용한 패키지입니다.</p>
+<p>공부를 하거나 연구를 하면서 내가 짠 코드가 아닌 다른 <strong>Github</strong>에 올라와있는 코드들을 보게 되는 경우가 생기는데요.
+이 코드들을 더 <em>예쁘게(?)</em> 볼 수 있는 방법이 있어 소개하려 합니다.
+바로 <strong>github1s</strong>입니다!!</p>
 <p><br></p>
-<div id="사용방법" class="section level2">
-<h2>사용방법</h2>
-<p>사용법은 굉장히 간단합니다.
-우선 패키지를 load하고, <code>TeX()</code> 함수에 인자로 <em>LaTeX</em> 구문을 문자열 형식으로 넣어주면 되는데요.</p>
-<pre class="r"><code>library(latex2exp)
-
-TeX(&quot;$x + y = z$&quot;)</code></pre>
-<pre><code>## expression(`$x + y = z$` = paste(&quot;&quot;, &quot;x&quot;, phantom() + phantom(), 
-##     &quot;y&quot;, phantom() == phantom(), &quot;z&quot;, &quot;&quot;))</code></pre>
-<p>결과창을 보시면 다음과 같이 작성한 <em>LaTeX</em> 구문을 <code>expression()</code> 코드로 반환해주는 것을 알 수 있습니다.
-사실 <code>expression()</code>은 <em>LaTeX</em> 구문과 비슷한 듯 하지만 또 다른 점이 많다보니 원하는 수식을 작성할 때마다 검색하여 찾아야했지만, <code>latex2exp</code> 패키지의 <code>TeX()</code> 함수를 이용하면 제가 익숙한 <em>LaTeX</em> 구문을 간단하게 <code>expression()</code> 코드로 변환해주는 역할을 하는 것입니다.</p>
-<p>이젠 그래프에 수식을 넣어볼까요?</p>
-<pre class="r"><code>x &lt;- seq(-1, 1, length.out = 10)
-y &lt;- exp(x)
-
-plot(x, y, type = &quot;l&quot;, main = TeX(&quot;y = $e^x$&quot;))</code></pre>
-<p><img src="https://statkim.github.io/post/2021-02-12-latex2exp_files/figure-html/unnamed-chunk-2-1.png" width="576" style="display: block; margin: auto;" />
-그림과 같이 수식이 잘 들어가 있는 것을 확인할 수 있습니다.</p>
-<p>한 가지 주의해야할 사항이 있다면, escape 문자를 사용하는 <em>LaTeX</em> 구문을 사용할 때에는 다음과 같이 에러가 발생하게 됩니다.</p>
-<pre class="r"><code>TeX(&quot;$\alpha + \beta = \gamma$&quot;)</code></pre>
-<pre><code>## Error: &#39;\g&#39; is an unrecognized escape in character string starting &quot;&quot;$\alpha + \beta = \g&quot;</code></pre>
-<p>따라서 이 때에는 backslash를 2번 사용하면 정상적으로 적용되며, 그래프에도 제대로 들어가게 됩니다.</p>
-<pre class="r"><code>TeX(&quot;$\\alpha + \\beta = \\gamma$&quot;)</code></pre>
-<pre><code>## expression(`$\alpha + \beta = \gamma$` = paste(&quot;&quot;, &quot;&quot;, alpha, 
-##     , , , phantom() + phantom(), &quot;&quot;, beta, , , , phantom() == 
-##         phantom(), &quot;&quot;, gamma, , , , &quot;&quot;))</code></pre>
-<pre class="r"><code>plot(x, y, type = &quot;l&quot;, main = TeX(&quot;$\\alpha + \\beta = \\gamma$&quot;))</code></pre>
-<p><img src="https://statkim.github.io/post/2021-02-12-latex2exp_files/figure-html/unnamed-chunk-5-1.png" width="576" style="display: block; margin: auto;" /></p>
+<div id="github1s" class="section level2">
+<h2>github1s</h2>
+<p>본 포스팅에서는 제가 자주 뜯어보고 있는(?) <a href="https://github.com/functionaldata/tPACE"><code>functionaldata/tPACE</code></a> repository를 사용해보겠습니다.</p>
+<p>보통 <strong>Github</strong>에서 소스코드를 볼 때, 이렇게 해당 repository에 들어가서 보게 되는데요.</p>
+<p><img src="https://statkim.github.io/img/github1s_1.png" /></p>
+<p>여기서, url의 <code>github</code> 부분을 <code>github1s</code>로 바꾸게 되면 놀라운 일이 생깁니다.</p>
+<p><img src="https://statkim.github.io/img/github1s_2.png" /></p>
+<p>바로, <strong>Visual Studio Code</strong>처럼 소스코드들을 볼 수 있게 되는 것이죠!!!</p>
+<p><img src="https://statkim.github.io/img/github1s_3.png" /></p>
+<p>또한 코드를 분할해서 볼 수도 있어 다른 사람들의 코드를 뜯어볼 때, 굉장히 유용합니다!!</p>
+<p><img src="https://statkim.github.io/img/github1s_4.png" /></p>
 <p><br></p>
 </div>
 <div id="reference" class="section level2">
 <h2>Reference</h2>
 <ul>
-<li><a href="https://www.youtube.com/watch?v=Gs3OUF6E0JE">R 그래프에 LaTex으로 수식을 넣어보자! - 꿀 R패키지 소개 (보너스 강의)</a></li>
+<li><a href="https://github.com/conwnet/github1s">github1s repository</a></li>
 </ul>
 </div>
 
@@ -330,11 +311,11 @@ plot(x, y, type = &quot;l&quot;, main = TeX(&quot;y = $e^x$&quot;))</code></pre>
                   <div class="post-footer-tags">
                     <span class="text-color-light text-small">TAGGED IN</span><br/>
                     
-  <a class="tag tag--primary tag--small" href="https://statkim.github.io/tags/r/">R</a>
+  <a class="tag tag--primary tag--small" href="https://statkim.github.io/tags/github1s/">github1s</a>
 
-  <a class="tag tag--primary tag--small" href="https://statkim.github.io/tags/r-%EA%BF%80%ED%8C%81/">R 꿀팁</a>
+  <a class="tag tag--primary tag--small" href="https://statkim.github.io/tags/github/">Github</a>
 
-  <a class="tag tag--primary tag--small" href="https://statkim.github.io/tags/latex/">LaTeX</a>
+  <a class="tag tag--primary tag--small" href="https://statkim.github.io/tags/vscode/">vscode</a>
 
                   </div>
                 
@@ -347,7 +328,7 @@ plot(x, y, type = &quot;l&quot;, main = TeX(&quot;y = $e^x$&quot;))</code></pre>
           
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--default tooltip--top" href="https://statkim.github.io/2021/04/github-%EC%86%8C%EC%8A%A4%EC%BD%94%EB%93%9C-visual-studio-code%EC%B2%98%EB%9F%BC-%EB%B3%B4%EA%B8%B0/" data-tooltip="Github 소스코드 Visual Studio Code처럼 보기">
+                <a class="post-action-btn btn btn--disabled">
               
                   <i class="fa fa-angle-left"></i>
                   <span class="hide-xs hide-sm text-small icon-ml">NEXT</span>
@@ -355,7 +336,7 @@ plot(x, y, type = &quot;l&quot;, main = TeX(&quot;y = $e^x$&quot;))</code></pre>
             </li>
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--default tooltip--top" href="https://statkim.github.io/2021/02/fork%ED%95%9C-repository-%EC%B5%9C%EC%8B%A0%EB%B2%84%EC%A0%84%EC%9C%BC%EB%A1%9C-%EC%97%85%EB%8D%B0%EC%9D%B4%ED%8A%B8%ED%95%98%EA%B8%B0/" data-tooltip="Fork한 repository 최신버전으로 업데이트하기">
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://statkim.github.io/2021/02/latex2exp-latex-%EA%B5%AC%EB%AC%B8%EC%9C%BC%EB%A1%9C-r-%EA%B7%B8%EB%9E%98%ED%94%84%EC%97%90-%EC%88%98%EC%8B%9D-%EB%84%A3%EA%B8%B0/" data-tooltip="latex2exp - LaTeX 구문으로 R 그래프에 수식 넣기">
               
                   <span class="hide-xs hide-sm text-small icon-mr">PREVIOUS</span>
                   <i class="fa fa-angle-right"></i>
@@ -373,19 +354,19 @@ plot(x, y, type = &quot;l&quot;, main = TeX(&quot;y = $e^x$&quot;))</code></pre>
         </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://statkim.github.io/2021/02/latex2exp-latex-%EA%B5%AC%EB%AC%B8%EC%9C%BC%EB%A1%9C-r-%EA%B7%B8%EB%9E%98%ED%94%84%EC%97%90-%EC%88%98%EC%8B%9D-%EB%84%A3%EA%B8%B0/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://statkim.github.io/2021/04/github-%EC%86%8C%EC%8A%A4%EC%BD%94%EB%93%9C-visual-studio-code%EC%B2%98%EB%9F%BC-%EB%B3%B4%EA%B8%B0/">
               <i class="fa fa-facebook-official"></i>
             </a>
           </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://statkim.github.io/2021/02/latex2exp-latex-%EA%B5%AC%EB%AC%B8%EC%9C%BC%EB%A1%9C-r-%EA%B7%B8%EB%9E%98%ED%94%84%EC%97%90-%EC%88%98%EC%8B%9D-%EB%84%A3%EA%B8%B0/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://statkim.github.io/2021/04/github-%EC%86%8C%EC%8A%A4%EC%BD%94%EB%93%9C-visual-studio-code%EC%B2%98%EB%9F%BC-%EB%B3%B4%EA%B8%B0/">
               <i class="fa fa-twitter"></i>
             </a>
           </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://statkim.github.io/2021/02/latex2exp-latex-%EA%B5%AC%EB%AC%B8%EC%9C%BC%EB%A1%9C-r-%EA%B7%B8%EB%9E%98%ED%94%84%EC%97%90-%EC%88%98%EC%8B%9D-%EB%84%A3%EA%B8%B0/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://statkim.github.io/2021/04/github-%EC%86%8C%EC%8A%A4%EC%BD%94%EB%93%9C-visual-studio-code%EC%B2%98%EB%9F%BC-%EB%B3%B4%EA%B8%B0/">
               <i class="fa fa-google-plus"></i>
             </a>
           </li>
@@ -433,7 +414,7 @@ plot(x, y, type = &quot;l&quot;, main = TeX(&quot;y = $e^x$&quot;))</code></pre>
           
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--default tooltip--top" href="https://statkim.github.io/2021/04/github-%EC%86%8C%EC%8A%A4%EC%BD%94%EB%93%9C-visual-studio-code%EC%B2%98%EB%9F%BC-%EB%B3%B4%EA%B8%B0/" data-tooltip="Github 소스코드 Visual Studio Code처럼 보기">
+                <a class="post-action-btn btn btn--disabled">
               
                   <i class="fa fa-angle-left"></i>
                   <span class="hide-xs hide-sm text-small icon-ml">NEXT</span>
@@ -441,7 +422,7 @@ plot(x, y, type = &quot;l&quot;, main = TeX(&quot;y = $e^x$&quot;))</code></pre>
             </li>
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--default tooltip--top" href="https://statkim.github.io/2021/02/fork%ED%95%9C-repository-%EC%B5%9C%EC%8B%A0%EB%B2%84%EC%A0%84%EC%9C%BC%EB%A1%9C-%EC%97%85%EB%8D%B0%EC%9D%B4%ED%8A%B8%ED%95%98%EA%B8%B0/" data-tooltip="Fork한 repository 최신버전으로 업데이트하기">
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://statkim.github.io/2021/02/latex2exp-latex-%EA%B5%AC%EB%AC%B8%EC%9C%BC%EB%A1%9C-r-%EA%B7%B8%EB%9E%98%ED%94%84%EC%97%90-%EC%88%98%EC%8B%9D-%EB%84%A3%EA%B8%B0/" data-tooltip="latex2exp - LaTeX 구문으로 R 그래프에 수식 넣기">
               
                   <span class="hide-xs hide-sm text-small icon-mr">PREVIOUS</span>
                   <i class="fa fa-angle-right"></i>
@@ -459,19 +440,19 @@ plot(x, y, type = &quot;l&quot;, main = TeX(&quot;y = $e^x$&quot;))</code></pre>
         </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://statkim.github.io/2021/02/latex2exp-latex-%EA%B5%AC%EB%AC%B8%EC%9C%BC%EB%A1%9C-r-%EA%B7%B8%EB%9E%98%ED%94%84%EC%97%90-%EC%88%98%EC%8B%9D-%EB%84%A3%EA%B8%B0/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://statkim.github.io/2021/04/github-%EC%86%8C%EC%8A%A4%EC%BD%94%EB%93%9C-visual-studio-code%EC%B2%98%EB%9F%BC-%EB%B3%B4%EA%B8%B0/">
               <i class="fa fa-facebook-official"></i>
             </a>
           </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://statkim.github.io/2021/02/latex2exp-latex-%EA%B5%AC%EB%AC%B8%EC%9C%BC%EB%A1%9C-r-%EA%B7%B8%EB%9E%98%ED%94%84%EC%97%90-%EC%88%98%EC%8B%9D-%EB%84%A3%EA%B8%B0/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://statkim.github.io/2021/04/github-%EC%86%8C%EC%8A%A4%EC%BD%94%EB%93%9C-visual-studio-code%EC%B2%98%EB%9F%BC-%EB%B3%B4%EA%B8%B0/">
               <i class="fa fa-twitter"></i>
             </a>
           </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://statkim.github.io/2021/02/latex2exp-latex-%EA%B5%AC%EB%AC%B8%EC%9C%BC%EB%A1%9C-r-%EA%B7%B8%EB%9E%98%ED%94%84%EC%97%90-%EC%88%98%EC%8B%9D-%EB%84%A3%EA%B8%B0/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://statkim.github.io/2021/04/github-%EC%86%8C%EC%8A%A4%EC%BD%94%EB%93%9C-visual-studio-code%EC%B2%98%EB%9F%BC-%EB%B3%B4%EA%B8%B0/">
               <i class="fa fa-google-plus"></i>
             </a>
           </li>
@@ -501,19 +482,19 @@ plot(x, y, type = &quot;l&quot;, main = TeX(&quot;y = $e^x$&quot;))</code></pre>
   <ul class="share-options">
     
       <li class="share-option">
-        <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fstatkim.github.io%2F2021%2F02%2Flatex2exp-latex-%25EA%25B5%25AC%25EB%25AC%25B8%25EC%259C%25BC%25EB%25A1%259C-r-%25EA%25B7%25B8%25EB%259E%2598%25ED%2594%2584%25EC%2597%2590-%25EC%2588%2598%25EC%258B%259D-%25EB%2584%25A3%25EA%25B8%25B0%2F">
+        <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fstatkim.github.io%2F2021%2F04%2Fgithub-%25EC%2586%258C%25EC%258A%25A4%25EC%25BD%2594%25EB%2593%259C-visual-studio-code%25EC%25B2%2598%25EB%259F%25BC-%25EB%25B3%25B4%25EA%25B8%25B0%2F">
           <i class="fa fa-facebook-official"></i><span>Share on Facebook</span>
         </a>
       </li>
     
       <li class="share-option">
-        <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=https%3A%2F%2Fstatkim.github.io%2F2021%2F02%2Flatex2exp-latex-%25EA%25B5%25AC%25EB%25AC%25B8%25EC%259C%25BC%25EB%25A1%259C-r-%25EA%25B7%25B8%25EB%259E%2598%25ED%2594%2584%25EC%2597%2590-%25EC%2588%2598%25EC%258B%259D-%25EB%2584%25A3%25EA%25B8%25B0%2F">
+        <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=https%3A%2F%2Fstatkim.github.io%2F2021%2F04%2Fgithub-%25EC%2586%258C%25EC%258A%25A4%25EC%25BD%2594%25EB%2593%259C-visual-studio-code%25EC%25B2%2598%25EB%259F%25BC-%25EB%25B3%25B4%25EA%25B8%25B0%2F">
           <i class="fa fa-twitter"></i><span>Share on Twitter</span>
         </a>
       </li>
     
       <li class="share-option">
-        <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=https%3A%2F%2Fstatkim.github.io%2F2021%2F02%2Flatex2exp-latex-%25EA%25B5%25AC%25EB%25AC%25B8%25EC%259C%25BC%25EB%25A1%259C-r-%25EA%25B7%25B8%25EB%259E%2598%25ED%2594%2584%25EC%2597%2590-%25EC%2588%2598%25EC%258B%259D-%25EB%2584%25A3%25EA%25B8%25B0%2F">
+        <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=https%3A%2F%2Fstatkim.github.io%2F2021%2F04%2Fgithub-%25EC%2586%258C%25EC%258A%25A4%25EC%25BD%2594%25EB%2593%259C-visual-studio-code%25EC%25B2%2598%25EB%259F%25BC-%25EB%25B3%25B4%25EA%25B8%25B0%2F">
           <i class="fa fa-google-plus"></i><span>Share on Google&#43;</span>
         </a>
       </li>
@@ -605,9 +586,9 @@ $(document).ready(function() {
     
       <script>
         var disqus_config = function () {
-          this.page.url = 'https:\/\/statkim.github.io\/2021\/02\/latex2exp-latex-%EA%B5%AC%EB%AC%B8%EC%9C%BC%EB%A1%9C-r-%EA%B7%B8%EB%9E%98%ED%94%84%EC%97%90-%EC%88%98%EC%8B%9D-%EB%84%A3%EA%B8%B0\/';
+          this.page.url = 'https:\/\/statkim.github.io\/2021\/04\/github-%EC%86%8C%EC%8A%A4%EC%BD%94%EB%93%9C-visual-studio-code%EC%B2%98%EB%9F%BC-%EB%B3%B4%EA%B8%B0\/';
           
-            this.page.identifier = '\/2021\/02\/latex2exp-latex-%EA%B5%AC%EB%AC%B8%EC%9C%BC%EB%A1%9C-r-%EA%B7%B8%EB%9E%98%ED%94%84%EC%97%90-%EC%88%98%EC%8B%9D-%EB%84%A3%EA%B8%B0\/'
+            this.page.identifier = '\/2021\/04\/github-%EC%86%8C%EC%8A%A4%EC%BD%94%EB%93%9C-visual-studio-code%EC%B2%98%EB%9F%BC-%EB%B3%B4%EA%B8%B0\/'
           
         };
         (function() {
