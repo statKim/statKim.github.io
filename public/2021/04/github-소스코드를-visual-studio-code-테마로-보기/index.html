@@ -8,25 +8,25 @@
 <meta name="generator" content="Hugo 0.73.0 with theme Tranquilpeak 0.4.8-BETA">
 <meta name="author" content="김현성">
 <meta name="keywords" content="">
-<meta name="description" content="블로그 포스팅을 비롯해서 간혹 GitHub repo에 있는 pdf나 html 파일 등을 간단히 url로 공유할 때가 있습니다. 사실 그럴 때마다 GitHub 자체에서 pdf를 열거나 아예 파일">
+<meta name="description" content="공부를 하거나 연구를 하면서 내가 짠 코드가 아닌 다른 GitHub에 올라와있는 코드들을 보게 되는 경우가 생기는데요. 이 코드들을 더 예쁘게(?) 볼 수 있는 방법이">
 
 
-<meta property="og:description" content="블로그 포스팅을 비롯해서 간혹 GitHub repo에 있는 pdf나 html 파일 등을 간단히 url로 공유할 때가 있습니다. 사실 그럴 때마다 GitHub 자체에서 pdf를 열거나 아예 파일">
+<meta property="og:description" content="공부를 하거나 연구를 하면서 내가 짠 코드가 아닌 다른 GitHub에 올라와있는 코드들을 보게 되는 경우가 생기는데요. 이 코드들을 더 예쁘게(?) 볼 수 있는 방법이">
 <meta property="og:type" content="article">
-<meta property="og:title" content="GitHub에 있는 문서 파일 외부 viewer로 공유하기">
-<meta name="twitter:title" content="GitHub에 있는 문서 파일 외부 viewer로 공유하기">
-<meta property="og:url" content="https://statkim.github.io/2021/01/github%EC%97%90-%EC%9E%88%EB%8A%94-%EB%AC%B8%EC%84%9C-%ED%8C%8C%EC%9D%BC-%EC%99%B8%EB%B6%80-viewer%EB%A1%9C-%EA%B3%B5%EC%9C%A0%ED%95%98%EA%B8%B0/">
-<meta property="twitter:url" content="https://statkim.github.io/2021/01/github%EC%97%90-%EC%9E%88%EB%8A%94-%EB%AC%B8%EC%84%9C-%ED%8C%8C%EC%9D%BC-%EC%99%B8%EB%B6%80-viewer%EB%A1%9C-%EA%B3%B5%EC%9C%A0%ED%95%98%EA%B8%B0/">
+<meta property="og:title" content="GitHub 소스코드를 Visual Studio Code 테마로 보기">
+<meta name="twitter:title" content="GitHub 소스코드를 Visual Studio Code 테마로 보기">
+<meta property="og:url" content="https://statkim.github.io/2021/04/github-%EC%86%8C%EC%8A%A4%EC%BD%94%EB%93%9C%EB%A5%BC-visual-studio-code-%ED%85%8C%EB%A7%88%EB%A1%9C-%EB%B3%B4%EA%B8%B0/">
+<meta property="twitter:url" content="https://statkim.github.io/2021/04/github-%EC%86%8C%EC%8A%A4%EC%BD%94%EB%93%9C%EB%A5%BC-visual-studio-code-%ED%85%8C%EB%A7%88%EB%A1%9C-%EB%B3%B4%EA%B8%B0/">
 <meta property="og:site_name" content="statKim">
-<meta property="og:description" content="블로그 포스팅을 비롯해서 간혹 GitHub repo에 있는 pdf나 html 파일 등을 간단히 url로 공유할 때가 있습니다. 사실 그럴 때마다 GitHub 자체에서 pdf를 열거나 아예 파일">
-<meta name="twitter:description" content="블로그 포스팅을 비롯해서 간혹 GitHub repo에 있는 pdf나 html 파일 등을 간단히 url로 공유할 때가 있습니다. 사실 그럴 때마다 GitHub 자체에서 pdf를 열거나 아예 파일">
+<meta property="og:description" content="공부를 하거나 연구를 하면서 내가 짠 코드가 아닌 다른 GitHub에 올라와있는 코드들을 보게 되는 경우가 생기는데요. 이 코드들을 더 예쁘게(?) 볼 수 있는 방법이">
+<meta name="twitter:description" content="공부를 하거나 연구를 하면서 내가 짠 코드가 아닌 다른 GitHub에 올라와있는 코드들을 보게 되는 경우가 생기는데요. 이 코드들을 더 예쁘게(?) 볼 수 있는 방법이">
 <meta property="og:locale" content="en-us">
 
   
-    <meta property="article:published_time" content="2021-01-18T00:00:00">
+    <meta property="article:published_time" content="2021-04-15T00:00:00">
   
   
-    <meta property="article:modified_time" content="2021-01-18T00:00:00">
+    <meta property="article:modified_time" content="2021-04-15T00:00:00">
   
   
   
@@ -36,9 +36,11 @@
   
   
     
-      <meta property="article:tag" content="Nbviewer">
+      <meta property="article:tag" content="github1s">
     
       <meta property="article:tag" content="GitHub">
+    
+      <meta property="article:tag" content="vscode">
     
   
 
@@ -59,14 +61,14 @@
   <meta property="twitter:image" content="https://statkim.github.io/img/profile.jpg">
 
 
-    <title>GitHub에 있는 문서 파일 외부 viewer로 공유하기</title>
+    <title>GitHub 소스코드를 Visual Studio Code 테마로 보기</title>
 
     <link rel="icon" href="https://statkim.github.io/img/favicon.ico">
     
 
     
 
-    <link rel="canonical" href="https://statkim.github.io/2021/01/github%EC%97%90-%EC%9E%88%EB%8A%94-%EB%AC%B8%EC%84%9C-%ED%8C%8C%EC%9D%BC-%EC%99%B8%EB%B6%80-viewer%EB%A1%9C-%EA%B3%B5%EC%9C%A0%ED%95%98%EA%B8%B0/">
+    <link rel="canonical" href="https://statkim.github.io/2021/04/github-%EC%86%8C%EC%8A%A4%EC%BD%94%EB%93%9C%EB%A5%BC-visual-studio-code-%ED%85%8C%EB%A7%88%EB%A1%9C-%EB%B3%B4%EA%B8%B0/">
 
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
@@ -243,15 +245,15 @@ if (!doNotTrack) {
             <div class="post-header main-content-wrap text-center">
   
     <h1 class="post-title" itemprop="headline">
-      GitHub에 있는 문서 파일 외부 viewer로 공유하기
+      GitHub 소스코드를 Visual Studio Code 테마로 보기
     </h1>
   
   
   <div class="postShorten-meta post-meta">
     
-      <time itemprop="datePublished" datetime="2021-01-18T00:00:00Z">
+      <time itemprop="datePublished" datetime="2021-04-15T00:00:00Z">
         
-  January 18, 2021
+  April 15, 2021
 
       </time>
     
@@ -274,31 +276,27 @@ if (!doNotTrack) {
 <script src="https://statkim.github.io/rmarkdown-libs/header-attrs/header-attrs.js"></script>
 
 
-<p>블로그 포스팅을 비롯해서 간혹 GitHub repo에 있는 pdf나 html 파일 등을 간단히 url로 공유할 때가 있습니다.
-사실 그럴 때마다 <strong>GitHub 자체에서 pdf를 열거나</strong> 아예 <strong>파일을 다운로드</strong> 받아야 하고, html의 경우는 GitHub에서는 source code만 보여주기 때문에 좋은 방법이 아니라는 생각을 하게 되었습니다.</p>
-<p>기존에 알고 있던 url을 통한 방법은 예를 들어, <code>https://github.com/statKim/TIL/blob/master/R/Rmd_beamer.pdf</code>의 링크로 들어가서 직접 GitHub에서 파일을 열어서 확인하거나, 이 링크 마지막에 <code>?raw=True</code> 옵션을 추가하여 파일을 다운받는 방법이었습니다.</p>
-<p>오늘은 많은 우여곡절 끝에 제가 찾은 2가지 방법에 대해 소개해보려 합니다.
-그리고 테스트해보지는 않았지만… 이 방법들은 pdf 파일뿐 아니라 다른 유형의 파일도 가능할 것 같습니다. (<code>.docx</code>, <code>.ipynb</code>, <code>.html</code> 등)</p>
+<p>공부를 하거나 연구를 하면서 내가 짠 코드가 아닌 다른 <strong>GitHub</strong>에 올라와있는 코드들을 보게 되는 경우가 생기는데요.
+이 코드들을 더 <em>예쁘게(?)</em> 볼 수 있는 방법이 있어 소개하려 합니다.
+바로 <strong>github1s</strong>입니다!!</p>
 <p><br></p>
-<div id="google-드라이브-뷰어" class="section level3">
-<h3>1. Google 드라이브 뷰어</h3>
-<p>첫 번째로, Google 드라이브 뷰어를 사용하는 방법입니다. 사용방법은 <code>https://docs.google.com/viewer?url= &lt;파일url&gt;?raw=True</code> 에서 <code>&lt;파일url&gt;</code>만 수정하여 사용하면 됩니다.</p>
-<p>예를 들어, <a href="https://docs.google.com/viewer?url=https://github.com/statKim/TIL/blob/master/R/Rmd_beamer.pdf?raw=T" class="uri">https://docs.google.com/viewer?url=https://github.com/statKim/TIL/blob/master/R/Rmd_beamer.pdf?raw=T</a> 처럼 사용할 수 있습니다.</p>
-<p><br></p>
-</div>
-<div id="nbviewer" class="section level3">
-<h3>2. Nbviewer</h3>
-<p><a href="https://nbviewer.jupyter.org/">https://nbviewer.jupyter.org/</a>에 가서 pdf 파일의 주소를 입력하고 <code>Go</code>를 클릭하면 <code>Nbviewer</code>에서 파일이 열리고 이 url을 복사하여 파일을 공유할 수 있습니다.</p>
-<p><img src="https://statkim.github.io/img/pdf_viewer.png" /></p>
-<p><code>Nbviewer</code>는 Jupyter에서 만든 viewer로써, <code>pdf</code>같은 문서만이 아니라 <code>jupyter notebook 파일(.ipynb)</code>과 <code>html</code>도 열 수 있어 굉장히 편리합니다!!</p>
-<p>예를 들어, <a href="https://nbviewer.jupyter.org/github/statKim/TIL/blob/master/R/Rmd_beamer.pdf" class="uri">https://nbviewer.jupyter.org/github/statKim/TIL/blob/master/R/Rmd_beamer.pdf</a> 와 같은 url을 얻을 수 있습니다.</p>
+<div id="github1s" class="section level2">
+<h2>github1s</h2>
+<p>본 포스팅에서는 제가 자주 뜯어보고 있는(?) <a href="https://github.com/functionaldata/tPACE"><code>functionaldata/tPACE</code></a> repository를 사용해보겠습니다.</p>
+<p>보통 <strong>GitHub</strong>에서 소스코드를 볼 때, 이렇게 해당 repository에 들어가서 보게 되는데요.</p>
+<p><img src="https://statkim.github.io/img/github1s_1.png" /></p>
+<p>여기서, url의 <code>github</code> 부분을 <code>github1s</code>로 바꾸게 되면 놀라운 일이 생깁니다.</p>
+<p><img src="https://statkim.github.io/img/github1s_2.png" /></p>
+<p>바로, <strong>Visual Studio Code</strong>처럼 소스코드들을 볼 수 있게 되는 것이죠!!!</p>
+<p><img src="https://statkim.github.io/img/github1s_3.png" /></p>
+<p>또한 코드를 분할해서 볼 수도 있어 다른 사람들의 코드를 뜯어볼 때, 굉장히 유용합니다!!</p>
+<p><img src="https://statkim.github.io/img/github1s_4.png" /></p>
 <p><br></p>
 </div>
 <div id="reference" class="section level2">
 <h2>Reference</h2>
 <ul>
-<li><a href="https://codefit.tistory.com/27">[web]iframe google docs gview 사용하여 PDF뷰어 사용하기</a></li>
-<li><a href="https://3months.tistory.com/12">NbViewer를 통해 Jupyter Notebook Share하기</a></li>
+<li><a href="https://github.com/conwnet/github1s">github1s repository</a></li>
 </ul>
 </div>
 
@@ -313,9 +311,11 @@ if (!doNotTrack) {
                   <div class="post-footer-tags">
                     <span class="text-color-light text-small">TAGGED IN</span><br/>
                     
-  <a class="tag tag--primary tag--small" href="https://statkim.github.io/tags/nbviewer/">Nbviewer</a>
+  <a class="tag tag--primary tag--small" href="https://statkim.github.io/tags/github1s/">github1s</a>
 
   <a class="tag tag--primary tag--small" href="https://statkim.github.io/tags/github/">GitHub</a>
+
+  <a class="tag tag--primary tag--small" href="https://statkim.github.io/tags/vscode/">vscode</a>
 
                   </div>
                 
@@ -328,7 +328,7 @@ if (!doNotTrack) {
           
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--default tooltip--top" href="https://statkim.github.io/2021/01/%EB%B3%80%EC%88%98%EB%AA%85%EC%9D%84-%EB%AC%B8%EC%9E%90%EC%97%B4-%ED%98%95%EC%8B%9D%EC%9C%BC%EB%A1%9C-%EC%9E%90%EC%9C%A0%EB%A1%AD%EA%B2%8C-%EB%8B%A4%EB%A3%A8%EA%B8%B0-get%EA%B3%BC-assign/" data-tooltip="변수명을 문자열 형식으로 자유롭게 다루기 - get과 assign">
+                <a class="post-action-btn btn btn--disabled">
               
                   <i class="fa fa-angle-left"></i>
                   <span class="hide-xs hide-sm text-small icon-ml">NEXT</span>
@@ -336,7 +336,7 @@ if (!doNotTrack) {
             </li>
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--default tooltip--top" href="https://statkim.github.io/2020/07/blogdown%EC%9C%BC%EB%A1%9C-github-blog-%EB%A7%8C%EB%93%A4%EA%B8%B0-2/2/" data-tooltip="blogdown으로 Github Blog 만들기 2/2">
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://statkim.github.io/2021/02/latex2exp-latex-%EA%B5%AC%EB%AC%B8%EC%9C%BC%EB%A1%9C-r-%EA%B7%B8%EB%9E%98%ED%94%84%EC%97%90-%EC%88%98%EC%8B%9D-%EB%84%A3%EA%B8%B0/" data-tooltip="latex2exp - LaTeX 구문으로 R 그래프에 수식 넣기">
               
                   <span class="hide-xs hide-sm text-small icon-mr">PREVIOUS</span>
                   <i class="fa fa-angle-right"></i>
@@ -354,19 +354,19 @@ if (!doNotTrack) {
         </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://statkim.github.io/2021/01/github%EC%97%90-%EC%9E%88%EB%8A%94-%EB%AC%B8%EC%84%9C-%ED%8C%8C%EC%9D%BC-%EC%99%B8%EB%B6%80-viewer%EB%A1%9C-%EA%B3%B5%EC%9C%A0%ED%95%98%EA%B8%B0/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://statkim.github.io/2021/04/github-%EC%86%8C%EC%8A%A4%EC%BD%94%EB%93%9C%EB%A5%BC-visual-studio-code-%ED%85%8C%EB%A7%88%EB%A1%9C-%EB%B3%B4%EA%B8%B0/">
               <i class="fa fa-facebook-official"></i>
             </a>
           </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://statkim.github.io/2021/01/github%EC%97%90-%EC%9E%88%EB%8A%94-%EB%AC%B8%EC%84%9C-%ED%8C%8C%EC%9D%BC-%EC%99%B8%EB%B6%80-viewer%EB%A1%9C-%EA%B3%B5%EC%9C%A0%ED%95%98%EA%B8%B0/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://statkim.github.io/2021/04/github-%EC%86%8C%EC%8A%A4%EC%BD%94%EB%93%9C%EB%A5%BC-visual-studio-code-%ED%85%8C%EB%A7%88%EB%A1%9C-%EB%B3%B4%EA%B8%B0/">
               <i class="fa fa-twitter"></i>
             </a>
           </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://statkim.github.io/2021/01/github%EC%97%90-%EC%9E%88%EB%8A%94-%EB%AC%B8%EC%84%9C-%ED%8C%8C%EC%9D%BC-%EC%99%B8%EB%B6%80-viewer%EB%A1%9C-%EA%B3%B5%EC%9C%A0%ED%95%98%EA%B8%B0/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://statkim.github.io/2021/04/github-%EC%86%8C%EC%8A%A4%EC%BD%94%EB%93%9C%EB%A5%BC-visual-studio-code-%ED%85%8C%EB%A7%88%EB%A1%9C-%EB%B3%B4%EA%B8%B0/">
               <i class="fa fa-google-plus"></i>
             </a>
           </li>
@@ -414,7 +414,7 @@ if (!doNotTrack) {
           
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--default tooltip--top" href="https://statkim.github.io/2021/01/%EB%B3%80%EC%88%98%EB%AA%85%EC%9D%84-%EB%AC%B8%EC%9E%90%EC%97%B4-%ED%98%95%EC%8B%9D%EC%9C%BC%EB%A1%9C-%EC%9E%90%EC%9C%A0%EB%A1%AD%EA%B2%8C-%EB%8B%A4%EB%A3%A8%EA%B8%B0-get%EA%B3%BC-assign/" data-tooltip="변수명을 문자열 형식으로 자유롭게 다루기 - get과 assign">
+                <a class="post-action-btn btn btn--disabled">
               
                   <i class="fa fa-angle-left"></i>
                   <span class="hide-xs hide-sm text-small icon-ml">NEXT</span>
@@ -422,7 +422,7 @@ if (!doNotTrack) {
             </li>
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--default tooltip--top" href="https://statkim.github.io/2020/07/blogdown%EC%9C%BC%EB%A1%9C-github-blog-%EB%A7%8C%EB%93%A4%EA%B8%B0-2/2/" data-tooltip="blogdown으로 Github Blog 만들기 2/2">
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://statkim.github.io/2021/02/latex2exp-latex-%EA%B5%AC%EB%AC%B8%EC%9C%BC%EB%A1%9C-r-%EA%B7%B8%EB%9E%98%ED%94%84%EC%97%90-%EC%88%98%EC%8B%9D-%EB%84%A3%EA%B8%B0/" data-tooltip="latex2exp - LaTeX 구문으로 R 그래프에 수식 넣기">
               
                   <span class="hide-xs hide-sm text-small icon-mr">PREVIOUS</span>
                   <i class="fa fa-angle-right"></i>
@@ -440,19 +440,19 @@ if (!doNotTrack) {
         </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://statkim.github.io/2021/01/github%EC%97%90-%EC%9E%88%EB%8A%94-%EB%AC%B8%EC%84%9C-%ED%8C%8C%EC%9D%BC-%EC%99%B8%EB%B6%80-viewer%EB%A1%9C-%EA%B3%B5%EC%9C%A0%ED%95%98%EA%B8%B0/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://statkim.github.io/2021/04/github-%EC%86%8C%EC%8A%A4%EC%BD%94%EB%93%9C%EB%A5%BC-visual-studio-code-%ED%85%8C%EB%A7%88%EB%A1%9C-%EB%B3%B4%EA%B8%B0/">
               <i class="fa fa-facebook-official"></i>
             </a>
           </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://statkim.github.io/2021/01/github%EC%97%90-%EC%9E%88%EB%8A%94-%EB%AC%B8%EC%84%9C-%ED%8C%8C%EC%9D%BC-%EC%99%B8%EB%B6%80-viewer%EB%A1%9C-%EA%B3%B5%EC%9C%A0%ED%95%98%EA%B8%B0/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://statkim.github.io/2021/04/github-%EC%86%8C%EC%8A%A4%EC%BD%94%EB%93%9C%EB%A5%BC-visual-studio-code-%ED%85%8C%EB%A7%88%EB%A1%9C-%EB%B3%B4%EA%B8%B0/">
               <i class="fa fa-twitter"></i>
             </a>
           </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://statkim.github.io/2021/01/github%EC%97%90-%EC%9E%88%EB%8A%94-%EB%AC%B8%EC%84%9C-%ED%8C%8C%EC%9D%BC-%EC%99%B8%EB%B6%80-viewer%EB%A1%9C-%EA%B3%B5%EC%9C%A0%ED%95%98%EA%B8%B0/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://statkim.github.io/2021/04/github-%EC%86%8C%EC%8A%A4%EC%BD%94%EB%93%9C%EB%A5%BC-visual-studio-code-%ED%85%8C%EB%A7%88%EB%A1%9C-%EB%B3%B4%EA%B8%B0/">
               <i class="fa fa-google-plus"></i>
             </a>
           </li>
@@ -482,19 +482,19 @@ if (!doNotTrack) {
   <ul class="share-options">
     
       <li class="share-option">
-        <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fstatkim.github.io%2F2021%2F01%2Fgithub%25EC%2597%2590-%25EC%259E%2588%25EB%258A%2594-%25EB%25AC%25B8%25EC%2584%259C-%25ED%258C%258C%25EC%259D%25BC-%25EC%2599%25B8%25EB%25B6%2580-viewer%25EB%25A1%259C-%25EA%25B3%25B5%25EC%259C%25A0%25ED%2595%2598%25EA%25B8%25B0%2F">
+        <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fstatkim.github.io%2F2021%2F04%2Fgithub-%25EC%2586%258C%25EC%258A%25A4%25EC%25BD%2594%25EB%2593%259C%25EB%25A5%25BC-visual-studio-code-%25ED%2585%258C%25EB%25A7%2588%25EB%25A1%259C-%25EB%25B3%25B4%25EA%25B8%25B0%2F">
           <i class="fa fa-facebook-official"></i><span>Share on Facebook</span>
         </a>
       </li>
     
       <li class="share-option">
-        <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=https%3A%2F%2Fstatkim.github.io%2F2021%2F01%2Fgithub%25EC%2597%2590-%25EC%259E%2588%25EB%258A%2594-%25EB%25AC%25B8%25EC%2584%259C-%25ED%258C%258C%25EC%259D%25BC-%25EC%2599%25B8%25EB%25B6%2580-viewer%25EB%25A1%259C-%25EA%25B3%25B5%25EC%259C%25A0%25ED%2595%2598%25EA%25B8%25B0%2F">
+        <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=https%3A%2F%2Fstatkim.github.io%2F2021%2F04%2Fgithub-%25EC%2586%258C%25EC%258A%25A4%25EC%25BD%2594%25EB%2593%259C%25EB%25A5%25BC-visual-studio-code-%25ED%2585%258C%25EB%25A7%2588%25EB%25A1%259C-%25EB%25B3%25B4%25EA%25B8%25B0%2F">
           <i class="fa fa-twitter"></i><span>Share on Twitter</span>
         </a>
       </li>
     
       <li class="share-option">
-        <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=https%3A%2F%2Fstatkim.github.io%2F2021%2F01%2Fgithub%25EC%2597%2590-%25EC%259E%2588%25EB%258A%2594-%25EB%25AC%25B8%25EC%2584%259C-%25ED%258C%258C%25EC%259D%25BC-%25EC%2599%25B8%25EB%25B6%2580-viewer%25EB%25A1%259C-%25EA%25B3%25B5%25EC%259C%25A0%25ED%2595%2598%25EA%25B8%25B0%2F">
+        <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=https%3A%2F%2Fstatkim.github.io%2F2021%2F04%2Fgithub-%25EC%2586%258C%25EC%258A%25A4%25EC%25BD%2594%25EB%2593%259C%25EB%25A5%25BC-visual-studio-code-%25ED%2585%258C%25EB%25A7%2588%25EB%25A1%259C-%25EB%25B3%25B4%25EA%25B8%25B0%2F">
           <i class="fa fa-google-plus"></i><span>Share on Google&#43;</span>
         </a>
       </li>
@@ -586,9 +586,9 @@ $(document).ready(function() {
     
       <script>
         var disqus_config = function () {
-          this.page.url = 'https:\/\/statkim.github.io\/2021\/01\/github%EC%97%90-%EC%9E%88%EB%8A%94-%EB%AC%B8%EC%84%9C-%ED%8C%8C%EC%9D%BC-%EC%99%B8%EB%B6%80-viewer%EB%A1%9C-%EA%B3%B5%EC%9C%A0%ED%95%98%EA%B8%B0\/';
+          this.page.url = 'https:\/\/statkim.github.io\/2021\/04\/github-%EC%86%8C%EC%8A%A4%EC%BD%94%EB%93%9C%EB%A5%BC-visual-studio-code-%ED%85%8C%EB%A7%88%EB%A1%9C-%EB%B3%B4%EA%B8%B0\/';
           
-            this.page.identifier = '\/2021\/01\/github%EC%97%90-%EC%9E%88%EB%8A%94-%EB%AC%B8%EC%84%9C-%ED%8C%8C%EC%9D%BC-%EC%99%B8%EB%B6%80-viewer%EB%A1%9C-%EA%B3%B5%EC%9C%A0%ED%95%98%EA%B8%B0\/'
+            this.page.identifier = '\/2021\/04\/github-%EC%86%8C%EC%8A%A4%EC%BD%94%EB%93%9C%EB%A5%BC-visual-studio-code-%ED%85%8C%EB%A7%88%EB%A1%9C-%EB%B3%B4%EA%B8%B0\/'
           
         };
         (function() {

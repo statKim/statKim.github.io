@@ -1,20 +1,20 @@
 ---
-title: Github 소스코드 Visual Studio Code처럼 보기
+title: GitHub 소스코드를 Visual Studio Code 테마로 보기
 date: '2021-04-15'
 coverImage: 
 coverMeta: out
 metaAlignment: center
 categories:
-  - Github
+  - GitHub
 tags:
   - github1s
-  - Github
+  - GitHub
   - vscode
 ---
 
 
 
-공부를 하거나 연구를 하면서 내가 짠 코드가 아닌 다른 **Github**에 올라와있는 코드들을 보게 되는 경우가 생기는데요.
+공부를 하거나 연구를 하면서 내가 짠 코드가 아닌 다른 **GitHub**에 올라와있는 코드들을 보게 되는 경우가 생기는데요.
 이 코드들을 더 *예쁘게(?)* 볼 수 있는 방법이 있어 소개하려 합니다.
 바로 **github1s**입니다!!
 
@@ -24,7 +24,7 @@ tags:
 
 본 포스팅에서는 제가 자주 뜯어보고 있는(?) [`functionaldata/tPACE`](https://github.com/functionaldata/tPACE) repository를 사용해보겠습니다.
 
-보통 **Github**에서 소스코드를 볼 때, 이렇게 해당 repository에 들어가서 보게 되는데요.
+보통 **GitHub**에서 소스코드를 볼 때, 이렇게 해당 repository에 들어가서 보게 되는데요.
 
 ![](/img/github1s_1.png)
 
