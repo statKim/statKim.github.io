@@ -6,11 +6,7 @@
     <description>Recent content in Rmarkdown on statKim</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko-kr</language>
-    <lastBuildDate>Tue, 07 Jul 2020 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="https://statkim.github.io/tags/rmarkdown/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Tue, 07 Jul 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://statkim.github.io/tags/rmarkdown/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>blogdown으로 Github Blog 만들기 2/2</title>
       <link>https://statkim.github.io/2020/07/blogdown%EC%9C%BC%EB%A1%9C-github-blog-%EB%A7%8C%EB%93%A4%EA%B8%B0-2/2/</link>

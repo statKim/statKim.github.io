@@ -6,11 +6,7 @@
     <description>Recent content in Test_vers on statKim</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko-kr</language>
-    <lastBuildDate>Mon, 18 Jan 2021 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="https://statkim.github.io/test_ver/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Mon, 18 Jan 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://statkim.github.io/test_ver/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>About</title>
       <link>https://statkim.github.io/test_ver/about/</link>

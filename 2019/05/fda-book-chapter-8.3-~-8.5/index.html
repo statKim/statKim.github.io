@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="generator" content="Hugo 0.73.0 with theme Tranquilpeak 0.4.8-BETA">
+<meta name="generator" content="Hugo 0.83.1 with theme Tranquilpeak 0.4.8-BETA">
 <meta name="author" content="김현성">
 <meta name="keywords" content="">
 <meta name="description" content="8.3 Visualizing the results 8.3.1 Plotting components as perturbations of the mean (mean의 작은 변동 요소를 plotting) Overall mean function과 PC function의 적절한 배수를 더하거나 나눈 function을 pl">
@@ -98,7 +98,6 @@ if (!doNotTrack) {
 	ga('send', 'pageview');
 }
 </script>
-
     
     
   </head>
@@ -311,7 +310,7 @@ $$</p>
 \psi = \mathbf{T}\xi
 $$</p>
 <p>where $\mathbf{T}$ : any orthonormal matrix of order $K$ ($\mathbf{T&rsquo;T=TT'=I}_{K \times K}$),</p>
-<p>$\xi$ : the vector of function $(\xi_1,&hellip;,\xi_k)&lsquo;$</p>
+<p>$\xi$ : the vector of function $(\xi_1,&hellip;,\xi_k)'$</p>
 </li>
 <li>
 <p>기하학적으로, the vector of functions $\psi$는 rigid(엄격한) rotation of $\xi$</p>
@@ -369,10 +368,10 @@ $$</p>
 <p>If $n \gg N$ (# variables $\gg$ sample size),</p>
 <ul>
 <li>
-<p>$n \times n$ matrix $\mathbf V$ 대신에 $\mathbf X$의 $SVD$인 $\mathbf{UDW&rsquo;}$를 사용</p>
+<p>$n \times n$ matrix $\mathbf V$ 대신에 $\mathbf X$의 $SVD$인 $\mathbf{UDW'}$를 사용</p>
 </li>
 <li>
-<p>variance matrix는 $N\mathbf{V=WD^2W&rsquo;}$를 만족 ($\because \mathbf V=\frac{1}{N}\mathbf{X&rsquo;X}$)</p>
+<p>variance matrix는 $N\mathbf{V=WD^2W'}$를 만족 ($\because \mathbf V=\frac{1}{N}\mathbf{X&rsquo;X}$)</p>
 <p>=&gt; $\mathbf V$의 nonzero eigen values는 $\mathbf X$의 singular values의 제곱값과 같고, 대응되는 eigenvectors는 $\mathbf U$의 columns이다.</p>
 </li>
 </ul>
@@ -441,8 +440,8 @@ $$</p>
 <p>$$
 \mathbf x = \mathbf {C\phi}
 $$</p>
-<p>where the vector-valued function $\mathbf x=(x_1,&hellip;,x_N)&lsquo;$</p>
-<p>and the vector-valued function $\mathbf \phi=(\phi_1,&hellip;,\phi_K)&lsquo;$</p>
+<p>where the vector-valued function $\mathbf x=(x_1,&hellip;,x_N)'$</p>
+<p>and the vector-valued function $\mathbf \phi=(\phi_1,&hellip;,\phi_K)'$</p>
 <p>and the coefficient matrix $\mathbf C$ is $N \times K$ matrix</p>
 </li>
 <li>
@@ -456,7 +455,7 @@ w_{k_1,k_2}=\int \phi_{k_1}\phi_{k_2}
 $$</p>
 <p>or</p>
 <p>$$
-\mathbf W=\int \boldsymbol{\phi\phi&rsquo;} \ \text{(matrix version)}
+\mathbf W=\int \boldsymbol{\phi\phi'} \ \text{(matrix version)}
 $$</p>
 <p>The eigen function $\xi$ for the eigen equation has an expansion</p>
 <p>$$
@@ -603,7 +602,7 @@ $$</p>
 <li>
 <p>Procedure</p>
 <ol>
-<li>Choose $n$, the $w_j$'s, and the $s_j$'s</li>
+<li>Choose $n$, the $w_j$&rsquo;s, and the $s_j$&rsquo;s</li>
 <li>Compute the eigen values $\rho_m$ and eigen vectors $\mathbf u_m$ of $\mathbf{W^{1/2}VW^{1/2}}$</li>
 <li>Compute $\tilde{\boldsymbol{\xi}}_m=\mathbf{W^{-1/2}u}_m$</li>
 <li>If needed, use an interpolation technique to convert each vector $\tilde \xi_m$ to a function $\xi_m$</li>
@@ -630,7 +629,7 @@ $$</p>
 <li>$\texttt{Hipmn}$ and $\texttt{Kneemn}$ : estimates of the mean function of $\texttt{Hip}$ and $\texttt{Knee}$ processes</li>
 <li>$v_{HH}$ and $v_{KK}$ : the covariance operator of the $\texttt{Hip}_i$ and $\texttt{Knee}_i$</li>
 <li>$v_{HK}$ : the cross-covariance function, $v_{KH}(t,s)=v_{HK}(s,t)$</li>
-<li>$\xi=(\xi^H,\xi^K)&lsquo;$ : a principal component of weight function with $\xi^H$(variation in the $\texttt{Hip}$ curves) and $\xi^K$(variation in the $\texttt{Knee}$ curves)</li>
+<li>$\xi=(\xi^H,\xi^K)'$ : a principal component of weight function with $\xi^H$(variation in the $\texttt{Hip}$ curves) and $\xi^K$(variation in the $\texttt{Knee}$ curves)</li>
 <li>$\texttt{Angles}_i=(\texttt{Hip}_i,\texttt{Knee}_i)$</li>
 </ul>
 </li>

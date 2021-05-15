@@ -6,11 +6,7 @@
     <description>Recent content in Python on statKim</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko-kr</language>
-    <lastBuildDate>Thu, 01 Nov 2018 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="https://statkim.github.io/tags/python/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Thu, 01 Nov 2018 00:00:00 +0000</lastBuildDate><atom:link href="https://statkim.github.io/tags/python/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Python 가상환경 만들기</title>
       <link>https://statkim.github.io/2018/11/python-%EA%B0%80%EC%83%81%ED%99%98%EA%B2%BD-%EB%A7%8C%EB%93%A4%EA%B8%B0/</link>

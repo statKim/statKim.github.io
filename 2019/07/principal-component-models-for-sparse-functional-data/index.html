@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="generator" content="Hugo 0.73.0 with theme Tranquilpeak 0.4.8-BETA">
+<meta name="generator" content="Hugo 0.83.1 with theme Tranquilpeak 0.4.8-BETA">
 <meta name="author" content="김현성">
 <meta name="keywords" content="">
 <meta name="description" content="Outline Introduction The Growth Curve Data The Reduced Rank Model Fitting the Reduced Rank Model The Reduced Rank and Mixed Effects Methods Compared Model Selection and Inference Comparison of the Reduced Rank Method and Classical Principal Components Appendix 1. Introduction The problem If each curves observed different time points, it is not good way to apply method with equal time points. In this paper, present an estimation technique when the">
@@ -100,7 +100,6 @@ if (!doNotTrack) {
 	ga('send', 'pageview');
 }
 </script>
-
     
     
   </head>
@@ -313,7 +312,7 @@ where $\mathbf Y_i$ is the $n_i$-dimensional vector, $\mathbf B$ is the $n_i \ti
 <p>$\texttt{EM}$ algorithm is used to fit the mixed effect model to estimate $\boldsymbol{\beta}$ and $\boldsymbol{\Gamma}$.</p>
 </li>
 <li>
-<p>Given these estimates $\boldsymbol{\beta}$ and $\boldsymbol{\Gamma}$, predictions are obtained  for the $\boldsymbol{\gamma}_i$'s using best linear unbiased prediction (BLUP)</p>
+<p>Given these estimates $\boldsymbol{\beta}$ and $\boldsymbol{\Gamma}$, predictions are obtained  for the $\boldsymbol{\gamma}_i$&rsquo;s using best linear unbiased prediction (BLUP)</p>
 </li>
 </ul>
 <p>$$
@@ -355,8 +354,8 @@ $\Rightarrow \texttt{EM}$ algorithm converges to local maximum.</li>
 <p>$$
 Y_i(t)=\mu(t)+\sum_{j=1}^k f_j(t)\alpha_{ij}+\epsilon_i(t) = \mu(t)+\mathbf{f}(t)^T\boldsymbol{\alpha}_i + \epsilon_i(t)
 $$</p>
-<p>subject to $\int f_jf_l=\delta_{jl}, \ the\ Kronecker \ \delta$, 
-$$ \delta_{jl}= 
+<p>subject to $\int f_jf_l=\delta_{jl}, \ the\ Kronecker \ \delta$,
+$$ \delta_{jl}=
 \begin{cases}
 1, &amp; j = l \\<br>
 0, &amp; j \ne l
@@ -365,7 +364,7 @@ where $\mu(t)$ is overall mean function, $f_j$ is the $j$th PC function, $\mathb
 <p>In this paper, we let $\Sigma$ is diagonal.</p>
 <h4 id="restrictions-when-data-measured-finite--of-time-points">Restrictions when data measured finite # of time points</h4>
 <p>$$
-\mu(t)=\mathbf{b}(t)^T\boldsymbol{\theta}_{\mu}, \ \ \mathbf{f}(t)^T=\mathbf{b}(t)^T\boldsymbol{\Theta} 
+\mu(t)=\mathbf{b}(t)^T\boldsymbol{\theta}_{\mu}, \ \ \mathbf{f}(t)^T=\mathbf{b}(t)^T\boldsymbol{\Theta}
 $$</p>
 <p>where $\mathbf{b}(t)$ is a spline basis with dimension $q$, $\boldsymbol{\Theta}$ is $q \times k$ spline coefficients matrix, $\boldsymbol{\theta}_{\mu}$ is $q$-dimensional vector of spline coefficients</p>
 <h4 id="restricted-model">Restricted model</h4>
@@ -373,19 +372,19 @@ $$</p>
 Y_i(t)=\mathbf{b}(t)^T\boldsymbol{\theta}_{\mu}+\mathbf{b}(t)^T\boldsymbol{\Theta}\boldsymbol{\alpha}_i + \epsilon_i(t)
 $$</p>
 <p>$$
-\epsilon_i(t) \sim (\mathbf{0},\sigma^2), \ \boldsymbol{\alpha}_i \sim (\mathbf{0}, \mathbf{D}) 
+\epsilon_i(t) \sim (\mathbf{0},\sigma^2), \ \boldsymbol{\alpha}_i \sim (\mathbf{0}, \mathbf{D})
 $$</p>
 <p>subject to</p>
 <p>$$
-\boldsymbol{\Theta}^T \boldsymbol{\Theta}=\mathbf{I}, \ \int \mathbf{b}(t)^T\mathbf{b}(t)dt=1, \ \int\int \mathbf{b}(t)^T\mathbf{b}(s)dt=0 
+\boldsymbol{\Theta}^T \boldsymbol{\Theta}=\mathbf{I}, \ \int \mathbf{b}(t)^T\mathbf{b}(t)dt=1, \ \int\int \mathbf{b}(t)^T\mathbf{b}(s)dt=0
 $$</p>
 <p>where $\mathbf{D}$ is diagonal.</p>
 <h4 id="reduced-rank-model">Reduced rank model</h4>
 <p>$$
-\mathbf Y_i = \mathbf B_i \mathbf{\theta}_{\mu} + \mathbf{B}_i\boldsymbol{\Theta}\boldsymbol{\alpha}_i + \boldsymbol{\epsilon}_i 
+\mathbf Y_i = \mathbf B_i \mathbf{\theta}_{\mu} + \mathbf{B}_i\boldsymbol{\Theta}\boldsymbol{\alpha}_i + \boldsymbol{\epsilon}_i
 $$</p>
 <p>$$
-\boldsymbol{\Theta}^T \boldsymbol{\Theta}=\mathbf{I}, \ \boldsymbol{\epsilon}_i \sim (\mathbf{0}, \sigma^2 \mathbf{I}), \ \boldsymbol{\alpha}_i \sim (\mathbf{0}, \mathbf{D}) 
+\boldsymbol{\Theta}^T \boldsymbol{\Theta}=\mathbf{I}, \ \boldsymbol{\epsilon}_i \sim (\mathbf{0}, \sigma^2 \mathbf{I}), \ \boldsymbol{\alpha}_i \sim (\mathbf{0}, \mathbf{D})
 $$</p>
 <ul>
 <li>Parameters to estimate : $\boldsymbol{\theta}_{\mu}, \boldsymbol{\Theta}, \mathbf{D}, \sigma^2$</li>
@@ -394,16 +393,16 @@ $$</p>
 <h3 id="mixed-effects-model">Mixed effects model</h3>
 <h4 id="random-vector-with-unrestricted-covariance-matrix">Random vector with unrestricted covariance matrix</h4>
 <p>$$
-\boldsymbol{\gamma}_i = [\boldsymbol{\Theta}, \boldsymbol{\Theta}^*]
+\boldsymbol{\gamma}_i = [\boldsymbol{\Theta}, \boldsymbol{\Theta}^<em>]
 \begin{pmatrix}
 \boldsymbol{\alpha}_i \\<br>
-\boldsymbol{\alpha}^*_i
+\boldsymbol{\alpha}^</em>_i
 \end{pmatrix}
 $$</p>
 <p>where $\boldsymbol{\gamma}_i$ is $q$-dimensional vector in mixed effect model, $\boldsymbol{\Theta}^*$ is a $q \times (q-k)$ matrix, $\boldsymbol{\alpha}_i$ is a random vector of length $q-k$ with diagonal covariance matrix.</p>
 <h4 id="mixed-effects-model-1">Mixed effects model</h4>
 <p>$$
-\mathbf Y_i = \mathbf B_i\boldsymbol{\theta}_{\mu}+\mathbf{B}_i\boldsymbol{\Theta}\boldsymbol{\alpha}_i + \mathbf{B}_i\boldsymbol{\Theta}^*\boldsymbol{\alpha}^*_i + \boldsymbol{\epsilon}_i 
+\mathbf Y_i = \mathbf B_i\boldsymbol{\theta}_{\mu}+\mathbf{B}_i\boldsymbol{\Theta}\boldsymbol{\alpha}_i + \mathbf{B}_i\boldsymbol{\Theta}^<em>\boldsymbol{\alpha}^</em>_i + \boldsymbol{\epsilon}_i
 $$</p>
 <ul>
 <li>The ruduced rank model is a submodel of the mixed effects model.</li>
@@ -435,22 +434,22 @@ $$</p>
 <h3 id="maximum-likelihood">Maximum likelihood</h3>
 <p>Assume that $\boldsymbol{\epsilon}_i \sim N(\mathbf{0},\sigma^2 \mathbf{I})$ and $\boldsymbol{\alpha}_i \sim N(\mathbf{0}, \mathbf{D})$.</p>
 <p>$$
-\mathbf Y_i \sim N(\mathbf B_i \boldsymbol{\theta}_{\mu}, \sigma^2\mathbf{I}+\mathbf{B}_i\boldsymbol{\Theta}\mathbf{D}\boldsymbol{\Theta}^T\mathbf{B}^T_i) 
+\mathbf Y_i \sim N(\mathbf B_i \boldsymbol{\theta}_{\mu}, \sigma^2\mathbf{I}+\mathbf{B}_i\boldsymbol{\Theta}\mathbf{D}\boldsymbol{\Theta}^T\mathbf{B}^T_i)
 $$</p>
-<p>The observed likelihood of the $\mathbf{Y}_i$'s is</p>
+<p>The observed likelihood of the $\mathbf{Y}_i$&rsquo;s is</p>
 <p>$$
-\prod_{i=1}^N \frac{1}{(2\pi)^{n_i/2}|\sigma^2\mathbf{I}+\mathbf{B}_i\boldsymbol{\Theta}\mathbf{D}\boldsymbol{\Theta}^T\mathbf{B}^T_i|^{1/2}} \exp \bigg { -\frac{1}{2}(\mathbf{Y}_i-\mathbf{B}_i\boldsymbol{\theta}_{\mu})^T(\sigma^2\mathbf{I}+\mathbf{B}_i\boldsymbol{\Theta}\mathbf{D}\boldsymbol{\Theta}^T\mathbf{B}^T_i)^{-1} (\mathbf{Y}_i-\mathbf{B}_i\boldsymbol{\theta}_{\mu}) \bigg } 
+\prod_{i=1}^N \frac{1}{(2\pi)^{n_i/2}|\sigma^2\mathbf{I}+\mathbf{B}_i\boldsymbol{\Theta}\mathbf{D}\boldsymbol{\Theta}^T\mathbf{B}^T_i|^{1/2}} \exp \bigg { -\frac{1}{2}(\mathbf{Y}_i-\mathbf{B}_i\boldsymbol{\theta}_{\mu})^T(\sigma^2\mathbf{I}+\mathbf{B}_i\boldsymbol{\Theta}\mathbf{D}\boldsymbol{\Theta}^T\mathbf{B}^T_i)^{-1} (\mathbf{Y}_i-\mathbf{B}_i\boldsymbol{\theta}_{\mu}) \bigg }
 $$</p>
 <p>But to maximize this likelihood is a nonconvex optimization problem.</p>
-<p>If $\boldsymbol{\alpha}_i$'s were observed, the joint likelihood is simplified to</p>
+<p>If $\boldsymbol{\alpha}_i$&rsquo;s were observed, the joint likelihood is simplified to</p>
 <p>$$
-\prod_{i=1}^N \frac{1}{(2\pi)^{(n_i+k)/2}\sigma^{n_i}|\mathbf{D}|^\frac{1}{2}} \exp \bigg { -\frac{1}{2\sigma^2}(\mathbf{Y}_i-\mathbf{B}_i\boldsymbol{\theta}_{\mu}-\mathbf{B}_i\boldsymbol{\Theta}\boldsymbol{\alpha}_i)^T(\mathbf{Y}_i-\mathbf{B}_i\boldsymbol{\theta}_{\mu}-\mathbf{B}_i\boldsymbol{\Theta}\boldsymbol{\alpha}_i) - \frac{1}{2}\boldsymbol{\alpha}_i^T\mathbf{D}^{-1}\boldsymbol{\alpha}_i \bigg } 
+\prod_{i=1}^N \frac{1}{(2\pi)^{(n_i+k)/2}\sigma^{n_i}|\mathbf{D}|^\frac{1}{2}} \exp \bigg { -\frac{1}{2\sigma^2}(\mathbf{Y}_i-\mathbf{B}_i\boldsymbol{\theta}_{\mu}-\mathbf{B}_i\boldsymbol{\Theta}\boldsymbol{\alpha}_i)^T(\mathbf{Y}_i-\mathbf{B}_i\boldsymbol{\theta}_{\mu}-\mathbf{B}_i\boldsymbol{\Theta}\boldsymbol{\alpha}_i) - \frac{1}{2}\boldsymbol{\alpha}_i^T\mathbf{D}^{-1}\boldsymbol{\alpha}_i \bigg }
 $$</p>
 <p>Let $\boldsymbol{\alpha}_i$ is unobserved(missing), we can maximize this likelihood much easier using $\texttt{EM}$ algorithm.</p>
 <h3 id="penalized-least-squares">Penalized least squares</h3>
-<p>We choose $\boldsymbol{\theta}_{\mu}, \boldsymbol{\Theta}, \boldsymbol{\alpha}_i$'s to minimize the sum of squared residuals,</p>
+<p>We choose $\boldsymbol{\theta}_{\mu}, \boldsymbol{\Theta}, \boldsymbol{\alpha}_i$&rsquo;s to minimize the sum of squared residuals,</p>
 <p>$$
-\sum_{i=1}^N \bigg { (\mathbf{Y}_i-\mathbf{B}_i\boldsymbol{\theta}_{\mu}-\mathbf{B}_i\boldsymbol{\Theta}\boldsymbol{\alpha}_i)^T(\mathbf{Y}_i-\mathbf{B}_i\boldsymbol{\theta}_{\mu}-\mathbf{B}_i\boldsymbol{\Theta}\boldsymbol{\alpha}_i) + \sigma^2 \sum_{j=1}^K \frac{\alpha^2_{ij}}{\mathbf{D}_{jj}} \bigg } 
+\sum_{i=1}^N \bigg { (\mathbf{Y}_i-\mathbf{B}_i\boldsymbol{\theta}_{\mu}-\mathbf{B}_i\boldsymbol{\Theta}\boldsymbol{\alpha}_i)^T(\mathbf{Y}_i-\mathbf{B}_i\boldsymbol{\theta}_{\mu}-\mathbf{B}_i\boldsymbol{\Theta}\boldsymbol{\alpha}_i) + \sigma^2 \sum_{j=1}^K \frac{\alpha^2_{ij}}{\mathbf{D}_{jj}} \bigg }
 $$</p>
 <ul>
 <li>Minimize SSE $\Leftrightarrow$ Maximize likelihood</li>
@@ -548,7 +547,7 @@ $\Rightarrow$ mixed effects fit underestimates the variance.(overfitting)</li>
 <li>Sparse data $\Rightarrow$ performance $\downarrow$</li>
 </ul>
 </li>
-<li>Resampling the estimated $\boldsymbol{\alpha}_i$'s and residuals and generating new partial curves based on these values.
+<li>Resampling the estimated $\boldsymbol{\alpha}_i$&rsquo;s and residuals and generating new partial curves based on these values.
 <ul>
 <li>Bootstrap datasets have observations at the same time points as the original dataset.</li>
 </ul>
@@ -563,10 +562,10 @@ $\Rightarrow$ mixed effects fit underestimates the variance.(overfitting)</li>
 <!-- raw HTML omitted -->
 <h4 id="the-linear-model">The linear model</h4>
 <p>$$
-\mathbf X_i = \boldsymbol{\theta}_{\mu}+\boldsymbol{\Theta}\boldsymbol{\alpha}_i + \boldsymbol{\epsilon}_i 
+\mathbf X_i = \boldsymbol{\theta}_{\mu}+\boldsymbol{\Theta}\boldsymbol{\alpha}_i + \boldsymbol{\epsilon}_i
 $$</p>
 <p>$$
-\boldsymbol{\epsilon}_i \sim N(\mathbf{0}, \boldsymbol{\Sigma}), \ \boldsymbol{\alpha}_i \sim N(\mathbf{0},\mathbf{D}) 
+\boldsymbol{\epsilon}_i \sim N(\mathbf{0}, \boldsymbol{\Sigma}), \ \boldsymbol{\alpha}_i \sim N(\mathbf{0},\mathbf{D})
 $$</p>
 <p>where $\mathbf{X}_i$ are $q$-dimensional data vectors, $\boldsymbol{\Theta}$ is an orthogonal matrix</p>
 <ul>
@@ -578,9 +577,9 @@ $$</p>
 $$</p>
 <h4 id="the-reduced-rank-model-1">The reduced rank model</h4>
 <p>$$
-\mathbf Y_i = \mathbf B_i\boldsymbol{\theta}_{\mu}+\mathbf B_i\boldsymbol{\Theta}\boldsymbol{\alpha}_i + \boldsymbol{\epsilon}_i, \ \text{Cov}(\boldsymbol{\epsilon}_i)=\sigma^2\mathbf{I} 
+\mathbf Y_i = \mathbf B_i\boldsymbol{\theta}_{\mu}+\mathbf B_i\boldsymbol{\Theta}\boldsymbol{\alpha}_i + \boldsymbol{\epsilon}_i, \ \text{Cov}(\boldsymbol{\epsilon}_i)=\sigma^2\mathbf{I}
 $$</p>
-<p>where $\boldsymbol{\Theta}$ is the PCs and the $\boldsymbol{\alpha}_i$'s are weights for the PC</p>
+<p>where $\boldsymbol{\Theta}$ is the PCs and the $\boldsymbol{\alpha}_i$&rsquo;s are weights for the PC</p>
 <ul>
 <li>
 <p>$Cov(\boldsymbol{\epsilon}_i)=\sigma^2 \mathbf{I}$ $\Rightarrow$ Solution of reduced rank model is equivalent to generalized PCA solution.</p>
@@ -598,12 +597,12 @@ $$</p>
 \sum_{i=1}^N \Vert \mathbf{Y}_i - \mathbf{B}_i\hat{\boldsymbol{\gamma}_i} \Vert^2 + \sum_{i=1}^N \Vert \mathbf{B}_i\hat{\boldsymbol{\gamma}_i} - \mathbf{B}_i\boldsymbol{\theta}_{\mu} - \mathbf{B}_i\boldsymbol{\Theta}\boldsymbol{\alpha}_i \Vert^2<br>
 $$</p>
 <p>$$
-= C(\mathbf{Y}) + \sum_{i=1}^N \Vert \hat{\boldsymbol{\gamma}_i} - \boldsymbol{\theta}_{\mu} - \boldsymbol{\Theta}\boldsymbol{\alpha}_i \Vert_{\mathbf{B}^T_i\mathbf{B}_i}^2 
+= C(\mathbf{Y}) + \sum_{i=1}^N \Vert \hat{\boldsymbol{\gamma}_i} - \boldsymbol{\theta}_{\mu} - \boldsymbol{\Theta}\boldsymbol{\alpha}_i \Vert_{\mathbf{B}^T_i\mathbf{B}_i}^2
 $$</p>
 <p>where $C(\mathbf{Y})$ is a constant with the parameters.</p>
 <p>Therefore, we minimize
 $
-\sum_{i=1}^N \Vert \hat{\mathbf{\gamma}_i} - \mathbf{\theta}_{\mu} - \mathbf{\Theta}\mathbf{\alpha}_i \Vert_{\mathbf{B}^T_i\mathbf{B}_i}^2 
+\sum_{i=1}^N \Vert \hat{\mathbf{\gamma}_i} - \mathbf{\theta}_{\mu} - \mathbf{\Theta}\mathbf{\alpha}_i \Vert_{\mathbf{B}^T_i\mathbf{B}_i}^2
 $</p>
 <ul>
 <li>If all curves are measured at the same time points, then $\mathbf{B}_i=\mathbf{B}$.</li>
@@ -618,31 +617,31 @@ $</p>
 \mathbf{y} = \mathbf{X} \boldsymbol{\beta}+\mathbf{Z}\mathbf{u}+\boldsymbol{\epsilon}
 $$</p>
 <p>$$
-\mathbf{u} \sim (\mathbf{0},\mathbf{G}), \ \boldsymbol{\epsilon} \sim (\mathbf{0},\mathbf{R}), \ Var(\mathbf{y})=\mathbf{V}=\mathbf{Z}\mathbf{G}\mathbf{Z}^T+\mathbf{R}, \ Cov(\mathbf{u},\boldsymbol{\epsilon})=\mathbf{0} 
+\mathbf{u} \sim (\mathbf{0},\mathbf{G}), \ \boldsymbol{\epsilon} \sim (\mathbf{0},\mathbf{R}), \ Var(\mathbf{y})=\mathbf{V}=\mathbf{Z}\mathbf{G}\mathbf{Z}^T+\mathbf{R}, \ Cov(\mathbf{u},\boldsymbol{\epsilon})=\mathbf{0}
 $$</p>
 <p>Assume $\mathbf{y}|\mathbf{u} \sim N(\mathbf{X} \boldsymbol{\beta}+\mathbf{Z}\mathbf{u},\mathbf{R})$ and $\mathbf{u} \sim N(\mathbf{0},\mathbf{G})$,
 then likelihood function is</p>
 <p>$$
--2\log f(\mathbf{y}|\mathbf{u})=N\log 2\pi+\log|\mathbf{R}|+(\mathbf{y}-\mathbf{X}  \boldsymbol{\beta}-\mathbf{Z}\mathbf{u})^T\mathbf{R}^{-1}(\mathbf{y}-\mathbf{X} \boldsymbol{\beta}-\mathbf{Z}\mathbf{u}) 
+-2\log f(\mathbf{y}|\mathbf{u})=N\log 2\pi+\log|\mathbf{R}|+(\mathbf{y}-\mathbf{X}  \boldsymbol{\beta}-\mathbf{Z}\mathbf{u})^T\mathbf{R}^{-1}(\mathbf{y}-\mathbf{X} \boldsymbol{\beta}-\mathbf{Z}\mathbf{u})
 $$</p>
 <p>$$
--2\log f(\mathbf{u})= q\log 2\pi + \log|\mathbf{G}| + \mathbf{u}^T\mathbf{G}^{-1}\mathbf{u} 
+-2\log f(\mathbf{u})= q\log 2\pi + \log|\mathbf{G}| + \mathbf{u}^T\mathbf{G}^{-1}\mathbf{u}
 $$</p>
-<p>Maximizing 
+<p>Maximizing
 $ l(\boldsymbol{\beta},\mathbf{u}|\mathbf{y})=\log f(\mathbf{y},\mathbf{u})$ is equivalent to minimizing the sum of the two equations.</p>
 <p>Differentiating the sum of the two equations</p>
 <p>$$
 \begin{aligned}
 \frac{\partial [-2l(\boldsymbol{\beta},\mathbf{u}|\mathbf{y})]}{\partial \boldsymbol{\beta}} &amp;= -2\mathbf{X}^T\mathbf{R}^{-1}(\mathbf{y}-\mathbf{X}\boldsymbol{\beta}-\mathbf{Z}\mathbf{u}) \\<br>
 \frac{\partial [-2l(\boldsymbol{\beta},\mathbf{u}|\mathbf{y})]}{\partial \mathbf{u}} &amp;= -2\mathbf{Z}^T\mathbf{R}^{-1}(\mathbf{y}-\mathbf{X}\boldsymbol{\beta}-\mathbf{Z}\mathbf{u})+2\mathbf{G}^{-1}\mathbf{u}
-\end{aligned} 
+\end{aligned}
 $$</p>
 <p>equating them to $0$ gives the following system</p>
 <p>$$
-\mathbf{X}^T\mathbf{R}^{-1}\mathbf{X}\hat{\boldsymbol{\beta}}+\mathbf{X}^T\mathbf{R}^{-1}\mathbf{Z}\hat{\mathbf{u}}=\mathbf{X}^T\mathbf{R}^{-1}\mathbf{y} 
+\mathbf{X}^T\mathbf{R}^{-1}\mathbf{X}\hat{\boldsymbol{\beta}}+\mathbf{X}^T\mathbf{R}^{-1}\mathbf{Z}\hat{\mathbf{u}}=\mathbf{X}^T\mathbf{R}^{-1}\mathbf{y}
 $$</p>
 <p>$$
-\mathbf{Z}^T\mathbf{R}^{-1}\mathbf{X}\hat{\boldsymbol{\beta}}+(\mathbf{Z}^T\mathbf{R}^{-1}\mathbf{Z}+\mathbf{G}^{-1})\hat{\mathbf{u}}=\mathbf{Z}^T\mathbf{R}^{-1}\mathbf{y} 
+\mathbf{Z}^T\mathbf{R}^{-1}\mathbf{X}\hat{\boldsymbol{\beta}}+(\mathbf{Z}^T\mathbf{R}^{-1}\mathbf{Z}+\mathbf{G}^{-1})\hat{\mathbf{u}}=\mathbf{Z}^T\mathbf{R}^{-1}\mathbf{y}
 $$</p>
 <p>called Henderson&rsquo;s mixed model equations (HMME)</p>
 <p>The matrix form of HMME is</p>
@@ -658,7 +657,7 @@ $$</p>
 \begin{pmatrix}
 \mathbf{X}^T\mathbf{R}^{-1}\mathbf{y} \\<br>
 \mathbf{Z}^T\mathbf{R}^{-1}\mathbf{y}
-\end{pmatrix} 
+\end{pmatrix}
 $$</p>
 <p>Solve this equation,</p>
 <p>$$
