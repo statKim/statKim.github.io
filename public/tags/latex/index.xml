@@ -6,11 +6,7 @@
     <description>Recent content in latex on statKim</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko-kr</language>
-    <lastBuildDate>Fri, 12 Feb 2021 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="https://statkim.github.io/tags/latex/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Fri, 12 Feb 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://statkim.github.io/tags/latex/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>latex2exp - LaTeX 구문으로 R 그래프에 수식 넣기</title>
       <link>https://statkim.github.io/2021/02/latex2exp-latex-%EA%B5%AC%EB%AC%B8%EC%9C%BC%EB%A1%9C-r-%EA%B7%B8%EB%9E%98%ED%94%84%EC%97%90-%EC%88%98%EC%8B%9D-%EB%84%A3%EA%B8%B0/</link>

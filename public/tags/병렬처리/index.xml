@@ -6,11 +6,7 @@
     <description>Recent content in 병렬처리 on statKim</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko-kr</language>
-    <lastBuildDate>Wed, 03 Feb 2021 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="https://statkim.github.io/tags/%EB%B3%91%EB%A0%AC%EC%B2%98%EB%A6%AC/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Wed, 03 Feb 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://statkim.github.io/tags/%EB%B3%91%EB%A0%AC%EC%B2%98%EB%A6%AC/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>doRNG 패키지로 foreach를 재현가능하도록 사용하기</title>
       <link>https://statkim.github.io/2021/02/dorng-%ED%8C%A8%ED%82%A4%EC%A7%80%EB%A1%9C-foreach%EB%A5%BC-%EC%9E%AC%ED%98%84%EA%B0%80%EB%8A%A5%ED%95%98%EB%8F%84%EB%A1%9D-%EC%82%AC%EC%9A%A9%ED%95%98%EA%B8%B0/</link>

@@ -5,10 +5,6 @@
     <link>https://statkim.github.io/archives/</link>
     <description>Recent content in Archives on statKim</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>ko-kr</language>
-    
-	<atom:link href="https://statkim.github.io/archives/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <language>ko-kr</language><atom:link href="https://statkim.github.io/archives/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>
