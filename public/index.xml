@@ -6,14 +6,32 @@
     <description>Recent content on statKim</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko-kr</language>
-    <lastBuildDate>Thu, 15 Apr 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://statkim.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 03 Aug 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://statkim.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Trimming vs Winsorization</title>
+      <link>https://statkim.github.io/2021/08/trimming-vs-winsorization/</link>
+      <pubDate>Tue, 03 Aug 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://statkim.github.io/2021/08/trimming-vs-winsorization/</guid>
+      <description>Trimming과 Winsorization은 이상치에 민감하지 않은 Robust Statistics의 종류입니다. 비슷한 아이디어를 가지는 방법들이지만, 어</description>
+    </item>
+    
     <item>
       <title>About</title>
       <link>https://statkim.github.io/about/</link>
-      <pubDate>Thu, 15 Apr 2021 00:00:00 +0000</pubDate>
+      <pubDate>Sun, 27 Jun 2021 00:00:00 +0000</pubDate>
       
       <guid>https://statkim.github.io/about/</guid>
-      <description>안녕하세요. 저는 중앙대학교 통계학과에서 통계학을 공부하고 있는 박사과정 학생입니다. 현재 다변량 분석 연구실(Multivariate Data Analysis Lab)에서</description>
+      <description>안녕하세요. 저는 중앙대학교 통계학과 다변량 통계 연구실(Multivariate Statistics Lab)에서 통계학을 공부하고 있는 박사과정 학생입니다. 현재 Functional Data A</description>
+    </item>
+    
+    <item>
+      <title>Curriculum Vitae</title>
+      <link>https://statkim.github.io/cv/</link>
+      <pubDate>Sun, 27 Jun 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://statkim.github.io/cv/</guid>
+      <description>   </description>
     </item>
     
     <item>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>winsorization on statKim</title>
+    <link>https://statkim.github.io/tags/winsorization/</link>
+    <description>Recent content in winsorization on statKim</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ko-kr</language>
+    <lastBuildDate>Tue, 03 Aug 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://statkim.github.io/tags/winsorization/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Trimming vs Winsorization</title>
+      <link>https://statkim.github.io/2021/08/trimming-vs-winsorization/</link>
+      <pubDate>Tue, 03 Aug 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://statkim.github.io/2021/08/trimming-vs-winsorization/</guid>
+      <description>Trimming과 Winsorization은 이상치에 민감하지 않은 Robust Statistics의 종류입니다. 비슷한 아이디어를 가지는 방법들이지만, 어</description>
+    </item>
+    
+  </channel>
+</rss>

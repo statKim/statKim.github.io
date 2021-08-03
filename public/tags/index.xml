@@ -6,7 +6,34 @@
     <description>Recent content in Tags on statKim</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko-kr</language>
-    <lastBuildDate>Thu, 15 Apr 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://statkim.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 03 Aug 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://statkim.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>robust statistics</title>
+      <link>https://statkim.github.io/tags/robust-statistics/</link>
+      <pubDate>Tue, 03 Aug 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://statkim.github.io/tags/robust-statistics/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>trimming</title>
+      <link>https://statkim.github.io/tags/trimming/</link>
+      <pubDate>Tue, 03 Aug 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://statkim.github.io/tags/trimming/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>winsorization</title>
+      <link>https://statkim.github.io/tags/winsorization/</link>
+      <pubDate>Tue, 03 Aug 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://statkim.github.io/tags/winsorization/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>GitHub</title>
       <link>https://statkim.github.io/tags/github/</link>

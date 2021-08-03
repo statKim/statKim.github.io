@@ -1,0 +1,8 @@
+---
+title: "Curriculum Vitae"
+sidemenu: "true"
+date: "`r Sys.Date()`"
+---
+
+
+<iframe src="https://nbviewer.jupyter.org/github/statKim/CV_KHS/blob/master/CV.pdf" width="900" height="900" style="border: none;"></iframe>

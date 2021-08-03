@@ -83,8 +83,13 @@ themesDir = "themes"
   identifier = "about"
   name = "About"
   pre = "<i class=\"sidebar-button-icon fa fa-lg fa-question\"></i>"
-  # url = "/about"
   url = "/#about"
+#[[menu.main]]
+#  weight = 6
+#  identifier = "cv"
+#  name = "CV"
+#  pre = "<i class=\"sidebar-button-icon fa fa-lg fa-file\"></i>"
+#  url = "/cv"
 
 [[menu.links]]
   weight = 1
@@ -96,7 +101,7 @@ themesDir = "themes"
   weight = 2
   identifier = "email"
   name = "Email"
-  pre = "<i class=\"sidebar-button-icon fa fa-lg fa-envelope-o\"></i>"
+  pre = "<i class=\"sidebar-button-icon fa fa-lg fa-envelope\"></i>"
   url = "mailto:hyunsung1021@gmail.com"  
 # [[menu.links]]
 #   weight = 2

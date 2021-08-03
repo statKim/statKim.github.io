@@ -5,15 +5,14 @@ date: "`r Sys.Date()`"
 ---
 
 안녕하세요. 
-저는 [중앙대학교 통계학과](https://stat.cau.ac.kr/)에서 **통계학**을 공부하고 있는 박사과정 학생입니다.
-현재 [다변량 분석 연구실(Multivariate Data Analysis Lab)](https://sites.google.com/site/yaejilim/)에서 `Functional Data Analysis`에 대한 연구를 하고 있습니다.
+저는 [중앙대학교 통계학과](https://stat.cau.ac.kr/) [다변량 통계 연구실(Multivariate Statistics Lab)](https://sites.google.com/view/caumulti)에서 **통계학**을 공부하고 있는 박사과정 학생입니다.
+현재 `Functional Data Analysis`에 대한 연구를 하고 있습니다.
 
 **R**로 코딩하고, **Rmarkdown**으로 문서 작성하는 것을 좋아하며, **통계학**이나 **R programming**에 대해 공부하며 알게된 내용들을 가끔식 블로그에 정리하고 있습니다. 
 
 
 ## Research Interests
 - `Functional Data Analysis`
-- `Spatio-temporal Data Analysis`
 - `High-dimensional Data Analysis`
 
 
@@ -25,10 +24,8 @@ date: "`r Sys.Date()`"
 
 
 ## Publications
-- **Kim, H.**, & Lim, Y. (2021). [Bootstrap aggregated classification for sparse functional data](https://doi.org/10.1080/02664763.2021.1889997). *Journal
-of Applied Statistics*, In press.
-- **Kim, H.**, Li, X., & Lim, Y. (2021). Robust group independent component analysis. *The Korean Journal
-of Applied Statistics*, 34(2), 135–147.
+- **Kim, H.**, & Lim, Y. (2021). [Bootstrap aggregated classification for sparse functional data](https://doi.org/10.1080/02664763.2021.1889997). *Journal of Applied Statistics*, In press.
+- **Kim, H.**, Li, X., & Lim, Y. (2021). Robust group independent component analysis. *The Korean Journal of Applied Statistics*, 34(2), 135–147.
 
 
 ## Projects
@@ -40,4 +37,6 @@ of Applied Statistics*, 34(2), 135–147.
 - **Teaching Assistant**, Introduction to Statistical Learning, *Department of Applied Statistics, Chung-Ang University*, 2019 Fall
 
 
-## [Curriculum Vitae](https://nbviewer.jupyter.org/github/statKim/CV_KHS/blob/master/CV.pdf)
+## Curriculum Vitae
+
+<iframe src="https://nbviewer.jupyter.org/github/statKim/CV_KHS/blob/master/CV.pdf" width="900" height="600" style="border: none;"></iframe>
