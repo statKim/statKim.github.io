@@ -84,6 +84,13 @@ themesDir = "themes"
   name = "About"
   pre = "<i class=\"sidebar-button-icon fa fa-lg fa-question\"></i>"
   url = "/#about"
+# https://statkim.github.io/rcpp-tutorial/
+[[menu.main]]
+  weight = 6
+  identifier = "rcpp_tutorial"
+  name = "Rcpp Tutorial"
+  pre = "<i class=\"sidebar-button-icon fa fa-lg fa-file\"></i>"
+  url = "/rcpp-tutorial"
 #[[menu.main]]
 #  weight = 6
 #  identifier = "cv"
