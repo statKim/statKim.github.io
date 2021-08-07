@@ -1,0 +1,70 @@
+---
+title: $O_p$(Big-Op)와 $o_p$(Little-Op)
+date: '2021-08-07'
+coverImage: 
+coverMeta: out
+metaAlignment: center
+categories:
+  - Statistics
+tags:
+  - big O
+  - little o
+  - asymptotic
+  - convergence rate
+---
+
+<script src="/rmarkdown-libs/header-attrs/header-attrs.js"></script>
+
+
+<p>Big-O와 little-O를 사용한 점근표기법(asymptotic notation)은 수학에서 rate of convergence를 나타내고 위해 사용되며, 또한 알고리즘의 시간복잡도를 나타낼 때에도 사용하는데요.
+이 notation을 stochastic sequence에 적용한 것이 <span class="math inline">\(O_p\)</span>(Big-Op)와 <span class="math inline">\(o_p\)</span>(Little-Op)입니다.</p>
+<div id="o_p-big-op" class="section level2">
+<h2><span class="math inline">\(O_p\)</span> (Big-Op)</h2>
+<p><span class="math inline">\(O_p\)</span> (Big-Op)는 <em>stochastic boundness</em> 또는 <em>bounded in probability</em>의 의미를 나타내며, 이에 대한 정의는 다음과 같습니다.</p>
+<div class="definition">
+<p><span id="def:unlabeled-div-1" class="definition"><strong>Definition 1  ($O_p$ (Big-Op)) </strong></span><em>For a set of random variable <span class="math inline">\(X_n\)</span> and a corresponding set of constants <span class="math inline">\(a_n\)</span>, <span class="math inline">\(X_n = O_p(a_n)\)</span> if and only if <span class="math inline">\(\forall \epsilon &gt; 0, ~ \exists M, N &gt; 0\)</span> such that
+<span class="math display">\[
+P\left(\left| \frac{X_n}{a_n} \right| &gt; M \right) &lt; \epsilon, ~ \forall n &gt; N.
+\]</span></em></p>
+</div>
+</div>
+<div id="o_p-little-op" class="section level2">
+<h2><span class="math inline">\(o_p\)</span> (Little-Op)</h2>
+<p><span class="math inline">\(o_p\)</span> (Little-Op)는 수리통계학에서 접하게 되는 <em>congergence in probability(확률수렴)</em>을 의미하며, 정의는 다음과 같습니다.</p>
+<div class="definition">
+<p><span id="def:unlabeled-div-2" class="definition"><strong>Definition 2  ($o_p$ (Little-Op)) </strong></span><em>For a set of random variable <span class="math inline">\(X_n\)</span> and a corresponding set of constants <span class="math inline">\(a_n\)</span>, <span class="math inline">\(X_n = o_p(a_n)\)</span> if and only if
+<span class="math display">\[
+\lim_{n \rightarrow \infty} P\left(\left| \frac{X_n}{a_n} \right| \ge \epsilon \right) = 0, ~ \forall \epsilon &gt; 0.
+\]</span></em></p>
+</div>
+<p>다시 말해, <span class="math inline">\(X_n = o_p(a_n)\)</span>의 필요충분조건은 <span class="math inline">\(\frac{X_n}{a_n} \overset{p}{\rightarrow} 0\)</span> 입니다.</p>
+</div>
+<div id="consistency-using-o_p-notation" class="section level2">
+<h2>Consistency using <span class="math inline">\(O_p\)</span> notation</h2>
+<p>보통 논문에서는 어떤 추정량(estimator)의 consistency를 <span class="math inline">\(o_p\)</span>가 아닌 <span class="math inline">\(O_p\)</span>로 나타내기도 하는데, 다음 논문의 예를 통해 왜 그런 방식이 성립하는지 알아보겠습니다.</p>
+<blockquote>
+<p>Kraus, D. (2015). Components and completion of partially observed functional data. <em>Journal of the Royal Statistical Society: Series B: Statistical Methodology</em>, 777-801.</p>
+</blockquote>
+<p>논문의 Proposition 1-(a)를 보면 <span class="math inline">\(\mu\)</span>에 대한 추정량 <span class="math inline">\(\hat\mu\)</span>의 consistency를 다음과 같이 <span class="math inline">\(O_p\)</span> 기호를 사용하여 나타내는데요.
+<span class="math display">\[
+E(\lVert\hat\mu - \mu\rVert^2) = O(n^{-1}) \text{ for } n\rightarrow \infty.
+\]</span></p>
+<p>이는 <span class="math inline">\(O_p\)</span>의 정의를 사용하여 나타내보면 쉽게 이해할 수 있습니다.
+<span class="math display">\[
+\begin{aligned}
+E(\lVert\hat\mu - \mu\rVert^2) = O(n^{-1}) &amp;\Leftrightarrow P\left(\left\lvert \frac{\lVert\hat\mu - \mu\rVert^2}{n^{-1}} \right\rvert &gt; M \right) &lt; \epsilon \\
+&amp;\Leftrightarrow P\left(\left\lvert \lVert\hat\mu - \mu\rVert^2 \right\rvert &gt; \frac{M}{n} \right) &lt; \epsilon
+\end{aligned}
+\]</span>
+여기서 <span class="math inline">\(n\)</span>에 대한 극한을 취하고, <span class="math inline">\(M/n\)</span>을 임의의 작은 실수 <span class="math inline">\(\epsilon^*\)</span>로 대체하게 되면 이는 convergence in probability를 의미하며, 즉 consistency를 나타내게 됩니다.
+다시 말해, <span class="math inline">\(O_p\)</span> 기호로도 consistency를 표현할 수 있는 것이죠.</p>
+<p><br></p>
+</div>
+<div id="reference" class="section level2">
+<h2>Reference</h2>
+<ul>
+<li><a href="https://bookdown.org/ts_robinson1994/10_fundamental_theorems_for_econometrics/big-op-and-little-op.html" class="uri">https://bookdown.org/ts_robinson1994/10_fundamental_theorems_for_econometrics/big-op-and-little-op.html</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Big_O_in_probability_notation" class="uri">https://en.wikipedia.org/wiki/Big_O_in_probability_notation</a></li>
+<li>Kraus, D. (2015). Components and completion of partially observed functional data. <em>Journal of the Royal Statistical Society: Series B: Statistical Methodology</em>, 777-801.</li>
+</ul>
+</div>

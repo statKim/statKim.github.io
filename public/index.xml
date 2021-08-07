@@ -6,7 +6,16 @@
     <description>Recent content on statKim</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko-kr</language>
-    <lastBuildDate>Tue, 03 Aug 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://statkim.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 07 Aug 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://statkim.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>$O_p$(Big-Op)와 $o_p$(Little-Op)</title>
+      <link>https://statkim.github.io/2021/08/o_pbig-op%EC%99%80-o_plittle-op/</link>
+      <pubDate>Sat, 07 Aug 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://statkim.github.io/2021/08/o_pbig-op%EC%99%80-o_plittle-op/</guid>
+      <description>Big-O와 little-O를 사용한 점근표기법(asymptotic notation)은 수학에서 rate of convergence를 나타내고 위해 사용</description>
+    </item>
+    
     <item>
       <title>Trimming vs Winsorization</title>
       <link>https://statkim.github.io/2021/08/trimming-vs-winsorization/</link>

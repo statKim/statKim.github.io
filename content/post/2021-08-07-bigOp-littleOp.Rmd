@@ -1,0 +1,70 @@
+---
+title: $O_p$(Big-Op)와 $o_p$(Little-Op)
+date: '2021-08-07'
+coverImage: 
+coverMeta: out
+metaAlignment: center
+categories:
+  - Statistics
+tags:
+  - big O
+  - little o
+  - asymptotic
+  - convergence rate
+---
+
+Big-O와 little-O를 사용한 점근표기법(asymptotic notation)은 수학에서 rate of convergence를 나타내고 위해 사용되며, 또한 알고리즘의 시간복잡도를 나타낼 때에도 사용하는데요.
+이 notation을 stochastic sequence에 적용한 것이 $O_p$(Big-Op)와 $o_p$(Little-Op)입니다.
+
+
+## $O_p$ (Big-Op)
+$O_p$ (Big-Op)는 *stochastic boundness* 또는 *bounded in probability*의 의미를 나타내며, 이에 대한 정의는 다음과 같습니다.
+
+::: {.definition name="$O_p$ (Big-Op)"}
+*For a set of random variable $X_n$ and a corresponding set of constants $a_n$, $X_n = O_p(a_n)$ if and only if $\forall \epsilon > 0, ~ \exists M, N > 0$ such that 
+$$
+P\left(\left| \frac{X_n}{a_n} \right| > M \right) < \epsilon, ~ \forall n > N.
+$$*
+:::
+
+
+## $o_p$ (Little-Op)
+$o_p$ (Little-Op)는 수리통계학에서 접하게 되는 *congergence in probability(확률수렴)*을 의미하며, 정의는 다음과 같습니다.
+
+::: {.definition name="$o_p$ (Little-Op)"}
+*For a set of random variable $X_n$ and a corresponding set of constants $a_n$, $X_n = o_p(a_n)$ if and only if
+$$
+\lim_{n \rightarrow \infty} P\left(\left| \frac{X_n}{a_n} \right| \ge \epsilon \right) = 0, ~ \forall \epsilon > 0.
+$$*
+:::
+
+다시 말해, $X_n = o_p(a_n)$의 필요충분조건은 $\frac{X_n}{a_n} \overset{p}{\rightarrow} 0$ 입니다.
+
+
+
+## Consistency using $O_p$ notation
+보통 논문에서는 어떤 추정량(estimator)의 consistency를 $o_p$가 아닌 $O_p$로 나타내기도 하는데, 다음 논문의 예를 통해 왜 그런 방식이 성립하는지 알아보겠습니다.
+
+> Kraus, D. (2015). Components and completion of partially observed functional data. *Journal of the Royal Statistical Society: Series B: Statistical Methodology*, 777-801.
+
+논문의 Proposition 1-(a)를 보면 $\mu$에 대한 추정량 $\hat\mu$의 consistency를 다음과 같이 $O_p$ 기호를 사용하여 나타내는데요.
+$$
+E(\lVert\hat\mu - \mu\rVert^2) = O(n^{-1}) \text{ for } n\rightarrow \infty.
+$$
+
+이는 $O_p$의 정의를 사용하여 나타내보면 쉽게 이해할 수 있습니다.
+$$
+\begin{aligned}
+E(\lVert\hat\mu - \mu\rVert^2) = O(n^{-1}) &\Leftrightarrow P\left(\left\lvert \frac{\lVert\hat\mu - \mu\rVert^2}{n^{-1}} \right\rvert > M \right) < \epsilon \\
+&\Leftrightarrow P\left(\left\lvert \lVert\hat\mu - \mu\rVert^2 \right\rvert > \frac{M}{n} \right) < \epsilon
+\end{aligned}
+$$
+여기서 $n$에 대한 극한을 취하고, $M/n$을 임의의 작은 실수 $\epsilon^*$로 대체하게 되면 이는 convergence in probability를 의미하며, 즉 consistency를 나타내게 됩니다.
+다시 말해, $O_p$ 기호로도 consistency를 표현할 수 있는 것이죠.
+
+<br>
+
+## Reference
+- <https://bookdown.org/ts_robinson1994/10_fundamental_theorems_for_econometrics/big-op-and-little-op.html>
+- <https://en.wikipedia.org/wiki/Big_O_in_probability_notation>
+- Kraus, D. (2015). Components and completion of partially observed functional data. *Journal of the Royal Statistical Society: Series B: Statistical Methodology*, 777-801.

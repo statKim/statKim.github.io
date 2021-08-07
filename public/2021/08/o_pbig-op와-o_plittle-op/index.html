@@ -8,25 +8,25 @@
 <meta name="generator" content="Hugo 0.83.1 with theme Tranquilpeak 0.4.8-BETA">
 <meta name="author" content="김현성">
 <meta name="keywords" content="">
-<meta name="description" content="Trimming과 Winsorization은 이상치에 민감하지 않은 Robust Statistics의 종류입니다. 비슷한 아이디어를 가지는 방법들이지만, 어">
+<meta name="description" content="Big-O와 little-O를 사용한 점근표기법(asymptotic notation)은 수학에서 rate of convergence를 나타내고 위해 사용">
 
 
-<meta property="og:description" content="Trimming과 Winsorization은 이상치에 민감하지 않은 Robust Statistics의 종류입니다. 비슷한 아이디어를 가지는 방법들이지만, 어">
+<meta property="og:description" content="Big-O와 little-O를 사용한 점근표기법(asymptotic notation)은 수학에서 rate of convergence를 나타내고 위해 사용">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Trimming vs Winsorization">
-<meta name="twitter:title" content="Trimming vs Winsorization">
-<meta property="og:url" content="https://statkim.github.io/2021/08/trimming-vs-winsorization/">
-<meta property="twitter:url" content="https://statkim.github.io/2021/08/trimming-vs-winsorization/">
+<meta property="og:title" content="$O_p$(Big-Op)와 $o_p$(Little-Op)">
+<meta name="twitter:title" content="$O_p$(Big-Op)와 $o_p$(Little-Op)">
+<meta property="og:url" content="https://statkim.github.io/2021/08/o_pbig-op%EC%99%80-o_plittle-op/">
+<meta property="twitter:url" content="https://statkim.github.io/2021/08/o_pbig-op%EC%99%80-o_plittle-op/">
 <meta property="og:site_name" content="statKim">
-<meta property="og:description" content="Trimming과 Winsorization은 이상치에 민감하지 않은 Robust Statistics의 종류입니다. 비슷한 아이디어를 가지는 방법들이지만, 어">
-<meta name="twitter:description" content="Trimming과 Winsorization은 이상치에 민감하지 않은 Robust Statistics의 종류입니다. 비슷한 아이디어를 가지는 방법들이지만, 어">
+<meta property="og:description" content="Big-O와 little-O를 사용한 점근표기법(asymptotic notation)은 수학에서 rate of convergence를 나타내고 위해 사용">
+<meta name="twitter:description" content="Big-O와 little-O를 사용한 점근표기법(asymptotic notation)은 수학에서 rate of convergence를 나타내고 위해 사용">
 <meta property="og:locale" content="en-us">
 
   
-    <meta property="article:published_time" content="2021-08-03T00:00:00">
+    <meta property="article:published_time" content="2021-08-07T00:00:00">
   
   
-    <meta property="article:modified_time" content="2021-08-03T00:00:00">
+    <meta property="article:modified_time" content="2021-08-07T00:00:00">
   
   
   
@@ -36,11 +36,13 @@
   
   
     
-      <meta property="article:tag" content="robust statistics">
+      <meta property="article:tag" content="big O">
     
-      <meta property="article:tag" content="trimming">
+      <meta property="article:tag" content="little o">
     
-      <meta property="article:tag" content="winsorization">
+      <meta property="article:tag" content="asymptotic">
+    
+      <meta property="article:tag" content="convergence rate">
     
   
 
@@ -61,14 +63,14 @@
   <meta property="twitter:image" content="https://statkim.github.io/img/profile.jpg">
 
 
-    <title>Trimming vs Winsorization</title>
+    <title>$O_p$(Big-Op)와 $o_p$(Little-Op)</title>
 
     <link rel="icon" href="https://statkim.github.io/img/favicon.ico">
     
 
     
 
-    <link rel="canonical" href="https://statkim.github.io/2021/08/trimming-vs-winsorization/">
+    <link rel="canonical" href="https://statkim.github.io/2021/08/o_pbig-op%EC%99%80-o_plittle-op/">
 
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
@@ -254,15 +256,15 @@ if (!doNotTrack) {
             <div class="post-header main-content-wrap text-center">
   
     <h1 class="post-title" itemprop="headline">
-      Trimming vs Winsorization
+      $O_p$(Big-Op)와 $o_p$(Little-Op)
     </h1>
   
   
   <div class="postShorten-meta post-meta">
     
-      <time itemprop="datePublished" datetime="2021-08-03T00:00:00Z">
+      <time itemprop="datePublished" datetime="2021-08-07T00:00:00Z">
         
-  August 3, 2021
+  August 7, 2021
 
       </time>
     
@@ -285,46 +287,56 @@ if (!doNotTrack) {
 <script src="https://statkim.github.io/rmarkdown-libs/header-attrs/header-attrs.js"></script>
 
 
-<p>Trimming과 Winsorization은 이상치에 민감하지 않은 <strong>Robust Statistics</strong>의 종류입니다.
-비슷한 아이디어를 가지는 방법들이지만, 어떤 차이점들이 있는지 알아보겠습니다.</p>
-<div id="trimming" class="section level2">
-<h2>Trimming</h2>
-<p><strong>Trimming</strong>이란 데이터의 일정 cut-off(또는 quantile)을 초과하지 않는 부분만을 이용하는 방법입니다.
-예를 들어, 10% trimmed mean이란 데이터의 5% ~ 95% quantile에 해당하는 값으로만 계산한 평균을 의미합니다.
-즉, 5% quantile 이하, 95% quantile 이상의 데이터는 계산에서 제외한다는 의미이죠.</p>
-<p>R로 간단히 계산해보면 다음과 같습니다.</p>
-<pre class="r"><code>x &lt;- c(1,2,3,4,5,6,7,8,9,100)
-mean(x)</code></pre>
-<pre><code>## [1] 14.5</code></pre>
-<p>마지막 부분에 100이라는 outlier(이상치)가 섞여있어 평균값이 매우 커지는 것을 볼 수 있죠.</p>
-<p>R에서는 <code>mean</code> 함수에 <code>trim</code> 옵션으로 trimming할 비율을 정하여 간단히 trimmed mean을 계산할 수 있습니다.</p>
-<pre class="r"><code>mean(x, trim = 0.2)</code></pre>
-<pre><code>## [1] 5.5</code></pre>
-<p>20% trimmed mean을 계산하였더니 값이 5.5가 나오는 것을 볼 수 있습니다.
-즉, 양 끝의 각각 10%에 해당하는 데이터(총 2개)를 제외하여 계산한 평균이 되는 것이고, 여기서는 1과 100이라는 값을 제외하여 계산한 값이 됩니다.</p>
+<p>Big-O와 little-O를 사용한 점근표기법(asymptotic notation)은 수학에서 rate of convergence를 나타내고 위해 사용되며, 또한 알고리즘의 시간복잡도를 나타낼 때에도 사용하는데요.
+이 notation을 stochastic sequence에 적용한 것이 <span class="math inline">\(O_p\)</span>(Big-Op)와 <span class="math inline">\(o_p\)</span>(Little-Op)입니다.</p>
+<div id="o_p-big-op" class="section level2">
+<h2><span class="math inline">\(O_p\)</span> (Big-Op)</h2>
+<p><span class="math inline">\(O_p\)</span> (Big-Op)는 <em>stochastic boundness</em> 또는 <em>bounded in probability</em>의 의미를 나타내며, 이에 대한 정의는 다음과 같습니다.</p>
+<div class="definition">
+<p><span id="def:unlabeled-div-1" class="definition"><strong>Definition 1  ($O_p$ (Big-Op)) </strong></span><em>For a set of random variable <span class="math inline">\(X_n\)</span> and a corresponding set of constants <span class="math inline">\(a_n\)</span>, <span class="math inline">\(X_n = O_p(a_n)\)</span> if and only if <span class="math inline">\(\forall \epsilon &gt; 0, ~ \exists M, N &gt; 0\)</span> such that
+<span class="math display">\[
+P\left(\left| \frac{X_n}{a_n} \right| &gt; M \right) &lt; \epsilon, ~ \forall n &gt; N.
+\]</span></em></p>
 </div>
-<div id="winsorization" class="section level2">
-<h2>Winsorization</h2>
-<p>Trimming이 특정 quantile 바깥의 값을 제외하는 방법이었다면, <strong>Winsorization</strong>은 이를 제외하지 않고 다른값으로 대체하여 게산하는 방법입니다.</p>
-<p>Winsorization을 할 수 있는 여러 패키지가 있지만 여기서는 <code>DescTools</code>라는 패키지의 <code>Winsorize</code> 함수를 이용해보겠습니다.
-<code>probs</code> 옵션으로 winsorize할 quantile cut-off를 정할 수 있으며, 다음과 같이 1과 100이라는 값이 각각 1.9와 18.1로 대체된 것을 볼 수 있습니다.</p>
-<pre class="r"><code>library(DescTools)
-Winsorize(x, probs = c(0.1, 0.9))</code></pre>
-<pre><code>##  [1]  1.9  2.0  3.0  4.0  5.0  6.0  7.0  8.0  9.0 18.1</code></pre>
-<p>1.9와 18.1이라는 값은 각각 <code>probs</code> 옵션으로 지정해준 quantile 값으로 정해집니다.</p>
-<pre class="r"><code>quantile(x, c(0.1, 0.9))</code></pre>
-<pre><code>##  10%  90% 
-##  1.9 18.1</code></pre>
-<p>그럼 위에서 winsorizing된 데이터의 평균을 계산하면 80% winsorized mean을 계산하는 것이 됩니다.</p>
-<pre class="r"><code>mean( Winsorize(x, probs = c(0.1, 0.9)) )</code></pre>
-<pre><code>## [1] 6.4</code></pre>
+</div>
+<div id="o_p-little-op" class="section level2">
+<h2><span class="math inline">\(o_p\)</span> (Little-Op)</h2>
+<p><span class="math inline">\(o_p\)</span> (Little-Op)는 수리통계학에서 접하게 되는 <em>congergence in probability(확률수렴)</em>을 의미하며, 정의는 다음과 같습니다.</p>
+<div class="definition">
+<p><span id="def:unlabeled-div-2" class="definition"><strong>Definition 2  ($o_p$ (Little-Op)) </strong></span><em>For a set of random variable <span class="math inline">\(X_n\)</span> and a corresponding set of constants <span class="math inline">\(a_n\)</span>, <span class="math inline">\(X_n = o_p(a_n)\)</span> if and only if
+<span class="math display">\[
+\lim_{n \rightarrow \infty} P\left(\left| \frac{X_n}{a_n} \right| \ge \epsilon \right) = 0, ~ \forall \epsilon &gt; 0.
+\]</span></em></p>
+</div>
+<p>다시 말해, <span class="math inline">\(X_n = o_p(a_n)\)</span>의 필요충분조건은 <span class="math inline">\(\frac{X_n}{a_n} \overset{p}{\rightarrow} 0\)</span> 입니다.</p>
+</div>
+<div id="consistency-using-o_p-notation" class="section level2">
+<h2>Consistency using <span class="math inline">\(O_p\)</span> notation</h2>
+<p>보통 논문에서는 어떤 추정량(estimator)의 consistency를 <span class="math inline">\(o_p\)</span>가 아닌 <span class="math inline">\(O_p\)</span>로 나타내기도 하는데, 다음 논문의 예를 통해 왜 그런 방식이 성립하는지 알아보겠습니다.</p>
+<blockquote>
+<p>Kraus, D. (2015). Components and completion of partially observed functional data. <em>Journal of the Royal Statistical Society: Series B: Statistical Methodology</em>, 777-801.</p>
+</blockquote>
+<p>논문의 Proposition 1-(a)를 보면 <span class="math inline">\(\mu\)</span>에 대한 추정량 <span class="math inline">\(\hat\mu\)</span>의 consistency를 다음과 같이 <span class="math inline">\(O_p\)</span> 기호를 사용하여 나타내는데요.
+<span class="math display">\[
+E(\lVert\hat\mu - \mu\rVert^2) = O(n^{-1}) \text{ for } n\rightarrow \infty.
+\]</span></p>
+<p>이는 <span class="math inline">\(O_p\)</span>의 정의를 사용하여 나타내보면 쉽게 이해할 수 있습니다.
+<span class="math display">\[
+\begin{aligned}
+E(\lVert\hat\mu - \mu\rVert^2) = O(n^{-1}) &amp;\Leftrightarrow P\left(\left\lvert \frac{\lVert\hat\mu - \mu\rVert^2}{n^{-1}} \right\rvert &gt; M \right) &lt; \epsilon \\
+&amp;\Leftrightarrow P\left(\left\lvert \lVert\hat\mu - \mu\rVert^2 \right\rvert &gt; \frac{M}{n} \right) &lt; \epsilon
+\end{aligned}
+\]</span>
+여기서 <span class="math inline">\(n\)</span>에 대한 극한을 취하고, <span class="math inline">\(M/n\)</span>을 임의의 작은 실수 <span class="math inline">\(\epsilon^*\)</span>로 대체하게 되면 이는 convergence in probability를 의미하며, 즉 consistency를 나타내게 됩니다.
+다시 말해, <span class="math inline">\(O_p\)</span> 기호로도 consistency를 표현할 수 있는 것이죠.</p>
 <p><br></p>
 </div>
 <div id="reference" class="section level2">
 <h2>Reference</h2>
 <ul>
-<li><a href="https://garstats.wordpress.com/2017/11/28/trimmed-means/" class="uri">https://garstats.wordpress.com/2017/11/28/trimmed-means/</a></li>
-<li><a href="https://en.wikipedia.org/wiki/Winsorizing" class="uri">https://en.wikipedia.org/wiki/Winsorizing</a></li>
+<li><a href="https://bookdown.org/ts_robinson1994/10_fundamental_theorems_for_econometrics/big-op-and-little-op.html" class="uri">https://bookdown.org/ts_robinson1994/10_fundamental_theorems_for_econometrics/big-op-and-little-op.html</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Big_O_in_probability_notation" class="uri">https://en.wikipedia.org/wiki/Big_O_in_probability_notation</a></li>
+<li>Kraus, D. (2015). Components and completion of partially observed functional data. <em>Journal of the Royal Statistical Society: Series B: Statistical Methodology</em>, 777-801.</li>
 </ul>
 </div>
 
@@ -339,11 +351,13 @@ Winsorize(x, probs = c(0.1, 0.9))</code></pre>
                   <div class="post-footer-tags">
                     <span class="text-color-light text-small">TAGGED IN</span><br/>
                     
-  <a class="tag tag--primary tag--small" href="https://statkim.github.io/tags/robust-statistics/">robust statistics</a>
+  <a class="tag tag--primary tag--small" href="https://statkim.github.io/tags/big-o/">big O</a>
 
-  <a class="tag tag--primary tag--small" href="https://statkim.github.io/tags/trimming/">trimming</a>
+  <a class="tag tag--primary tag--small" href="https://statkim.github.io/tags/little-o/">little o</a>
 
-  <a class="tag tag--primary tag--small" href="https://statkim.github.io/tags/winsorization/">winsorization</a>
+  <a class="tag tag--primary tag--small" href="https://statkim.github.io/tags/asymptotic/">asymptotic</a>
+
+  <a class="tag tag--primary tag--small" href="https://statkim.github.io/tags/convergence-rate/">convergence rate</a>
 
                   </div>
                 
@@ -356,7 +370,7 @@ Winsorize(x, probs = c(0.1, 0.9))</code></pre>
           
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--default tooltip--top" href="https://statkim.github.io/2021/08/o_pbig-op%EC%99%80-o_plittle-op/" data-tooltip="$O_p$(Big-Op)와 $o_p$(Little-Op)">
+                <a class="post-action-btn btn btn--disabled">
               
                   <i class="fa fa-angle-left"></i>
                   <span class="hide-xs hide-sm text-small icon-ml">NEXT</span>
@@ -364,7 +378,7 @@ Winsorize(x, probs = c(0.1, 0.9))</code></pre>
             </li>
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--default tooltip--top" href="https://statkim.github.io/2021/04/github-%EC%86%8C%EC%8A%A4%EC%BD%94%EB%93%9C%EB%A5%BC-visual-studio-code-%ED%85%8C%EB%A7%88%EB%A1%9C-%EB%B3%B4%EA%B8%B0/" data-tooltip="GitHub 소스코드를 Visual Studio Code 테마로 보기">
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://statkim.github.io/2021/08/trimming-vs-winsorization/" data-tooltip="Trimming vs Winsorization">
               
                   <span class="hide-xs hide-sm text-small icon-mr">PREVIOUS</span>
                   <i class="fa fa-angle-right"></i>
@@ -382,19 +396,19 @@ Winsorize(x, probs = c(0.1, 0.9))</code></pre>
         </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://statkim.github.io/2021/08/trimming-vs-winsorization/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://statkim.github.io/2021/08/o_pbig-op%EC%99%80-o_plittle-op/">
               <i class="fa fa-facebook-official"></i>
             </a>
           </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://statkim.github.io/2021/08/trimming-vs-winsorization/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://statkim.github.io/2021/08/o_pbig-op%EC%99%80-o_plittle-op/">
               <i class="fa fa-twitter"></i>
             </a>
           </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://statkim.github.io/2021/08/trimming-vs-winsorization/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://statkim.github.io/2021/08/o_pbig-op%EC%99%80-o_plittle-op/">
               <i class="fa fa-google-plus"></i>
             </a>
           </li>
@@ -442,7 +456,7 @@ Winsorize(x, probs = c(0.1, 0.9))</code></pre>
           
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--default tooltip--top" href="https://statkim.github.io/2021/08/o_pbig-op%EC%99%80-o_plittle-op/" data-tooltip="$O_p$(Big-Op)와 $o_p$(Little-Op)">
+                <a class="post-action-btn btn btn--disabled">
               
                   <i class="fa fa-angle-left"></i>
                   <span class="hide-xs hide-sm text-small icon-ml">NEXT</span>
@@ -450,7 +464,7 @@ Winsorize(x, probs = c(0.1, 0.9))</code></pre>
             </li>
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--default tooltip--top" href="https://statkim.github.io/2021/04/github-%EC%86%8C%EC%8A%A4%EC%BD%94%EB%93%9C%EB%A5%BC-visual-studio-code-%ED%85%8C%EB%A7%88%EB%A1%9C-%EB%B3%B4%EA%B8%B0/" data-tooltip="GitHub 소스코드를 Visual Studio Code 테마로 보기">
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://statkim.github.io/2021/08/trimming-vs-winsorization/" data-tooltip="Trimming vs Winsorization">
               
                   <span class="hide-xs hide-sm text-small icon-mr">PREVIOUS</span>
                   <i class="fa fa-angle-right"></i>
@@ -468,19 +482,19 @@ Winsorize(x, probs = c(0.1, 0.9))</code></pre>
         </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://statkim.github.io/2021/08/trimming-vs-winsorization/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://statkim.github.io/2021/08/o_pbig-op%EC%99%80-o_plittle-op/">
               <i class="fa fa-facebook-official"></i>
             </a>
           </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://statkim.github.io/2021/08/trimming-vs-winsorization/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://statkim.github.io/2021/08/o_pbig-op%EC%99%80-o_plittle-op/">
               <i class="fa fa-twitter"></i>
             </a>
           </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://statkim.github.io/2021/08/trimming-vs-winsorization/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://statkim.github.io/2021/08/o_pbig-op%EC%99%80-o_plittle-op/">
               <i class="fa fa-google-plus"></i>
             </a>
           </li>
@@ -510,19 +524,19 @@ Winsorize(x, probs = c(0.1, 0.9))</code></pre>
   <ul class="share-options">
     
       <li class="share-option">
-        <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fstatkim.github.io%2F2021%2F08%2Ftrimming-vs-winsorization%2F">
+        <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fstatkim.github.io%2F2021%2F08%2Fo_pbig-op%25EC%2599%2580-o_plittle-op%2F">
           <i class="fa fa-facebook-official"></i><span>Share on Facebook</span>
         </a>
       </li>
     
       <li class="share-option">
-        <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=https%3A%2F%2Fstatkim.github.io%2F2021%2F08%2Ftrimming-vs-winsorization%2F">
+        <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=https%3A%2F%2Fstatkim.github.io%2F2021%2F08%2Fo_pbig-op%25EC%2599%2580-o_plittle-op%2F">
           <i class="fa fa-twitter"></i><span>Share on Twitter</span>
         </a>
       </li>
     
       <li class="share-option">
-        <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=https%3A%2F%2Fstatkim.github.io%2F2021%2F08%2Ftrimming-vs-winsorization%2F">
+        <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=https%3A%2F%2Fstatkim.github.io%2F2021%2F08%2Fo_pbig-op%25EC%2599%2580-o_plittle-op%2F">
           <i class="fa fa-google-plus"></i><span>Share on Google&#43;</span>
         </a>
       </li>
@@ -614,9 +628,9 @@ $(document).ready(function() {
     
       <script>
         var disqus_config = function () {
-          this.page.url = 'https:\/\/statkim.github.io\/2021\/08\/trimming-vs-winsorization\/';
+          this.page.url = 'https:\/\/statkim.github.io\/2021\/08\/o_pbig-op%EC%99%80-o_plittle-op\/';
           
-            this.page.identifier = '\/2021\/08\/trimming-vs-winsorization\/'
+            this.page.identifier = '\/2021\/08\/o_pbig-op%EC%99%80-o_plittle-op\/'
           
         };
         (function() {
