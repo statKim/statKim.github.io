@@ -29,7 +29,7 @@ $$*
 
 
 ## $o_p$ (Little-Op)
-$o_p$ (Little-Op)는 수리통계학에서 접하게 되는 *congergence in probability(확률수렴)*을 의미하며, 정의는 다음과 같습니다.
+$o_p$ (Little-Op)는 수리통계학에서 접하게 되는 *convergence in probability(확률수렴)*을 의미하며, 정의는 다음과 같습니다.
 
 ::: {.definition name="$o_p$ (Little-Op)"}
 *For a set of random variable $X_n$ and a corresponding set of constants $a_n$, $X_n = o_p(a_n)$ if and only if
