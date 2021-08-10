@@ -45,21 +45,21 @@ $$*
 ## Consistency using $O_p$ notation
 보통 논문에서는 어떤 추정량(estimator)의 consistency를 $o_p$가 아닌 $O_p$로 나타내기도 하는데, 다음 논문의 예를 통해 왜 그런 방식이 성립하는지 알아보겠습니다.
 
-> Kraus, D. (2015). Components and completion of partially observed functional data. *Journal of the Royal Statistical Society: Series B: Statistical Methodology*, 777-801.
+> Yao, F., Müller, H. G., & Wang, J. L. (2005). Functional data analysis for sparse longitudinal data. *Journal of the American statistical association*, 100(470), 577-590.
 
-논문의 Proposition 1-(a)를 보면 $\mu$에 대한 추정량 $\hat\mu$의 consistency를 다음과 같이 $O_p$ 기호를 사용하여 나타내는데요.
+논문의 Theorem 2 - equation (15)에는 $k$th eigenvalue $\lambda_k$에 대한 추정량 $\hat\lambda_k$의 consistency를 다음과 같이 $O_p$ 기호를 사용하여 나타내는데요.
 $$
-E(\lVert\hat\mu - \mu\rVert^2) = O(n^{-1}) \text{ for } n\rightarrow \infty.
+|\hat\lambda_k - \lambda_k| = O_p\left( \frac{1}{\sqrt{n}h^2_G} \right)
 $$
 
 이는 $O_p$의 정의를 사용하여 나타내보면 쉽게 이해할 수 있습니다.
 $$
 \begin{aligned}
-E(\lVert\hat\mu - \mu\rVert^2) = O(n^{-1}) &\Leftrightarrow P\left(\left\lvert \frac{\lVert\hat\mu - \mu\rVert^2}{n^{-1}} \right\rvert > M \right) < \epsilon \\
-&\Leftrightarrow P\left(\left\lvert \lVert\hat\mu - \mu\rVert^2 \right\rvert > \frac{M}{n} \right) < \epsilon
+|\hat\lambda_k - \lambda_k| = O_p\left( \frac{1}{\sqrt{n}h^2_G} \right) &\Leftrightarrow P\left(\left\lvert \frac{|\hat\lambda_k - \lambda_k|}{1/\sqrt{n}h^2_G} \right\rvert > M \right) < \epsilon \\
+&\Leftrightarrow P\left(|\hat\lambda_k - \lambda_k| > \frac{M}{\sqrt{n}h^2_G} \right) < \epsilon
 \end{aligned}
 $$
-여기서 $n$에 대한 극한을 취하고, $M/n$을 임의의 작은 실수 $\epsilon^*$로 대체하게 되면 이는 convergence in probability를 의미하며, 즉 consistency를 나타내게 됩니다.
+여기서 $h_G < \infty$인 상수이기 때문에 $n$에 대한 극한을 취하고, $M/\sqrt{n}h^2_G$을 임의의 작은 실수 $\epsilon^*$로 대체하게 되면 이는 convergence in probability의 정의를 만족하며, $\hat\lambda_k$아 $\lambda_k$의 consistent estimator임을 의미하게 됩니다.
 다시 말해, $O_p$ 기호로도 consistency를 표현할 수 있는 것이죠.
 
 <br>
@@ -67,4 +67,4 @@ $$
 ## Reference
 - <https://bookdown.org/ts_robinson1994/10_fundamental_theorems_for_econometrics/big-op-and-little-op.html>
 - <https://en.wikipedia.org/wiki/Big_O_in_probability_notation>
-- Kraus, D. (2015). Components and completion of partially observed functional data. *Journal of the Royal Statistical Society: Series B: Statistical Methodology*, 777-801.
+- Yao, F., Müller, H. G., & Wang, J. L. (2005). Functional data analysis for sparse longitudinal data. *Journal of the American statistical association*, 100(470), 577-590.

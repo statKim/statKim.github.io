@@ -43,20 +43,20 @@ P\left(\left| \frac{X_n}{a_n} \right| &gt; M \right) &lt; \epsilon, ~ \forall n 
 <h2>Consistency using <span class="math inline">\(O_p\)</span> notation</h2>
 <p>보통 논문에서는 어떤 추정량(estimator)의 consistency를 <span class="math inline">\(o_p\)</span>가 아닌 <span class="math inline">\(O_p\)</span>로 나타내기도 하는데, 다음 논문의 예를 통해 왜 그런 방식이 성립하는지 알아보겠습니다.</p>
 <blockquote>
-<p>Kraus, D. (2015). Components and completion of partially observed functional data. <em>Journal of the Royal Statistical Society: Series B: Statistical Methodology</em>, 777-801.</p>
+<p>Yao, F., Müller, H. G., &amp; Wang, J. L. (2005). Functional data analysis for sparse longitudinal data. <em>Journal of the American statistical association</em>, 100(470), 577-590.</p>
 </blockquote>
-<p>논문의 Proposition 1-(a)를 보면 <span class="math inline">\(\mu\)</span>에 대한 추정량 <span class="math inline">\(\hat\mu\)</span>의 consistency를 다음과 같이 <span class="math inline">\(O_p\)</span> 기호를 사용하여 나타내는데요.
+<p>논문의 Theorem 2 - equation (15)에는 <span class="math inline">\(k\)</span>th eigenvalue <span class="math inline">\(\lambda_k\)</span>에 대한 추정량 <span class="math inline">\(\hat\lambda_k\)</span>의 consistency를 다음과 같이 <span class="math inline">\(O_p\)</span> 기호를 사용하여 나타내는데요.
 <span class="math display">\[
-E(\lVert\hat\mu - \mu\rVert^2) = O(n^{-1}) \text{ for } n\rightarrow \infty.
+|\hat\lambda_k - \lambda_k| = O_p\left( \frac{1}{\sqrt{n}h^2_G} \right)
 \]</span></p>
 <p>이는 <span class="math inline">\(O_p\)</span>의 정의를 사용하여 나타내보면 쉽게 이해할 수 있습니다.
 <span class="math display">\[
 \begin{aligned}
-E(\lVert\hat\mu - \mu\rVert^2) = O(n^{-1}) &amp;\Leftrightarrow P\left(\left\lvert \frac{\lVert\hat\mu - \mu\rVert^2}{n^{-1}} \right\rvert &gt; M \right) &lt; \epsilon \\
-&amp;\Leftrightarrow P\left(\left\lvert \lVert\hat\mu - \mu\rVert^2 \right\rvert &gt; \frac{M}{n} \right) &lt; \epsilon
+|\hat\lambda_k - \lambda_k| = O_p\left( \frac{1}{\sqrt{n}h^2_G} \right) &amp;\Leftrightarrow P\left(\left\lvert \frac{|\hat\lambda_k - \lambda_k|}{1/\sqrt{n}h^2_G} \right\rvert &gt; M \right) &lt; \epsilon \\
+&amp;\Leftrightarrow P\left(|\hat\lambda_k - \lambda_k| &gt; \frac{M}{\sqrt{n}h^2_G} \right) &lt; \epsilon
 \end{aligned}
 \]</span>
-여기서 <span class="math inline">\(n\)</span>에 대한 극한을 취하고, <span class="math inline">\(M/n\)</span>을 임의의 작은 실수 <span class="math inline">\(\epsilon^*\)</span>로 대체하게 되면 이는 convergence in probability를 의미하며, 즉 consistency를 나타내게 됩니다.
+여기서 <span class="math inline">\(h_G &lt; \infty\)</span>인 상수이기 때문에 <span class="math inline">\(n\)</span>에 대한 극한을 취하고, <span class="math inline">\(M/\sqrt{n}h^2_G\)</span>을 임의의 작은 실수 <span class="math inline">\(\epsilon^*\)</span>로 대체하게 되면 이는 convergence in probability의 정의를 만족하며, <span class="math inline">\(\hat\lambda_k\)</span>아 <span class="math inline">\(\lambda_k\)</span>의 consistent estimator임을 의미하게 됩니다.
 다시 말해, <span class="math inline">\(O_p\)</span> 기호로도 consistency를 표현할 수 있는 것이죠.</p>
 <p><br></p>
 </div>
@@ -65,6 +65,6 @@ E(\lVert\hat\mu - \mu\rVert^2) = O(n^{-1}) &amp;\Leftrightarrow P\left(\left\lve
 <ul>
 <li><a href="https://bookdown.org/ts_robinson1994/10_fundamental_theorems_for_econometrics/big-op-and-little-op.html" class="uri">https://bookdown.org/ts_robinson1994/10_fundamental_theorems_for_econometrics/big-op-and-little-op.html</a></li>
 <li><a href="https://en.wikipedia.org/wiki/Big_O_in_probability_notation" class="uri">https://en.wikipedia.org/wiki/Big_O_in_probability_notation</a></li>
-<li>Kraus, D. (2015). Components and completion of partially observed functional data. <em>Journal of the Royal Statistical Society: Series B: Statistical Methodology</em>, 777-801.</li>
+<li>Yao, F., Müller, H. G., &amp; Wang, J. L. (2005). Functional data analysis for sparse longitudinal data. <em>Journal of the American statistical association</em>, 100(470), 577-590.</li>
 </ul>
 </div>
