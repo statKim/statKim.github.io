@@ -38,5 +38,4 @@ date: "`r Sys.Date()`"
 
 
 ## Curriculum Vitae
-
-<iframe src="https://nbviewer.jupyter.org/github/statKim/CV_KHS/blob/master/CV.pdf" width="900" height="600" style="border: none;"></iframe>
+<iframe src="https://drive.google.com/file/d/1BE4L3BCqZO3jVBTvnYbm5e6JOdG_awd5/preview" width="900" height="600" style="border: none;"></iframe>

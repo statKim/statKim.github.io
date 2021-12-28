@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="generator" content="Hugo 0.83.1 with theme Tranquilpeak 0.4.8-BETA">
+<meta name="generator" content="Hugo 0.89.4 with theme Tranquilpeak 0.4.8-BETA">
 <meta name="author" content="김현성">
 <meta name="keywords" content="">
 <meta name="description" content="2. Tools for exploring functional data 2.1 Introduction FDA의 notation과 concept 정의 FDA에서 사용하는 statistics 정의 Matrix decompositions, projections, and the constrained maximization of quadratic forms에 대한 자세한 내용은 Appendix 참고 2.2 Some notation 2.2.1 Scalars, vectors, functions and">
@@ -181,7 +181,7 @@ if (!doNotTrack) {
 
   <li class="sidebar-button">
     
-      <a class="sidebar-button-link " href="https://statkim.github.io/#about">
+      <a class="sidebar-button-link " href="https://statkim.github.io/hyunsungkim">
     
       <i class="sidebar-button-icon fa fa-lg fa-question"></i>
       
@@ -292,10 +292,10 @@ if (!doNotTrack) {
 <h2 id="22-some-notation">2.2 Some notation</h2>
 <h3 id="221-scalars-vectors-functions-and-matrices">2.2.1 Scalars, vectors, functions and matrices</h3>
 <ul>
-<li>$x$ : a vector<br>
+<li>$x$ : a vector <br>
 $\Rightarrow x_i$ : scalar (the elements of vector $x$)</li>
-<li>$x$ : a function<br>
-$\Rightarrow x(t)$ : scalar (the values of function $x$)<br>
+<li>$x$ : a function <br>
+$\Rightarrow x(t)$ : scalar (the values of function $x$) <br>
 $\Rightarrow x(\mathbf{t})$ : vector $\mathbf{t}$에 대한 function value ($p$-dim function)</li>
 <li>If $x_i$ or $x(t)$ is a vector, we use $\mathbf{x}_i$ or $\mathbf{x}(t)$</li>
 <li>Standard notation을 요약하여 사용
@@ -312,7 +312,7 @@ $\Rightarrow x(\mathbf{t})$ : vector $\mathbf{t}$에 대한 function value ($p$-
 <ul>
 <li>$D$ : operator (함수 $x$를 함수 $Dx$로 변환하는 operator)</li>
 <li>$D^m x$ : the derivative of order m of a function $x$ ($\frac{d^mx}{dt^m}$와 동일)</li>
-<li>$D^0 x$ : $x$<br>
+<li>$D^0 x$ : $x$ <br>
 $s.t. \ D^{1}D^{-1}x=D^0x=x$,<br>
 when $D^{-1}x$가 $x$의 부정적분(indefinite integral)</li>
 <li>$\int x$ : $\int_{a}^{b} x(t)dt$ ($t$의 적분 범위가 clear할 때)</li>
@@ -468,7 +468,7 @@ ex) $D$ : $x \rightarrow Dx$</p>
 <li>
 <p>Find the weight function $\xi_1(s)$ for</p>
 <p>$$ f_i = \int \xi_1(s) x_i(s) ds $$</p>
-<p>s.t. maximize $ \frac{1}{N}\sum_i f_{i1}^2 = \frac{1}{N}\sum_i (\int \xi_1 x_i)^2 $<br>
+<p>s.t. maximize $ \frac{1}{N}\sum_i f_{i1}^2 = \frac{1}{N}\sum_i (\int \xi_1 x_i)^2 $ <br>
 subject to $ \lVert \xi_1 \rVert^2 =\int \xi_1(s)^2ds = \int \xi_1^2 = 1 $</p>
 </li>
 <li>
@@ -526,7 +526,7 @@ subject to $ \lVert \xi_1 \rVert^2 =\int \xi_1(s)^2ds = \int \xi_1^2 = 1 $</p>
 <li>
 <p>Substitute variance-covariance matrix</p>
 <p>$$ \max_{\boldsymbol{\xi^{'}\xi}=1} \boldsymbol{\xi^{'}V\xi} $$</p>
-<p>where $\mathbf{V} = N^{-1}\mathbf{X^{'}X} $ is a $p \times p$ sample var-cov matrix<br>
+<p>where $\mathbf{V} = N^{-1}\mathbf{X^{'}X} $ is a $p \times p$ sample var-cov matrix <br>
 $\Rightarrow$ We can solve maximization problem using eigen decomposition!</p>
 </li>
 <li>
@@ -538,11 +538,11 @@ $\Rightarrow$ We can solve maximization problem using eigen decomposition!</p>
 <p>위 식을 풀면 $ (\rho_j,\boldsymbol{\xi}_j) $ pairs가 생기고, 각 $\boldsymbol{\xi}_j$는 orthogonal하다.</p>
 </li>
 <li>
-<p>$\mathbf{V}$ has $\min{p,N-1}$ nonzero eigen values $\rho_j$<br>
+<p>$\mathbf{V}$ has $\min{p,N-1}$ nonzero eigen values $\rho_j$ <br>
 $(\because \max(rank(\mathbf{X}))=N-1)$</p>
 </li>
 <li>
-<p>$ \boldsymbol \xi_j $ satisfied maximization problem and the orthogonal constraints ($ \xi_j \perp (\xi_1, \cdots, \xi_{j-1}) $) for $\forall j$<br>
+<p>$ \boldsymbol \xi_j $ satisfied maximization problem and the orthogonal constraints ($ \xi_j \perp (\xi_1, \cdots, \xi_{j-1}) $) for $\forall j$ <br>
 $\Rightarrow$ $\boldsymbol{\xi}$ is a solution of PCA</p>
 </li>
 </ul>
@@ -571,7 +571,7 @@ $\Rightarrow$ $\boldsymbol{\xi}$ is a solution of PCA</p>
 <li>$\max${# of different eigen pairs}가 다르다
 <ul>
 <li>multivariate : # of variables = $p$</li>
-<li>functional : # of functions = $\infty$ ($\because$ smoothed)<br>
+<li>functional : # of functions = $\infty$ ($\because$ smoothed) <br>
 but if $x_i$ are linearly independent, $rank(V)=N-1$ and only $N-1$ nonzero eigen values exist.</li>
 </ul>
 </li>

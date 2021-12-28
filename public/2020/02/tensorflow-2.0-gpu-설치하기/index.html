@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="generator" content="Hugo 0.83.1 with theme Tranquilpeak 0.4.8-BETA">
+<meta name="generator" content="Hugo 0.89.4 with theme Tranquilpeak 0.4.8-BETA">
 <meta name="author" content="김현성">
 <meta name="keywords" content="">
 <meta name="description" content="0. 컴퓨터 사양 확인 설치 전, 자신의 컴퓨터의 운영체제, GPU를 먼저 확인 제 컴퓨터 사양 운영체제 : Windows 10 GPU : Quadro P600 1. NVIDIA driver 설치 NVIDIA driver Download : https://www.nvidia.co.kr/Download/index.aspx?lang=kr 자신의 GPU에 맞는 드라">
@@ -181,7 +181,7 @@ if (!doNotTrack) {
 
   <li class="sidebar-button">
     
-      <a class="sidebar-button-link " href="https://statkim.github.io/#about">
+      <a class="sidebar-button-link " href="https://statkim.github.io/hyunsungkim">
     
       <i class="sidebar-button-icon fa fa-lg fa-question"></i>
       
@@ -327,15 +327,15 @@ if (!doNotTrack) {
 </li>
 <li>
 <p>가상환경 생성</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cmd" data-lang="cmd">conda create --name tf-gpu python=3.7
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cmd" data-lang="cmd">conda create --name tf-gpu python=3.7
 </code></pre></div></li>
 <li>
 <p>가상환경 활성화</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cmd" data-lang="cmd">activate tf-gpu
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cmd" data-lang="cmd">activate tf-gpu
 </code></pre></div></li>
 <li>
 <p>jupyter kernel 생성</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cmd" data-lang="cmd">conda install ipykernel
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cmd" data-lang="cmd">conda install ipykernel
 python -m ipykernel install --user --name tf-gpu --display-name tf-gpu
 </code></pre></div></li>
 </ul>
@@ -344,13 +344,13 @@ python -m ipykernel install --user --name tf-gpu --display-name tf-gpu
 <ul>
 <li><strong>가상환경 활성화</strong>된 상태에서 tensorflow 2.0 gpu 버전 설치</li>
 </ul>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cmd" data-lang="cmd">conda install tensorflow-gpu==2.0.0
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cmd" data-lang="cmd">conda install tensorflow-gpu==2.0.0
 </code></pre></div><!-- raw HTML omitted -->
 <h2 id="6-설치-확인">6. 설치 확인</h2>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> tensorflow <span style="color:#f92672">as</span> tf 
-<span style="color:#66d9ef">print</span>(tf<span style="color:#f92672">.</span>__version__) 
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> tensorflow <span style="color:#66d9ef">as</span> tf 
+print(tf<span style="color:#f92672">.</span>__version__) 
 tf<span style="color:#f92672">.</span>test<span style="color:#f92672">.</span>is_gpu_available()
-</code></pre></div><pre><code>2.0.0
+</code></pre></div><pre tabindex="0"><code>2.0.0
 True
 </code></pre><!-- raw HTML omitted -->
 <h2 id="reference">Reference</h2>

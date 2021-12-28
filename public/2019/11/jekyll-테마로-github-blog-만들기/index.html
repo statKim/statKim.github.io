@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="generator" content="Hugo 0.83.1 with theme Tranquilpeak 0.4.8-BETA">
+<meta name="generator" content="Hugo 0.89.4 with theme Tranquilpeak 0.4.8-BETA">
 <meta name="author" content="김현성">
 <meta name="keywords" content="">
 <meta name="description" content="1. Ruby 설치 RubyInstaller for Windows에서 Ruby&#43;Devkit 설치 프로그램 다운 및 설치 Ruby의 경우 최신버전보다는 이하 버전 사용을 권장 최신 버전의 경우 jekyll 인스톨시 호환성 문제가 있다">
@@ -183,7 +183,7 @@ if (!doNotTrack) {
 
   <li class="sidebar-button">
     
-      <a class="sidebar-button-link " href="https://statkim.github.io/#about">
+      <a class="sidebar-button-link " href="https://statkim.github.io/hyunsungkim">
     
       <i class="sidebar-button-icon fa fa-lg fa-question"></i>
       
@@ -302,24 +302,24 @@ if (!doNotTrack) {
 <ul>
 <li>Terminal에서 Ruby 설치 확인</li>
 </ul>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cmd" data-lang="cmd">ruby --version
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cmd" data-lang="cmd">ruby --version
 </code></pre></div><!-- raw HTML omitted -->
 <h3 id="2-jekyll-설치">2. Jekyll 설치</h3>
 <ul>
 <li>Terminal에서 <code>jekyll</code>과 <code>bundler</code> 설치</li>
 </ul>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cmd" data-lang="cmd">gem install jekyll
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cmd" data-lang="cmd">gem install jekyll
 gem install bundler
 jekyll -v   # jekyll 설치되었는지 확인
 </code></pre></div><!-- raw HTML omitted -->
 <h3 id="3-sample-blog-생성">3. Sample Blog 생성</h3>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cmd" data-lang="cmd">jekyll new my_blog        # sample 블로그 생성
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cmd" data-lang="cmd">jekyll new my_blog        # sample 블로그 생성
 <span style="color:#66d9ef">cd</span> my_blog                # 블로그 폴더로 이동
 bundle exec jekyll serve  # 블로그 호스팅
 </code></pre></div><ul>
 <li>만약, encoding 에러 발생시, 아래 명령어 실행 후 다시 실행</li>
 </ul>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cmd" data-lang="cmd">chcp 65001
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cmd" data-lang="cmd">chcp 65001
 bundle exec jekyll serve
 </code></pre></div><ul>
 <li><a href="http://127.0.0.1:4000/">http://127.0.0.1:4000/</a>에 접속해서 생성된 블로그 확인!</li>
@@ -338,7 +338,7 @@ bundle exec jekyll serve
 <p>다음 명령어로 생성된 repo에 push</p>
 </li>
 </ul>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git init
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git init
 git add .
 git commit -m <span style="color:#e6db74">&#34;Github 블로그&#34;</span>
 git remote add origin https://github.com/github계정/github계정.github.io
