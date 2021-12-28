@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="generator" content="Hugo 0.83.1 with theme Tranquilpeak 0.4.8-BETA">
+<meta name="generator" content="Hugo 0.89.4 with theme Tranquilpeak 0.4.8-BETA">
 <meta name="author" content="김현성">
 <meta name="keywords" content="">
 <meta name="description" content="가상환경을 사용하는 이유 여러 사람과 협업 또는 만들어 놓은 코드를 분석할 때 각 프로젝트마다 파이썬, 라이브러리 버전이 다름 이로 인해 기존 로컬에 영향이 가지 않는 별">
@@ -183,7 +183,7 @@ if (!doNotTrack) {
 
   <li class="sidebar-button">
     
-      <a class="sidebar-button-link " href="https://statkim.github.io/#about">
+      <a class="sidebar-button-link " href="https://statkim.github.io/hyunsungkim">
     
       <i class="sidebar-button-icon fa fa-lg fa-question"></i>
       
@@ -293,7 +293,7 @@ if (!doNotTrack) {
 <ul>
 <li>
 <h5 id="가상환경-생성">가상환경 생성</h5>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cmd" data-lang="cmd"># 아나콘다 버전 확인
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cmd" data-lang="cmd"># 아나콘다 버전 확인
 conda --version
 
 # 아나콘다 업데이트
@@ -306,7 +306,7 @@ conda create --name test python=3.6.4
 </code></pre></div></li>
 <li>
 <h5 id="가상환경-활성화-및-비활성화">가상환경 활성화 및 비활성화</h5>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cmd" data-lang="cmd"># 설치된 가상환경 리스트 확인
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cmd" data-lang="cmd"># 설치된 가상환경 리스트 확인
 conda info --envs
 
 # 가상환경 활성화
@@ -317,7 +317,7 @@ deactivate
 </code></pre></div></li>
 <li>
 <h5 id="가상환경-패키지-설치-및-확인-가상환경-activate된-상태에서-실행">가상환경 패키지 설치 및 확인 (가상환경 activate된 상태에서 실행)</h5>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cmd" data-lang="cmd"># 가상환경에 설치된 package 확인
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cmd" data-lang="cmd"># 가상환경에 설치된 package 확인
 pip list
 # or
 conda list
@@ -336,7 +336,7 @@ conda install --file requirements.txt
 </code></pre></div></li>
 <li>
 <h5 id="가상환경-삭제-root-계정으로-activate-후-삭제하는-것을-추천">가상환경 삭제 (root 계정으로 activate 후 삭제하는 것을 추천)</h5>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cmd" data-lang="cmd"># 가상환경 삭제
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cmd" data-lang="cmd"># 가상환경 삭제
 conda remove --name 가상환경이름 --all
 # 예)
 conda remove --name test --all
@@ -350,14 +350,14 @@ conda info --envs
 <ul>
 <li>
 <h5 id="virtualenv-설치">virtualenv 설치</h5>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cmd" data-lang="cmd">pip install virtualenv	
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cmd" data-lang="cmd">pip install virtualenv	
 </code></pre></div></li>
 <li>
 <h5 id="가상환경-만들기">가상환경 만들기</h5>
 <ul>
 <li>현재 경로에 가상환경 폴더 생성됨</li>
 </ul>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cmd" data-lang="cmd"># 가상환경 폴더 생성할 경로로 이동
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cmd" data-lang="cmd"># 가상환경 폴더 생성할 경로로 이동
 <span style="color:#66d9ef">cd</span> 경로
 
 # 가상환경 생성
@@ -365,7 +365,7 @@ virtualenv 가상환경이름
 </code></pre></div></li>
 <li>
 <h5 id="가상환경-활성화-및-패키지--설치">가상환경 활성화 및 패키지  설치</h5>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cmd" data-lang="cmd"># 가상환경 활성화
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cmd" data-lang="cmd"># 가상환경 활성화
 <span style="color:#66d9ef">call</span> 경로/Script/activate
 # 활성화되면 terminal 왼쪽에 (가상환경이름)이 생긴다!!
 
@@ -385,7 +385,7 @@ deactivate
 <ul>
 <li>가상환경 폴더를 삭제하면 됨!!!</li>
 </ul>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cmd" data-lang="cmd">rm -rf 경로/가상환경이름 (리눅스)
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cmd" data-lang="cmd">rm -rf 경로/가상환경이름 (리눅스)
 <span style="color:#66d9ef">rmdir</span> /s 경로/가상환경이름 (cmd - /s:하위 모든 파일 삭제)
 </code></pre></div></li>
 </ul>
@@ -397,7 +397,7 @@ deactivate
 <ul>
 <li>
 <p>kernel 생성 경로 : <code>C:\Users\window계정명\AppData\Roaming\jupyter\kernels</code></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cmd" data-lang="cmd"># 가상환경 활성화
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cmd" data-lang="cmd"># 가상환경 활성화
 activate &lt;가상환경이름&gt;
 
 # 가상환경에 ipykernel을 설치!!
@@ -410,7 +410,7 @@ python -m ipykernel install --user --name 가상환경이름 --display-name <spa
 </li>
 <li>
 <h5 id="jupyter에-추가된-kernel-삭제하기">jupyter에 추가된 kernel 삭제하기</h5>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cmd" data-lang="cmd"># 가상환경을 파이썬3로 만들기(만약 현재 파이썬 버전이 2.xx일 떄)
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cmd" data-lang="cmd"># 가상환경을 파이썬3로 만들기(만약 현재 파이썬 버전이 2.xx일 떄)
 virtualenv -p python3 &lt;가상환경이름&gt;
 
 # 현재 가지고 있는 kernel 종류

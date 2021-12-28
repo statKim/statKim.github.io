@@ -5,21 +5,21 @@
     <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="generator" content="Hugo 0.83.1 with theme Tranquilpeak 0.4.8-BETA">
+<meta name="generator" content="Hugo 0.89.4 with theme Tranquilpeak 0.4.8-BETA">
 <meta name="author" content="김현성">
 <meta name="keywords" content="">
-<meta name="description" content="1. Row-wise cross-validation $$ \begin{aligned} CV(k) &amp;= \sum_{i=1}^N \lvert \lvert \mathbf{x}_i - \boldsymbol{\xi} \boldsymbol{f}_i^T \lvert\vert^2 \ &amp;= \sum_{i=1}^N \lvert \lvert \mathbf{x}_i - \boldsymbol{\xi} (\mathbf{x}_i^T\boldsymbol{\xi})^T \lvert\vert^2 \end{aligned} $$ where $\boldsymbol\xi$ is a PC function(PC loading) with $k$ eigenvectors and $\boldsymbol{f}_i$ is $i$th PC score with $k$ components. $\mathbf{x}_i$를 predict하는">
+<meta name="description" content="1. Row-wise cross-validation $$ \begin{aligned} CV(k) &amp;= \sum_{i=1}^N \lvert \lvert \mathbf{x}_i - \boldsymbol{\xi} \boldsymbol{f}i^T \lvert\vert^2 \ &amp;= \sum{i=1}^N \lvert \lvert \mathbf{x}_i - \boldsymbol{\xi} (\mathbf{x}_i^T\boldsymbol{\xi})^T \lvert\vert^2 \end{aligned} $$ where $\boldsymbol\xi$ is a PC function(PC loading) with $k$ eigenvectors and $\boldsymbol{f}_i$ is $i$th PC score with $k$ components. $\mathbf{x}_i$를 predict하는">
 
 
-<meta property="og:description" content="1. Row-wise cross-validation $$ \begin{aligned} CV(k) &amp;= \sum_{i=1}^N \lvert \lvert \mathbf{x}_i - \boldsymbol{\xi} \boldsymbol{f}_i^T \lvert\vert^2 \ &amp;= \sum_{i=1}^N \lvert \lvert \mathbf{x}_i - \boldsymbol{\xi} (\mathbf{x}_i^T\boldsymbol{\xi})^T \lvert\vert^2 \end{aligned} $$ where $\boldsymbol\xi$ is a PC function(PC loading) with $k$ eigenvectors and $\boldsymbol{f}_i$ is $i$th PC score with $k$ components. $\mathbf{x}_i$를 predict하는">
+<meta property="og:description" content="1. Row-wise cross-validation $$ \begin{aligned} CV(k) &amp;= \sum_{i=1}^N \lvert \lvert \mathbf{x}_i - \boldsymbol{\xi} \boldsymbol{f}i^T \lvert\vert^2 \ &amp;= \sum{i=1}^N \lvert \lvert \mathbf{x}_i - \boldsymbol{\xi} (\mathbf{x}_i^T\boldsymbol{\xi})^T \lvert\vert^2 \end{aligned} $$ where $\boldsymbol\xi$ is a PC function(PC loading) with $k$ eigenvectors and $\boldsymbol{f}_i$ is $i$th PC score with $k$ components. $\mathbf{x}_i$를 predict하는">
 <meta property="og:type" content="article">
 <meta property="og:title" content="PCA에서 최적 PC 개수를 정하기 위한 Cross-validation 방법">
 <meta name="twitter:title" content="PCA에서 최적 PC 개수를 정하기 위한 Cross-validation 방법">
 <meta property="og:url" content="https://statkim.github.io/2019/12/pca%EC%97%90%EC%84%9C-%EC%B5%9C%EC%A0%81-pc-%EA%B0%9C%EC%88%98%EB%A5%BC-%EC%A0%95%ED%95%98%EA%B8%B0-%EC%9C%84%ED%95%9C-cross-validation-%EB%B0%A9%EB%B2%95/">
 <meta property="twitter:url" content="https://statkim.github.io/2019/12/pca%EC%97%90%EC%84%9C-%EC%B5%9C%EC%A0%81-pc-%EA%B0%9C%EC%88%98%EB%A5%BC-%EC%A0%95%ED%95%98%EA%B8%B0-%EC%9C%84%ED%95%9C-cross-validation-%EB%B0%A9%EB%B2%95/">
 <meta property="og:site_name" content="statKim">
-<meta property="og:description" content="1. Row-wise cross-validation $$ \begin{aligned} CV(k) &amp;= \sum_{i=1}^N \lvert \lvert \mathbf{x}_i - \boldsymbol{\xi} \boldsymbol{f}_i^T \lvert\vert^2 \ &amp;= \sum_{i=1}^N \lvert \lvert \mathbf{x}_i - \boldsymbol{\xi} (\mathbf{x}_i^T\boldsymbol{\xi})^T \lvert\vert^2 \end{aligned} $$ where $\boldsymbol\xi$ is a PC function(PC loading) with $k$ eigenvectors and $\boldsymbol{f}_i$ is $i$th PC score with $k$ components. $\mathbf{x}_i$를 predict하는">
-<meta name="twitter:description" content="1. Row-wise cross-validation $$ \begin{aligned} CV(k) &amp;= \sum_{i=1}^N \lvert \lvert \mathbf{x}_i - \boldsymbol{\xi} \boldsymbol{f}_i^T \lvert\vert^2 \ &amp;= \sum_{i=1}^N \lvert \lvert \mathbf{x}_i - \boldsymbol{\xi} (\mathbf{x}_i^T\boldsymbol{\xi})^T \lvert\vert^2 \end{aligned} $$ where $\boldsymbol\xi$ is a PC function(PC loading) with $k$ eigenvectors and $\boldsymbol{f}_i$ is $i$th PC score with $k$ components. $\mathbf{x}_i$를 predict하는">
+<meta property="og:description" content="1. Row-wise cross-validation $$ \begin{aligned} CV(k) &amp;= \sum_{i=1}^N \lvert \lvert \mathbf{x}_i - \boldsymbol{\xi} \boldsymbol{f}i^T \lvert\vert^2 \ &amp;= \sum{i=1}^N \lvert \lvert \mathbf{x}_i - \boldsymbol{\xi} (\mathbf{x}_i^T\boldsymbol{\xi})^T \lvert\vert^2 \end{aligned} $$ where $\boldsymbol\xi$ is a PC function(PC loading) with $k$ eigenvectors and $\boldsymbol{f}_i$ is $i$th PC score with $k$ components. $\mathbf{x}_i$를 predict하는">
+<meta name="twitter:description" content="1. Row-wise cross-validation $$ \begin{aligned} CV(k) &amp;= \sum_{i=1}^N \lvert \lvert \mathbf{x}_i - \boldsymbol{\xi} \boldsymbol{f}i^T \lvert\vert^2 \ &amp;= \sum{i=1}^N \lvert \lvert \mathbf{x}_i - \boldsymbol{\xi} (\mathbf{x}_i^T\boldsymbol{\xi})^T \lvert\vert^2 \end{aligned} $$ where $\boldsymbol\xi$ is a PC function(PC loading) with $k$ eigenvectors and $\boldsymbol{f}_i$ is $i$th PC score with $k$ components. $\mathbf{x}_i$를 predict하는">
 <meta property="og:locale" content="en-us">
 
   
@@ -181,7 +181,7 @@ if (!doNotTrack) {
 
   <li class="sidebar-button">
     
-      <a class="sidebar-button-link " href="https://statkim.github.io/#about">
+      <a class="sidebar-button-link " href="https://statkim.github.io/hyunsungkim">
     
       <i class="sidebar-button-icon fa fa-lg fa-question"></i>
       
@@ -284,8 +284,8 @@ if (!doNotTrack) {
               <h4 id="1-row-wise-cross-validation">1. Row-wise cross-validation</h4>
 <p>$$
 \begin{aligned}
-CV(k) &amp;= \sum_{i=1}^N \lvert \lvert \mathbf{x}_i - \boldsymbol{\xi} \boldsymbol{f}_i^T \lvert\vert^2 \<br>
-&amp;= \sum_{i=1}^N \lvert \lvert \mathbf{x}_i - \boldsymbol{\xi} (\mathbf{x}_i^T\boldsymbol{\xi})^T \lvert\vert^2
+CV(k) &amp;= \sum_{i=1}^N \lvert \lvert \mathbf{x}_i - \boldsymbol{\xi} \boldsymbol{f}<em>i^T \lvert\vert^2 \
+&amp;= \sum</em>{i=1}^N \lvert \lvert \mathbf{x}_i - \boldsymbol{\xi} (\mathbf{x}_i^T\boldsymbol{\xi})^T \lvert\vert^2
 \end{aligned}
 $$</p>
 <p>where $\boldsymbol\xi$ is a PC function(PC loading) with $k$ eigenvectors and $\boldsymbol{f}_i$ is $i$th PC score with $k$ components.</p>
