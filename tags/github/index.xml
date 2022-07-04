@@ -6,7 +6,16 @@
     <description>Recent content in GitHub on statKim</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko-kr</language>
-    <lastBuildDate>Thu, 15 Apr 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://statkim.github.io/tags/github/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 04 Jul 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://statkim.github.io/tags/github/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>R package 만들기 1</title>
+      <link>https://statkim.github.io/2022/07/r-package-%EB%A7%8C%EB%93%A4%EA%B8%B0-1/</link>
+      <pubDate>Mon, 04 Jul 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://statkim.github.io/2022/07/r-package-%EB%A7%8C%EB%93%A4%EA%B8%B0-1/</guid>
+      <description>오늘부터 R package를 만들어서 GitHub을 통해 배포할 수 있는 방법에 대해 정리해보려 합니다. 이 방법은 cran 대신, 개인 GitHub에 업로드하여 패키</description>
+    </item>
+    
     <item>
       <title>GitHub 소스코드를 Visual Studio Code 테마로 보기</title>
       <link>https://statkim.github.io/2021/04/github-%EC%86%8C%EC%8A%A4%EC%BD%94%EB%93%9C%EB%A5%BC-visual-studio-code-%ED%85%8C%EB%A7%88%EB%A1%9C-%EB%B3%B4%EA%B8%B0/</link>
