@@ -6,7 +6,16 @@
     <description>Recent content in Posts on statKim</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko-kr</language>
-    <lastBuildDate>Sat, 07 Aug 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://statkim.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 04 Jul 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://statkim.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>R package 만들기 1</title>
+      <link>https://statkim.github.io/2022/07/r-package-%EB%A7%8C%EB%93%A4%EA%B8%B0-1/</link>
+      <pubDate>Mon, 04 Jul 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://statkim.github.io/2022/07/r-package-%EB%A7%8C%EB%93%A4%EA%B8%B0-1/</guid>
+      <description>오늘부터 R package를 만들어서 GitHub을 통해 배포할 수 있는 방법에 대해 정리해보려 합니다. 이 방법은 cran 대신, 개인 GitHub에 업로드하여 패키</description>
+    </item>
+    
     <item>
       <title>$O_p$(Big-Op)와 $o_p$(Little-Op)</title>
       <link>https://statkim.github.io/2021/08/o_pbig-op%EC%99%80-o_plittle-op/</link>

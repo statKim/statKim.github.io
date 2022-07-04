@@ -2,8 +2,32 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://statkim.github.io/about/</loc>
-    <lastmod>2021-10-08T00:00:00+00:00</lastmod>
+    <loc>https://statkim.github.io/categories/</loc>
+    <lastmod>2022-07-04T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://statkim.github.io/tags/github/</loc>
+    <lastmod>2022-07-04T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://statkim.github.io/post/</loc>
+    <lastmod>2022-07-04T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://statkim.github.io/tags/r/</loc>
+    <lastmod>2022-07-04T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://statkim.github.io/categories/r/</loc>
+    <lastmod>2022-07-04T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://statkim.github.io/tags/r-package/</loc>
+    <lastmod>2022-07-04T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://statkim.github.io/2022/07/r-package-%EB%A7%8C%EB%93%A4%EA%B8%B0-1/</loc>
+    <lastmod>2022-07-04T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://statkim.github.io/</loc>
+    <lastmod>2022-07-04T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://statkim.github.io/tags/</loc>
+    <lastmod>2022-07-04T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://statkim.github.io/2021/08/o_pbig-op%EC%99%80-o_plittle-op/</loc>
     <lastmod>2021-08-07T00:00:00+00:00</lastmod>
@@ -14,25 +38,13 @@
     <loc>https://statkim.github.io/tags/big-o/</loc>
     <lastmod>2021-08-07T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://statkim.github.io/categories/</loc>
-    <lastmod>2021-08-07T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>https://statkim.github.io/tags/convergence-rate/</loc>
     <lastmod>2021-08-07T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://statkim.github.io/tags/little-o/</loc>
     <lastmod>2021-08-07T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://statkim.github.io/post/</loc>
-    <lastmod>2021-08-07T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>https://statkim.github.io/categories/statistics/</loc>
-    <lastmod>2021-08-07T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://statkim.github.io/</loc>
-    <lastmod>2021-08-07T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://statkim.github.io/tags/</loc>
     <lastmod>2021-08-07T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://statkim.github.io/tags/robust-statistics/</loc>
@@ -46,12 +58,6 @@
   </url><url>
     <loc>https://statkim.github.io/tags/winsorization/</loc>
     <lastmod>2021-08-03T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://statkim.github.io/cv/</loc>
-    <lastmod>2021-06-27T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://statkim.github.io/tags/github/</loc>
-    <lastmod>2021-04-15T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://statkim.github.io/categories/github/</loc>
     <lastmod>2021-04-15T00:00:00+00:00</lastmod>
@@ -69,12 +75,6 @@
     <lastmod>2021-02-12T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://statkim.github.io/2021/02/latex2exp-latex-%EA%B5%AC%EB%AC%B8%EC%9C%BC%EB%A1%9C-r-%EA%B7%B8%EB%9E%98%ED%94%84%EC%97%90-%EC%88%98%EC%8B%9D-%EB%84%A3%EA%B8%B0/</loc>
-    <lastmod>2021-02-12T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://statkim.github.io/tags/r/</loc>
-    <lastmod>2021-02-12T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://statkim.github.io/categories/r/</loc>
     <lastmod>2021-02-12T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://statkim.github.io/tags/r-%EA%BF%80%ED%8C%81/</loc>
@@ -101,16 +101,10 @@
     <loc>https://statkim.github.io/2021/01/%EB%B3%80%EC%88%98%EB%AA%85%EC%9D%84-%EB%AC%B8%EC%9E%90%EC%97%B4-%ED%98%95%EC%8B%9D%EC%9C%BC%EB%A1%9C-%EC%9E%90%EC%9C%A0%EB%A1%AD%EA%B2%8C-%EB%8B%A4%EB%A3%A8%EA%B8%B0-get%EA%B3%BC-assign/</loc>
     <lastmod>2021-01-28T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://statkim.github.io/test_ver/about/</loc>
-    <lastmod>2021-01-18T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>https://statkim.github.io/2021/01/github%EC%97%90-%EC%9E%88%EB%8A%94-%EB%AC%B8%EC%84%9C-%ED%8C%8C%EC%9D%BC-%EC%99%B8%EB%B6%80-viewer%EB%A1%9C-%EA%B3%B5%EC%9C%A0%ED%95%98%EA%B8%B0/</loc>
     <lastmod>2021-01-18T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://statkim.github.io/tags/nbviewer/</loc>
-    <lastmod>2021-01-18T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://statkim.github.io/test_ver/</loc>
     <lastmod>2021-01-18T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://statkim.github.io/categories/blog/</loc>
@@ -133,9 +127,6 @@
   </url><url>
     <loc>https://statkim.github.io/2020/06/blogdown%EC%9C%BC%EB%A1%9C-github-blog-%EB%A7%8C%EB%93%A4%EA%B8%B0-1/2/</loc>
     <lastmod>2020-06-30T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://statkim.github.io/test_ver/about_eng/</loc>
-    <lastmod>2020-06-28T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://statkim.github.io/tags/gpu/</loc>
     <lastmod>2020-02-01T00:00:00+00:00</lastmod>

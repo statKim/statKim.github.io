@@ -1,0 +1,136 @@
+---
+title: R package 만들기 1
+date: '2022-07-04'
+coverImage: 
+coverMeta: out
+metaAlignment: center
+categories:
+  - R
+tags:
+  - R package
+  - R
+  - GitHub
+---
+
+<script src="/rmarkdown-libs/header-attrs/header-attrs.js"></script>
+
+
+<p>오늘부터 <strong>R package</strong>를 만들어서 GitHub을 통해 배포할 수 있는 방법에 대해 정리해보려 합니다.
+이 방법은 cran 대신, 개인 <strong>GitHub에 업로드하여 패키지를 다운 및 사용</strong>할 수 있는 방법입니다. (아래 예시 코드에서 두번째 방식으로 패키지를 다운받는 방법입니다.)</p>
+<pre class="r"><code># cran에 있는 패키지 설치
+install.package(&quot;패키지명&quot;)
+
+# GitHub에 있는 패키지 설치
+devtools::install_github(&quot;statKim/패키지명&quot;)</code></pre>
+<p>그럼, 패키지를 만들고 GitHub에 업로드하는 것으로 먼저 시작해보죠!</p>
+<div id="패키지-만들기" class="section level2">
+<h2>패키지 만들기</h2>
+<p>먼저 RStudio를 실행하고, <code>usethis</code>라는 패키지를 먼저 다운받아줍니다. (이 패키지 안에는 패키지 개발을 하는 것에 대한 여러 유용한 함수들이 들어있습니다.)</p>
+<p><code>usethis::create_package()</code>라는 함수를 이용하여 <strong>패키지를 생성</strong>할 수 있는데요.
+다음과 같이 함수 인자로 <code>Rproject_저장경로/패키지_이름</code>을 넣어주면 됩니다. (여기서는 <code>fda.manifold</code>라는 패키지를 만들어보겠습니다.)</p>
+<pre class="r"><code>usethis::create_package(&quot;~/Desktop/Rproject/fda.manifold&quot;)</code></pre>
+<pre><code>✓ Creating &#39;/Users/hyunsung/Desktop/Rproject/fda.manifold/&#39;
+✓ Setting active project to &#39;/Users/hyunsung/Desktop/Rproject/fda.manifold&#39;
+✓ Creating &#39;R/&#39;
+✓ Writing &#39;DESCRIPTION&#39;
+Package: fda.manifold
+Title: What the Package Does (One Line, Title Case)
+Version: 0.0.0.9000
+Authors@R (parsed):
+    * First Last &lt;first.last@example.com&gt; [aut, cre] (YOUR-ORCID-ID)
+Description: What the package does (one paragraph).
+License: `use_mit_license()`, `use_gpl3_license()` or friends to
+    pick a license
+Encoding: UTF-8
+LazyData: true
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.1.2
+✓ Writing &#39;NAMESPACE&#39;
+✓ Writing &#39;fda.manifold.Rproj&#39;
+✓ Adding &#39;^fda\\.manifold\\.Rproj$&#39; to &#39;.Rbuildignore&#39;
+✓ Adding &#39;.Rproj.user&#39; to &#39;.gitignore&#39;
+✓ Adding &#39;^\\.Rproj\\.user$&#39; to &#39;.Rbuildignore&#39;
+✓ Opening &#39;/Users/hyunsung/Desktop/Rproject/fda.manifold/&#39; in new RStudio session
+✓ Setting active project to &#39;&lt;no active project&gt;&#39;</code></pre>
+<p>그럼 위의 결과가 나오면서 새로운 RStudio 창이 열리게 되고, 아래의 그림의 구조를 가지는 <strong>Rproject가 생성</strong>되게 됩니다.</p>
+<p><img src="/img/Rpackage_1/create_package.png" /></p>
+</div>
+<div id="패키지-document-생성" class="section level2">
+<h2>패키지 document 생성</h2>
+<pre class="r"><code>usethis::use_package_doc()</code></pre>
+<pre><code>✓ Setting active project to &#39;/Users/hyunsung/Desktop/Rproject/fda.manifold&#39;
+✓ Writing &#39;R/fda.manifold-package.R&#39;
+• Modify &#39;R/fda.manifold-package.R&#39;</code></pre>
+<p><img src="/img/Rpackage_1/create_document.png" /></p>
+</div>
+<div id="git-사용" class="section level2">
+<h2>git 사용</h2>
+<p>GitHub에 패키지를 업로드하기 위해서, <strong>git</strong>을 사용하도록 설정해주어야 하는데요.
+다음의 코드를 입력하여 현재 Rproject를 git 폴더형태로 만들 수 있습니다.</p>
+<pre class="r"><code>usethis::use_git()</code></pre>
+<pre><code>✓ Initialising Git repo
+✓ Adding &#39;.Rhistory&#39;, &#39;.Rdata&#39;, &#39;.httr-oauth&#39;, &#39;.DS_Store&#39; to &#39;.gitignore&#39;
+There are 6 uncommitted files:
+* &#39;.gitignore&#39;
+* &#39;.Rbuildignore&#39;
+* &#39;DESCRIPTION&#39;
+* &#39;fda.manifold.Rproj&#39;
+* &#39;NAMESPACE&#39;
+* &#39;R/&#39;
+Is it ok to commit them?
+
+1: Negative
+2: No way
+3: Yeah
+
+Selection: 3
+✓ Adding files
+✓ Making a commit with message &#39;Initial commit&#39;
+• A restart of RStudio is required to activate the Git pane
+Restart now?
+
+1: Absolutely not
+2: No
+3: Definitely
+
+Selection: 3</code></pre>
+</div>
+<div id="github-연결-및-repository-생성" class="section level2">
+<h2>GitHub 연결 및 repository 생성</h2>
+<blockquote>
+<p>이 부분은 기존에 RStudio를 본인의 GitHub 계정과 연결되어 있는 경우에 가능합니다!</p>
+</blockquote>
+<p>로컬에서 git 폴더를 만들었으니, <strong>이제 GitHub 원격저장소에 올리면 끝입니다!</strong>
+다음의 코드를 실행하면, 자동으로 본인의 GitHub에 패키지 이름으로 repository를 생성해주고 push까지 해주게 됩니다.</p>
+<pre class="r"><code>usethis::use_github()</code></pre>
+<pre><code>ℹ Defaulting to &#39;https&#39; Git protocol
+✓ Setting active project to &#39;/Users/hyunsung/Desktop/Rproject/fda.manifold&#39;
+✓ Checking that current branch is default branch (&#39;master&#39;)
+✓ Creating GitHub repository &#39;statKim/fda.manifold&#39;
+✓ Setting remote &#39;origin&#39; to &#39;https://github.com/statKim/fda.manifold.git&#39;
+✓ Setting URL field in DESCRIPTION to &#39;https://github.com/statKim/fda.manifold&#39;
+✓ Setting BugReports field in DESCRIPTION to &#39;https://github.com/statKim/fda.manifold/issues&#39;
+There is 1 uncommitted file:
+* &#39;DESCRIPTION&#39;
+Is it ok to commit it?
+
+1: For sure
+2: Absolutely not
+3: Not now
+
+Selection: 1
+✓ Adding files
+✓ Making a commit with message &#39;Add GitHub links to DESCRIPTION&#39;
+✓ Pushing &#39;master&#39; branch to GitHub and setting &#39;origin/master&#39; as upstream branch
+✓ Opening URL &#39;https://github.com/statKim/fda.manifold&#39;</code></pre>
+<p>그리고 자동으로 창 하나가 열리면서 다음의 GitHub repository에 잘 업로드되어 있는 것을 확인할 수 있습니다.</p>
+<p><img src="/img/Rpackage_1/github_commit.png" /></p>
+<p><br></p>
+</div>
+<div id="reference" class="section level2">
+<h2>Reference</h2>
+<ul>
+<li><a href="https://r-pkgs.org/whole-game.html" class="uri">https://r-pkgs.org/whole-game.html</a></li>
+<li><a href="http://www.danieldsjoberg.com/writing-R-packages/" class="uri">http://www.danieldsjoberg.com/writing-R-packages/</a></li>
+</ul>
+</div>

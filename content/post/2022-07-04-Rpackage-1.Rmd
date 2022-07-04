@@ -1,0 +1,170 @@
+---
+title: R package 만들기 1
+date: '2022-07-04'
+coverImage: 
+coverMeta: out
+metaAlignment: center
+categories:
+  - R
+tags:
+  - R package
+  - R
+  - GitHub
+---
+
+
+
+오늘부터 **R package**를 만들어서 GitHub을 통해 배포할 수 있는 방법에 대해 정리해보려 합니다.
+이 방법은 cran 대신, 개인 **GitHub에 업로드하여 패키지를 다운 및 사용**할 수 있는 방법입니다. (아래 예시 코드에서 두번째 방식으로 패키지를 다운받는 방법입니다.)
+```r
+# cran에 있는 패키지 설치
+install.package("패키지명")
+
+# GitHub에 있는 패키지 설치
+devtools::install_github("statKim/패키지명")
+```
+
+그럼, 패키지를 만들고 GitHub에 업로드하는 것으로 먼저 시작해보죠!
+
+
+## 패키지 만들기
+먼저 RStudio를 실행하고, `usethis`라는 패키지를 먼저 다운받아줍니다. (이 패키지 안에는 패키지 개발을 하는 것에 대한 여러 유용한 함수들이 들어있습니다.)
+
+`usethis::create_package()`라는 함수를 이용하여 **패키지를 생성**할 수 있는데요.
+다음과 같이 함수 인자로 `Rproject_저장경로/패키지_이름`을 넣어주면 됩니다. (여기서는 `fda.manifold`라는 패키지를 만들어보겠습니다.)
+```r
+usethis::create_package("~/Desktop/Rproject/fda.manifold")
+```
+
+```
+✓ Creating '/Users/hyunsung/Desktop/Rproject/fda.manifold/'
+✓ Setting active project to '/Users/hyunsung/Desktop/Rproject/fda.manifold'
+✓ Creating 'R/'
+✓ Writing 'DESCRIPTION'
+Package: fda.manifold
+Title: What the Package Does (One Line, Title Case)
+Version: 0.0.0.9000
+Authors@R (parsed):
+    * First Last <first.last@example.com> [aut, cre] (YOUR-ORCID-ID)
+Description: What the package does (one paragraph).
+License: `use_mit_license()`, `use_gpl3_license()` or friends to
+    pick a license
+Encoding: UTF-8
+LazyData: true
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.1.2
+✓ Writing 'NAMESPACE'
+✓ Writing 'fda.manifold.Rproj'
+✓ Adding '^fda\\.manifold\\.Rproj$' to '.Rbuildignore'
+✓ Adding '.Rproj.user' to '.gitignore'
+✓ Adding '^\\.Rproj\\.user$' to '.Rbuildignore'
+✓ Opening '/Users/hyunsung/Desktop/Rproject/fda.manifold/' in new RStudio session
+✓ Setting active project to '<no active project>'
+```
+
+
+그럼 위의 결과가 나오면서 새로운 RStudio 창이 열리게 되고, 아래의 그림의 구조를 가지는 **Rproject가 생성**되게 됩니다.
+
+![](/img/Rpackage_1/create_package.png)
+
+
+
+## 패키지 document 생성
+
+```r
+usethis::use_package_doc()
+```
+
+```
+✓ Setting active project to '/Users/hyunsung/Desktop/Rproject/fda.manifold'
+✓ Writing 'R/fda.manifold-package.R'
+• Modify 'R/fda.manifold-package.R'
+```
+
+![](/img/Rpackage_1/create_document.png)
+
+
+
+## git 사용
+GitHub에 패키지를 업로드하기 위해서, **git**을 사용하도록 설정해주어야 하는데요.
+다음의 코드를 입력하여 현재 Rproject를 git 폴더형태로 만들 수 있습니다.
+
+```r
+usethis::use_git()
+```
+
+```
+✓ Initialising Git repo
+✓ Adding '.Rhistory', '.Rdata', '.httr-oauth', '.DS_Store' to '.gitignore'
+There are 6 uncommitted files:
+* '.gitignore'
+* '.Rbuildignore'
+* 'DESCRIPTION'
+* 'fda.manifold.Rproj'
+* 'NAMESPACE'
+* 'R/'
+Is it ok to commit them?
+
+1: Negative
+2: No way
+3: Yeah
+
+Selection: 3
+✓ Adding files
+✓ Making a commit with message 'Initial commit'
+• A restart of RStudio is required to activate the Git pane
+Restart now?
+
+1: Absolutely not
+2: No
+3: Definitely
+
+Selection: 3
+```
+
+## GitHub 연결 및 repository 생성
+
+> 이 부분은 기존에 RStudio를 본인의 GitHub 계정과 연결되어 있는 경우에 가능합니다!
+
+로컬에서 git 폴더를 만들었으니, **이제 GitHub 원격저장소에 올리면 끝입니다!**
+다음의 코드를 실행하면, 자동으로 본인의 GitHub에 패키지 이름으로 repository를 생성해주고 push까지 해주게 됩니다.
+
+```r
+usethis::use_github()
+```
+
+```
+ℹ Defaulting to 'https' Git protocol
+✓ Setting active project to '/Users/hyunsung/Desktop/Rproject/fda.manifold'
+✓ Checking that current branch is default branch ('master')
+✓ Creating GitHub repository 'statKim/fda.manifold'
+✓ Setting remote 'origin' to 'https://github.com/statKim/fda.manifold.git'
+✓ Setting URL field in DESCRIPTION to 'https://github.com/statKim/fda.manifold'
+✓ Setting BugReports field in DESCRIPTION to 'https://github.com/statKim/fda.manifold/issues'
+There is 1 uncommitted file:
+* 'DESCRIPTION'
+Is it ok to commit it?
+
+1: For sure
+2: Absolutely not
+3: Not now
+
+Selection: 1
+✓ Adding files
+✓ Making a commit with message 'Add GitHub links to DESCRIPTION'
+✓ Pushing 'master' branch to GitHub and setting 'origin/master' as upstream branch
+✓ Opening URL 'https://github.com/statKim/fda.manifold'
+```
+
+그리고 자동으로 창 하나가 열리면서 다음의 GitHub repository에 잘 업로드되어 있는 것을 확인할 수 있습니다.
+
+![](/img/Rpackage_1/github_commit.png)
+
+
+
+<br>
+
+## Reference
+- https://r-pkgs.org/whole-game.html
+- http://www.danieldsjoberg.com/writing-R-packages/
+

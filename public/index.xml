@@ -6,14 +6,14 @@
     <description>Recent content on statKim</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko-kr</language>
-    <lastBuildDate>Sat, 07 Aug 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://statkim.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 04 Jul 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://statkim.github.io/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>About</title>
-      <link>https://statkim.github.io/about/</link>
-      <pubDate>Fri, 08 Oct 2021 00:00:00 +0000</pubDate>
+      <title>R package 만들기 1</title>
+      <link>https://statkim.github.io/2022/07/r-package-%EB%A7%8C%EB%93%A4%EA%B8%B0-1/</link>
+      <pubDate>Mon, 04 Jul 2022 00:00:00 +0000</pubDate>
       
-      <guid>https://statkim.github.io/about/</guid>
-      <description>안녕하세요. 저는 중앙대학교 통계학과 다변량 통계 연구실(Multivariate Statistics Lab)에서 통계학을 공부하고 있는 박사과정 학생입니다. 현재 Functional Data A</description>
+      <guid>https://statkim.github.io/2022/07/r-package-%EB%A7%8C%EB%93%A4%EA%B8%B0-1/</guid>
+      <description>오늘부터 R package를 만들어서 GitHub을 통해 배포할 수 있는 방법에 대해 정리해보려 합니다. 이 방법은 cran 대신, 개인 GitHub에 업로드하여 패키</description>
     </item>
     
     <item>
@@ -32,15 +32,6 @@
       
       <guid>https://statkim.github.io/2021/08/trimming-vs-winsorization/</guid>
       <description>Trimming과 Winsorization은 이상치에 민감하지 않은 Robust Statistics의 종류입니다. 비슷한 아이디어를 가지는 방법들이지만, 어</description>
-    </item>
-    
-    <item>
-      <title>Curriculum Vitae</title>
-      <link>https://statkim.github.io/cv/</link>
-      <pubDate>Sun, 27 Jun 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://statkim.github.io/cv/</guid>
-      <description>   </description>
     </item>
     
     <item>
@@ -89,15 +80,6 @@
     </item>
     
     <item>
-      <title>About</title>
-      <link>https://statkim.github.io/test_ver/about/</link>
-      <pubDate>Mon, 18 Jan 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://statkim.github.io/test_ver/about/</guid>
-      <description>현재 중앙대학교 통계학과에서 석사과정을 하고 있으며 다변량 분석 연구실(Multivariate Analysis Lab)에서 연구하고 있습니다. Functional Data Analysis(FDA), Spatio-temporal Data Analysis, High-dimensional Data Analysis 분</description>
-    </item>
-    
-    <item>
       <title>GitHub에 있는 문서 파일 외부 viewer로 공유하기</title>
       <link>https://statkim.github.io/2021/01/github%EC%97%90-%EC%9E%88%EB%8A%94-%EB%AC%B8%EC%84%9C-%ED%8C%8C%EC%9D%BC-%EC%99%B8%EB%B6%80-viewer%EB%A1%9C-%EA%B3%B5%EC%9C%A0%ED%95%98%EA%B8%B0/</link>
       <pubDate>Mon, 18 Jan 2021 00:00:00 +0000</pubDate>
@@ -122,15 +104,6 @@
       
       <guid>https://statkim.github.io/2020/06/blogdown%EC%9C%BC%EB%A1%9C-github-blog-%EB%A7%8C%EB%93%A4%EA%B8%B0-1/2/</guid>
       <description>blogdown이란 Jekyll과 더불어 최근 인기가 많아지고 있는 Hugo 엔진을 사용하여 정적 페이지를 만들어주는 R 패키지입니다. 특히, R을 자주 사용하는 사</description>
-    </item>
-    
-    <item>
-      <title>About</title>
-      <link>https://statkim.github.io/test_ver/about_eng/</link>
-      <pubDate>Sun, 28 Jun 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://statkim.github.io/test_ver/about_eng/</guid>
-      <description>Korean version I&amp;rsquo;m a master&amp;rsquo;s student of the Department of Statistics at Chung-Ang University and I work in Multivariate Statistics Lab. My research interests are Functional Data Analysis(FDA), Spatio-temporal Data Analysis, Principal Component Analysis(PCA), Machine Learning, and I&amp;rsquo;m working on Functional principal component analysis(FPCA). I love R to handle the data, but I sometimes use Python. Education Master&amp;rsquo;s student in Statistics, Chung-Ang University, 2019.03 - Present B.A. in Applied Statistics,</description>
     </item>
     
     <item>
