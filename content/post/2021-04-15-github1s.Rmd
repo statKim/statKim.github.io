@@ -1,5 +1,5 @@
 ---
-title: GitHub 소스코드를 Visual Studio Code 테마로 보기
+title: "github1s - GitHub 소스코드를 Visual Studio Code 테마로 보기"
 date: '2021-04-15'
 coverImage: 
 coverMeta: out

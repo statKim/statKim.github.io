@@ -25,8 +25,11 @@ devtools::install_github(&quot;statKim/패키지명&quot;)</code></pre>
 <p>그럼, 패키지를 만들고 GitHub에 업로드하는 것으로 먼저 시작해보죠!</p>
 <div id="패키지-만들기" class="section level2">
 <h2>패키지 만들기</h2>
-<p>먼저 RStudio를 실행하고, <code>usethis</code>라는 패키지를 먼저 다운받아줍니다. (이 패키지 안에는 패키지 개발을 하는 것에 대한 여러 유용한 함수들이 들어있습니다.)</p>
-<p><code>usethis::create_package()</code>라는 함수를 이용하여 <strong>패키지를 생성</strong>할 수 있는데요.
+<p>먼저 RStudio를 실행하고, <code>usethis</code>라는 패키지를 먼저 설치해줍니다.
+<code>usethis</code>에는 R 패키지 개발에 있어 여러 유용한 함수들이 들어있고, 이는 공식 홈페이지인 <a href="https://usethis.r-lib.org/" class="uri">https://usethis.r-lib.org/</a> 에서 확인할 수 있습니다.
+(웬만한 R 패키지 세팅에 대한 기능은 대부분 포함되어 있기 떄문에, 패키지에 포함할 함수 코드부분을 제외한 설정에 있어서는 되도록 <strong>usethis 패키지에 내장된 함수를 사용하기를 권장</strong>합니다!)</p>
+<pre class="r"><code>install.packages(&quot;usethis&quot;) </code></pre>
+<p><code>usethis</code> 패키지 안의 <code>usethis::create_package()</code>라는 함수를 이용하여 <strong>패키지를 생성</strong>할 수 있는데요.
 다음과 같이 함수 인자로 <code>Rproject_저장경로/패키지_이름</code>을 넣어주면 됩니다. (여기서는 <code>fda.manifold</code>라는 패키지를 만들어보겠습니다.)</p>
 <pre class="r"><code>usethis::create_package(&quot;~/Desktop/Rproject/fda.manifold&quot;)</code></pre>
 <pre><code>✓ Creating &#39;/Users/hyunsung/Desktop/Rproject/fda.manifold/&#39;
