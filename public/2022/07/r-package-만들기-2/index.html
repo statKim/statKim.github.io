@@ -8,25 +8,25 @@
 <meta name="generator" content="Hugo 0.89.4 with theme Tranquilpeak 0.4.8-BETA">
 <meta name="author" content="김현성">
 <meta name="keywords" content="">
-<meta name="description" content="오늘부터 R package를 만들어서 GitHub을 통해 배포할 수 있는 방법에 대해 정리해보려 합니다. 이 방법은 cran 대신, 개인 GitHub에 업로드하여 패키">
+<meta name="description" content="License 추가하기 패키지의 License는 다음의 함수를 사용하여 생성할 수 있습니다. 여기서는 흔하게 사용하는 MIT License를 사용해보겠습니다. usethis::use_mit_license() ✓ Setting License field">
 
 
-<meta property="og:description" content="오늘부터 R package를 만들어서 GitHub을 통해 배포할 수 있는 방법에 대해 정리해보려 합니다. 이 방법은 cran 대신, 개인 GitHub에 업로드하여 패키">
+<meta property="og:description" content="License 추가하기 패키지의 License는 다음의 함수를 사용하여 생성할 수 있습니다. 여기서는 흔하게 사용하는 MIT License를 사용해보겠습니다. usethis::use_mit_license() ✓ Setting License field">
 <meta property="og:type" content="article">
-<meta property="og:title" content="R package 만들기 1">
-<meta name="twitter:title" content="R package 만들기 1">
-<meta property="og:url" content="https://statkim.github.io/2022/07/r-package-%EB%A7%8C%EB%93%A4%EA%B8%B0-1/">
-<meta property="twitter:url" content="https://statkim.github.io/2022/07/r-package-%EB%A7%8C%EB%93%A4%EA%B8%B0-1/">
+<meta property="og:title" content="R package 만들기 2">
+<meta name="twitter:title" content="R package 만들기 2">
+<meta property="og:url" content="https://statkim.github.io/2022/07/r-package-%EB%A7%8C%EB%93%A4%EA%B8%B0-2/">
+<meta property="twitter:url" content="https://statkim.github.io/2022/07/r-package-%EB%A7%8C%EB%93%A4%EA%B8%B0-2/">
 <meta property="og:site_name" content="statKim">
-<meta property="og:description" content="오늘부터 R package를 만들어서 GitHub을 통해 배포할 수 있는 방법에 대해 정리해보려 합니다. 이 방법은 cran 대신, 개인 GitHub에 업로드하여 패키">
-<meta name="twitter:description" content="오늘부터 R package를 만들어서 GitHub을 통해 배포할 수 있는 방법에 대해 정리해보려 합니다. 이 방법은 cran 대신, 개인 GitHub에 업로드하여 패키">
+<meta property="og:description" content="License 추가하기 패키지의 License는 다음의 함수를 사용하여 생성할 수 있습니다. 여기서는 흔하게 사용하는 MIT License를 사용해보겠습니다. usethis::use_mit_license() ✓ Setting License field">
+<meta name="twitter:description" content="License 추가하기 패키지의 License는 다음의 함수를 사용하여 생성할 수 있습니다. 여기서는 흔하게 사용하는 MIT License를 사용해보겠습니다. usethis::use_mit_license() ✓ Setting License field">
 <meta property="og:locale" content="en-us">
 
   
-    <meta property="article:published_time" content="2022-07-04T00:00:00">
+    <meta property="article:published_time" content="2022-07-17T00:00:00">
   
   
-    <meta property="article:modified_time" content="2022-07-04T00:00:00">
+    <meta property="article:modified_time" content="2022-07-17T00:00:00">
   
   
   
@@ -61,14 +61,14 @@
   <meta property="twitter:image" content="https://statkim.github.io/img/profile.jpg">
 
 
-    <title>R package 만들기 1</title>
+    <title>R package 만들기 2</title>
 
     <link rel="icon" href="https://statkim.github.io/img/favicon.ico">
     
 
     
 
-    <link rel="canonical" href="https://statkim.github.io/2022/07/r-package-%EB%A7%8C%EB%93%A4%EA%B8%B0-1/">
+    <link rel="canonical" href="https://statkim.github.io/2022/07/r-package-%EB%A7%8C%EB%93%A4%EA%B8%B0-2/">
 
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
@@ -254,15 +254,15 @@ if (!doNotTrack) {
             <div class="post-header main-content-wrap text-center">
   
     <h1 class="post-title" itemprop="headline">
-      R package 만들기 1
+      R package 만들기 2
     </h1>
   
   
   <div class="postShorten-meta post-meta">
     
-      <time itemprop="datePublished" datetime="2022-07-04T00:00:00Z">
+      <time itemprop="datePublished" datetime="2022-07-17T00:00:00Z">
         
-  July 4, 2022
+  July 17, 2022
 
       </time>
     
@@ -285,119 +285,68 @@ if (!doNotTrack) {
 <script src="https://statkim.github.io/rmarkdown-libs/header-attrs/header-attrs.js"></script>
 
 
-<p>오늘부터 <strong>R package</strong>를 만들어서 GitHub을 통해 배포할 수 있는 방법에 대해 정리해보려 합니다.
-이 방법은 cran 대신, 개인 <strong>GitHub에 업로드하여 패키지를 다운 및 사용</strong>할 수 있는 방법입니다. (아래 예시 코드에서 두번째 방식으로 패키지를 다운받는 방법입니다.)</p>
-<pre class="r"><code># cran에 있는 패키지 설치
-install.package(&quot;패키지명&quot;)
-
-# GitHub에 있는 패키지 설치
-devtools::install_github(&quot;statKim/패키지명&quot;)</code></pre>
-<p>그럼, 패키지를 만들고 GitHub에 업로드하는 것으로 먼저 시작해보죠!</p>
-<div id="패키지-만들기" class="section level2">
-<h2>패키지 만들기</h2>
-<p>먼저 RStudio를 실행하고, <code>usethis</code>라는 패키지를 먼저 설치해줍니다.
-<code>usethis</code>에는 R 패키지 개발에 있어 여러 유용한 함수들이 들어있고, 이는 공식 홈페이지인 <a href="https://usethis.r-lib.org/" class="uri">https://usethis.r-lib.org/</a> 에서 확인할 수 있습니다.
-(웬만한 R 패키지 세팅에 대한 기능은 대부분 포함되어 있기 떄문에, 패키지에 포함할 함수 코드부분을 제외한 설정에 있어서는 되도록 <strong>usethis 패키지에 내장된 함수를 사용하기를 권장</strong>합니다!)</p>
-<pre class="r"><code>install.packages(&quot;usethis&quot;) </code></pre>
-<p><code>usethis</code> 패키지 안의 <code>usethis::create_package()</code>라는 함수를 이용하여 <strong>패키지를 생성</strong>할 수 있는데요.
-다음과 같이 함수 인자로 <code>Rproject_저장경로/패키지_이름</code>을 넣어주면 됩니다. (여기서는 <code>fda.manifold</code>라는 패키지를 만들어보겠습니다.)</p>
-<pre class="r"><code>usethis::create_package(&quot;~/Desktop/Rproject/fda.manifold&quot;)</code></pre>
-<pre><code>✓ Creating &#39;/Users/hyunsung/Desktop/Rproject/fda.manifold/&#39;
-✓ Setting active project to &#39;/Users/hyunsung/Desktop/Rproject/fda.manifold&#39;
-✓ Creating &#39;R/&#39;
-✓ Writing &#39;DESCRIPTION&#39;
-Package: fda.manifold
-Title: What the Package Does (One Line, Title Case)
-Version: 0.0.0.9000
-Authors@R (parsed):
-    * First Last &lt;first.last@example.com&gt; [aut, cre] (YOUR-ORCID-ID)
-Description: What the package does (one paragraph).
-License: `use_mit_license()`, `use_gpl3_license()` or friends to
-    pick a license
-Encoding: UTF-8
-LazyData: true
-Roxygen: list(markdown = TRUE)
-RoxygenNote: 7.1.2
-✓ Writing &#39;NAMESPACE&#39;
-✓ Writing &#39;fda.manifold.Rproj&#39;
-✓ Adding &#39;^fda\\.manifold\\.Rproj$&#39; to &#39;.Rbuildignore&#39;
-✓ Adding &#39;.Rproj.user&#39; to &#39;.gitignore&#39;
-✓ Adding &#39;^\\.Rproj\\.user$&#39; to &#39;.Rbuildignore&#39;
-✓ Opening &#39;/Users/hyunsung/Desktop/Rproject/fda.manifold/&#39; in new RStudio session
-✓ Setting active project to &#39;&lt;no active project&gt;&#39;</code></pre>
-<p>그럼 위의 결과가 나오면서 새로운 RStudio 창이 열리게 되고, 아래의 그림의 구조를 가지는 <strong>Rproject가 생성</strong>되게 됩니다.</p>
-<p><img src="https://statkim.github.io/img/Rpackage_1/create_package.png" /></p>
+<div id="license-추가하기" class="section level2">
+<h2>License 추가하기</h2>
+<p>패키지의 License는 다음의 함수를 사용하여 생성할 수 있습니다.
+여기서는 흔하게 사용하는 MIT License를 사용해보겠습니다.</p>
+<pre class="r"><code>usethis::use_mit_license()</code></pre>
+<pre><code>✓ Setting License field in DESCRIPTION to &#39;MIT + file LICENSE&#39;
+✓ Writing &#39;LICENSE&#39;
+✓ Writing &#39;LICENSE.md&#39;
+✓ Adding &#39;^LICENSE\\.md$&#39; to &#39;.Rbuildignore&#39;</code></pre>
+<p><img src="https://statkim.github.io/img/Rpackage_2/license_ex.png" /></p>
 </div>
-<div id="패키지-document-생성" class="section level2">
-<h2>패키지 document 생성</h2>
-<pre class="r"><code>usethis::use_package_doc()</code></pre>
+<div id="r-함수-추가하기" class="section level2">
+<h2>R 함수 추가하기</h2>
+<p>이제 R package에 포함하고자 하는 함수를 생성해보겠습니다.
+우선 다음의 코드로 <code>R/my_Rfunction.R</code> 파일을 생성할 수 있습니다.</p>
+<pre class="r"><code>usethis::use_r(&quot;my_Rfunction&quot;)</code></pre>
 <pre><code>✓ Setting active project to &#39;/Users/hyunsung/Desktop/Rproject/fda.manifold&#39;
-✓ Writing &#39;R/fda.manifold-package.R&#39;
-• Modify &#39;R/fda.manifold-package.R&#39;</code></pre>
-<p><img src="https://statkim.github.io/img/Rpackage_1/create_document.png" /></p>
+• Modify &#39;R/my_Rfunction.R&#39;
+• Call `use_test()` to create a matching test file</code></pre>
+<p>이제 <code>R/my_Rfunction.R</code> 파일을 열어서 다음의 내용을 입력해줍니다.
+벡터를 받아와서 결측값을 제외하여 합하는 <code>add()</code>라는 함수를 만들었는데요.
+<strong>패키지를 만들 때에 주의할 점으로 <code>base</code> 함수가 아닌 다른 패키지에 포함되어 있는 함수를 사용할 경우에는 <code>패키지명::함수</code>와 같은 방식으로 사용해야만 합니다.</strong>
+여기서는 <code>stats</code> 패키지에 있는 <code>na.omit()</code> 함수를 사용하기 위해 <code>stats::na.omit()</code>과 같이 입력해주었습니다.
+물론 패키지 이름을 생략하여 사용할 수 있는 방법이 있긴 하지만, 그보다는 작업시 <strong>다른 패키지 안의 같은 이름을 가진 함수끼리의 충돌을 방지</strong>하는 차원에서 이러한 방식을 추천드립니다.</p>
+<pre class="r"><code>#&#39; 함수 이름 (Title)
+#&#39;
+#&#39; 함수 설명 (Description)
+#&#39; 여러 줄로도 적을 수 있음
+#&#39;
+#&#39; @param x 함수의 input parameter
+#&#39; @export
+add &lt;- function(x) {
+    sum(stats::na.omit(x))
+}</code></pre>
+<p><code>#'</code>로 시작되는 부분은 함수의 설명을 적어주는 부분인데요. (이는 <code>roxygen2</code>라는 패키지를 통해 변환해줍니다.)
+첫 번째 줄에는 함수의 이름(Title), 두 번째 문단에는 함수의 설명(Description)을 입력해주면 됩니다.
+<code>@param</code>은 함수읠 input parameter(Arguments)와 그에 대한 설명을 적어주고, <code>@export</code>는 이 함수를 패키지에 속해있는 함수로 사용하겠다라는 의미입니다.</p>
+<p>다음의 코드로 위에서 생성한 함수의 manual를 생성해주게 되고, <code>man</code> 폴더가 생성되고 그 안에 <code>add.Rd</code>라는 manual 파일이 생성되게 됩니다.</p>
+<pre class="r"><code>devtools::document()</code></pre>
+<pre><code>ℹ Updating fda.manifold documentation
+ℹ Loading fda.manifold
+Writing NAMESPACE
+Writing NAMESPACE
+Writing fda.manifold-package.Rd
+Writing add.Rd</code></pre>
+<p><img src="https://statkim.github.io/img/Rpackage_2/ftn_man.png" /></p>
+<p>다음과 같이 함수의 설명을 확인해보면, 우리가 입력해준 내용이 나타나는 것을 확인할 수 있습니다.</p>
+<pre class="r"><code>?add</code></pre>
+<p><img src="https://statkim.github.io/img/Rpackage_2/ex_ftn_help.png" /></p>
 </div>
-<div id="git-사용" class="section level2">
-<h2>git 사용</h2>
-<p>GitHub에 패키지를 업로드하기 위해서, <strong>git</strong>을 사용하도록 설정해주어야 하는데요.
-다음의 코드를 입력하여 현재 Rproject를 git 폴더형태로 만들 수 있습니다.</p>
-<pre class="r"><code>usethis::use_git()</code></pre>
-<pre><code>✓ Initialising Git repo
-✓ Adding &#39;.Rhistory&#39;, &#39;.Rdata&#39;, &#39;.httr-oauth&#39;, &#39;.DS_Store&#39; to &#39;.gitignore&#39;
-There are 6 uncommitted files:
-* &#39;.gitignore&#39;
-* &#39;.Rbuildignore&#39;
-* &#39;DESCRIPTION&#39;
-* &#39;fda.manifold.Rproj&#39;
-* &#39;NAMESPACE&#39;
-* &#39;R/&#39;
-Is it ok to commit them?
+<div id="패키지-check" class="section level2">
+<h2>패키지 check</h2>
+<p>이제 <code>R CMD check</code>를 통해 이 패키지가 정상적으로 사용될 수 있는지에 대한 확인을 해주어야 하는데요.
+이는 Rstudio에서 <code>Build</code> 탭에 <code>Check</code> 버튼을 눌러주거나</p>
+<p><img src="https://statkim.github.io/img/Rpackage_2/cmd_check.png" /></p>
+<p>아래의 함수를 사용해주면 됩니다.</p>
+<pre class="r"><code>devtools::check()</code></pre>
+<p>아래와 같이 아무런 errors나 warnings, notes가 나타나지 않으면 현재 패키지 작동에 문제가 없다는 것을 의미합니다.
+만약 이 과정에서 문제가 있다는 메시지가 있을 경우, 내용을 보고 함수나 다른 설정을 수정해준 후에 다시 <code>R CMD check</code>를 해주면 됩니다.</p>
+<pre><code>0 errors ✓ | 0 warnings ✓ | 0 notes ✓
 
-1: Negative
-2: No way
-3: Yeah
-
-Selection: 3
-✓ Adding files
-✓ Making a commit with message &#39;Initial commit&#39;
-• A restart of RStudio is required to activate the Git pane
-Restart now?
-
-1: Absolutely not
-2: No
-3: Definitely
-
-Selection: 3</code></pre>
-</div>
-<div id="github-연결-및-repository-생성" class="section level2">
-<h2>GitHub 연결 및 repository 생성</h2>
-<blockquote>
-<p>이 부분은 기존에 RStudio를 본인의 GitHub 계정과 연결되어 있는 경우에 가능합니다!</p>
-</blockquote>
-<p>로컬에서 git 폴더를 만들었으니, <strong>이제 GitHub 원격저장소에 올리면 끝입니다!</strong>
-다음의 코드를 실행하면, 자동으로 본인의 GitHub에 패키지 이름으로 repository를 생성해주고 push까지 해주게 됩니다.</p>
-<pre class="r"><code>usethis::use_github()</code></pre>
-<pre><code>ℹ Defaulting to &#39;https&#39; Git protocol
-✓ Setting active project to &#39;/Users/hyunsung/Desktop/Rproject/fda.manifold&#39;
-✓ Checking that current branch is default branch (&#39;master&#39;)
-✓ Creating GitHub repository &#39;statKim/fda.manifold&#39;
-✓ Setting remote &#39;origin&#39; to &#39;https://github.com/statKim/fda.manifold.git&#39;
-✓ Setting URL field in DESCRIPTION to &#39;https://github.com/statKim/fda.manifold&#39;
-✓ Setting BugReports field in DESCRIPTION to &#39;https://github.com/statKim/fda.manifold/issues&#39;
-There is 1 uncommitted file:
-* &#39;DESCRIPTION&#39;
-Is it ok to commit it?
-
-1: For sure
-2: Absolutely not
-3: Not now
-
-Selection: 1
-✓ Adding files
-✓ Making a commit with message &#39;Add GitHub links to DESCRIPTION&#39;
-✓ Pushing &#39;master&#39; branch to GitHub and setting &#39;origin/master&#39; as upstream branch
-✓ Opening URL &#39;https://github.com/statKim/fda.manifold&#39;</code></pre>
-<p>그리고 자동으로 창 하나가 열리면서 다음의 GitHub repository에 잘 업로드되어 있는 것을 확인할 수 있습니다.</p>
-<p><img src="https://statkim.github.io/img/Rpackage_1/github_commit.png" /></p>
+R CMD check succeeded</code></pre>
 <p><br></p>
 </div>
 <div id="reference" class="section level2">
@@ -436,7 +385,7 @@ Selection: 1
           
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--default tooltip--top" href="https://statkim.github.io/2022/07/r-package-%EB%A7%8C%EB%93%A4%EA%B8%B0-2/" data-tooltip="R package 만들기 2">
+                <a class="post-action-btn btn btn--disabled">
               
                   <i class="fa fa-angle-left"></i>
                   <span class="hide-xs hide-sm text-small icon-ml">NEXT</span>
@@ -444,7 +393,7 @@ Selection: 1
             </li>
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--default tooltip--top" href="https://statkim.github.io/2021/08/o_pbig-op%EC%99%80-o_plittle-op/" data-tooltip="$O_p$(Big-Op)와 $o_p$(Little-Op)">
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://statkim.github.io/2022/07/r-package-%EB%A7%8C%EB%93%A4%EA%B8%B0-1/" data-tooltip="R package 만들기 1">
               
                   <span class="hide-xs hide-sm text-small icon-mr">PREVIOUS</span>
                   <i class="fa fa-angle-right"></i>
@@ -462,19 +411,19 @@ Selection: 1
         </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://statkim.github.io/2022/07/r-package-%EB%A7%8C%EB%93%A4%EA%B8%B0-1/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://statkim.github.io/2022/07/r-package-%EB%A7%8C%EB%93%A4%EA%B8%B0-2/">
               <i class="fa fa-facebook-official"></i>
             </a>
           </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://statkim.github.io/2022/07/r-package-%EB%A7%8C%EB%93%A4%EA%B8%B0-1/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://statkim.github.io/2022/07/r-package-%EB%A7%8C%EB%93%A4%EA%B8%B0-2/">
               <i class="fa fa-twitter"></i>
             </a>
           </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://statkim.github.io/2022/07/r-package-%EB%A7%8C%EB%93%A4%EA%B8%B0-1/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://statkim.github.io/2022/07/r-package-%EB%A7%8C%EB%93%A4%EA%B8%B0-2/">
               <i class="fa fa-google-plus"></i>
             </a>
           </li>
@@ -522,7 +471,7 @@ Selection: 1
           
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--default tooltip--top" href="https://statkim.github.io/2022/07/r-package-%EB%A7%8C%EB%93%A4%EA%B8%B0-2/" data-tooltip="R package 만들기 2">
+                <a class="post-action-btn btn btn--disabled">
               
                   <i class="fa fa-angle-left"></i>
                   <span class="hide-xs hide-sm text-small icon-ml">NEXT</span>
@@ -530,7 +479,7 @@ Selection: 1
             </li>
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--default tooltip--top" href="https://statkim.github.io/2021/08/o_pbig-op%EC%99%80-o_plittle-op/" data-tooltip="$O_p$(Big-Op)와 $o_p$(Little-Op)">
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://statkim.github.io/2022/07/r-package-%EB%A7%8C%EB%93%A4%EA%B8%B0-1/" data-tooltip="R package 만들기 1">
               
                   <span class="hide-xs hide-sm text-small icon-mr">PREVIOUS</span>
                   <i class="fa fa-angle-right"></i>
@@ -548,19 +497,19 @@ Selection: 1
         </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://statkim.github.io/2022/07/r-package-%EB%A7%8C%EB%93%A4%EA%B8%B0-1/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://statkim.github.io/2022/07/r-package-%EB%A7%8C%EB%93%A4%EA%B8%B0-2/">
               <i class="fa fa-facebook-official"></i>
             </a>
           </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://statkim.github.io/2022/07/r-package-%EB%A7%8C%EB%93%A4%EA%B8%B0-1/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://statkim.github.io/2022/07/r-package-%EB%A7%8C%EB%93%A4%EA%B8%B0-2/">
               <i class="fa fa-twitter"></i>
             </a>
           </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://statkim.github.io/2022/07/r-package-%EB%A7%8C%EB%93%A4%EA%B8%B0-1/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://statkim.github.io/2022/07/r-package-%EB%A7%8C%EB%93%A4%EA%B8%B0-2/">
               <i class="fa fa-google-plus"></i>
             </a>
           </li>
@@ -590,19 +539,19 @@ Selection: 1
   <ul class="share-options">
     
       <li class="share-option">
-        <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fstatkim.github.io%2F2022%2F07%2Fr-package-%25EB%25A7%258C%25EB%2593%25A4%25EA%25B8%25B0-1%2F">
+        <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fstatkim.github.io%2F2022%2F07%2Fr-package-%25EB%25A7%258C%25EB%2593%25A4%25EA%25B8%25B0-2%2F">
           <i class="fa fa-facebook-official"></i><span>Share on Facebook</span>
         </a>
       </li>
     
       <li class="share-option">
-        <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=https%3A%2F%2Fstatkim.github.io%2F2022%2F07%2Fr-package-%25EB%25A7%258C%25EB%2593%25A4%25EA%25B8%25B0-1%2F">
+        <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=https%3A%2F%2Fstatkim.github.io%2F2022%2F07%2Fr-package-%25EB%25A7%258C%25EB%2593%25A4%25EA%25B8%25B0-2%2F">
           <i class="fa fa-twitter"></i><span>Share on Twitter</span>
         </a>
       </li>
     
       <li class="share-option">
-        <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=https%3A%2F%2Fstatkim.github.io%2F2022%2F07%2Fr-package-%25EB%25A7%258C%25EB%2593%25A4%25EA%25B8%25B0-1%2F">
+        <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=https%3A%2F%2Fstatkim.github.io%2F2022%2F07%2Fr-package-%25EB%25A7%258C%25EB%2593%25A4%25EA%25B8%25B0-2%2F">
           <i class="fa fa-google-plus"></i><span>Share on Google&#43;</span>
         </a>
       </li>
@@ -694,9 +643,9 @@ $(document).ready(function() {
     
       <script>
         var disqus_config = function () {
-          this.page.url = 'https:\/\/statkim.github.io\/2022\/07\/r-package-%EB%A7%8C%EB%93%A4%EA%B8%B0-1\/';
+          this.page.url = 'https:\/\/statkim.github.io\/2022\/07\/r-package-%EB%A7%8C%EB%93%A4%EA%B8%B0-2\/';
           
-            this.page.identifier = '\/2022\/07\/r-package-%EB%A7%8C%EB%93%A4%EA%B8%B0-1\/'
+            this.page.identifier = '\/2022\/07\/r-package-%EB%A7%8C%EB%93%A4%EA%B8%B0-2\/'
           
         };
         (function() {

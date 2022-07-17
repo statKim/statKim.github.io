@@ -1,0 +1,88 @@
+---
+title: R package 만들기 2
+date: '2022-07-17'
+coverImage: 
+coverMeta: out
+metaAlignment: center
+categories:
+  - R
+tags:
+  - R package
+  - R
+  - GitHub
+---
+
+<script src="/rmarkdown-libs/header-attrs/header-attrs.js"></script>
+
+
+<div id="license-추가하기" class="section level2">
+<h2>License 추가하기</h2>
+<p>패키지의 License는 다음의 함수를 사용하여 생성할 수 있습니다.
+여기서는 흔하게 사용하는 MIT License를 사용해보겠습니다.</p>
+<pre class="r"><code>usethis::use_mit_license()</code></pre>
+<pre><code>✓ Setting License field in DESCRIPTION to &#39;MIT + file LICENSE&#39;
+✓ Writing &#39;LICENSE&#39;
+✓ Writing &#39;LICENSE.md&#39;
+✓ Adding &#39;^LICENSE\\.md$&#39; to &#39;.Rbuildignore&#39;</code></pre>
+<p><img src="/img/Rpackage_2/license_ex.png" /></p>
+</div>
+<div id="r-함수-추가하기" class="section level2">
+<h2>R 함수 추가하기</h2>
+<p>이제 R package에 포함하고자 하는 함수를 생성해보겠습니다.
+우선 다음의 코드로 <code>R/my_Rfunction.R</code> 파일을 생성할 수 있습니다.</p>
+<pre class="r"><code>usethis::use_r(&quot;my_Rfunction&quot;)</code></pre>
+<pre><code>✓ Setting active project to &#39;/Users/hyunsung/Desktop/Rproject/fda.manifold&#39;
+• Modify &#39;R/my_Rfunction.R&#39;
+• Call `use_test()` to create a matching test file</code></pre>
+<p>이제 <code>R/my_Rfunction.R</code> 파일을 열어서 다음의 내용을 입력해줍니다.
+벡터를 받아와서 결측값을 제외하여 합하는 <code>add()</code>라는 함수를 만들었는데요.
+<strong>패키지를 만들 때에 주의할 점으로 <code>base</code> 함수가 아닌 다른 패키지에 포함되어 있는 함수를 사용할 경우에는 <code>패키지명::함수</code>와 같은 방식으로 사용해야만 합니다.</strong>
+여기서는 <code>stats</code> 패키지에 있는 <code>na.omit()</code> 함수를 사용하기 위해 <code>stats::na.omit()</code>과 같이 입력해주었습니다.
+물론 패키지 이름을 생략하여 사용할 수 있는 방법이 있긴 하지만, 그보다는 작업시 <strong>다른 패키지 안의 같은 이름을 가진 함수끼리의 충돌을 방지</strong>하는 차원에서 이러한 방식을 추천드립니다.</p>
+<pre class="r"><code>#&#39; 함수 이름 (Title)
+#&#39;
+#&#39; 함수 설명 (Description)
+#&#39; 여러 줄로도 적을 수 있음
+#&#39;
+#&#39; @param x 함수의 input parameter
+#&#39; @export
+add &lt;- function(x) {
+    sum(stats::na.omit(x))
+}</code></pre>
+<p><code>#'</code>로 시작되는 부분은 함수의 설명을 적어주는 부분인데요. (이는 <code>roxygen2</code>라는 패키지를 통해 변환해줍니다.)
+첫 번째 줄에는 함수의 이름(Title), 두 번째 문단에는 함수의 설명(Description)을 입력해주면 됩니다.
+<code>@param</code>은 함수읠 input parameter(Arguments)와 그에 대한 설명을 적어주고, <code>@export</code>는 이 함수를 패키지에 속해있는 함수로 사용하겠다라는 의미입니다.</p>
+<p>다음의 코드로 위에서 생성한 함수의 manual를 생성해주게 되고, <code>man</code> 폴더가 생성되고 그 안에 <code>add.Rd</code>라는 manual 파일이 생성되게 됩니다.</p>
+<pre class="r"><code>devtools::document()</code></pre>
+<pre><code>ℹ Updating fda.manifold documentation
+ℹ Loading fda.manifold
+Writing NAMESPACE
+Writing NAMESPACE
+Writing fda.manifold-package.Rd
+Writing add.Rd</code></pre>
+<p><img src="/img/Rpackage_2/ftn_man.png" /></p>
+<p>다음과 같이 함수의 설명을 확인해보면, 우리가 입력해준 내용이 나타나는 것을 확인할 수 있습니다.</p>
+<pre class="r"><code>?add</code></pre>
+<p><img src="/img/Rpackage_2/ex_ftn_help.png" /></p>
+</div>
+<div id="패키지-check" class="section level2">
+<h2>패키지 check</h2>
+<p>이제 <code>R CMD check</code>를 통해 이 패키지가 정상적으로 사용될 수 있는지에 대한 확인을 해주어야 하는데요.
+이는 Rstudio에서 <code>Build</code> 탭에 <code>Check</code> 버튼을 눌러주거나</p>
+<p><img src="/img/Rpackage_2/cmd_check.png" /></p>
+<p>아래의 함수를 사용해주면 됩니다.</p>
+<pre class="r"><code>devtools::check()</code></pre>
+<p>아래와 같이 아무런 errors나 warnings, notes가 나타나지 않으면 현재 패키지 작동에 문제가 없다는 것을 의미합니다.
+만약 이 과정에서 문제가 있다는 메시지가 있을 경우, 내용을 보고 함수나 다른 설정을 수정해준 후에 다시 <code>R CMD check</code>를 해주면 됩니다.</p>
+<pre><code>0 errors ✓ | 0 warnings ✓ | 0 notes ✓
+
+R CMD check succeeded</code></pre>
+<p><br></p>
+</div>
+<div id="reference" class="section level2">
+<h2>Reference</h2>
+<ul>
+<li><a href="https://r-pkgs.org/whole-game.html" class="uri">https://r-pkgs.org/whole-game.html</a></li>
+<li><a href="http://www.danieldsjoberg.com/writing-R-packages/" class="uri">http://www.danieldsjoberg.com/writing-R-packages/</a></li>
+</ul>
+</div>
