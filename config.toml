@@ -20,7 +20,8 @@ defaultContentLanguage = "en-us"
 title = "statKim"
 theme = "hugo-tranquilpeak-theme"
 disqusShortname = "statkim"
-googleAnalytics = "UA-171508264-1"
+# googleAnalytics = "UA-171508264-1"   # Google Analytics 3
+googleAnalytics = "342867990"   # Google Analytics 4
 paginate = 7
 hasCJKLanguage = true  # Set `true` for Chinese/Japanese/Korean languages.
 enableEmoji = true
@@ -40,7 +41,7 @@ themesDir = "themes"
 [author]
   name = "김현성"
   bio = "Ph.D. Student in Statistics"
-  job = "Dept. of Statistics, Chung-Ang University"
+  job = "Chung-Ang University"
   location = "Seoul, Korea"
   # Your Gravatar email. Overwrite `author.picture` everywhere in the blog
   # gravatarEmail = "hyunsung1021@gmail.com"
@@ -238,9 +239,10 @@ themesDir = "themes"
     url = "/#about"
 
   # Customize link of author avatar in sidebar
-  # [params.sidebar.profile]
+  [params.sidebar.profile]
   #   url = "/#about"
-
+    url = "/hyunsungkim"
+    
   # Customize copyright value "© 2017 <CUSTOMIZATION>. All Rights Reserved"
   [params.footer]
     copyright = "<a href=\"https://github.com/statKim\">statKim</a>"

@@ -161,15 +161,6 @@
     </item>
     
     <item>
-      <title>Generalized Estimating Equations (GEE)</title>
-      <link>https://statkim.github.io/2019/11/generalized-estimating-equations-gee/</link>
-      <pubDate>Fri, 01 Nov 2019 00:00:00 +0000</pubDate>
-      
-      <guid>https://statkim.github.io/2019/11/generalized-estimating-equations-gee/</guid>
-      <description>GLM으로 다루기 어려운 repeated measured data를 다룰 수 있는 분석방법 (Liang &amp;amp; Zeger, 1986) Independence 가정이 있는 GLM에서 non-independence (or clustered)인 경우를 허용 (반복 측정된 데이터이</description>
-    </item>
-    
-    <item>
       <title>Jupyter notebook에서 가상환경 kernel이 인식되지 않는 오류</title>
       <link>https://statkim.github.io/2019/11/jupyter-notebook%EC%97%90%EC%84%9C-%EA%B0%80%EC%83%81%ED%99%98%EA%B2%BD-kernel%EC%9D%B4-%EC%9D%B8%EC%8B%9D%EB%90%98%EC%A7%80-%EC%95%8A%EB%8A%94-%EC%98%A4%EB%A5%98/</link>
       <pubDate>Fri, 01 Nov 2019 00:00:00 +0000</pubDate>
